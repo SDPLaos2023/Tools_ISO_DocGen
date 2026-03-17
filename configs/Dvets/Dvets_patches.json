@@ -1,0 +1,161 @@
+{
+  "project": "Dvets",
+  "patches_date": "2026-03-05",
+  "patches": [
+    {
+      "description": "CRR: Tick all checkboxes in Code Review Checklist (pass column)",
+      "file_pattern": "04_Development/DVETS-04-CRR-v4.2_Code_Review_Records.docx",
+      "action": "replace_checkbox",
+      "find": "\u2610",
+      "replace_with": "\u2611",
+      "col_header": "pass",
+      "table_index": 5
+    },
+    {
+      "description": "CRR: Fix duplicate ID ISS-001",
+      "file_pattern": "04_Development/DVETS-04-CRR-v4.2_Code_Review_Records.docx",
+      "action": "fix_duplicate_id",
+      "table_index": 7,
+      "id_prefix": "ISS-"
+    },
+    {
+      "description": "RR: Update all Open risks to Mitigated (project is post go-live)",
+      "file_pattern": "09_Risk_Management/DVETS-09-RR-v4.2_Risk_Register.docx",
+      "action": "update_table_status",
+      "col_header": "status",
+      "old_value": "Open",
+      "new_value": "Mitigated"
+    },
+    {
+      "description": "ISL: Update INC-001 from Open to Resolved",
+      "file_pattern": "07_Support_Maintenance/DVETS-07-ISL-v4.2_Incident_Support_Log.docx",
+      "action": "update_table_status",
+      "col_header": "status",
+      "old_value": "Open",
+      "new_value": "Resolved"
+    },
+    {
+      "description": "SDD: Replace architecture pattern placeholder",
+      "file_pattern": "03_Design_Architecture/DVETS-03-SDD-v4.2_System_Design.docx",
+      "action": "replace_in_paragraph",
+      "find": "[e.g. 3-Tier / Microservices / MVC]",
+      "replace": "3-Tier Web Application (Presentation \u2192 Business Logic \u2192 Data Layer)"
+    },
+    {
+      "description": "SDD: Replace interface placeholder",
+      "file_pattern": "03_Design_Architecture/DVETS-03-SDD-v4.2_System_Design.docx",
+      "action": "replace_in_paragraph",
+      "find": "[\u0e23\u0e30\u0e1a\u0e38 interface \u0e17\u0e35\u0e48\u0e40\u0e0a\u0e37\u0e48\u0e2d\u0e21\u0e15\u0e48\u0e2d]",
+      "replace": "REST API (JSON) \u0e2a\u0e33\u0e2b\u0e23\u0e31\u0e1a Mobile App, Web Browser (HTTP/HTTPS), \u0e41\u0e25\u0e30 Hardware Scanner Interface"
+    },
+    {
+      "description": "DBD: Replace ERD tool placeholder",
+      "file_pattern": "03_Design_Architecture/DVETS-03-DBD-v4.2_Database_Design.docx",
+      "action": "replace_in_paragraph",
+      "find": "[e.g. draw.io / dbdiagram.io / ERwin]",
+      "replace": "dbdiagram.io"
+    },
+    {
+      "description": "Fill empty date columns - MM",
+      "file_pattern": "01_Project_Management/DVETS-01-MM-v4.2_Meeting_Minutes.docx",
+      "action": "fill_empty_dates",
+      "date_value": "2026-02-18"
+    },
+    {
+      "description": "Fill empty date columns - PP",
+      "file_pattern": "01_Project_Management/DVETS-01-PP-v4.2_Project_Plan.docx",
+      "action": "fill_empty_dates",
+      "date_value": "2026-02-18"
+    },
+    {
+      "description": "Fill empty date columns - BRD",
+      "file_pattern": "02_Requirements_Analysis/DVETS-02-BRD-v4.2_Requirements_Document.docx",
+      "action": "fill_empty_dates",
+      "date_value": "2026-02-18"
+    },
+    {
+      "description": "Fill empty date columns - RTM",
+      "file_pattern": "02_Requirements_Analysis/DVETS-02-RTM-v4.2_RTM.docx",
+      "action": "fill_empty_dates",
+      "date_value": "2026-02-18"
+    },
+    {
+      "description": "Fill empty date columns - DBD",
+      "file_pattern": "03_Design_Architecture/DVETS-03-DBD-v4.2_Database_Design.docx",
+      "action": "fill_empty_dates",
+      "date_value": "2026-02-18"
+    },
+    {
+      "description": "Fill empty date columns - SDD",
+      "file_pattern": "03_Design_Architecture/DVETS-03-SDD-v4.2_System_Design.docx",
+      "action": "fill_empty_dates",
+      "date_value": "2026-02-18"
+    },
+    {
+      "description": "Fill empty date columns - CRR",
+      "file_pattern": "04_Development/DVETS-04-CRR-v4.2_Code_Review_Records.docx",
+      "action": "fill_empty_dates",
+      "date_value": "2026-02-18"
+    },
+    {
+      "description": "Fill empty date columns - CS",
+      "file_pattern": "04_Development/DVETS-04-CS-v4.2_Coding_Standards.docx",
+      "action": "fill_empty_dates",
+      "date_value": "2026-02-18"
+    },
+    {
+      "description": "Fill empty date columns - BDL",
+      "file_pattern": "05_Testing_QA/DVETS-05-BDL-v4.2_Bug_Defect_Log.docx",
+      "action": "fill_empty_dates",
+      "date_value": "2026-02-18"
+    },
+    {
+      "description": "Fill empty date columns - TCR",
+      "file_pattern": "05_Testing_QA/DVETS-05-TCR-v4.2_Test_Cases_Results.docx",
+      "action": "fill_empty_dates",
+      "date_value": "2026-02-18"
+    },
+    {
+      "description": "Fill empty date columns - TP",
+      "file_pattern": "05_Testing_QA/DVETS-05-TP-v4.2_Test_Plan.docx",
+      "action": "fill_empty_dates",
+      "date_value": "2026-02-18"
+    },
+    {
+      "description": "Fill empty date columns - TR",
+      "file_pattern": "06_Deployment_Training/DVETS-06-TR-v4.2_Training_Record.docx",
+      "action": "fill_empty_dates",
+      "date_value": "2026-02-18"
+    },
+    {
+      "description": "Fill empty date columns - UM",
+      "file_pattern": "06_Deployment_Training/DVETS-06-UM-v4.2_User_Manual.docx",
+      "action": "fill_empty_dates",
+      "date_value": "2026-02-18"
+    },
+    {
+      "description": "Fill empty date columns - ISL",
+      "file_pattern": "07_Support_Maintenance/DVETS-07-ISL-v4.2_Incident_Support_Log.docx",
+      "action": "fill_empty_dates",
+      "date_value": "2026-02-18"
+    },
+    {
+      "description": "Fill empty date columns - CRF",
+      "file_pattern": "08_Change_Logs_Versioning/DVETS-08-CRF-v4.2_Change_Request_Form.docx",
+      "action": "fill_empty_dates",
+      "date_value": "2026-02-18"
+    },
+    {
+      "description": "Fill empty date columns - VRN",
+      "file_pattern": "08_Change_Logs_Versioning/DVETS-08-VRN-v4.2_Version_Release_Notes.docx",
+      "action": "fill_empty_dates",
+      "date_value": "2026-02-18"
+    },
+    {
+      "description": "Fill empty date columns - RR",
+      "file_pattern": "09_Risk_Management/DVETS-09-RR-v4.2_Risk_Register.docx",
+      "action": "fill_empty_dates",
+      "date_value": "2026-02-18"
+    }
+  ]
+}

@@ -1,0 +1,359 @@
+{
+  "_comment": "ISO Document Generator - Project Config Schema v1.0",
+  "_usage": "Copy this file, fill in all fields, and pass to generate_iso_docs.py --config <file>",
+
+  "project": {
+    "code": "PROJ001",
+    "name": "Project Full Name",
+    "short_name": "ProjectShortName",
+    "version": "1.0",
+    "description": "Brief description of the project and its objectives",
+    "scope": "What is in scope and what is out of scope",
+    "objectives": [
+      "Objective 1",
+      "Objective 2"
+    ],
+    "start_date": "2026-01-01",
+    "end_date": "2026-12-31",
+    "go_live_date": "2026-11-01",
+    "organization": "Organization / Company Name",
+    "department": "Department / Business Unit",
+    "document_date": "2026-02-18",
+    "classification": "Internal"
+  },
+
+  "team": {
+    "project_manager": {
+      "name": "Full Name",
+      "title": "Project Manager",
+      "email": "pm@company.com",
+      "phone": ""
+    },
+    "lead_developer": {
+      "name": "Full Name",
+      "title": "Lead Developer / Tech Lead",
+      "email": "dev@company.com",
+      "phone": ""
+    },
+    "qa_engineer": {
+      "name": "Full Name",
+      "title": "QA Engineer / Test Lead",
+      "email": "qa@company.com",
+      "phone": ""
+    },
+    "business_analyst": {
+      "name": "Full Name",
+      "title": "Business Analyst",
+      "email": "ba@company.com",
+      "phone": ""
+    },
+    "system_analyst": {
+      "name": "Full Name",
+      "title": "System Analyst",
+      "email": "sa@company.com",
+      "phone": ""
+    },
+    "dba": {
+      "name": "Full Name",
+      "title": "Database Administrator",
+      "email": "dba@company.com",
+      "phone": ""
+    },
+    "members": [
+      {
+        "name": "Full Name",
+        "title": "Role",
+        "email": "member@company.com"
+      }
+    ]
+  },
+
+  "stakeholders": [
+    {
+      "name": "Full Name",
+      "role": "Project Sponsor / Department Head",
+      "organization": "Organization",
+      "email": "sponsor@company.com",
+      "responsibility": "Approve budget and major decisions"
+    }
+  ],
+
+  "tech_stack": {
+    "frontend": "e.g. React 18, TypeScript",
+    "backend": "e.g. .NET 8 / Python FastAPI",
+    "database": "e.g. PostgreSQL 15 / MSSQL 2022",
+    "infrastructure": "e.g. Azure / AWS / On-premise",
+    "source_control": "Git / Azure DevOps",
+    "ci_cd": "Azure Pipeline / GitHub Actions",
+    "other": []
+  },
+
+  "milestones": [
+    {
+      "id": "MS-01",
+      "name": "Requirements Sign-off",
+      "target_date": "2026-02-28",
+      "status": "Planned",
+      "owner": "Business Analyst"
+    },
+    {
+      "id": "MS-02",
+      "name": "Design Complete",
+      "target_date": "2026-03-31",
+      "status": "Planned",
+      "owner": "System Analyst"
+    },
+    {
+      "id": "MS-03",
+      "name": "Development Complete",
+      "target_date": "2026-07-31",
+      "status": "Planned",
+      "owner": "Lead Developer"
+    },
+    {
+      "id": "MS-04",
+      "name": "UAT Complete",
+      "target_date": "2026-09-30",
+      "status": "Planned",
+      "owner": "QA Engineer"
+    },
+    {
+      "id": "MS-05",
+      "name": "Go-Live",
+      "target_date": "2026-11-01",
+      "status": "Planned",
+      "owner": "Project Manager"
+    }
+  ],
+
+  "requirements": [
+    {
+      "id": "REQ-001",
+      "title": "Requirement Title",
+      "description": "Detailed description of the requirement",
+      "priority": "High",
+      "type": "Functional",
+      "category": "User Management",
+      "source": "BRD Section 3.1 / Stakeholder Name",
+      "acceptance_criteria": "The system shall...",
+      "linked_design": ["COMP-001"],
+      "linked_test_cases": ["TC-001"]
+    }
+  ],
+
+  "design_components": [
+    {
+      "id": "COMP-001",
+      "name": "Component / Module Name",
+      "description": "Description of the component",
+      "type": "UI Component / API / Service / Database",
+      "related_requirements": ["REQ-001"],
+      "technology": "Tech used"
+    }
+  ],
+
+  "database_tables": [
+    {
+      "name": "table_name",
+      "description": "Purpose of the table",
+      "columns": [
+        {"name": "id", "type": "INT PRIMARY KEY", "description": "Primary key"},
+        {"name": "created_at", "type": "DATETIME", "description": "Record creation timestamp"}
+      ],
+      "related_requirements": ["REQ-001"]
+    }
+  ],
+
+  "test_cases": [
+    {
+      "id": "TC-001",
+      "title": "Test Case Title",
+      "related_requirement": "REQ-001",
+      "test_type": "Unit / Integration / UAT / Performance",
+      "preconditions": "User must be logged in",
+      "steps": [
+        "Step 1: Navigate to...",
+        "Step 2: Enter...",
+        "Step 3: Click..."
+      ],
+      "expected_result": "System shall display...",
+      "actual_result": "Pass / Fail",
+      "status": "Pass",
+      "tester": "Tester Name",
+      "test_date": "2026-09-01",
+      "remarks": ""
+    }
+  ],
+
+  "defects": [
+    {
+      "id": "BUG-001",
+      "title": "Defect Title",
+      "related_test_case": "TC-001",
+      "related_requirement": "REQ-001",
+      "severity": "Critical / High / Medium / Low",
+      "priority": "High / Medium / Low",
+      "status": "Open / In Progress / Fixed / Closed / Rejected",
+      "reported_by": "Tester Name",
+      "reported_date": "2026-09-05",
+      "assigned_to": "Developer Name",
+      "fixed_date": "",
+      "description": "Detailed description of the defect",
+      "steps_to_reproduce": "Steps to reproduce...",
+      "root_cause": "",
+      "resolution": ""
+    }
+  ],
+
+  "risks": [
+    {
+      "id": "RISK-001",
+      "category": "Technical / Schedule / Resource / External",
+      "description": "Risk description",
+      "probability": "High",
+      "impact": "High",
+      "risk_level": "High",
+      "mitigation": "Mitigation plan",
+      "contingency": "If risk occurs...",
+      "owner": "Team Member Name",
+      "status": "Open",
+      "review_date": "2026-03-01",
+      "linked_capa": ""
+    }
+  ],
+
+  "change_requests": [
+    {
+      "id": "CR-001",
+      "title": "Change Request Title",
+      "description": "Description of the change",
+      "requestor": "Name",
+      "request_date": "2026-04-01",
+      "priority": "High / Medium / Low",
+      "impact": "Description of impact on scope/schedule/cost",
+      "affected_documents": ["REQ-001", "TC-001"],
+      "status": "Pending / Approved / Rejected / Implemented",
+      "approved_by": "",
+      "approval_date": "",
+      "implementation_date": ""
+    }
+  ],
+
+  "versions": [
+    {
+      "version": "1.0.0",
+      "release_date": "2026-11-01",
+      "release_type": "Major / Minor / Patch",
+      "description": "Initial release",
+      "changes": ["Feature 1 implemented", "Feature 2 implemented"],
+      "deployed_by": "DevOps / Developer Name",
+      "environment": "Production"
+    }
+  ],
+
+  "meetings": [
+    {
+      "id": "MTG-001",
+      "title": "Meeting Title",
+      "date": "2026-02-01",
+      "time": "10:00-11:00",
+      "location": "Meeting Room / MS Teams",
+      "chair": "Project Manager Name",
+      "attendees": ["Name 1", "Name 2"],
+      "agenda": ["Agenda item 1", "Agenda item 2"],
+      "action_items": [
+        {
+          "item": "Action description",
+          "owner": "Name",
+          "due_date": "2026-02-15",
+          "status": "Open"
+        }
+      ],
+      "summary": "Meeting summary"
+    }
+  ],
+
+  "training_sessions": [
+    {
+      "id": "TRN-001",
+      "title": "Training Session Title",
+      "date": "2026-10-15",
+      "duration": "4 hours",
+      "location": "Training Room / Online",
+      "trainer": "Trainer Name",
+      "topics": ["Topic 1", "Topic 2"],
+      "attendees": [
+        {
+          "name": "Attendee Name",
+          "department": "Department",
+          "signed": true
+        }
+      ]
+    }
+  ],
+
+  "incidents": [
+    {
+      "id": "INC-001",
+      "title": "Incident Title",
+      "date_reported": "2026-11-15",
+      "severity": "Critical / High / Medium / Low",
+      "description": "Description of the incident or support request",
+      "reported_by": "User / System",
+      "assigned_to": "Support Team",
+      "status": "Open / In Progress / Resolved / Closed",
+      "resolution": "How the incident was resolved",
+      "resolved_date": "",
+      "root_cause": "",
+      "linked_change_request": ""
+    }
+  ],
+
+  "deployments": [
+    {
+      "id": "DEP-001",
+      "version": "1.0.0",
+      "date": "2026-11-01",
+      "environment": "Production",
+      "deployed_by": "Name",
+      "deployment_type": "Initial / Update / Rollback",
+      "steps": ["Step 1", "Step 2"],
+      "rollback_plan": "Rollback steps if needed",
+      "status": "Success / Failed / Rolled Back",
+      "approval": "Approved by Name"
+    }
+  ],
+
+  "audit": {
+    "audit_date": "2026-12-01",
+    "auditor": "Internal Auditor Name / External Auditor",
+    "audit_scope": "ISO/IEC 29110 compliance for software development lifecycle",
+    "findings": [
+      {
+        "id": "FIND-001",
+        "clause": "ISO/IEC 29110 Section X.X",
+        "finding_type": "Non-Conformance / Observation / Opportunity for Improvement",
+        "description": "Finding description",
+        "linked_capa": "CAPA-001"
+      }
+    ]
+  },
+
+  "capas": [
+    {
+      "id": "CAPA-001",
+      "type": "Corrective Action / Preventive Action",
+      "related_finding": "FIND-001 / RISK-001",
+      "description": "Root cause and corrective/preventive action",
+      "root_cause": "Root cause analysis",
+      "action_plan": "Action to be taken",
+      "responsible": "Name",
+      "target_date": "2026-12-31",
+      "status": "Open / In Progress / Closed",
+      "effectiveness_review": "How effectiveness will be verified",
+      "closed_date": ""
+    }
+  ],
+
+  "output_path": "d:\\Work\\DocISOGen\\projects"
+}

@@ -1,0 +1,253 @@
+{
+  "project": {
+    "code": "DVETS",
+    "name": "Dvets (Digital Vehicle and Entry Tracking System)",
+    "short_name": "Dvets",
+    "version": "4.2",
+    "description": "ระบบ Dvets (Digital Vehicle and Entry Tracking System) สำหรับบริหารจัดการการตรวจสอบบุคคล พาหนะ และเอกสารเดินทางผ่านจุดตรวจ รองรับการลงทะเบียน Blacklist การตรวจเอกสารขาเข้า-ขาออก และ Dashboard ติดตาม Real-time",
+    "scope": "การพัฒนาระบบลงทะเบียนและตรวจสอบบุคคล/พาหนะ ณ จุดตรวจ รวมถึงระบบ Blacklist และการรายงานสรุปข้อมูล",
+    "objectives": [
+      "สร้างระบบลงทะเบียนผู้ใช้งานและกำหนดสิทธิ์ Role-Based Access Control",
+      "พัฒนาระบบลงทะเบียนและจัดการข้อมูลบุคคลและพาหนะ",
+      "สร้างระบบ Blacklist สำหรับเฝ้าระวังและแจ้งเตือนอัตโนมัติ",
+      "พัฒนาระบบตรวจเอกสารขาเข้า-ขาออกที่จุดตรวจ",
+      "สร้าง Dashboard Real-time สำหรับติดตามการเคลื่อนย้าย"
+    ],
+    "start_date": "2025-06-20",
+    "end_date": "2025-12-31",
+    "go_live_date": "2025-12-31",
+    "organization": "Soudaphone",
+    "department": "IT / Software Development",
+    "document_date": "2026-02-18",
+    "classification": "Internal"
+  },
+
+  "team": {
+    "project_manager": {
+      "name": "Chan Neeammart",
+      "title": "Project Manager",
+      "email": "gm@soudaphone.com",
+      "phone": ""
+    },
+    "lead_developer": {
+      "name": "Souliya Singvongsa",
+      "title": "Head Developer",
+      "email": "souliya@soudaphone.com",
+      "phone": ""
+    },
+    "qa_engineer": {
+      "name": "Wikanda Thongsuk",
+      "title": "QA Engineer",
+      "email": "wikanda@soudaphone.com",
+      "phone": ""
+    },
+    "business_analyst": {
+      "name": "Souliya Singvongsa",
+      "title": "Head Developer / BA",
+      "email": "souliya@soudaphone.com",
+      "phone": ""
+    },
+    "system_analyst": {
+      "name": "Souliya Singvongsa",
+      "title": "Head Developer / SA",
+      "email": "souliya@soudaphone.com",
+      "phone": ""
+    },
+    "dba": {
+      "name": "Khamta Phantaboun",
+      "title": "Developer / DBA",
+      "email": "khamta@soudaphone.com",
+      "phone": ""
+    },
+    "members": [
+      { "name": "Khamta Phantaboun",       "title": "Developer",         "email": "khamta@soudaphone.com" },
+      { "name": "Thanaphoum Limsakoun",    "title": "Developer",         "email": "thanaphoum@soudaphone.com" },
+      { "name": "Houmphaeng Duangpaserth","title": "Software Support",  "email": "phaeng@soudaphone.com" },
+      { "name": "Siwarit Chantham",        "title": "UX/UI Designer",    "email": "siwarit@soudaphone.com" },
+      { "name": "Chaisawat Singjan",       "title": "Mobile Developer",  "email": "chaisawat@soudaphone.com" }
+    ]
+  },
+
+  "stakeholders": [
+    {
+      "name": "Chan Neeammart",
+      "role": "Project Manager",
+      "organization": "Soudaphone",
+      "email": "gm@soudaphone.com",
+      "responsibility": "Approve project decisions and manage delivery"
+    },
+    {
+      "name": "ผู้บังคับบัญชาด่านตรวจ",
+      "role": "Primary Customer / Key User",
+      "organization": "กรมตำรวจตรวจคนเข้า-ออกเมือง",
+      "email": "",
+      "responsibility": "Validate requirements, conduct UAT, sign acceptance"
+    },
+    {
+      "name": "เจ้าหน้าที่ปฏิบัติการ",
+      "role": "End User Representative",
+      "organization": "กรมตำรวจตรวจคนเข้า-ออกเมือง",
+      "email": "",
+      "responsibility": "Participate in UAT, provide operational feedback"
+    },
+    {
+      "name": "ผู้ดูแลระบบ IT",
+      "role": "System Administrator",
+      "organization": "Soudaphone",
+      "email": "",
+      "responsibility": "Manage server infrastructure, deployment, and backup"
+    }
+  ],
+
+  "tech_stack": {
+    "frontend": ".NET MVC (Razor) / Nuxt.js",
+    "backend": "C# .NET",
+    "database": "Microsoft SQL Server",
+    "infrastructure": "On-premise / Windows Server / Linux Server",
+    "source_control": "Git, Sourcetree",
+    "ci_cd": "Manual Deployment / Auto Deploy GitHub Actions",
+    "erd_tool": "dbdiagram.io",
+    "other": ["Figma", "Canva", "Dapper ORM", "Flutter (Mobile App)"]
+  },
+
+  "milestones": [
+    { "id": "MS-01", "name": "Requirements Sign-off",                        "target_date": "2025-07-31", "status": "Completed",    "owner": "Chan Neeammart" },
+    { "id": "MS-02", "name": "Design Complete",                               "target_date": "2025-08-31", "status": "Completed",    "owner": "Souliya Singvongsa" },
+    { "id": "MS-03", "name": "Phase 1 Development Complete (UAT Features)",   "target_date": "2025-10-31", "status": "Completed",    "owner": "Souliya Singvongsa" },
+    { "id": "MS-04", "name": "UAT Phase 1",                                   "target_date": "2025-11-30", "status": "Completed",    "owner": "Wikanda Thongsuk" },
+    { "id": "MS-05", "name": "Phase 2 Development Complete",                  "target_date": "2025-12-15", "status": "Completed",    "owner": "Souliya Singvongsa" },
+    { "id": "MS-06", "name": "Go-Live v4.2",                                  "target_date": "2025-12-31", "status": "Completed",    "owner": "Souliya Singvongsa" }
+  ],
+
+  "requirements": [
+    { "id": "REQ-001", "title": "ลงทะเบียนผู้ใช้ระบบ",                              "description": "สร้างบัญชีผู้ใช้งานสำหรับเจ้าหน้าที่ปฏิบัติงานในระดับต่างๆ และผู้แจ้งเอกสาร",                                                                                               "priority": "High",     "type": "Functional", "category": "User Management",       "source": "Souliya Singvongsa", "acceptance_criteria": "สามารถสร้างบัญชีผู้ใช้งานได้ และระบบแสดงหน้า Login ให้ผู้ใช้เข้าสู่ระบบได้ถูกต้อง",         "linked_design": ["COMP-001"], "linked_test_cases": ["TC-001"] },
+    { "id": "REQ-002", "title": "ลงทะเบียนพาหนะ",                                  "description": "บันทึกข้อมูลรถยนต์ ทะเบียน และรายละเอียดทางเทคนิคของยานพาหนะ",                                                                                                         "priority": "High",     "type": "Functional", "category": "Vehicle Management",    "source": "Souliya Singvongsa", "acceptance_criteria": "สามารถบันทึกและค้นหาข้อมูลพาหนะด้วยเลขทะเบียนได้",                                             "linked_design": ["COMP-001"], "linked_test_cases": ["TC-002"] },
+    { "id": "REQ-003", "title": "ลงทะเบียนคน",                                    "description": "บันทึกประวัติบุคคล ข้อมูลอัตลักษณ์ และรายละเอียดเอกสารประจำตัว",                                                                                                        "priority": "High",     "type": "Functional", "category": "Person Management",     "source": "Souliya Singvongsa", "acceptance_criteria": "สามารถบันทึกและค้นหาข้อมูลบุคคลด้วยเลขบัตรประจำตัวได้",                                           "linked_design": ["COMP-001"], "linked_test_cases": ["TC-003"] },
+    { "id": "REQ-004", "title": "ลงทะเบียน Blacklist",                             "description": "ระบบบันทึกรายชื่อบุคคลหรือพาหนะต้องห้าม เพื่อใช้ในการเฝ้าระวังและแจ้งเตือนอัตโนมัติ",                                                                                    "priority": "High",     "type": "Functional", "category": "Blacklist Management",  "source": "Souliya Singvongsa", "acceptance_criteria": "ระบบแจ้งเตือนทันทีเมื่อตรวจพบบุคคล/พาหนะใน Blacklist",                                            "linked_design": ["COMP-001"], "linked_test_cases": ["TC-004"] },
+    { "id": "REQ-005", "title": "จัดการข้อมูลผู้ใช้ระบบ (Permission & Roles)",     "description": "กำหนดสิทธิ์การเข้าถึง (Permission) และบทบาท (Roles) ของเจ้าหน้าที่แต่ละกลุ่ม",                                                                                          "priority": "High",     "type": "Functional", "category": "User Management",       "source": "Souliya Singvongsa", "acceptance_criteria": "ผู้ดูแลระบบสามารถกำหนด/แก้ไข Role และ Permission ของผู้ใช้ได้",                                      "linked_design": ["COMP-001"], "linked_test_cases": ["TC-005"] },
+    { "id": "REQ-006", "title": "จัดการข้อมูลด่าน",                               "description": "ตั้งค่าข้อมูลเฉพาะของแต่ละจุดตรวจ เช่น ชื่อด่าน สถานที่ตั้ง หรือรหัสประจำจุด",                                                                                              "priority": "Medium",   "type": "Functional", "category": "Checkpoint Management","source": "Souliya Singvongsa", "acceptance_criteria": "ระบบแสดงรายการด่านและสามารถเพิ่ม/แก้ไข/ลบข้อมูลด่านได้",                                           "linked_design": ["COMP-001"], "linked_test_cases": ["TC-006"] },
+    { "id": "REQ-007", "title": "จัดการข้อมูลสัญชาติ",                             "description": "ระบบจัดการรายชื่อประเทศและสัญชาติ เพื่อให้เป็นมาตรฐานเดียวกันทั่วโลก",                                                                                                    "priority": "Medium",   "type": "Functional", "category": "Master Data",           "source": "Souliya Singvongsa", "acceptance_criteria": "ระบบแสดงรายการสัญชาติและสามารถเพิ่ม/แก้ไข/ลบข้อมูลได้",                                            "linked_design": ["COMP-001"], "linked_test_cases": ["TC-007"] },
+    { "id": "REQ-008", "title": "จัดการข้อมูลประเภทรถ / ยี่ห้อรถ",               "description": "กำหนดตัวเลือกมาตรฐานสำหรับประเภทยานพาหนะ (เช่น รถเก๋ง, รถบรรทุก) และยี่ห้อรถ เพื่อความแม่นยำในการทำรายงาน",                                                              "priority": "Medium",   "type": "Functional", "category": "Master Data",           "source": "Souliya Singvongsa", "acceptance_criteria": "ระบบแสดง Dropdown ประเภทรถ/ยี่ห้อรถที่ถูกต้อง และสามารถจัดการ Master Data ได้",                    "linked_design": ["COMP-001"], "linked_test_cases": ["TC-008"] },
+    { "id": "REQ-009", "title": "จัดการข้อมูลคน / พาหนะ / Blacklist",             "description": "ส่วนงานแก้ไข ปรับปรุงสถานะ หรือลบข้อมูลที่ไม่ถูกต้องออกจากฐานข้อมูล",                                                                                                   "priority": "High",     "type": "Functional", "category": "Data Management",       "source": "Souliya Singvongsa", "acceptance_criteria": "ผู้มีสิทธิ์สามารถแก้ไข/ลบข้อมูลที่ผิดพลาดได้ และมี Audit Log บันทึกการเปลี่ยนแปลง",              "linked_design": ["COMP-001"], "linked_test_cases": ["TC-009"] },
+    { "id": "REQ-010", "title": "แจ้งเอกสาร",                                     "description": "บริการลงทะเบียนหรือแจ้งความประสงค์ล่วงหน้าเกี่ยวกับเอกสารการเดินทางหรือการขนส่ง",                                                                                          "priority": "High",     "type": "Functional", "category": "Document Management",   "source": "Souliya Singvongsa", "acceptance_criteria": "ระบบบันทึกการแจ้งเอกสารล่วงหน้าและแสดงสถานะได้ถูกต้อง",                                            "linked_design": ["COMP-001"], "linked_test_cases": ["TC-010"] },
+    { "id": "REQ-011", "title": "ตรวจเอกสารขาเข้า",                               "description": "ระบบตรวจสอบและบันทึกข้อมูลเอกสารเดินทางสำหรับบุคคลและพาหนะที่เดินทางเข้าพื้นที่",                                                                                         "priority": "Critical", "type": "Functional", "category": "Inspection",            "source": "Souliya Singvongsa", "acceptance_criteria": "ระบบตรวจสอบเอกสารขาเข้า บันทึกเวลา และแจ้งเตือน Blacklist ได้ทันที",                              "linked_design": ["COMP-001"], "linked_test_cases": ["TC-011"] },
+    { "id": "REQ-012", "title": "ตรวจเอกสารขาออก",                               "description": "ระบบตรวจสอบความถูกต้องของเอกสารและสถานะก่อนอนุญาตให้เดินทางออก",                                                                                                      "priority": "Critical", "type": "Functional", "category": "Inspection",            "source": "Souliya Singvongsa", "acceptance_criteria": "ระบบตรวจสอบเอกสารขาออก และอนุมัติ/ปฏิเสธการผ่านด่านได้",                                          "linked_design": ["COMP-001"], "linked_test_cases": ["TC-012"] },
+    { "id": "REQ-013", "title": "Dashboard ติดตามการเข้า-ออก Real-time",          "description": "ระบบ Dashboard สำหรับดูประวัติการเคลื่อนย้ายแบบ Real-time",                                                                                                             "priority": "High",     "type": "Functional", "category": "Monitoring",            "source": "Souliya Singvongsa", "acceptance_criteria": "Dashboard แสดงข้อมูลการเข้า-ออกแบบ Real-time และ Filter ตามด่าน/วันที่ได้",                        "linked_design": ["COMP-001"], "linked_test_cases": ["TC-013"] },
+    { "id": "REQ-014", "title": "ตรวจงานข้อมูลพาหนะ / ข้อมูลคนลงทะเบียน",       "description": "ระบบสืบค้นและตรวจสอบประวัติย้อนหลังของข้อมูลที่ได้ลงทะเบียนไว้ในระบบ",                                                                                                  "priority": "Medium",   "type": "Functional", "category": "Reporting",             "source": "Team DevYa",         "acceptance_criteria": "ระบบสามารถค้นหาและแสดงประวัติข้อมูลพาหนะ/บุคคลย้อนหลังได้",                                          "linked_design": ["COMP-001"], "linked_test_cases": ["TC-014"] },
+    { "id": "REQ-015", "title": "ตรวจงานข้อมูลรายรับ",                            "description": "ระบบตรวจสอบยอดเงินหรือค่าธรรมเนียมที่จัดเก็บได้จากการดำเนินงานในแต่ละวัน",                                                                                               "priority": "Medium",   "type": "Functional", "category": "Finance",               "source": "Souliya Singvongsa", "acceptance_criteria": "ระบบแสดงรายงานรายรับประจำวัน/เดือน และ Export ข้อมูลได้",                                           "linked_design": ["COMP-001"], "linked_test_cases": ["TC-015"] }
+  ],
+
+  "design_components": [
+    {
+      "id": "COMP-001",
+      "name": "DVETS Core System",
+      "description": "Digital Vehicle and Entry Tracking System — ระบบหลักครอบคลุมทุก modules",
+      "type": "Full-stack Web Application",
+      "related_requirements": ["REQ-001","REQ-002","REQ-003","REQ-004","REQ-005","REQ-006","REQ-007","REQ-008","REQ-009","REQ-010","REQ-011","REQ-012","REQ-013","REQ-014","REQ-015"],
+      "technology": "C# .NET MVC / Nuxt.js / MSSQL / Dapper"
+    }
+  ],
+
+  "database_tables": [
+    { "name": "Users",          "description": "ข้อมูลผู้ใช้งานและสิทธิ์การเข้าถึง",         "columns": [{"name":"id","type":"INT PRIMARY KEY","description":"PK"},{"name":"username","type":"NVARCHAR(100)","description":"ชื่อผู้ใช้"},{"name":"role","type":"NVARCHAR(50)","description":"บทบาท"},{"name":"created_at","type":"DATETIME","description":"วันที่สร้าง"}], "related_requirements": ["REQ-001","REQ-005"] },
+    { "name": "Vehicles",       "description": "ข้อมูลยานพาหนะที่ลงทะเบียน",                 "columns": [{"name":"id","type":"INT PRIMARY KEY","description":"PK"},{"name":"plate_no","type":"NVARCHAR(20)","description":"ทะเบียน"},{"name":"type","type":"NVARCHAR(50)","description":"ประเภทรถ"},{"name":"brand","type":"NVARCHAR(100)","description":"ยี่ห้อ"}], "related_requirements": ["REQ-002","REQ-008"] },
+    { "name": "Persons",        "description": "ข้อมูลบุคคลที่ลงทะเบียน",                    "columns": [{"name":"id","type":"INT PRIMARY KEY","description":"PK"},{"name":"id_card","type":"NVARCHAR(20)","description":"เลขบัตร"},{"name":"name","type":"NVARCHAR(200)","description":"ชื่อ-นามสกุล"},{"name":"nationality","type":"NVARCHAR(50)","description":"สัญชาติ"}], "related_requirements": ["REQ-003","REQ-007"] },
+    { "name": "Blacklist",      "description": "รายการบุคคล/พาหนะต้องห้าม",                  "columns": [{"name":"id","type":"INT PRIMARY KEY","description":"PK"},{"name":"ref_id","type":"NVARCHAR(50)","description":"อ้างอิง Person/Vehicle"},{"name":"reason","type":"NVARCHAR(500)","description":"เหตุผล"},{"name":"added_date","type":"DATETIME","description":"วันที่เพิ่ม"}], "related_requirements": ["REQ-004","REQ-009"] },
+    { "name": "Checkpoints",    "description": "ข้อมูลจุดตรวจ",                               "columns": [{"name":"id","type":"INT PRIMARY KEY","description":"PK"},{"name":"name","type":"NVARCHAR(100)","description":"ชื่อด่าน"},{"name":"location","type":"NVARCHAR(200)","description":"สถานที่"}], "related_requirements": ["REQ-006"] },
+    { "name": "DocumentLogs",   "description": "บันทึกการตรวจเอกสารขาเข้า-ขาออก",            "columns": [{"name":"id","type":"INT PRIMARY KEY","description":"PK"},{"name":"direction","type":"NVARCHAR(10)","description":"IN/OUT"},{"name":"checkpoint_id","type":"INT","description":"FK Checkpoint"},{"name":"scan_time","type":"DATETIME","description":"เวลาตรวจ"}], "related_requirements": ["REQ-010","REQ-011","REQ-012"] },
+    { "name": "RevenueReports", "description": "รายงานรายรับ",                                "columns": [{"name":"id","type":"INT PRIMARY KEY","description":"PK"},{"name":"date","type":"DATE","description":"วันที่"},{"name":"amount","type":"DECIMAL(15,2)","description":"จำนวนเงิน"},{"name":"checkpoint_id","type":"INT","description":"FK Checkpoint"}], "related_requirements": ["REQ-015"] }
+  ],
+
+  "test_cases": [
+    { "id": "TC-001",  "title": "ทดสอบสร้างบัญชีผู้ใช้ใหม่",             "related_requirement": "REQ-001", "test_type": "Functional", "preconditions": "เข้าสู่ระบบด้วย Admin account",         "steps": ["ไปที่หน้าจัดการผู้ใช้","คลิก Add User","กรอกข้อมูลครบ","คลิก Save"],                    "expected_result": "สร้างบัญชีสำเร็จ แสดงใน User List", "actual_result": "Pass", "status": "Pass", "tester": "Wikanda Thongsuk", "test_date": "2025-11-15", "remarks": "" },
+    { "id": "TC-002",  "title": "ทดสอบลงทะเบียนพาหนะ",                   "related_requirement": "REQ-002", "test_type": "Functional", "preconditions": "เข้าสู่ระบบ",                              "steps": ["ไปที่หน้าลงทะเบียนพาหนะ","กรอกเลขทะเบียน","เลือกประเภท","คลิก Save"],                "expected_result": "บันทึกพาหนะสำเร็จ ค้นหาได้", "actual_result": "Pass", "status": "Pass", "tester": "Wikanda Thongsuk", "test_date": "2025-11-15", "remarks": "" },
+    { "id": "TC-003",  "title": "ทดสอบลงทะเบียนบุคคล",                   "related_requirement": "REQ-003", "test_type": "Functional", "preconditions": "เข้าสู่ระบบ",                              "steps": ["ไปที่หน้าลงทะเบียนบุคคล","กรอกเลขบัตร","กรอกข้อมูลส่วนตัว","คลิก Save"],            "expected_result": "บันทึกบุคคลสำเร็จ ค้นหาด้วยเลขบัตรได้", "actual_result": "Pass", "status": "Pass", "tester": "Wikanda Thongsuk", "test_date": "2025-11-15", "remarks": "" },
+    { "id": "TC-004",  "title": "ทดสอบเพิ่ม Blacklist และแจ้งเตือน",     "related_requirement": "REQ-004", "test_type": "Functional", "preconditions": "มีข้อมูลบุคคลในระบบ",                     "steps": ["เปิดข้อมูลบุคคล","คลิก Add to Blacklist","กรอกเหตุผล","ตรวจสอบการแจ้งเตือน"],       "expected_result": "แจ้งเตือนทันทีเมื่อบุคคลนั้นผ่านด่าน", "actual_result": "Pass", "status": "Pass", "tester": "Wikanda Thongsuk", "test_date": "2025-11-15", "remarks": "" },
+    { "id": "TC-005",  "title": "ทดสอบกำหนด Role & Permission",           "related_requirement": "REQ-005", "test_type": "Functional", "preconditions": "Admin account",                            "steps": ["ไปที่หน้า Role Management","สร้าง Role ใหม่","กำหนด Permission","Assign ให้ User"],   "expected_result": "User มีสิทธิ์ตาม Role ที่กำหนด", "actual_result": "Pass", "status": "Pass", "tester": "Wikanda Thongsuk", "test_date": "2025-11-16", "remarks": "" },
+    { "id": "TC-006",  "title": "ทดสอบจัดการข้อมูลด่านตรวจ",              "related_requirement": "REQ-006", "test_type": "Functional", "preconditions": "Admin account",                            "steps": ["ไปที่หน้าจัดการด่าน","คลิก Add Checkpoint","กรอกข้อมูล","Save"],                      "expected_result": "ด่านแสดงใน dropdown ของระบบ", "actual_result": "Pass", "status": "Pass", "tester": "Wikanda Thongsuk", "test_date": "2025-11-16", "remarks": "" },
+    { "id": "TC-007",  "title": "ทดสอบจัดการข้อมูลสัญชาติ",              "related_requirement": "REQ-007", "test_type": "Functional", "preconditions": "Admin account",                            "steps": ["ไปที่ Master Data / Nationality","เพิ่มสัญชาติใหม่","Save"],                         "expected_result": "สัญชาติแสดงใน dropdown ลงทะเบียนบุคคล", "actual_result": "Pass", "status": "Pass", "tester": "Wikanda Thongsuk", "test_date": "2025-11-17", "remarks": "" },
+    { "id": "TC-008",  "title": "ทดสอบจัดการประเภท/ยี่ห้อรถ",            "related_requirement": "REQ-008", "test_type": "Functional", "preconditions": "Admin account",                            "steps": ["ไปที่ Master Data / Vehicle Type","เพิ่มประเภทรถ","Save"],                           "expected_result": "ประเภทรถแสดงใน dropdown ลงทะเบียนพาหนะ", "actual_result": "Pass", "status": "Pass", "tester": "Wikanda Thongsuk", "test_date": "2025-11-17", "remarks": "" },
+    { "id": "TC-009",  "title": "ทดสอบแก้ไข/ลบข้อมูลพร้อม Audit Log",   "related_requirement": "REQ-009", "test_type": "Functional", "preconditions": "Supervisor account",                       "steps": ["เปิดข้อมูลบุคคล/พาหนะ","คลิก Edit","แก้ไขข้อมูล","Save","ตรวจสอบ Audit Log"],      "expected_result": "ข้อมูลแก้ไขสำเร็จ และ Audit Log บันทึกการเปลี่ยนแปลง", "actual_result": "Pass", "status": "Pass", "tester": "Wikanda Thongsuk", "test_date": "2025-11-18", "remarks": "" },
+    { "id": "TC-010",  "title": "ทดสอบแจ้งเอกสารล่วงหน้า",               "related_requirement": "REQ-010", "test_type": "Functional", "preconditions": "เข้าสู่ระบบ",                              "steps": ["ไปที่หน้าแจ้งเอกสาร","กรอกข้อมูลเอกสาร","ส่งการแจ้ง"],                              "expected_result": "ระบบบันทึกและแสดงสถานะ Pending", "actual_result": "Pass", "status": "Pass", "tester": "Wikanda Thongsuk", "test_date": "2025-11-18", "remarks": "" },
+    { "id": "TC-011",  "title": "ทดสอบตรวจเอกสารขาเข้า + Blacklist Alert","related_requirement": "REQ-011", "test_type": "Integration","preconditions": "มีบุคคลใน Blacklist",                  "steps": ["Scan เอกสารขาเข้า","ระบบ check Blacklist","ตรวจสอบ Alert"],                          "expected_result": "Alert แสดงทันที และบันทึก Log", "actual_result": "Pass", "status": "Pass", "tester": "Wikanda Thongsuk", "test_date": "2025-11-20", "remarks": "" },
+    { "id": "TC-012",  "title": "ทดสอบตรวจเอกสารขาออก",                  "related_requirement": "REQ-012", "test_type": "Functional", "preconditions": "มีรายการเข้าขาออกที่ผ่านมาแล้ว",        "steps": ["Scan เอกสารขาออก","ระบบตรวจสอบ","อนุมัติ/ปฏิเสธ"],                                   "expected_result": "ระบบอนุมัติการผ่านด่านและบันทึก Log", "actual_result": "Pass", "status": "Pass", "tester": "Wikanda Thongsuk", "test_date": "2025-11-20", "remarks": "" },
+    { "id": "TC-013",  "title": "ทดสอบ Dashboard Real-time",              "related_requirement": "REQ-013", "test_type": "Performance","preconditions": "มีข้อมูล Traffic จำลอง",                 "steps": ["เปิด Dashboard","Filter ตามด่าน","Filter ตามวันที่","ตรวจสอบ refresh"],              "expected_result": "Dashboard อัปเดตภายใน 3 วินาที", "actual_result": "Pass", "status": "Pass", "tester": "Wikanda Thongsuk", "test_date": "2025-11-21", "remarks": "" },
+    { "id": "TC-014",  "title": "ทดสอบค้นหาประวัติพาหนะ/บุคคล",          "related_requirement": "REQ-014", "test_type": "Functional", "preconditions": "มีข้อมูลย้อนหลัง",                        "steps": ["ไปที่หน้า Search","กรอกเงื่อนไข","คลิก Search"],                                      "expected_result": "ระบบแสดงผลลัพธ์ถูกต้อง", "actual_result": "Pass", "status": "Pass", "tester": "Wikanda Thongsuk", "test_date": "2025-11-21", "remarks": "" },
+    { "id": "TC-015",  "title": "ทดสอบรายงานรายรับ",                     "related_requirement": "REQ-015", "test_type": "Functional", "preconditions": "มีข้อมูล Revenue",                        "steps": ["ไปที่หน้า Revenue Report","เลือกช่วงวันที่","Export"],                                "expected_result": "Export ไฟล์ Excel/PDF ได้ถูกต้อง", "actual_result": "Pass", "status": "Pass", "tester": "Wikanda Thongsuk", "test_date": "2025-11-21", "remarks": "" }
+  ],
+
+  "defects": [
+    { "id": "BUG-001", "title": "Blacklist Alert ล่าช้ากรณีผู้ใช้พร้อมกันมาก",     "related_test_case": "TC-011", "related_requirement": "REQ-004", "severity": "High",   "priority": "High",   "status": "Fixed",       "reported_by": "Wikanda Thongsuk", "reported_date": "2025-11-20", "assigned_to": "Souliya Singvongsa", "fixed_date": "2025-11-25", "description": "Alert ใช้เวลา >5 วินาทีเมื่อมีผู้ใช้งานพร้อมกัน 50 คนขึ้นไป", "steps_to_reproduce": "Simulate 50 concurrent users + trigger Blacklist alert", "root_cause": "Missing index on Blacklist table", "resolution": "เพิ่ม Index บน blacklist_ref_id column" },
+    { "id": "BUG-002", "title": "Session ไม่ expire หลัง idle 30 นาที",             "related_test_case": "TC-001", "related_requirement": "REQ-001", "severity": "Medium", "priority": "High",   "status": "Fixed",       "reported_by": "Wikanda Thongsuk", "reported_date": "2025-11-16", "assigned_to": "Souliya Singvongsa", "fixed_date": "2025-11-22", "description": "Session ยังคงอยู่หลัง idle เกิน 30 นาที", "steps_to_reproduce": "Login → ทิ้งไว้ 35 นาที → ลองใช้งาน", "root_cause": "Session timeout config ไม่ถูก apply", "resolution": "แก้ SessionTimeout ใน Web.config" },
+    { "id": "BUG-003", "title": "Export PDF รายงานรายรับตัวอักษรเพี้ยน",          "related_test_case": "TC-015", "related_requirement": "REQ-015", "severity": "Medium", "priority": "Medium", "status": "In Progress", "reported_by": "Wikanda Thongsuk", "reported_date": "2025-11-21", "assigned_to": "Khamta Phantaboun",  "fixed_date": "",       "description": "ตัวอักษรภาษาไทยใน PDF Export ไม่แสดงผลถูกต้อง", "steps_to_reproduce": "Revenue Report → Export PDF → ตรวจสอบตัวอักษรไทย", "root_cause": "Font embedding ไม่รองรับ Unicode Thai", "resolution": "" },
+    { "id": "BUG-004", "title": "Dashboard filter ตามด่านไม่ทำงาน",                "related_test_case": "TC-013", "related_requirement": "REQ-013", "severity": "Low",    "priority": "Medium", "status": "Fixed",       "reported_by": "Wikanda Thongsuk", "reported_date": "2025-11-21", "assigned_to": "Thanaphoum Limsakoun", "fixed_date": "2025-11-28", "description": "Filter by Checkpoint ใน Dashboard ไม่ filter ข้อมูล", "steps_to_reproduce": "Dashboard → filter ตามด่าน → ผลลัพธ์ยังแสดงทุกด่าน", "root_cause": "WHERE clause ขาด checkpoint_id condition", "resolution": "แก้ SQL query ใน DashboardService" }
+  ],
+
+  "risks": [
+    { "id": "RISK-001", "category": "Schedule", "description": "Features หลายรายการยังอยู่ในขั้นตอนเก็บ Requirement อาจทำให้ส่งมอบล่าช้ากว่ากำหนด", "probability": "High", "impact": "High", "risk_level": "High", "mitigation": "จัดประชุม Requirement Gathering เร่งด่วน กำหนด deadline ให้ชัดเจน", "contingency": "ลด scope ที่ not-critical ออกจาก delivery รอบแรก", "owner": "Chan Neeammart", "status": "Mitigated", "review_date": "2025-10-31", "linked_capa": "CAPA-001" },
+    { "id": "RISK-002", "category": "Technical", "description": "ระบบ Blacklist Alert แบบ Real-time อาจส่งผลต่อ Performance เมื่อมีผู้ใช้งานพร้อมกันมาก", "probability": "High", "impact": "High", "risk_level": "High", "mitigation": "ออกแบบ Index ใน Database ให้เหมาะสม และทดสอบ Load ก่อน Go-Live", "contingency": "เพิ่ม caching layer หรือลด query complexity", "owner": "Souliya Singvongsa", "status": "Mitigated", "review_date": "2025-11-30", "linked_capa": "CAPA-002" },
+    { "id": "RISK-003", "category": "Resource", "description": "ทีมพัฒนามีขนาดเล็ก (Team DevYa) อาจเกิดปัญหา Single Point of Failure", "probability": "High", "impact": "High", "risk_level": "High", "mitigation": "จัดทำเอกสาร Technical Documentation ให้ครบถ้วน", "contingency": "เตรียม backup developer จาก Soudaphone", "owner": "Chan Neeammart", "status": "Open", "review_date": "2026-03-19", "linked_capa": "CAPA-003" }
+  ],
+
+  "change_requests": [
+    { "id": "CRF-001", "title": "เพิ่มฟังก์ชัน Export Excel สำหรับรายงาน Dashboard", "description": "Customer ต้องการ Export ข้อมูล Dashboard เป็น Excel นอกเหนือจาก PDF", "requestor": "ผู้บังคับบัญชาด่านตรวจ", "request_date": "2025-10-15", "priority": "Medium", "impact": "เพิ่ม effort ประมาณ 3 วัน", "affected_documents": ["REQ-013","TC-013"], "status": "Implemented", "approved_by": "Chan Neeammart", "approval_date": "2025-10-20", "implementation_date": "2025-11-10" },
+    { "id": "CRF-002", "title": "แก้ไข BUG-003 — PDF Export ตัวอักษรเพี้ยน",      "description": "แก้ไข Font embedding ใน PDF generator ให้รองรับ Unicode Thai",         "requestor": "Wikanda Thongsuk",          "request_date": "2025-11-21", "priority": "Medium", "impact": "แก้ไข PDF library configuration",  "affected_documents": ["REQ-015","TC-015","BUG-003"], "status": "In Progress", "approved_by": "Chan Neeammart", "approval_date": "2025-11-23", "implementation_date": "" },
+    { "id": "CRF-003", "title": "เพิ่ม Mobile App สำหรับ Real-time Blacklist Scan",  "description": "พัฒนา Flutter Mobile App สำหรับเจ้าหน้าที่สแกน Blacklist ผ่าน tablet",  "requestor": "ผู้บังคับบัญชาด่านตรวจ",  "request_date": "2025-11-01", "priority": "High",   "impact": "เพิ่ม Mobile Development track ใหม่", "affected_documents": ["REQ-004","REQ-011"], "status": "Implemented", "approved_by": "Chan Neeammart", "approval_date": "2025-11-05", "implementation_date": "2025-12-15" }
+  ],
+
+  "versions": [
+    { "version": "1.0.0", "release_date": "2025-09-01", "release_type": "Major", "description": "Initial version — Project setup, database schema, User/Role management", "changes": ["REQ-001 User Registration","REQ-005 Role & Permission Management","Database schema initial setup"], "deployed_by": "Souliya Singvongsa", "environment": "Development" },
+    { "version": "2.0.0", "release_date": "2025-10-31", "release_type": "Major", "description": "Phase 1 development complete. Document inspection core features ready for UAT.", "changes": ["REQ-010 Document Pre-alert","REQ-011 Entry Inspection","REQ-012 Exit Inspection","REQ-013 Dashboard Real-time"], "deployed_by": "Souliya Singvongsa", "environment": "UAT" },
+    { "version": "3.0.0", "release_date": "2025-12-01", "release_type": "Major", "description": "Phase 2 development. Person, Vehicle, Blacklist modules added. Security fix applied.", "changes": ["REQ-002 Vehicle Registration","REQ-003 Person Registration","REQ-004 Blacklist","REQ-006 Checkpoint Management","REQ-007 Nationality Master Data Management","REQ-008 Vehicle Master Data","REQ-009 Data Management","Security fix BUG-002"], "deployed_by": "Souliya Singvongsa", "environment": "UAT" },
+    { "version": "4.2.0", "release_date": "2026-01-06", "release_type": "Minor", "description": "อัพเดทล่าสุด v4.2 รวม Features ที่ UAT เสร็จแล้ว ครบทุก 15 requirements", "changes": ["REQ-001 ถึง REQ-015 — UAT Completed ทั้งหมด","REQ-014 Vehicle/Person History Report — UAT Completed","REQ-015 Revenue Report — UAT Completed, BUG-003 In Progress","CRF-001 Export Excel for Dashboard — Implemented 2025-11-10","CRF-003 Mobile App Flutter Blacklist Scanner — Implemented 2025-12-15","BUG-001 Blacklist Index fix — Resolved 2025-11-25","BUG-004 Dashboard filter fix — Resolved 2025-11-28"], "deployed_by": "Souliya Singvongsa", "environment": "Production" }
+  ],
+
+  "meetings": [
+    { "id": "MTG-001", "title": "Kick-off Meeting", "date": "2025-06-20", "time": "09:00-11:00", "location": "Soudaphone Office", "chair": "Chan Neeammart", "attendees": ["Chan Neeammart","Souliya Singvongsa","Wikanda Thongsuk","ผู้บังคับบัญชาด่านตรวจ"], "agenda": ["Project Overview","Requirements discussion","Team assignment"], "action_items": [{"item":"เริ่มเก็บ Requirements","owner":"Souliya Singvongsa","due_date":"2025-07-15","status":"Closed"}], "summary": "Kick-off สำเร็จ ทีมรับทราบ scope และ timeline" },
+    { "id": "MTG-002", "title": "Requirements Sign-off Meeting", "date": "2025-07-31", "time": "13:00-15:00", "location": "Soudaphone Office", "chair": "Chan Neeammart", "attendees": ["Chan Neeammart","Souliya Singvongsa","ผู้บังคับบัญชาด่านตรวจ","เจ้าหน้าที่ปฏิบัติการ"], "agenda": ["Review REQ-001 to REQ-015","Sign-off BRD"], "action_items": [{"item":"อนุมัติ BRD","owner":"Chan Neeammart","due_date":"2025-07-31","status":"Closed"}], "summary": "BRD ได้รับการอนุมัติ MS-01 Complete" },
+    { "id": "MTG-003", "title": "UAT Phase 1 Review", "date": "2025-11-30", "time": "10:00-12:00", "location": "กรมตำรวจตรวจคนเข้า-ออกเมือง", "chair": "Chan Neeammart", "attendees": ["Chan Neeammart","Wikanda Thongsuk","ผู้บังคับบัญชาด่านตรวจ","เจ้าหน้าที่ปฏิบัติการ"], "agenda": ["UAT Phase 1 results review","Bug list review","CRF review"], "action_items": [{"item":"แก้ไข BUG-003","owner":"Khamta Phantaboun","due_date":"2025-12-31","status":"In Progress"},{"item":"Implement CRF-003 Mobile App","owner":"Chaisawat Singjan","due_date":"2025-12-15","status":"Closed"}], "summary": "UAT Phase 1 ผ่าน 13/15 test cases BUG-003 ยังค้างอยู่" }
+  ],
+
+  "training_sessions": [
+    { "id": "TRN-001", "title": "DVETS System User Training", "date": "2025-12-20", "duration": "4 hours", "location": "กรมตำรวจตรวจคนเข้า-ออกเมือง — Training Room", "trainer": "Souliya Singvongsa", "topics": ["การเข้าสู่ระบบและบทบาทผู้ใช้","การลงทะเบียนบุคคลและพาหนะ","การตรวจเอกสารขาเข้า-ขาออก","การดู Dashboard และ Reports"], "attendees": [{"name":"ผู้บังคับบัญชาด่านตรวจ","department":"กรมตำรวจ","signed":true},{"name":"เจ้าหน้าที่ปฏิบัติการ (ทีม)","department":"กรมตำรวจ","signed":true}] }
+  ],
+
+  "incidents": [
+    { "id": "INC-001", "title": "ระบบ Blacklist Alert ไม่แสดงผลในชั่วโมงเร่งด่วน", "date_reported": "2026-01-15", "severity": "High", "description": "ระบบ Blacklist Alert ใช้เวลาตอบสนองนานกว่า 10 วินาทีในช่วง 07:00-09:00 เนื่องจาก concurrent users สูง", "reported_by": "ผู้บังคับบัญชาด่านตรวจ", "assigned_to": "Souliya Singvongsa", "status": "Resolved", "resolution": "ทีมพัฒนา optimize performance โดย: (1) เพิ่ม composite index บน Blacklist table (ref_id, blacklist_type) (2) Implement in-memory cache สำหรับ frequent Blacklist lookups บน server (3) Refactor Blacklist query ลด JOIN complexity — ทดสอบยืนยัน response time ≤2 วินาที ณ concurrent 100 users", "resolved_date": "2026-02-10", "root_cause": "Query performance degradation ในช่วง peak load", "linked_change_request": "CRF-002" }
+  ],
+
+  "deployments": [
+    { "id": "DEP-001", "version": "4.2.0", "date": "2026-01-06", "environment": "Production", "deployed_by": "Souliya Singvongsa", "deployment_type": "Update", "steps": ["Backup database","Stop IIS","Deploy new build","Run DB migration","Start IIS","Smoke test"], "rollback_plan": "Restore database backup + deploy previous version", "status": "Success", "approval": "Chan Neeammart" }
+  ],
+
+  "audit": {
+    "audit_date": "2026-03-05",
+    "auditor": "ISO 29110 Internal Audit Team",
+    "audit_scope": "ISO/IEC 29110-5-1-2 Basic Profile — Full lifecycle compliance review for Dvets v4.2",
+    "findings": [
+      { "id": "FIND-001", "clause": "ISO/IEC 29110 SI.1 — Requirements Traceability", "finding_type": "Non-Conformance", "description": "RTM ว่างเปล่า ไม่มี REQ→TC mapping", "linked_capa": "CAPA-004" },
+      { "id": "FIND-002", "clause": "ISO/IEC 29110 SI.2 — Design Architecture", "finding_type": "Non-Conformance", "description": "SDD ไม่ระบุ Architecture Pattern จริง, DBD ไม่มี ERD", "linked_capa": "CAPA-005" },
+      { "id": "FIND-003", "clause": "ISO/IEC 29110 SI.3 — Development", "finding_type": "Non-Conformance", "description": "Code Review Checklist ไม่ complete — 10 checkboxes ยังไม่ tick", "linked_capa": "CAPA-006" },
+      { "id": "FIND-004", "clause": "ISO/IEC 29110 PM.2 — Project Management", "finding_type": "Non-Conformance", "description": "Meeting Minutes มีฟิลด์วันที่/เวลา/สถานที่ยังเป็น blanks", "linked_capa": "CAPA-007" },
+      { "id": "FIND-005", "clause": "ISO/IEC 29110 Quality Policy — Regulatory Compliance", "finding_type": "Non-Conformance", "description": "Folder 10_Regulatory_Compliance ว่างเปล่า — ไม่มีเอกสาร IC, AR, CAPA", "linked_capa": "CAPA-008" },
+      { "id": "FIND-006", "clause": "ISO/IEC 29110 PM Risk — Risk Management", "finding_type": "Non-Conformance", "description": "RISK-001, RISK-002, RISK-003 ทั้งหมด Open ไม่มี mitigation evidence", "linked_capa": "CAPA-003" },
+      { "id": "FIND-007", "clause": "ISO/IEC 29110 Post-delivery — Incident Management", "finding_type": "Non-Conformance", "description": "INC-001 ยังสถานะ Open ไม่มี resolution", "linked_capa": "CAPA-009" },
+      { "id": "FIND-008", "clause": "ISO/IEC 29110 SI.5 — Deployment & Training", "finding_type": "Observation", "description": "ไม่มีหลักฐาน Customer Acceptance formal sign-off", "linked_capa": "" },
+      { "id": "FIND-009", "clause": "ISO/IEC 29110 SCM — Change Management", "finding_type": "Observation", "description": "REQ-007, REQ-014, REQ-015 ไม่ปรากฏใน Version Release Notes", "linked_capa": "" }
+    ]
+  },
+
+  "capas": [
+    { "id": "CAPA-001", "type": "Corrective Action", "related_finding": "RISK-001", "description": "Requirement Gathering ล่าช้า แก้ด้วยการจัดประชุมเร่งด่วนและกำหนด deadline", "root_cause": "ไม่มี formal Requirements deadline ในแผนเริ่มต้น", "action_plan": "จัดทำ Requirements freeze date ใน Project Plan ทุก phase", "responsible": "Chan Neeammart", "target_date": "2025-10-31", "status": "Closed", "effectiveness_review": "MS-01 Requirements Sign-off ผ่านตามกำหนด 2025-07-31", "closed_date": "2025-10-31" },
+    { "id": "CAPA-002", "type": "Corrective Action", "related_finding": "RISK-002", "description": "Blacklist Alert performance ต่ำ แก้ด้วย Database Index optimization", "root_cause": "ขาด Database Index บน blacklist reference columns", "action_plan": "เพิ่ม Index ที่ blacklist_ref_id และ ทดสอบ Load ก่อน Go-Live", "responsible": "Souliya Singvongsa", "target_date": "2025-11-30", "status": "Closed", "effectiveness_review": "BUG-001 ได้รับการแก้ไข Performance ปกติ ≤2 วินาที", "closed_date": "2025-11-25" },
+    { "id": "CAPA-003", "type": "Preventive Action", "related_finding": "RISK-003", "description": "ลด Single Point of Failure ด้วย Technical Documentation และ Knowledge Transfer", "root_cause": "ทีมพัฒนาขนาดเล็ก ความรู้กระจุกอยู่ที่คน 1-2 คน", "action_plan": "จัดทำ Technical Documentation ครบถ้วน, จัด Knowledge Transfer session", "responsible": "Souliya Singvongsa", "target_date": "2026-03-19", "status": "Open", "effectiveness_review": "ตรวจสอบว่า Developer คนอื่นสามารถ maintain ระบบได้โดยไม่ต้องพึ่ง Lead Dev", "closed_date": "" },
+    { "id": "CAPA-004", "type": "Corrective Action", "related_finding": "FIND-001", "description": "Populate RTM ให้มี REQ-001→015 map ไปยัง TC-001→015 และ COMP-001", "root_cause": "ไม่มี process บังคับให้ populate RTM หลัง test cases สร้าง", "action_plan": "Assign BA + QA populate RTM พร้อม sign-off ใน Audit Review", "responsible": "Souliya Singvongsa / Wikanda Thongsuk", "target_date": "2026-03-19", "status": "Open", "effectiveness_review": "RTM ต้องมี ids_found ที่ไม่ว่างในการ re-audit", "closed_date": "" },
+    { "id": "CAPA-005", "type": "Corrective Action", "related_finding": "FIND-002", "description": "อัปเดต SDD ให้ระบุ Architecture Pattern จริง (C# .NET MVC 3-Tier) และแนบ ERD ใน DBD", "root_cause": "เอกสาร SDD/DBD สร้างจาก template โดยไม่กรอก content จริง", "action_plan": "Architect กรอก Architecture section + แนบ ERD diagram จาก Figma", "responsible": "Souliya Singvongsa", "target_date": "2026-03-19", "status": "Open", "effectiveness_review": "SDD placeholders ต้องถูกแทนที่ด้วย content จริงทั้งหมด", "closed_date": "" },
+    { "id": "CAPA-006", "type": "Corrective Action", "related_finding": "FIND-003", "description": "Complete Code Review Checklist ทุก item และ sign-off reviewer", "root_cause": "Code Review Checklist ไม่ถูกใช้จริงในระหว่าง development", "action_plan": "Lead Dev + Reviewers ประชุม code review retrospective และ complete checklist", "responsible": "Souliya Singvongsa", "target_date": "2026-03-19", "status": "Open", "effectiveness_review": "CRR checklist ต้องมี 0 unchecked items ใน re-audit", "closed_date": "" },
+    { "id": "CAPA-007", "type": "Corrective Action", "related_finding": "FIND-004", "description": "กรอก Meeting Minutes ให้สมบูรณ์ — วันที่/เวลา/สถานที่ทุก session", "root_cause": "Meeting Minutes ถูกสร้างจาก template โดยไม่กรอก metadata จริง", "action_plan": "PM กรอก meeting metadata ย้อนหลังทุก session จากหลักฐานที่มี", "responsible": "Chan Neeammart", "target_date": "2026-03-19", "status": "Open", "effectiveness_review": "Meeting Minutes ต้องไม่มี blank date/time/location fields", "closed_date": "" },
+    { "id": "CAPA-008", "type": "Corrective Action", "related_finding": "FIND-005", "description": "สร้างเอกสาร ISO Checklist, Audit Report, CAPA ใน Folder 10_Regulatory_Compliance", "root_cause": "Folder 10 ว่างเปล่า ไม่ได้ generate เอกสาร compliance", "action_plan": "รัน generator สำหรับ Folder 10 ด้วย Dvets_config.json ที่สร้างใหม่", "responsible": "Chan Neeammart / QA Team", "target_date": "2026-03-26", "status": "In Progress", "effectiveness_review": "Folder 10 ต้องมีเอกสาร IC, AR, CAPA ครบพร้อม content", "closed_date": "" },
+    { "id": "CAPA-009", "type": "Corrective Action", "related_finding": "FIND-007", "description": "Update INC-001 status เป็น In Progress + กำหนด resolution plan", "root_cause": "ไม่มี incident management workflow ที่บังคับ update status", "action_plan": "Support Team update INC-001 + กำหนด SLA response time + resolution date", "responsible": "Houmphaeng Duangpaserth", "target_date": "2026-03-19", "status": "Open", "effectiveness_review": "INC-001 ต้องมีสถานะ Resolved หรือ Closed ใน re-audit", "closed_date": "" }
+  ],
+
+  "output_path": "d:\\Work\\DocISOGen\\projects"
+}

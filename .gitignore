@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+*.egg-info/
+
+# Generated .docx output (projects folder)
+projects/
+
+# Desktop
+desktop.ini
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+*.txt

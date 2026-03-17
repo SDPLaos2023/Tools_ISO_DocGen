@@ -1,0 +1,87 @@
+{
+  "project": "Dvets",
+  "patches_date": "2026-03-05",
+  "description": "Post-8C re-apply: fill_empty_dates for regenerated folders + 8D checkbox patches",
+  "patches": [
+    {
+      "description": "8D: ISO Checklist — tick all compliant checkboxes",
+      "file_pattern": "10_Regulatory_Compliance/DVETS-10-IC-v4.2_ISO_Checklist.docx",
+      "action": "replace_checkbox",
+      "find": "\u2610",
+      "replace_with": "\u2611",
+      "col_header": "compliant"
+    },
+    {
+      "description": "fill_empty_dates — SDD (regenerated)",
+      "file_pattern": "03_Design_Architecture/DVETS-03-SDD-v4.2_System_Design.docx",
+      "action": "fill_empty_dates",
+      "date_value": "2026-02-18"
+    },
+    {
+      "description": "fill_empty_dates — DBD (regenerated)",
+      "file_pattern": "03_Design_Architecture/DVETS-03-DBD-v4.2_Database_Design.docx",
+      "action": "fill_empty_dates",
+      "date_value": "2026-02-18"
+    },
+    {
+      "description": "fill_empty_dates — TP (regenerated)",
+      "file_pattern": "05_Testing_QA/DVETS-05-TP-v4.2_Test_Plan.docx",
+      "action": "fill_empty_dates",
+      "date_value": "2026-02-18"
+    },
+    {
+      "description": "fill_empty_dates — TCR (regenerated)",
+      "file_pattern": "05_Testing_QA/DVETS-05-TCR-v4.2_Test_Cases_Results.docx",
+      "action": "fill_empty_dates",
+      "date_value": "2026-02-18"
+    },
+    {
+      "description": "fill_empty_dates — BDL (regenerated)",
+      "file_pattern": "05_Testing_QA/DVETS-05-BDL-v4.2_Bug_Defect_Log.docx",
+      "action": "fill_empty_dates",
+      "date_value": "2026-02-18"
+    },
+    {
+      "description": "fill_empty_dates — UM (regenerated)",
+      "file_pattern": "06_Deployment_Training/DVETS-06-UM-v4.2_User_Manual.docx",
+      "action": "fill_empty_dates",
+      "date_value": "2026-02-18"
+    },
+    {
+      "description": "fill_empty_dates — TR (regenerated)",
+      "file_pattern": "06_Deployment_Training/DVETS-06-TR-v4.2_Training_Record.docx",
+      "action": "fill_empty_dates",
+      "date_value": "2026-02-18"
+    },
+    {
+      "description": "fill_empty_dates — CRF (regenerated)",
+      "file_pattern": "08_Change_Logs_Versioning/DVETS-08-CRF-v4.2_Change_Request_Form.docx",
+      "action": "fill_empty_dates",
+      "date_value": "2026-02-18"
+    },
+    {
+      "description": "fill_empty_dates — VRN (regenerated)",
+      "file_pattern": "08_Change_Logs_Versioning/DVETS-08-VRN-v4.2_Version_Release_Notes.docx",
+      "action": "fill_empty_dates",
+      "date_value": "2026-02-18"
+    },
+    {
+      "description": "fill_empty_dates — IC (new)",
+      "file_pattern": "10_Regulatory_Compliance/DVETS-10-IC-v4.2_ISO_Checklist.docx",
+      "action": "fill_empty_dates",
+      "date_value": "2026-03-05"
+    },
+    {
+      "description": "fill_empty_dates — AR (new)",
+      "file_pattern": "10_Regulatory_Compliance/DVETS-10-AR-v4.2_Audit_Report.docx",
+      "action": "fill_empty_dates",
+      "date_value": "2026-03-05"
+    },
+    {
+      "description": "fill_empty_dates — CAPA (new)",
+      "file_pattern": "10_Regulatory_Compliance/DVETS-10-CAPA-v4.2_CAPA.docx",
+      "action": "fill_empty_dates",
+      "date_value": "2026-03-05"
+    }
+  ]
+}

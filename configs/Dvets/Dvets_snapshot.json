@@ -1,0 +1,1548 @@
+{
+  "project": "Dvets",
+  "snapshot_date": "2026-03-05 15:13",
+  "project_path": "D:\\Work\\DocISOGen\\projects\\Dvets",
+  "summary": {
+    "total_folders": 10,
+    "total_docs": 39,
+    "total_placeholders": 6,
+    "docs_with_missing_sigs": 1,
+    "docs_with_table_issues": 39,
+    "missing_docs": [],
+    "all_ids": {
+      "REQ": [
+        "REQ-001",
+        "REQ-002",
+        "REQ-003",
+        "REQ-004",
+        "REQ-005",
+        "REQ-006",
+        "REQ-007",
+        "REQ-008",
+        "REQ-009",
+        "REQ-010",
+        "REQ-011",
+        "REQ-012",
+        "REQ-013",
+        "REQ-014",
+        "REQ-015"
+      ],
+      "COMP": [
+        "COMP-001"
+      ],
+      "TC": [
+        "TC-001",
+        "TC-002",
+        "TC-003",
+        "TC-004",
+        "TC-005",
+        "TC-006",
+        "TC-007",
+        "TC-008",
+        "TC-009",
+        "TC-010",
+        "TC-011",
+        "TC-012",
+        "TC-013",
+        "TC-014",
+        "TC-015"
+      ],
+      "BUG": [
+        "BUG-001",
+        "BUG-002",
+        "BUG-003",
+        "BUG-004"
+      ],
+      "CRF": [
+        "CRF-001",
+        "CRF-002",
+        "CRF-003"
+      ],
+      "MS": [
+        "MS-03"
+      ],
+      "INC": [
+        "INC-001"
+      ],
+      "RISK": [
+        "RISK-001",
+        "RISK-002",
+        "RISK-003"
+      ]
+    }
+  },
+  "folders": [
+    {
+      "folder": "01_Project_Management",
+      "coverage": {
+        "folder": "01_Project_Management",
+        "docx_count": 4,
+        "found_codes": [
+          "MM",
+          "MM",
+          "PP",
+          "PP"
+        ],
+        "expected_codes": [
+          "PP",
+          "MM"
+        ],
+        "missing_codes": []
+      },
+      "documents": [
+        {
+          "file": "DVETS-01-MM-v4.2_Meeting_Minutes.backup.docx",
+          "size_kb": 150.4,
+          "headings": [],
+          "ids_found": {
+            "REQ": [
+              "REQ-001",
+              "REQ-015"
+            ],
+            "COMP": [
+              "COMP-001"
+            ],
+            "TC": [
+              "TC-001",
+              "TC-015"
+            ],
+            "BUG": [
+              "BUG-001",
+              "BUG-003",
+              "BUG-004"
+            ],
+            "CRF": [
+              "CRF-001",
+              "CRF-003"
+            ],
+            "MS": [
+              "MS-03"
+            ]
+          },
+          "placeholder_count": 1,
+          "placeholders_sample": [
+            "_______________"
+          ],
+          "missing_signatures": [
+            "วันที่: _______________  เวลา: _______________  สถานที่: _______________",
+            "วันที่: _______________  เวลา: _______________  สถานที่: _______________",
+            "วันที่: _______________  เวลา: _______________  สถานที่: _______________",
+            "วันที่: _______________  เวลา: _______________  สถานที่: _______________",
+            "วันที่: _______________  เวลา: _______________  สถานที่: _______________",
+            "วันที่: _______________  เวลา: _______________  สถานที่: _______________"
+          ],
+          "table_issues": [
+            {
+              "table_index": 3,
+              "issue": "empty_date_columns",
+              "count": 2
+            },
+            {
+              "table_index": 23,
+              "issue": "placeholder_cells",
+              "count": 6
+            }
+          ],
+          "version_history_rows": 4,
+          "has_cover_page": true
+        },
+        {
+          "file": "DVETS-01-MM-v4.2_Meeting_Minutes.docx",
+          "size_kb": 150.2,
+          "headings": [],
+          "ids_found": {
+            "REQ": [
+              "REQ-001",
+              "REQ-015"
+            ],
+            "COMP": [
+              "COMP-001"
+            ],
+            "TC": [
+              "TC-001",
+              "TC-015"
+            ],
+            "BUG": [
+              "BUG-001",
+              "BUG-003",
+              "BUG-004"
+            ],
+            "CRF": [
+              "CRF-001",
+              "CRF-003"
+            ],
+            "MS": [
+              "MS-03"
+            ]
+          },
+          "placeholder_count": 0,
+          "placeholders_sample": [],
+          "missing_signatures": [],
+          "table_issues": [
+            {
+              "table_index": 3,
+              "issue": "empty_date_columns",
+              "count": 2
+            },
+            {
+              "table_index": 23,
+              "issue": "placeholder_cells",
+              "count": 3
+            }
+          ],
+          "version_history_rows": 4,
+          "has_cover_page": true
+        },
+        {
+          "file": "DVETS-01-PP-v4.2_Project_Plan.backup.docx",
+          "size_kb": 145.3,
+          "headings": [],
+          "ids_found": {},
+          "placeholder_count": 0,
+          "placeholders_sample": [],
+          "missing_signatures": [],
+          "table_issues": [
+            {
+              "table_index": 3,
+              "issue": "empty_date_columns",
+              "count": 2
+            },
+            {
+              "table_index": 11,
+              "issue": "placeholder_cells",
+              "count": 6
+            }
+          ],
+          "version_history_rows": 4,
+          "has_cover_page": true
+        },
+        {
+          "file": "DVETS-01-PP-v4.2_Project_Plan.docx",
+          "size_kb": 145.0,
+          "headings": [],
+          "ids_found": {},
+          "placeholder_count": 0,
+          "placeholders_sample": [],
+          "missing_signatures": [],
+          "table_issues": [
+            {
+              "table_index": 3,
+              "issue": "empty_date_columns",
+              "count": 2
+            },
+            {
+              "table_index": 11,
+              "issue": "placeholder_cells",
+              "count": 3
+            }
+          ],
+          "version_history_rows": 4,
+          "has_cover_page": true
+        }
+      ]
+    },
+    {
+      "folder": "02_Requirements_Analysis",
+      "coverage": {
+        "folder": "02_Requirements_Analysis",
+        "docx_count": 4,
+        "found_codes": [
+          "BRD",
+          "BRD",
+          "RTM",
+          "RTM"
+        ],
+        "expected_codes": [
+          "BRD",
+          "RTM"
+        ],
+        "missing_codes": []
+      },
+      "documents": [
+        {
+          "file": "DVETS-02-BRD-v4.2_Requirements_Document.backup.docx",
+          "size_kb": 147.4,
+          "headings": [],
+          "ids_found": {
+            "REQ": [
+              "REQ-001",
+              "REQ-002",
+              "REQ-003",
+              "REQ-004",
+              "REQ-005",
+              "REQ-006",
+              "REQ-007",
+              "REQ-008",
+              "REQ-009",
+              "REQ-010",
+              "REQ-011",
+              "REQ-012",
+              "REQ-013",
+              "REQ-014",
+              "REQ-015"
+            ]
+          },
+          "placeholder_count": 0,
+          "placeholders_sample": [],
+          "missing_signatures": [],
+          "table_issues": [
+            {
+              "table_index": 3,
+              "issue": "empty_date_columns",
+              "count": 2
+            },
+            {
+              "table_index": 23,
+              "issue": "placeholder_cells",
+              "count": 6
+            }
+          ],
+          "version_history_rows": 4,
+          "has_cover_page": true
+        },
+        {
+          "file": "DVETS-02-BRD-v4.2_Requirements_Document.docx",
+          "size_kb": 147.1,
+          "headings": [],
+          "ids_found": {
+            "REQ": [
+              "REQ-001",
+              "REQ-002",
+              "REQ-003",
+              "REQ-004",
+              "REQ-005",
+              "REQ-006",
+              "REQ-007",
+              "REQ-008",
+              "REQ-009",
+              "REQ-010",
+              "REQ-011",
+              "REQ-012",
+              "REQ-013",
+              "REQ-014",
+              "REQ-015"
+            ]
+          },
+          "placeholder_count": 0,
+          "placeholders_sample": [],
+          "missing_signatures": [],
+          "table_issues": [
+            {
+              "table_index": 3,
+              "issue": "empty_date_columns",
+              "count": 2
+            },
+            {
+              "table_index": 23,
+              "issue": "placeholder_cells",
+              "count": 3
+            }
+          ],
+          "version_history_rows": 4,
+          "has_cover_page": true
+        },
+        {
+          "file": "DVETS-02-RTM-v4.2_RTM.backup.docx",
+          "size_kb": 143.3,
+          "headings": [],
+          "ids_found": {},
+          "placeholder_count": 0,
+          "placeholders_sample": [],
+          "missing_signatures": [],
+          "table_issues": [
+            {
+              "table_index": 3,
+              "issue": "empty_date_columns",
+              "count": 2
+            },
+            {
+              "table_index": 8,
+              "issue": "placeholder_cells",
+              "count": 6
+            }
+          ],
+          "version_history_rows": 4,
+          "has_cover_page": true
+        },
+        {
+          "file": "DVETS-02-RTM-v4.2_RTM.docx",
+          "size_kb": 143.0,
+          "headings": [],
+          "ids_found": {},
+          "placeholder_count": 0,
+          "placeholders_sample": [],
+          "missing_signatures": [],
+          "table_issues": [
+            {
+              "table_index": 3,
+              "issue": "empty_date_columns",
+              "count": 2
+            },
+            {
+              "table_index": 8,
+              "issue": "placeholder_cells",
+              "count": 3
+            }
+          ],
+          "version_history_rows": 4,
+          "has_cover_page": true
+        }
+      ]
+    },
+    {
+      "folder": "03_Design_Architecture",
+      "coverage": {
+        "folder": "03_Design_Architecture",
+        "docx_count": 4,
+        "found_codes": [
+          "DBD",
+          "DBD",
+          "SDD",
+          "SDD"
+        ],
+        "expected_codes": [
+          "SDD",
+          "DBD"
+        ],
+        "missing_codes": []
+      },
+      "documents": [
+        {
+          "file": "DVETS-03-DBD-v4.2_Database_Design.backup.docx",
+          "size_kb": 156.6,
+          "headings": [],
+          "ids_found": {},
+          "placeholder_count": 1,
+          "placeholders_sample": [
+            "(แนบ diagram ที่นี่ หรือดูใน design tool ที่กำหนด)"
+          ],
+          "missing_signatures": [],
+          "table_issues": [
+            {
+              "table_index": 3,
+              "issue": "empty_date_columns",
+              "count": 2
+            },
+            {
+              "table_index": 15,
+              "issue": "placeholder_cells",
+              "count": 6
+            }
+          ],
+          "version_history_rows": 4,
+          "has_cover_page": true
+        },
+        {
+          "file": "DVETS-03-DBD-v4.2_Database_Design.docx",
+          "size_kb": 156.6,
+          "headings": [],
+          "ids_found": {},
+          "placeholder_count": 1,
+          "placeholders_sample": [
+            "(แนบ diagram ที่นี่ หรือดูใน design tool ที่กำหนด)"
+          ],
+          "missing_signatures": [],
+          "table_issues": [
+            {
+              "table_index": 3,
+              "issue": "empty_date_columns",
+              "count": 2
+            },
+            {
+              "table_index": 15,
+              "issue": "placeholder_cells",
+              "count": 3
+            }
+          ],
+          "version_history_rows": 4,
+          "has_cover_page": true
+        },
+        {
+          "file": "DVETS-03-SDD-v4.2_System_Design.backup.docx",
+          "size_kb": 156.2,
+          "headings": [],
+          "ids_found": {},
+          "placeholder_count": 0,
+          "placeholders_sample": [],
+          "missing_signatures": [],
+          "table_issues": [
+            {
+              "table_index": 3,
+              "issue": "empty_date_columns",
+              "count": 2
+            },
+            {
+              "table_index": 10,
+              "issue": "placeholder_cells",
+              "count": 6
+            }
+          ],
+          "version_history_rows": 4,
+          "has_cover_page": true
+        },
+        {
+          "file": "DVETS-03-SDD-v4.2_System_Design.docx",
+          "size_kb": 156.2,
+          "headings": [],
+          "ids_found": {},
+          "placeholder_count": 0,
+          "placeholders_sample": [],
+          "missing_signatures": [],
+          "table_issues": [
+            {
+              "table_index": 3,
+              "issue": "empty_date_columns",
+              "count": 2
+            },
+            {
+              "table_index": 10,
+              "issue": "placeholder_cells",
+              "count": 3
+            }
+          ],
+          "version_history_rows": 4,
+          "has_cover_page": true
+        }
+      ]
+    },
+    {
+      "folder": "04_Development",
+      "coverage": {
+        "folder": "04_Development",
+        "docx_count": 4,
+        "found_codes": [
+          "CRR",
+          "CRR",
+          "CS",
+          "CS"
+        ],
+        "expected_codes": [
+          "CS",
+          "CRR"
+        ],
+        "missing_codes": []
+      },
+      "documents": [
+        {
+          "file": "DVETS-04-CRR-v4.2_Code_Review_Records.backup.docx",
+          "size_kb": 143.4,
+          "headings": [],
+          "ids_found": {},
+          "placeholder_count": 0,
+          "placeholders_sample": [],
+          "missing_signatures": [],
+          "table_issues": [
+            {
+              "table_index": 3,
+              "issue": "empty_date_columns",
+              "count": 2
+            },
+            {
+              "table_index": 5,
+              "issue": "unticked_checkboxes",
+              "count": 10
+            },
+            {
+              "table_index": 7,
+              "issue": "duplicate_ids",
+              "ids": [
+                "ISS-001"
+              ]
+            },
+            {
+              "table_index": 9,
+              "issue": "placeholder_cells",
+              "count": 6
+            }
+          ],
+          "version_history_rows": 4,
+          "has_cover_page": true
+        },
+        {
+          "file": "DVETS-04-CRR-v4.2_Code_Review_Records.docx",
+          "size_kb": 143.1,
+          "headings": [],
+          "ids_found": {},
+          "placeholder_count": 0,
+          "placeholders_sample": [],
+          "missing_signatures": [],
+          "table_issues": [
+            {
+              "table_index": 3,
+              "issue": "empty_date_columns",
+              "count": 2
+            },
+            {
+              "table_index": 7,
+              "issue": "duplicate_ids",
+              "ids": [
+                "ISS-001"
+              ]
+            },
+            {
+              "table_index": 9,
+              "issue": "placeholder_cells",
+              "count": 3
+            }
+          ],
+          "version_history_rows": 4,
+          "has_cover_page": true
+        },
+        {
+          "file": "DVETS-04-CS-v4.2_Coding_Standards.backup.docx",
+          "size_kb": 144.2,
+          "headings": [],
+          "ids_found": {},
+          "placeholder_count": 0,
+          "placeholders_sample": [],
+          "missing_signatures": [],
+          "table_issues": [
+            {
+              "table_index": 3,
+              "issue": "empty_date_columns",
+              "count": 2
+            },
+            {
+              "table_index": 11,
+              "issue": "placeholder_cells",
+              "count": 6
+            }
+          ],
+          "version_history_rows": 4,
+          "has_cover_page": true
+        },
+        {
+          "file": "DVETS-04-CS-v4.2_Coding_Standards.docx",
+          "size_kb": 144.0,
+          "headings": [],
+          "ids_found": {},
+          "placeholder_count": 0,
+          "placeholders_sample": [],
+          "missing_signatures": [],
+          "table_issues": [
+            {
+              "table_index": 3,
+              "issue": "empty_date_columns",
+              "count": 2
+            },
+            {
+              "table_index": 11,
+              "issue": "placeholder_cells",
+              "count": 3
+            }
+          ],
+          "version_history_rows": 4,
+          "has_cover_page": true
+        }
+      ]
+    },
+    {
+      "folder": "05_Testing_QA",
+      "coverage": {
+        "folder": "05_Testing_QA",
+        "docx_count": 6,
+        "found_codes": [
+          "BDL",
+          "BDL",
+          "TCR",
+          "TCR",
+          "TP",
+          "TP"
+        ],
+        "expected_codes": [
+          "TP",
+          "TCR",
+          "BDL"
+        ],
+        "missing_codes": []
+      },
+      "documents": [
+        {
+          "file": "DVETS-05-BDL-v4.2_Bug_Defect_Log.backup.docx",
+          "size_kb": 156.0,
+          "headings": [],
+          "ids_found": {
+            "BUG": [
+              "BUG-001",
+              "BUG-002",
+              "BUG-003",
+              "BUG-004"
+            ]
+          },
+          "placeholder_count": 0,
+          "placeholders_sample": [],
+          "missing_signatures": [],
+          "table_issues": [
+            {
+              "table_index": 3,
+              "issue": "empty_date_columns",
+              "count": 2
+            },
+            {
+              "table_index": 6,
+              "issue": "empty_date_columns",
+              "count": 1
+            },
+            {
+              "table_index": 11,
+              "issue": "placeholder_cells",
+              "count": 6
+            }
+          ],
+          "version_history_rows": 4,
+          "has_cover_page": true
+        },
+        {
+          "file": "DVETS-05-BDL-v4.2_Bug_Defect_Log.docx",
+          "size_kb": 156.0,
+          "headings": [],
+          "ids_found": {
+            "BUG": [
+              "BUG-001",
+              "BUG-002",
+              "BUG-003",
+              "BUG-004"
+            ]
+          },
+          "placeholder_count": 0,
+          "placeholders_sample": [],
+          "missing_signatures": [],
+          "table_issues": [
+            {
+              "table_index": 3,
+              "issue": "empty_date_columns",
+              "count": 2
+            },
+            {
+              "table_index": 6,
+              "issue": "empty_date_columns",
+              "count": 1
+            },
+            {
+              "table_index": 11,
+              "issue": "placeholder_cells",
+              "count": 3
+            }
+          ],
+          "version_history_rows": 4,
+          "has_cover_page": true
+        },
+        {
+          "file": "DVETS-05-TCR-v4.2_Test_Cases_Results.backup.docx",
+          "size_kb": 158.4,
+          "headings": [],
+          "ids_found": {
+            "TC": [
+              "TC-001",
+              "TC-002",
+              "TC-003",
+              "TC-004",
+              "TC-005",
+              "TC-006",
+              "TC-007",
+              "TC-008",
+              "TC-009",
+              "TC-010",
+              "TC-011",
+              "TC-012",
+              "TC-013",
+              "TC-014",
+              "TC-015"
+            ]
+          },
+          "placeholder_count": 0,
+          "placeholders_sample": [],
+          "missing_signatures": [],
+          "table_issues": [
+            {
+              "table_index": 3,
+              "issue": "empty_date_columns",
+              "count": 2
+            },
+            {
+              "table_index": 22,
+              "issue": "placeholder_cells",
+              "count": 6
+            }
+          ],
+          "version_history_rows": 4,
+          "has_cover_page": true
+        },
+        {
+          "file": "DVETS-05-TCR-v4.2_Test_Cases_Results.docx",
+          "size_kb": 158.4,
+          "headings": [],
+          "ids_found": {
+            "TC": [
+              "TC-001",
+              "TC-002",
+              "TC-003",
+              "TC-004",
+              "TC-005",
+              "TC-006",
+              "TC-007",
+              "TC-008",
+              "TC-009",
+              "TC-010",
+              "TC-011",
+              "TC-012",
+              "TC-013",
+              "TC-014",
+              "TC-015"
+            ]
+          },
+          "placeholder_count": 0,
+          "placeholders_sample": [],
+          "missing_signatures": [],
+          "table_issues": [
+            {
+              "table_index": 3,
+              "issue": "empty_date_columns",
+              "count": 2
+            },
+            {
+              "table_index": 22,
+              "issue": "placeholder_cells",
+              "count": 3
+            }
+          ],
+          "version_history_rows": 4,
+          "has_cover_page": true
+        },
+        {
+          "file": "DVETS-05-TP-v4.2_Test_Plan.backup.docx",
+          "size_kb": 156.8,
+          "headings": [],
+          "ids_found": {},
+          "placeholder_count": 0,
+          "placeholders_sample": [],
+          "missing_signatures": [],
+          "table_issues": [
+            {
+              "table_index": 3,
+              "issue": "empty_date_columns",
+              "count": 2
+            },
+            {
+              "table_index": 10,
+              "issue": "placeholder_cells",
+              "count": 6
+            }
+          ],
+          "version_history_rows": 4,
+          "has_cover_page": true
+        },
+        {
+          "file": "DVETS-05-TP-v4.2_Test_Plan.docx",
+          "size_kb": 156.8,
+          "headings": [],
+          "ids_found": {},
+          "placeholder_count": 0,
+          "placeholders_sample": [],
+          "missing_signatures": [],
+          "table_issues": [
+            {
+              "table_index": 3,
+              "issue": "empty_date_columns",
+              "count": 2
+            },
+            {
+              "table_index": 10,
+              "issue": "placeholder_cells",
+              "count": 3
+            }
+          ],
+          "version_history_rows": 4,
+          "has_cover_page": true
+        }
+      ]
+    },
+    {
+      "folder": "06_Deployment_Training",
+      "coverage": {
+        "folder": "06_Deployment_Training",
+        "docx_count": 3,
+        "found_codes": [
+          "TR",
+          "TR",
+          "UM"
+        ],
+        "expected_codes": [
+          "UM",
+          "TR"
+        ],
+        "missing_codes": []
+      },
+      "documents": [
+        {
+          "file": "DVETS-06-TR-v4.2_Training_Record.backup.docx",
+          "size_kb": 155.1,
+          "headings": [],
+          "ids_found": {},
+          "placeholder_count": 0,
+          "placeholders_sample": [],
+          "missing_signatures": [],
+          "table_issues": [
+            {
+              "table_index": 3,
+              "issue": "empty_date_columns",
+              "count": 2
+            },
+            {
+              "table_index": 8,
+              "issue": "placeholder_cells",
+              "count": 6
+            }
+          ],
+          "version_history_rows": 4,
+          "has_cover_page": true
+        },
+        {
+          "file": "DVETS-06-TR-v4.2_Training_Record.docx",
+          "size_kb": 155.1,
+          "headings": [],
+          "ids_found": {},
+          "placeholder_count": 0,
+          "placeholders_sample": [],
+          "missing_signatures": [],
+          "table_issues": [
+            {
+              "table_index": 3,
+              "issue": "empty_date_columns",
+              "count": 2
+            },
+            {
+              "table_index": 8,
+              "issue": "placeholder_cells",
+              "count": 3
+            }
+          ],
+          "version_history_rows": 4,
+          "has_cover_page": true
+        },
+        {
+          "file": "DVETS-06-UM-v4.2_User_Manual.docx",
+          "size_kb": 157.7,
+          "headings": [],
+          "ids_found": {},
+          "placeholder_count": 1,
+          "placeholders_sample": [
+            "(แนบ screenshot ที่นี่)"
+          ],
+          "missing_signatures": [],
+          "table_issues": [
+            {
+              "table_index": 3,
+              "issue": "empty_date_columns",
+              "count": 2
+            },
+            {
+              "table_index": 8,
+              "issue": "placeholder_cells",
+              "count": 1
+            }
+          ],
+          "version_history_rows": 4,
+          "has_cover_page": true
+        }
+      ]
+    },
+    {
+      "folder": "07_Support_Maintenance",
+      "coverage": {
+        "folder": "07_Support_Maintenance",
+        "docx_count": 2,
+        "found_codes": [
+          "ISL",
+          "ISL"
+        ],
+        "expected_codes": [
+          "ISL"
+        ],
+        "missing_codes": []
+      },
+      "documents": [
+        {
+          "file": "DVETS-07-ISL-v4.2_Incident_Support_Log.backup.docx",
+          "size_kb": 155.6,
+          "headings": [],
+          "ids_found": {
+            "INC": [
+              "INC-001"
+            ]
+          },
+          "placeholder_count": 0,
+          "placeholders_sample": [],
+          "missing_signatures": [],
+          "table_issues": [
+            {
+              "table_index": 3,
+              "issue": "empty_date_columns",
+              "count": 2
+            },
+            {
+              "table_index": 7,
+              "issue": "all_open_status",
+              "note": "All 1 rows have Open/Pending status"
+            },
+            {
+              "table_index": 7,
+              "issue": "empty_date_columns",
+              "count": 1
+            },
+            {
+              "table_index": 10,
+              "issue": "placeholder_cells",
+              "count": 4
+            }
+          ],
+          "version_history_rows": 4,
+          "has_cover_page": true
+        },
+        {
+          "file": "DVETS-07-ISL-v4.2_Incident_Support_Log.docx",
+          "size_kb": 155.6,
+          "headings": [],
+          "ids_found": {
+            "INC": [
+              "INC-001"
+            ]
+          },
+          "placeholder_count": 0,
+          "placeholders_sample": [],
+          "missing_signatures": [],
+          "table_issues": [
+            {
+              "table_index": 3,
+              "issue": "empty_date_columns",
+              "count": 2
+            },
+            {
+              "table_index": 7,
+              "issue": "all_open_status",
+              "note": "All 1 rows have Open/Pending status"
+            },
+            {
+              "table_index": 7,
+              "issue": "empty_date_columns",
+              "count": 1
+            },
+            {
+              "table_index": 10,
+              "issue": "placeholder_cells",
+              "count": 2
+            }
+          ],
+          "version_history_rows": 4,
+          "has_cover_page": true
+        }
+      ]
+    },
+    {
+      "folder": "08_Change_Logs_Versioning",
+      "coverage": {
+        "folder": "08_Change_Logs_Versioning",
+        "docx_count": 4,
+        "found_codes": [
+          "CRF",
+          "CRF",
+          "VRN",
+          "VRN"
+        ],
+        "expected_codes": [
+          "CRF",
+          "VRN"
+        ],
+        "missing_codes": []
+      },
+      "documents": [
+        {
+          "file": "DVETS-08-CRF-v4.2_Change_Request_Form.backup.docx",
+          "size_kb": 156.2,
+          "headings": [],
+          "ids_found": {
+            "REQ": [
+              "REQ-004",
+              "REQ-011",
+              "REQ-013",
+              "REQ-015"
+            ],
+            "TC": [
+              "TC-013",
+              "TC-015"
+            ],
+            "BUG": [
+              "BUG-003"
+            ],
+            "CRF": [
+              "CRF-001",
+              "CRF-002",
+              "CRF-003"
+            ]
+          },
+          "placeholder_count": 0,
+          "placeholders_sample": [],
+          "missing_signatures": [],
+          "table_issues": [
+            {
+              "table_index": 3,
+              "issue": "empty_date_columns",
+              "count": 2
+            },
+            {
+              "table_index": 8,
+              "issue": "placeholder_cells",
+              "count": 6
+            },
+            {
+              "table_index": 11,
+              "issue": "placeholder_cells",
+              "count": 6
+            },
+            {
+              "table_index": 14,
+              "issue": "placeholder_cells",
+              "count": 6
+            }
+          ],
+          "version_history_rows": 4,
+          "has_cover_page": true
+        },
+        {
+          "file": "DVETS-08-CRF-v4.2_Change_Request_Form.docx",
+          "size_kb": 156.2,
+          "headings": [],
+          "ids_found": {
+            "REQ": [
+              "REQ-004",
+              "REQ-011",
+              "REQ-013",
+              "REQ-015"
+            ],
+            "TC": [
+              "TC-013",
+              "TC-015"
+            ],
+            "BUG": [
+              "BUG-003"
+            ],
+            "CRF": [
+              "CRF-001",
+              "CRF-002",
+              "CRF-003"
+            ]
+          },
+          "placeholder_count": 0,
+          "placeholders_sample": [],
+          "missing_signatures": [],
+          "table_issues": [
+            {
+              "table_index": 3,
+              "issue": "empty_date_columns",
+              "count": 2
+            },
+            {
+              "table_index": 8,
+              "issue": "placeholder_cells",
+              "count": 3
+            },
+            {
+              "table_index": 11,
+              "issue": "placeholder_cells",
+              "count": 3
+            },
+            {
+              "table_index": 14,
+              "issue": "placeholder_cells",
+              "count": 3
+            }
+          ],
+          "version_history_rows": 4,
+          "has_cover_page": true
+        },
+        {
+          "file": "DVETS-08-VRN-v4.2_Version_Release_Notes.backup.docx",
+          "size_kb": 155.7,
+          "headings": [],
+          "ids_found": {
+            "REQ": [
+              "REQ-001",
+              "REQ-002",
+              "REQ-003",
+              "REQ-004",
+              "REQ-005",
+              "REQ-006",
+              "REQ-007",
+              "REQ-008",
+              "REQ-009",
+              "REQ-010",
+              "REQ-011",
+              "REQ-012",
+              "REQ-013",
+              "REQ-014",
+              "REQ-015"
+            ],
+            "BUG": [
+              "BUG-001",
+              "BUG-002",
+              "BUG-003",
+              "BUG-004"
+            ],
+            "CRF": [
+              "CRF-001",
+              "CRF-003"
+            ]
+          },
+          "placeholder_count": 0,
+          "placeholders_sample": [],
+          "missing_signatures": [],
+          "table_issues": [
+            {
+              "table_index": 3,
+              "issue": "empty_date_columns",
+              "count": 2
+            },
+            {
+              "table_index": 11,
+              "issue": "placeholder_cells",
+              "count": 6
+            }
+          ],
+          "version_history_rows": 4,
+          "has_cover_page": true
+        },
+        {
+          "file": "DVETS-08-VRN-v4.2_Version_Release_Notes.docx",
+          "size_kb": 155.8,
+          "headings": [],
+          "ids_found": {
+            "REQ": [
+              "REQ-001",
+              "REQ-002",
+              "REQ-003",
+              "REQ-004",
+              "REQ-005",
+              "REQ-006",
+              "REQ-007",
+              "REQ-008",
+              "REQ-009",
+              "REQ-010",
+              "REQ-011",
+              "REQ-012",
+              "REQ-013",
+              "REQ-014",
+              "REQ-015"
+            ],
+            "BUG": [
+              "BUG-001",
+              "BUG-002",
+              "BUG-003",
+              "BUG-004"
+            ],
+            "CRF": [
+              "CRF-001",
+              "CRF-003"
+            ]
+          },
+          "placeholder_count": 0,
+          "placeholders_sample": [],
+          "missing_signatures": [],
+          "table_issues": [
+            {
+              "table_index": 3,
+              "issue": "empty_date_columns",
+              "count": 2
+            },
+            {
+              "table_index": 11,
+              "issue": "placeholder_cells",
+              "count": 3
+            }
+          ],
+          "version_history_rows": 4,
+          "has_cover_page": true
+        }
+      ]
+    },
+    {
+      "folder": "09_Risk_Management",
+      "coverage": {
+        "folder": "09_Risk_Management",
+        "docx_count": 2,
+        "found_codes": [
+          "RR",
+          "RR"
+        ],
+        "expected_codes": [
+          "RR"
+        ],
+        "missing_codes": []
+      },
+      "documents": [
+        {
+          "file": "DVETS-09-RR-v4.2_Risk_Register.backup.docx",
+          "size_kb": 156.3,
+          "headings": [],
+          "ids_found": {
+            "RISK": [
+              "RISK-001",
+              "RISK-002",
+              "RISK-003"
+            ]
+          },
+          "placeholder_count": 0,
+          "placeholders_sample": [],
+          "missing_signatures": [],
+          "table_issues": [
+            {
+              "table_index": 3,
+              "issue": "empty_date_columns",
+              "count": 2
+            },
+            {
+              "table_index": 12,
+              "issue": "placeholder_cells",
+              "count": 3
+            }
+          ],
+          "version_history_rows": 4,
+          "has_cover_page": true
+        },
+        {
+          "file": "DVETS-09-RR-v4.2_Risk_Register.docx",
+          "size_kb": 156.3,
+          "headings": [],
+          "ids_found": {
+            "RISK": [
+              "RISK-001",
+              "RISK-002",
+              "RISK-003"
+            ]
+          },
+          "placeholder_count": 0,
+          "placeholders_sample": [],
+          "missing_signatures": [],
+          "table_issues": [
+            {
+              "table_index": 3,
+              "issue": "empty_date_columns",
+              "count": 2
+            },
+            {
+              "table_index": 12,
+              "issue": "placeholder_cells",
+              "count": 3
+            }
+          ],
+          "version_history_rows": 4,
+          "has_cover_page": true
+        }
+      ]
+    },
+    {
+      "folder": "10_Regulatory_Compliance",
+      "coverage": {
+        "folder": "10_Regulatory_Compliance",
+        "docx_count": 6,
+        "found_codes": [
+          "AR",
+          "AR",
+          "CAPA",
+          "CAPA",
+          "IC",
+          "IC"
+        ],
+        "expected_codes": [
+          "IC",
+          "AR",
+          "CAPA"
+        ],
+        "missing_codes": []
+      },
+      "documents": [
+        {
+          "file": "DVETS-10-AR-v4.2_Audit_Report.backup.docx",
+          "size_kb": 156.6,
+          "headings": [],
+          "ids_found": {},
+          "placeholder_count": 1,
+          "placeholders_sample": [
+            "[กรอก overall conclusion ของการ audit เช่น: โครงการมีความสอดคล้องกับ ISO/IEC 29110 ในระดับดี พบข้อบกพร่องเล็กน้อยที่ได้กำหนด CAPA แล้ว]"
+          ],
+          "missing_signatures": [],
+          "table_issues": [
+            {
+              "table_index": 3,
+              "issue": "empty_date_columns",
+              "count": 2
+            },
+            {
+              "table_index": 9,
+              "issue": "placeholder_cells",
+              "count": 6
+            }
+          ],
+          "version_history_rows": 4,
+          "has_cover_page": true
+        },
+        {
+          "file": "DVETS-10-AR-v4.2_Audit_Report.docx",
+          "size_kb": 156.6,
+          "headings": [],
+          "ids_found": {},
+          "placeholder_count": 1,
+          "placeholders_sample": [
+            "[กรอก overall conclusion ของการ audit เช่น: โครงการมีความสอดคล้องกับ ISO/IEC 29110 ในระดับดี พบข้อบกพร่องเล็กน้อยที่ได้กำหนด CAPA แล้ว]"
+          ],
+          "missing_signatures": [],
+          "table_issues": [
+            {
+              "table_index": 3,
+              "issue": "empty_date_columns",
+              "count": 2
+            },
+            {
+              "table_index": 9,
+              "issue": "placeholder_cells",
+              "count": 3
+            }
+          ],
+          "version_history_rows": 4,
+          "has_cover_page": true
+        },
+        {
+          "file": "DVETS-10-CAPA-v4.2_CAPA.backup.docx",
+          "size_kb": 159.1,
+          "headings": [],
+          "ids_found": {},
+          "placeholder_count": 0,
+          "placeholders_sample": [],
+          "missing_signatures": [],
+          "table_issues": [
+            {
+              "table_index": 3,
+              "issue": "empty_date_columns",
+              "count": 2
+            },
+            {
+              "table_index": 6,
+              "issue": "empty_date_columns",
+              "count": 7
+            },
+            {
+              "table_index": 17,
+              "issue": "placeholder_cells",
+              "count": 6
+            }
+          ],
+          "version_history_rows": 4,
+          "has_cover_page": true
+        },
+        {
+          "file": "DVETS-10-CAPA-v4.2_CAPA.docx",
+          "size_kb": 159.1,
+          "headings": [],
+          "ids_found": {},
+          "placeholder_count": 0,
+          "placeholders_sample": [],
+          "missing_signatures": [],
+          "table_issues": [
+            {
+              "table_index": 3,
+              "issue": "empty_date_columns",
+              "count": 2
+            },
+            {
+              "table_index": 6,
+              "issue": "empty_date_columns",
+              "count": 7
+            },
+            {
+              "table_index": 17,
+              "issue": "placeholder_cells",
+              "count": 3
+            }
+          ],
+          "version_history_rows": 4,
+          "has_cover_page": true
+        },
+        {
+          "file": "DVETS-10-IC-v4.2_ISO_Checklist.backup.docx",
+          "size_kb": 155.9,
+          "headings": [],
+          "ids_found": {},
+          "placeholder_count": 0,
+          "placeholders_sample": [],
+          "missing_signatures": [],
+          "table_issues": [
+            {
+              "table_index": 3,
+              "issue": "empty_date_columns",
+              "count": 2
+            },
+            {
+              "table_index": 5,
+              "issue": "unticked_checkboxes",
+              "count": 6
+            },
+            {
+              "table_index": 6,
+              "issue": "unticked_checkboxes",
+              "count": 13
+            },
+            {
+              "table_index": 7,
+              "issue": "unticked_checkboxes",
+              "count": 4
+            },
+            {
+              "table_index": 9,
+              "issue": "placeholder_cells",
+              "count": 6
+            }
+          ],
+          "version_history_rows": 4,
+          "has_cover_page": true
+        },
+        {
+          "file": "DVETS-10-IC-v4.2_ISO_Checklist.docx",
+          "size_kb": 155.9,
+          "headings": [],
+          "ids_found": {},
+          "placeholder_count": 0,
+          "placeholders_sample": [],
+          "missing_signatures": [],
+          "table_issues": [
+            {
+              "table_index": 3,
+              "issue": "empty_date_columns",
+              "count": 2
+            },
+            {
+              "table_index": 5,
+              "issue": "unticked_checkboxes",
+              "count": 6
+            },
+            {
+              "table_index": 6,
+              "issue": "unticked_checkboxes",
+              "count": 13
+            },
+            {
+              "table_index": 7,
+              "issue": "unticked_checkboxes",
+              "count": 4
+            },
+            {
+              "table_index": 9,
+              "issue": "placeholder_cells",
+              "count": 3
+            }
+          ],
+          "version_history_rows": 4,
+          "has_cover_page": true
+        }
+      ]
+    }
+  ]
+}
