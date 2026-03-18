@@ -1,0 +1,1233 @@
+{
+  "project": {
+    "code": "PreAlert",
+    "name": "Development TDP - Pre-Alert System",
+    "organization": "Soudaphone",
+    "description": "ระบบ Pre-Alert สำหรับบริหารจัดการเอกสารแจ้งล่วงหน้า (Pre Alert) สำหรับรถบรรทุกเข้าใช้บริการ พร้อมระบบ RBAC สำหรับควบคุมสิทธิ์การเข้าถึง รองรับกระบวนการอนุมัติเอกสาร การติดตามสถานะ และการจัดทำรายงาน",
+    "scope": "In Scope: UserRegister, Dashboard, Pre_Alert Document, Approvelist, CorrectionRequestDocument, DocumentRejectAll, DetailedDailyReport, Eseal, User Management, TruckRegister, Shipping, Driver, Customers, VehicleInformationReport, DriverInformationReport, ShippingInformationReport, Risk Manage, FG_page. Out of Scope: การเชื่อมต่อกับระบบ ERP ภายนอก",
+    "department": "Soudaphone",
+    "start_date": "2024-08-16",
+    "end_date": "2024-11-30",
+    "go_live_date": "2024-11-30",
+    "doc_revision": "1.0",
+    "document_date": "2025-02-18",
+    "classification": "Internal",
+    "short_name": "PreAlert",
+    "objectives": [
+      "พัฒนาระบบ Pre-Alert ที่รองรับกระบวนการแจ้งข้อมูลล่วงหน้าสำหรับรถบรรทุก",
+      "ติดตั้งระบบ Role-Based Access Control (RBAC) เพื่อควบคุมสิทธิ์การเข้าถึงระบบ",
+      "จัดทำ Dashboard สรุปภาพรวมข้อมูลสำคัญสำหรับผู้บริหาร",
+      "รองรับกระบวนการอนุมัติเอกสาร และการแก้ไข/ปฏิเสธเอกสาร",
+      "จัดทำรายงานประจำวันและรายงานข้อมูลอ้างอิง",
+      "บริหารจัดการข้อมูล Master Data: รถบรรทุก, พนักงานขับรถ, บริษัทขนส่ง, ลูกค้า"
+    ]
+  },
+  "team": {
+    "members": [
+      {
+        "name": "Saravut Chanchom",
+        "title": "Full Stack Developer",
+        "email": "saravut@soudaphone.com"
+      }
+    ],
+    "project_manager": {
+      "name": "Saravut Chanchom",
+      "title": "Project Manager",
+      "email": "saravut@soudaphone.com",
+      "phone": ""
+    },
+    "lead_developer": {
+      "name": "Saravut Chanchom",
+      "title": "Lead Developer",
+      "email": "saravut@soudaphone.com",
+      "phone": ""
+    },
+    "business_analyst": {
+      "name": "Saravut Chanchom",
+      "title": "Business Analyst",
+      "email": "saravut@soudaphone.com",
+      "phone": ""
+    },
+    "system_analyst": {
+      "name": "Saravut Chanchom",
+      "title": "System Analyst",
+      "email": "saravut@soudaphone.com",
+      "phone": ""
+    },
+    "qa_engineer": {
+      "name": "PreAlert Team",
+      "title": "QA Engineer",
+      "email": "qa@soudaphone.com",
+      "phone": ""
+    },
+    "dba": {
+      "name": "Saravut Chanchom",
+      "title": "DBA",
+      "email": "saravut@soudaphone.com",
+      "phone": ""
+    }
+  },
+  "stakeholders": [
+    {
+      "name": "Saravut Chanchom",
+      "role": "Project Sponsor / Project Manager",
+      "organization": "Soudaphone",
+      "email": "",
+      "responsibility": "Approve project scope, budget, and major decisions"
+    }
+  ],
+  "tech_stack": {
+    "frontend": "",
+    "backend": "",
+    "database": "Saravut Chanchom",
+    "infrastructure": "",
+    "source_control": "",
+    "ci_cd": ""
+  },
+  "milestones": [
+    {
+      "id": "MS-01",
+      "name": "Requirements Sign-off",
+      "target_date": "2024-08-31",
+      "status": "Completed",
+      "owner": "Saravut Chanchom"
+    },
+    {
+      "id": "MS-02",
+      "name": "System Design Complete",
+      "target_date": "2024-09-15",
+      "status": "Completed",
+      "owner": "Saravut Chanchom"
+    },
+    {
+      "id": "MS-03",
+      "name": "Development Complete",
+      "target_date": "2024-10-31",
+      "status": "Completed",
+      "owner": "Saravut Chanchom"
+    },
+    {
+      "id": "MS-04",
+      "name": "UAT Complete",
+      "target_date": "2024-11-20",
+      "status": "Completed",
+      "owner": "Saravut Chanchom"
+    },
+    {
+      "id": "MS-05",
+      "name": "Go-Live",
+      "target_date": "2024-11-30",
+      "status": "Completed",
+      "owner": "Saravut Chanchom"
+    }
+  ],
+  "requirements": [
+    {
+      "id": "REQ-001",
+      "title": "UserRegister - User Account & RBAC Management",
+      "description": "บริหารจัดการการสร้างบัญชีผู้ใช้งาน และกำหนดสิทธิ์การเข้าถึงระบบตามบทบาทหน้าที่ (Role-Based Access Control) เพื่อควบคุมการใช้งานระบบอย่างเหมาะสม",
+      "priority": "High",
+      "type": "Functional",
+      "category": "User Management",
+      "source": "Feature List #1",
+      "acceptance_criteria": "ระบบต้องรองรับการสร้าง แก้ไข ลบบัญชีผู้ใช้งาน และกำหนด Role ได้ตามที่กำหนด",
+      "linked_design": [],
+      "linked_test_cases": []
+    },
+    {
+      "id": "REQ-002",
+      "title": "Dashboard - Summary View",
+      "description": "แสดงภาพรวมข้อมูลสำคัญของระบบในรูปแบบสรุป (Summary View) แยกตามหมวดหมู่ เพื่อสนับสนุนการติดตามและบริหารจัดการข้อมูลอย่างมีประสิทธิภาพ",
+      "priority": "High",
+      "type": "Functional",
+      "category": "Dashboard",
+      "source": "Feature List #2",
+      "acceptance_criteria": "Dashboard ต้องแสดงข้อมูลสรุปแยกตามหมวดหมู่ได้อย่างถูกต้อง",
+      "linked_design": [],
+      "linked_test_cases": []
+    },
+    {
+      "id": "REQ-003",
+      "title": "Pre_Alert - Pre Alert Document Management",
+      "description": "จัดทำเอกสาร Pre Alert พร้อมกำหนดรายละเอียดข้อมูลรถบรรทุก ข้อมูลสินค้า และเอกสารประกอบที่เกี่ยวข้อง เพื่อแจ้งข้อมูลล่วงหน้าก่อนการเข้าใช้บริการ",
+      "priority": "High",
+      "type": "Functional",
+      "category": "Document Management",
+      "source": "Feature List #3",
+      "acceptance_criteria": "ระบบต้องรองรับการสร้างเอกสาร Pre Alert พร้อมแนบข้อมูลรถบรรทุกและสินค้าได้ครบถ้วน",
+      "linked_design": [],
+      "linked_test_cases": []
+    },
+    {
+      "id": "REQ-004",
+      "title": "Approvelist - Document Approval Workflow",
+      "description": "แสดงรายการเอกสารที่อยู่ระหว่างรอการอนุมัติ พร้อมรองรับกระบวนการอนุมัติเอกสารตามลำดับขั้นการควบคุมภายใน",
+      "priority": "High",
+      "type": "Functional",
+      "category": "Approval Workflow",
+      "source": "Feature List #4",
+      "acceptance_criteria": "ระบบต้องแสดงรายการรออนุมัติ และรองรับการอนุมัติ/ปฏิเสธพร้อมบันทึกประวัติ",
+      "linked_design": [],
+      "linked_test_cases": []
+    },
+    {
+      "id": "REQ-005",
+      "title": "CorrectionRequestDocument - Document Correction Tracking",
+      "description": "แสดงรายการเอกสารที่ถูกส่งกลับเพื่อแก้ไข พร้อมบันทึกเหตุผลและรายละเอียดการแก้ไข เพื่อให้สามารถตรวจสอบย้อนหลังได้",
+      "priority": "Medium",
+      "type": "Functional",
+      "category": "Document Management",
+      "source": "Feature List #5",
+      "acceptance_criteria": "ระบบต้องบันทึกและแสดงรายการเอกสารที่ถูกส่งกลับแก้ไข พร้อมเหตุผลครบถ้วน",
+      "linked_design": [],
+      "linked_test_cases": []
+    },
+    {
+      "id": "REQ-006",
+      "title": "DocumentRejectAll - Rejected Document List",
+      "description": "แสดงรายการเอกสารที่ถูกปฏิเสธทั้งหมด พร้อมแสดงจำนวนครั้งที่ถูกปฏิเสธ และรายละเอียดเหตุผลการปฏิเสธ เพื่อใช้ในการวิเคราะห์และควบคุมคุณภาพข้อมูล",
+      "priority": "Medium",
+      "type": "Functional",
+      "category": "Document Management",
+      "source": "Feature List #6",
+      "acceptance_criteria": "ระบบต้องแสดงรายการเอกสารที่ถูกปฏิเสธ พร้อมสถิติครั้งที่ถูกปฏิเสธ",
+      "linked_design": [],
+      "linked_test_cases": []
+    },
+    {
+      "id": "REQ-007",
+      "title": "DetailedDailyReport - Daily Report Generation",
+      "description": "จัดทำรายงานรายละเอียดประจำวัน สำหรับรายการที่ถูกสร้างในวันนั้นๆ พร้อมรองรับการส่งออกข้อมูลเป็นเอกสารรายงาน",
+      "priority": "High",
+      "type": "Functional",
+      "category": "Reporting",
+      "source": "Feature List #7",
+      "acceptance_criteria": "ระบบต้องสร้างรายงานประจำวันได้ถูกต้อง และรองรับการ Export เป็นไฟล์รายงาน",
+      "linked_design": [],
+      "linked_test_cases": []
+    },
+    {
+      "id": "REQ-008",
+      "title": "Eseal - e-Seal Task Management",
+      "description": "แสดงและบริหารจัดการรายการงานที่เกี่ยวข้องกับระบบ e-Seal เพื่อควบคุมและติดตามสถานะงาน",
+      "priority": "High",
+      "type": "Functional",
+      "category": "e-Seal Management",
+      "source": "Feature List #8",
+      "acceptance_criteria": "ระบบต้องแสดงและอัปเดตสถานะงาน e-Seal ได้ถูกต้องตามเวลาจริง",
+      "linked_design": [],
+      "linked_test_cases": []
+    },
+    {
+      "id": "REQ-009",
+      "title": "User - User Information Management",
+      "description": "แสดงข้อมูลผู้ใช้งานภายในระบบ โดยอ้างอิงตามสิทธิ์ของผู้ดูแลระบบ (Admin) ของแต่ละบริษัท",
+      "priority": "Medium",
+      "type": "Functional",
+      "category": "User Management",
+      "source": "Feature List #9",
+      "acceptance_criteria": "Admin แต่ละบริษัทต้องมองเห็นเฉพาะข้อมูลผู้ใช้ในบริษัทของตนเอง",
+      "linked_design": [],
+      "linked_test_cases": []
+    },
+    {
+      "id": "REQ-010",
+      "title": "TruckRegister - Truck Master Data",
+      "description": "ลงทะเบียนและบริหารจัดการข้อมูลรถบรรทุก เพื่อใช้เป็นข้อมูลอ้างอิงในกระบวนการปฏิบัติงาน",
+      "priority": "High",
+      "type": "Functional",
+      "category": "Master Data",
+      "source": "Feature List #10",
+      "acceptance_criteria": "ระบบต้องรองรับการ CRUD ข้อมูลรถบรรทุก และใช้อ้างอิงในเอกสาร Pre Alert ได้",
+      "linked_design": [],
+      "linked_test_cases": []
+    },
+    {
+      "id": "REQ-011",
+      "title": "Shipping - Shipping Company Master Data",
+      "description": "ลงทะเบียนและบริหารจัดการข้อมูลบริษัทขนส่ง (Shipping) เพื่อใช้เป็นข้อมูลอ้างอิงในระบบ",
+      "priority": "Medium",
+      "type": "Functional",
+      "category": "Master Data",
+      "source": "Feature List #11",
+      "acceptance_criteria": "ระบบต้องรองรับการ CRUD ข้อมูลบริษัทขนส่ง และใช้อ้างอิงในระบบได้",
+      "linked_design": [],
+      "linked_test_cases": []
+    },
+    {
+      "id": "REQ-012",
+      "title": "Driver - Driver Master Data",
+      "description": "ลงทะเบียนและบริหารจัดการข้อมูลพนักงานขับรถ เพื่อรองรับการตรวจสอบและติดตามการปฏิบัติงาน",
+      "priority": "Medium",
+      "type": "Functional",
+      "category": "Master Data",
+      "source": "Feature List #12",
+      "acceptance_criteria": "ระบบต้องรองรับการ CRUD ข้อมูลพนักงานขับรถ",
+      "linked_design": [],
+      "linked_test_cases": []
+    },
+    {
+      "id": "REQ-013",
+      "title": "Customers - Customer Master Data",
+      "description": "ลงทะเบียนและบริหารจัดการข้อมูลบริษัทลูกค้า เพื่อใช้ในการทำธุรกรรมและออกเอกสารในระบบ",
+      "priority": "Medium",
+      "type": "Functional",
+      "category": "Master Data",
+      "source": "Feature List #13",
+      "acceptance_criteria": "ระบบต้องรองรับการ CRUD ข้อมูลลูกค้า และใช้อ้างอิงในเอกสารได้",
+      "linked_design": [],
+      "linked_test_cases": []
+    },
+    {
+      "id": "REQ-014",
+      "title": "VehicleInformationReport - Vehicle Report",
+      "description": "จัดทำรายงานข้อมูลรถที่ได้ลงทะเบียนในระบบ เพื่อใช้ในการตรวจสอบและอ้างอิงข้อมูล",
+      "priority": "Medium",
+      "type": "Functional",
+      "category": "Reporting",
+      "source": "Feature List #14",
+      "acceptance_criteria": "ระบบต้องสร้างรายงานข้อมูลรถที่ลงทะเบียนได้ครบถ้วนและถูกต้อง",
+      "linked_design": [],
+      "linked_test_cases": []
+    },
+    {
+      "id": "REQ-015",
+      "title": "DriverInformationReport - Driver Report",
+      "description": "จัดทำรายงานข้อมูลพนักงานขับรถที่ลงทะเบียนในระบบ เพื่อสนับสนุนการควบคุมและตรวจสอบ",
+      "priority": "Medium",
+      "type": "Functional",
+      "category": "Reporting",
+      "source": "Feature List #15",
+      "acceptance_criteria": "ระบบต้องสร้างรายงานข้อมูลพนักงานขับรถได้ครบถ้วนและถูกต้อง",
+      "linked_design": [],
+      "linked_test_cases": []
+    },
+    {
+      "id": "REQ-016",
+      "title": "ShippingInformationReport - Shipping Company Report",
+      "description": "จัดทำรายงานข้อมูลบริษัท Shipping ที่ลงทะเบียนในระบบ เพื่อใช้ในการติดตามและบริหารจัดการข้อมูล",
+      "priority": "Medium",
+      "type": "Functional",
+      "category": "Reporting",
+      "source": "Feature List #16",
+      "acceptance_criteria": "ระบบต้องสร้างรายงานข้อมูลบริษัทขนส่งได้ครบถ้วนและถูกต้อง",
+      "linked_design": [],
+      "linked_test_cases": []
+    },
+    {
+      "id": "REQ-017",
+      "title": "Risk Manage - Risk Document Management",
+      "description": "บริหารจัดการและติดตามเอกสารหรือรายการที่มีความเสี่ยง โดยกำหนดสถานะและแนวทางการควบคุมตามมาตรการที่กำหนด",
+      "priority": "High",
+      "type": "Functional",
+      "category": "Risk Management",
+      "source": "Feature List #17",
+      "acceptance_criteria": "ระบบต้องบันทึกและแสดงรายการความเสี่ยง พร้อมสถานะและแนวทางควบคุมได้",
+      "linked_design": [],
+      "linked_test_cases": []
+    },
+    {
+      "id": "REQ-018",
+      "title": "FG_page - Finished Goods (FG) Management",
+      "description": "แสดงรายการสินค้าในหมวดสินค้าสำเร็จรูป (Finished Goods) เพื่อใช้เป็นข้อมูลอ้างอิงในการจัดทำเอกสารและบริหารจัดการข้อมูลสินค้า",
+      "priority": "Medium",
+      "type": "Functional",
+      "category": "Inventory",
+      "source": "Feature List #18",
+      "acceptance_criteria": "ระบบต้องแสดงและบริหารจัดการข้อมูลสินค้าสำเร็จรูปได้ถูกต้อง",
+      "linked_design": [],
+      "linked_test_cases": []
+    }
+  ],
+  "design_components": [],
+  "database_tables": [],
+  "test_cases": [
+    {
+      "id": "TC-001",
+      "title": "Test UserRegister - Create User with Role",
+      "related_requirement": "REQ-001",
+      "test_type": "Functional",
+      "preconditions": "Admin logged in",
+      "steps": [
+        "Navigate to UserRegister",
+        "Enter user details",
+        "Assign role",
+        "Save"
+      ],
+      "expected_result": "User created with correct role assignment",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "Saravut Chanchom",
+      "test_date": "2024-11-15",
+      "remarks": "Go Live"
+    },
+    {
+      "id": "TC-002",
+      "title": "Test Dashboard - Summary View Display",
+      "related_requirement": "REQ-002",
+      "test_type": "Functional",
+      "preconditions": "User logged in",
+      "steps": [
+        "Navigate to Dashboard"
+      ],
+      "expected_result": "Summary data displayed correctly by category",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "Saravut Chanchom",
+      "test_date": "2024-11-15",
+      "remarks": "Go Live"
+    },
+    {
+      "id": "TC-003",
+      "title": "Test Pre_Alert - Create Pre Alert Document",
+      "related_requirement": "REQ-003",
+      "test_type": "Functional",
+      "preconditions": "Truck and Driver registered",
+      "steps": [
+        "Navigate to Pre_Alert",
+        "Select truck, driver, cargo,file Invoice and Packing list",
+        "Submit document"
+      ],
+      "expected_result": "Pre Alert document created successfully",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "Saravut Chanchom",
+      "test_date": "2024-11-15",
+      "remarks": "Go Live"
+    },
+    {
+      "id": "TC-004",
+      "title": "Test Approvelist - Approve Document",
+      "related_requirement": "REQ-004",
+      "test_type": "Functional",
+      "preconditions": "Document pending approval",
+      "steps": [
+        "Navigate to Approvelist",
+        "Select document",
+        "Click Approve or Reject for Document Data not Correct"
+      ],
+      "expected_result": "Document status updated to Approved",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "Saravut Chanchom",
+      "test_date": "2024-11-15",
+      "remarks": "Go Live"
+    },
+    {
+      "id": "TC-005",
+      "title": "Test CorrectionRequestDocument - View Correction List",
+      "related_requirement": "REQ-005",
+      "test_type": "Functional",
+      "preconditions": "Document sent back for correction",
+      "steps": [
+        "Navigate to CorrectionRequestDocument"
+      ],
+      "expected_result": "Correction list displayed with reasons",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "Saravut Chanchom",
+      "test_date": "2024-11-15",
+      "remarks": "Go Live"
+    },
+    {
+      "id": "TC-006",
+      "title": "Test DocumentRejectAll - View Rejected Documents",
+      "related_requirement": "REQ-006",
+      "test_type": "Functional",
+      "preconditions": "Rejected documents exist",
+      "steps": [
+        "Navigate to DocumentRejectAll"
+      ],
+      "expected_result": "Rejected list with rejection count displayed",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "Saravut Chanchom",
+      "test_date": "2024-11-15",
+      "remarks": "Go Live"
+    },
+    {
+      "id": "TC-007",
+      "title": "Test DetailedDailyReport - Generate Daily Report",
+      "related_requirement": "REQ-007",
+      "test_type": "Functional",
+      "preconditions": "Approved documents exist",
+      "steps": [
+        "Navigate to DetailedDailyReport",
+        "Select date or another fillter",
+        "Generate report"
+      ],
+      "expected_result": "Daily report generated and exportable",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "Saravut Chanchom",
+      "test_date": "2024-11-15",
+      "remarks": "Go Live"
+    },
+    {
+      "id": "TC-008",
+      "title": "Test Eseal - View and Update e-Seal Status",
+      "related_requirement": "REQ-008",
+      "test_type": "Functional",
+      "preconditions": "e-Seal tasks exist",
+      "steps": [
+        "Navigate to Eseal",
+        "View tasks",
+        "Update status"
+      ],
+      "expected_result": "e-Seal status updated correctly",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "Saravut Chanchom",
+      "test_date": "2024-11-15",
+      "remarks": "Go Live"
+    },
+    {
+      "id": "TC-009",
+      "title": "Test User - View Company Users",
+      "related_requirement": "REQ-009",
+      "test_type": "Functional",
+      "preconditions": "Company Admin logged in",
+      "steps": [
+        "Navigate to User"
+      ],
+      "expected_result": "Only company's own users displayed",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "Saravut Chanchom",
+      "test_date": "2024-11-15",
+      "remarks": "Go Live"
+    },
+    {
+      "id": "TC-010",
+      "title": "Test TruckRegister - Register New Truck",
+      "related_requirement": "REQ-010",
+      "test_type": "Functional",
+      "preconditions": "Admin logged in",
+      "steps": [
+        "Navigate to TruckRegister",
+        "Enter truck details",
+        "Save"
+      ],
+      "expected_result": "Truck registered and available for reference",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "Saravut Chanchom",
+      "test_date": "2024-11-15",
+      "remarks": "Go Live"
+    },
+    {
+      "id": "TC-011",
+      "title": "Test Shipping - Register Shipping Company",
+      "related_requirement": "REQ-011",
+      "test_type": "Functional",
+      "preconditions": "Admin logged in",
+      "steps": [
+        "Navigate to Shipping",
+        "Enter company details",
+        "Save"
+      ],
+      "expected_result": "Shipping company registered successfully",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "Saravut Chanchom",
+      "test_date": "2024-11-15",
+      "remarks": "Go Live"
+    },
+    {
+      "id": "TC-012",
+      "title": "Test Driver - Register New Driver",
+      "related_requirement": "REQ-012",
+      "test_type": "Functional",
+      "preconditions": "Admin logged in",
+      "steps": [
+        "Navigate to Driver",
+        "Enter driver details",
+        "Save"
+      ],
+      "expected_result": "Driver registered successfully",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "Saravut Chanchom",
+      "test_date": "2024-11-15",
+      "remarks": "Go Live"
+    },
+    {
+      "id": "TC-013",
+      "title": "Test Customers - Register Customer Company",
+      "related_requirement": "REQ-013",
+      "test_type": "Functional",
+      "preconditions": "Admin logged in",
+      "steps": [
+        "Navigate to Customers",
+        "Enter customer details",
+        "Save"
+      ],
+      "expected_result": "Customer registered successfully",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "Saravut Chanchom",
+      "test_date": "2024-11-15",
+      "remarks": "Go Live"
+    },
+    {
+      "id": "TC-014",
+      "title": "Test VehicleInformationReport - Generate Vehicle Report",
+      "related_requirement": "REQ-014",
+      "test_type": "Functional",
+      "preconditions": "Trucks registered",
+      "steps": [
+        "Navigate to VehicleInformationReport",
+        "Generate report"
+      ],
+      "expected_result": "Vehicle report generated correctly",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "Saravut Chanchom",
+      "test_date": "2024-11-15",
+      "remarks": "Go Live"
+    },
+    {
+      "id": "TC-015",
+      "title": "Test DriverInformationReport - Generate Driver Report",
+      "related_requirement": "REQ-015",
+      "test_type": "Functional",
+      "preconditions": "Drivers registered",
+      "steps": [
+        "Navigate to DriverInformationReport",
+        "Generate report"
+      ],
+      "expected_result": "Driver report generated correctly",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "Saravut Chanchom",
+      "test_date": "2024-11-15",
+      "remarks": "Go Live"
+    },
+    {
+      "id": "TC-016",
+      "title": "Test ShippingInformationReport - Generate Shipping Report",
+      "related_requirement": "REQ-016",
+      "test_type": "Functional",
+      "preconditions": "Shipping companies registered",
+      "steps": [
+        "Navigate to ShippingInformationReport",
+        "Generate report"
+      ],
+      "expected_result": "Shipping company report generated correctly",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "Saravut Chanchom",
+      "test_date": "2024-11-15",
+      "remarks": "Go Live"
+    },
+    {
+      "id": "TC-017",
+      "title": "Test Risk Manage - Track Risk Items",
+      "related_requirement": "REQ-017",
+      "test_type": "Functional",
+      "preconditions": "Risk items exist",
+      "steps": [
+        "Navigate to Risk Manage",
+        "View risk list",
+        "Update status"
+      ],
+      "expected_result": "Risk items displayed and updatable with mitigation measures",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "Saravut Chanchom",
+      "test_date": "2024-11-15",
+      "remarks": "Go Live"
+    },
+    {
+      "id": "TC-018",
+      "title": "Test FG_page - View Finished Goods",
+      "related_requirement": "REQ-018",
+      "test_type": "Functional",
+      "preconditions": "FG items registered",
+      "steps": [
+        "Navigate to FG_page"
+      ],
+      "expected_result": "Finished goods list displayed correctly",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "Saravut Chanchom",
+      "test_date": "2024-11-15",
+      "remarks": "Go Live"
+    }
+  ],
+  "defects": [
+    {
+      "id": "BUG-001",
+      "title": "Document Header Update Does Not Reflect in Detail Table",
+      "related_test_case": "TC-001",
+      "related_requirement": "REQ-001",
+      "severity": "High",
+      "priority": "Medium",
+      "status": "Open",
+      "reported_by": "",
+      "reported_date": "",
+      "assigned_to": "",
+      "fixed_date": "",
+      "description": "ระบบไม่อัปเดตข้อมูลในตาราง Detail ให้สอดคล้องกับการแก้ไขข้อมูลในตาราง Header ของเอกสาร\nเมื่อผู้ใช้งานทำการแก้ไขข้อมูล Header เช่น Status, Reference Number, หรือข้อมูลสรุปของเอกสาร แล้วกดบันทึก ระบบบันทึกข้อมูล Header สำเร็จ แต่ข้อมูลในตาราง Detail ไม่ถูกอัปเดตตาม Business Logic ที่กำหนด\nส่งผลให้ข้อมูล Header และ Detail ของเอกสารไม่ตรงกัน และอาจกระทบต่อการแสดงผล รายงาน และความถูกต้องของข้อมูล",
+      "steps_to_reproduce": "",
+      "root_cause": "",
+      "resolution": "No defects recorded"
+    },
+    {
+      "id": "BUG-002",
+      "title": "Data Saved to Incorrect Field",
+      "related_test_case": "",
+      "related_requirement": "REQ-002",
+      "severity": "High",
+      "priority": "Medium",
+      "status": "Open",
+      "reported_by": "",
+      "reported_date": "",
+      "assigned_to": "",
+      "fixed_date": "",
+      "description": "",
+      "steps_to_reproduce": "",
+      "root_cause": "",
+      "resolution": ""
+    },
+    {
+      "id": "BUG-003",
+      "title": "Duplicate Document Number Generated",
+      "related_test_case": "",
+      "related_requirement": "REQ-003",
+      "severity": "Critical",
+      "priority": "Medium",
+      "status": "Open",
+      "reported_by": "",
+      "reported_date": "",
+      "assigned_to": "",
+      "fixed_date": "",
+      "description": "",
+      "steps_to_reproduce": "",
+      "root_cause": "",
+      "resolution": ""
+    },
+    {
+      "id": "BUG-004",
+      "title": "Data Not Retrieved from System",
+      "related_test_case": "",
+      "related_requirement": "REQ-004",
+      "severity": "High",
+      "priority": "Medium",
+      "status": "Open",
+      "reported_by": "",
+      "reported_date": "",
+      "assigned_to": "",
+      "fixed_date": "",
+      "description": "",
+      "steps_to_reproduce": "",
+      "root_cause": "",
+      "resolution": ""
+    },
+    {
+      "id": "BUG-005",
+      "title": "Cancel and Reject Buttons Not Functioning",
+      "related_test_case": "",
+      "related_requirement": "REQ-005",
+      "severity": "High",
+      "priority": "Medium",
+      "status": "Open",
+      "reported_by": "",
+      "reported_date": "",
+      "assigned_to": "",
+      "fixed_date": "",
+      "description": "",
+      "steps_to_reproduce": "",
+      "root_cause": "",
+      "resolution": ""
+    },
+    {
+      "id": "BUG-006",
+      "title": "Item List Not Displayed in Print Out",
+      "related_test_case": "",
+      "related_requirement": "REQ-006",
+      "severity": "High",
+      "priority": "Medium",
+      "status": "Open",
+      "reported_by": "",
+      "reported_date": "",
+      "assigned_to": "",
+      "fixed_date": "",
+      "description": "",
+      "steps_to_reproduce": "",
+      "root_cause": "",
+      "resolution": ""
+    },
+    {
+      "id": "BUG-007",
+      "title": "Position Data Not Displayed Correctly",
+      "related_test_case": "",
+      "related_requirement": "REQ-007",
+      "severity": "Medium",
+      "priority": "Medium",
+      "status": "Open",
+      "reported_by": "",
+      "reported_date": "",
+      "assigned_to": "",
+      "fixed_date": "",
+      "description": "",
+      "steps_to_reproduce": "",
+      "root_cause": "",
+      "resolution": ""
+    },
+    {
+      "id": "BUG-008",
+      "title": "Incorrect Document Count in Report",
+      "related_test_case": "",
+      "related_requirement": "REQ-008",
+      "severity": "High",
+      "priority": "Medium",
+      "status": "Open",
+      "reported_by": "",
+      "reported_date": "",
+      "assigned_to": "",
+      "fixed_date": "",
+      "description": "",
+      "steps_to_reproduce": "",
+      "root_cause": "",
+      "resolution": ""
+    },
+    {
+      "id": "BUG-009",
+      "title": "File Attachment Failed",
+      "related_test_case": "",
+      "related_requirement": "REQ-009",
+      "severity": "High",
+      "priority": "Medium",
+      "status": "Open",
+      "reported_by": "",
+      "reported_date": "",
+      "assigned_to": "",
+      "fixed_date": "",
+      "description": "",
+      "steps_to_reproduce": "",
+      "root_cause": "",
+      "resolution": ""
+    },
+    {
+      "id": "BUG-010",
+      "title": "User Registration Failed for Some Records",
+      "related_test_case": "",
+      "related_requirement": "REQ-010",
+      "severity": "High",
+      "priority": "Medium",
+      "status": "Open",
+      "reported_by": "",
+      "reported_date": "",
+      "assigned_to": "",
+      "fixed_date": "",
+      "description": "",
+      "steps_to_reproduce": "",
+      "root_cause": "",
+      "resolution": ""
+    },
+    {
+      "id": "BUG-011",
+      "title": "Incorrect Data Imported from Excel File",
+      "related_test_case": "",
+      "related_requirement": "REQ-011",
+      "severity": "High",
+      "priority": "Medium",
+      "status": "Open",
+      "reported_by": "",
+      "reported_date": "",
+      "assigned_to": "",
+      "fixed_date": "",
+      "description": "",
+      "steps_to_reproduce": "",
+      "root_cause": "",
+      "resolution": ""
+    }
+  ],
+  "risks": [
+    {
+      "id": "RISK-001",
+      "category": "Technical",
+      "description": "ความเสี่ยงจากการ integrate กับ e-Seal system ภายนอก อาจมี API compatibility issues",
+      "probability": "Medium",
+      "impact": "High",
+      "risk_level": "High",
+      "mitigation": "ทดสอบ integration ตั้งแต่ early stage และมี fallback process",
+      "owner": "Saravut Chanchom",
+      "status": "Closed",
+      "review_date": "2024-11-01",
+      "contingency": "ใช้ manual process ชั่วคราวหากระบบ e-Seal ขัดข้อง",
+      "linked_capa": "CAPA-001"
+    },
+    {
+      "id": "RISK-002",
+      "category": "Schedule",
+      "description": "ข้อมูล Master Data (ลูกค้า รถ คนขับ) อาจไม่พร้อมก่อน Go Live",
+      "probability": "Medium",
+      "impact": "Medium",
+      "risk_level": "Medium",
+      "mitigation": "เตรียม data import template และประสานงานกับผู้ใช้งานล่วงหน้า",
+      "owner": "Saravut Chanchom",
+      "status": "Closed",
+      "review_date": "2024-10-15",
+      "contingency": "Generate placeholder data สำหรับ UAT และ import ข้อมูลจริงก่อน Go Live",
+      "linked_capa": ""
+    },
+    {
+      "id": "RISK-003",
+      "category": "Resource",
+      "description": "ทีมพัฒนามีขนาดเล็ก 1 คน หากเกิดปัญหาสุขภาพหรือลาออกจะกระทบ timeline",
+      "probability": "Low",
+      "impact": "High",
+      "risk_level": "Medium",
+      "mitigation": "จัดทำเอกสาร technical documentation ให้ครบถ้วน",
+      "owner": "Saravut Chanchom",
+      "status": "Open",
+      "review_date": "2025-02-18",
+      "contingency": "จ้าง developer เพิ่ม หรือขยาย timeline",
+      "linked_capa": ""
+    }
+  ],
+  "change_requests": [
+    {
+      "id": "CR-001",
+      "title": "Document Header Update Does Not Reflect in Detail Table",
+      "description": "",
+      "requestor": "",
+      "request_date": "",
+      "priority": "Medium",
+      "impact": "",
+      "affected_documents": [],
+      "status": "Pending",
+      "approved_by": "",
+      "approval_date": "",
+      "implementation_date": ""
+    },
+    {
+      "id": "CR-002",
+      "title": "Data Saved to Incorrect Field",
+      "description": "",
+      "requestor": "",
+      "request_date": "",
+      "priority": "Medium",
+      "impact": "",
+      "affected_documents": [],
+      "status": "Pending",
+      "approved_by": "",
+      "approval_date": "",
+      "implementation_date": ""
+    },
+    {
+      "id": "CR-003",
+      "title": "Duplicate Document Number Generated",
+      "description": "",
+      "requestor": "",
+      "request_date": "",
+      "priority": "Medium",
+      "impact": "",
+      "affected_documents": [],
+      "status": "Pending",
+      "approved_by": "",
+      "approval_date": "",
+      "implementation_date": ""
+    },
+    {
+      "id": "CR-004",
+      "title": "Data Not Retrieved from System",
+      "description": "",
+      "requestor": "",
+      "request_date": "",
+      "priority": "Medium",
+      "impact": "",
+      "affected_documents": [],
+      "status": "Pending",
+      "approved_by": "",
+      "approval_date": "",
+      "implementation_date": ""
+    },
+    {
+      "id": "CR-001",
+      "title": "ลงชื่อ ______________________________",
+      "description": "",
+      "requestor": "ตรวจสอบ / Reviewed by",
+      "request_date": "",
+      "priority": "Medium",
+      "impact": "",
+      "affected_documents": [],
+      "status": "Pending",
+      "approved_by": "",
+      "approval_date": "",
+      "implementation_date": ""
+    }
+  ],
+  "versions": [
+    {
+      "version": "1.0.0",
+      "release_date": "2024-11-30",
+      "release_type": "Major",
+      "description": "Initial Production Release - Go Live",
+      "changes": [],
+      "deployed_by": "Saravut Chanchom",
+      "environment": "Production"
+    },
+    {
+      "version": "2.0.0",
+      "release_date": "2024-12-15",
+      "release_type": "Major",
+      "description": "Initial Production Release - Go Live",
+      "changes": [],
+      "deployed_by": "Saravut Chanchom",
+      "environment": "Production"
+    },
+    {
+      "version": "3.0.0",
+      "release_date": "2025-01-10",
+      "release_type": "Major",
+      "description": "แก้ไขข้อบกพร่องของระบบ",
+      "changes": [],
+      "deployed_by": "",
+      "environment": "Production"
+    },
+    {
+      "version": "4.0.0",
+      "release_date": "2025-04-01",
+      "release_type": "Major",
+      "description": "แก้ไขข้อบกพร่องของระบบ",
+      "changes": [],
+      "deployed_by": "",
+      "environment": "Production"
+    }
+  ],
+  "meetings": [
+    {
+      "id": "MTG-001",
+      "title": "Project Kickoff Meeting",
+      "date": "2024-08-16",
+      "time": "09:00-11:00",
+      "location": "Online / MS Teams",
+      "chair": "Saravut Chanchom",
+      "attendees": [
+        "Saravut Chanchom",
+        "Soudaphone Stakeholder"
+      ],
+      "agenda": [],
+      "action_items": [
+        {
+          "item": "Prepare requirements specification",
+          "owner": "Saravut Chanchom",
+          "due_date": "2024-08-31",
+          "status": "Closed"
+        }
+      ],
+      "summary": ""
+    },
+    {
+      "id": "MTG-002",
+      "title": "Design Review Meeting",
+      "date": "2024-09-15",
+      "time": "10:00-11:30",
+      "location": "Online / MS Teams",
+      "chair": "Saravut Chanchom",
+      "attendees": [
+        "Saravut Chanchom",
+        "Soudaphone Stakeholder"
+      ],
+      "agenda": [],
+      "action_items": [
+        {
+          "item": "Finalize database schema",
+          "owner": "Saravut Chanchom",
+          "due_date": "2024-09-20",
+          "status": "Closed"
+        }
+      ],
+      "summary": ""
+    },
+    {
+      "id": "MTG-003",
+      "title": "UAT Sign-off Meeting",
+      "date": "2024-11-20",
+      "time": "14:00-15:00",
+      "location": "Online / MS Teams",
+      "chair": "Saravut Chanchom",
+      "attendees": [
+        "Saravut Chanchom",
+        "Soudaphone End Users"
+      ],
+      "agenda": [],
+      "action_items": [
+        {
+          "item": "Prepare production deployment",
+          "owner": "Saravut Chanchom",
+          "due_date": "2024-11-30",
+          "status": "Closed"
+        }
+      ],
+      "summary": ""
+    },
+    {
+      "id": "MTG-004",
+      "title": "อัพเดทระบบ แก้ไขข้อผิดพลาด",
+      "date": "2024-12-13",
+      "time": "14:00-15:00",
+      "location": "Online / MS Teams",
+      "chair": "Saravut Chanchom",
+      "attendees": [
+        "Saravut Chanchom",
+        "Soudaphone End Users"
+      ],
+      "agenda": [],
+      "action_items": [
+        {
+          "item": "ทดสอบใน Environment ที่กำหนดครบถ้วนก่อน Deploy",
+          "owner": "Saravut Chanchom",
+          "due_date": "2024-12-15",
+          "status": "Closed"
+        },
+        {
+          "item": "อัพเดทระบบ",
+          "owner": "Saravut Chanchom",
+          "due_date": "2024-12-15",
+          "status": "Closed"
+        }
+      ],
+      "summary": ""
+    },
+    {
+      "id": "MTG-005",
+      "title": "อัพเดทระบบ แก้ไขข้อผิดพลาด",
+      "date": "2025-01-09",
+      "time": "14:00-15:00",
+      "location": "Online / MS Teams",
+      "chair": "Saravut Chanchom",
+      "attendees": [
+        "Saravut Chanchom",
+        "Soudaphone End Users"
+      ],
+      "agenda": [],
+      "action_items": [
+        {
+          "item": "ทดสอบใน Environment ที่กำหนดครบถ้วนก่อน Deploy",
+          "owner": "Saravut Chanchom",
+          "due_date": "2024-01-10",
+          "status": "Closed"
+        },
+        {
+          "item": "อัพเดทระบบ",
+          "owner": "Saravut Chanchom",
+          "due_date": "2024-01-10",
+          "status": "Closed"
+        }
+      ],
+      "summary": ""
+    },
+    {
+      "id": "MTG-006",
+      "title": "อัพเดทระบบ แก้ไขข้อผิดพลาด",
+      "date": "(Saravut Chanchom\nBusiness Analyst\nวันที่: _______________",
+      "time": "",
+      "location": "",
+      "chair": "เลขานุการ / Secretary",
+      "attendees": [],
+      "agenda": [],
+      "action_items": [],
+      "summary": ""
+    }
+  ],
+  "training_sessions": [
+    {
+      "id": "TRN-001",
+      "title": "End User Training - Pre-Alert System",
+      "date": "2024-11-25",
+      "duration": "3 hours",
+      "location": "Online / MS Teams",
+      "trainer": "ผู้จัดอบรม / Organizer",
+      "topics": [],
+      "attendees": [
+        {
+          "name": "End User Group 1",
+          "department": "Operations",
+          "signed": true
+        },
+        {
+          "name": "End User Group 2",
+          "department": "Management",
+          "signed": true
+        }
+      ]
+    }
+  ],
+  "incidents": [
+    {
+      "id": "INC-001",
+      "title": "(Placeholder)",
+      "date_reported": "—",
+      "severity": "Medium",
+      "description": "",
+      "reported_by": "",
+      "assigned_to": "—",
+      "status": "Open",
+      "resolution": "",
+      "resolved_date": "—",
+      "root_cause": "",
+      "linked_change_request": "—"
+    }
+  ],
+  "deployments": [
+    {
+      "id": "DEP-001",
+      "version": "1.0.0",
+      "date": "2024-11-30",
+      "environment": "Production",
+      "deployed_by": "Saravut Chanchom",
+      "deployment_type": "Major",
+      "steps": [],
+      "rollback_plan": "",
+      "status": "Success",
+      "approval": "Approved by Saravut Chanchom"
+    },
+    {
+      "id": "DEP-001",
+      "version": "2.0.0",
+      "date": "2024-12-15",
+      "environment": "Production",
+      "deployed_by": "Saravut Chanchom",
+      "deployment_type": "Major",
+      "steps": [],
+      "rollback_plan": "",
+      "status": "Success",
+      "approval": "Approved by Saravut Chanchom"
+    }
+  ],
+  "audit": {
+    "audit_date": "2025-02-18",
+    "auditor": "Internal Auditor / Soudaphone",
+    "audit_scope": "ISO/IEC 29110 compliance for Pre-Alert software development lifecycle",
+    "findings": [
+      {
+        "id": "FIND-001",
+        "clause": "ISO/IEC 29110 Section 3.4 - Software Implementation",
+        "finding_type": "Opportunity for Improvement",
+        "description": "ควรเพิ่มเติมการจัดทำ unit test อย่างเป็นระบบ",
+        "linked_capa": "CAPA-001"
+      }
+    ]
+  },
+  "capas": [
+    {
+      "id": "CAPA-001",
+      "type": "Corrective Action",
+      "related_finding": "FIND-001 / RISK-001",
+      "description": "จัดทำ automated test suite สำหรับ critical business functions",
+      "root_cause": "ทีมพัฒนาขนาดเล็กทำให้ขาด resource สำหรับทำ automated testing อย่างครบถ้วน",
+      "action_plan": "วางแผนเพิ่ม unit test coverage ใน v1.1 release",
+      "responsible": "Saravut Chanchom",
+      "target_date": "2025-06-30",
+      "status": "In Progress",
+      "effectiveness_review": "ตรวจสอบ test coverage report หลัง v1.1 release",
+      "closed_date": ""
+    }
+  ],
+  "sow": {},
+  "output_path": "D:\\Work\\DocISOGen\\projects"
+}

@@ -1,0 +1,1450 @@
+{
+  "project": {
+    "code": "LOGPRO",
+    "name": "Logistic Pro",
+    "organization": "Soudaphone",
+    "description": "Logistic Pro เป็นแพลตฟอร์มโลจิสติกส์แบบ On-Demand ที่เชื่อมต่อลูกค้า คนขับ และผู้ดูแลระบบ รองรับการจองรถขนส่ง ติดตามสถานะสด และจัดการการเงินในระบบเดียว",
+    "scope": "ระบบครอบคลุม 3 โมดูลหลัก: Customer App (iOS/Android), Driver App (iOS/Android) และ Admin Web Dashboard รองรับการจองรถ ติดตาม GPS สด ชำระเงินออนไลน์ และรายงานสถิติ",
+    "department": "Soudaphone",
+    "start_date": "2026-01-01",
+    "end_date": "2026-12-31",
+    "go_live_date": "2026-11-01",
+    "doc_revision": "1.0",
+    "document_date": "2026-01-01",
+    "classification": "Internal",
+    "short_name": "LOGPRO",
+    "objectives": [
+      "พัฒนาแอปพลิเคชันมือถือสำหรับลูกค้าในการจองรถขนส่งแบบ On-Demand",
+      "พัฒนาแอปพลิเคชันมือถือสำหรับคนขับในการรับงานและนำทาง",
+      "พัฒนาระบบ Admin Dashboard สำหรับบริหารจัดการแพลตฟอร์ม",
+      "รองรับการชำระเงินหลายรูปแบบ (เงินสด, QR Code, บัตรเครดิต)",
+      "ให้บริการ Live Tracking ผ่าน Google Maps แบบเรียลไทม์"
+    ]
+  },
+  "team": {
+    "members": [
+      {
+        "name": "Suthep Wadkhian",
+        "title": "Senior Developer",
+        "email": "joe.248811@gmail.com"
+      }
+    ],
+    "project_manager": {
+      "name": "Apisit Yimboa",
+      "title": "Project Manager",
+      "email": "apisit@soudaphone.com",
+      "phone": ""
+    },
+    "lead_developer": {
+      "name": "Apisit Yimboa",
+      "title": "Lead Developer",
+      "email": "apisit@soudaphone.com",
+      "phone": ""
+    },
+    "business_analyst": {
+      "name": "TBD",
+      "title": "Business Analyst",
+      "email": "ba@soudaphone.com",
+      "phone": ""
+    },
+    "system_analyst": {
+      "name": "TBD",
+      "title": "System Analyst",
+      "email": "sa@soudaphone.com",
+      "phone": ""
+    },
+    "qa_engineer": {
+      "name": "TBD",
+      "title": "QA Engineer",
+      "email": "qa@soudaphone.com",
+      "phone": ""
+    },
+    "dba": {
+      "name": "TBD",
+      "title": "DBA",
+      "email": "dba@soudaphone.com",
+      "phone": ""
+    }
+  },
+  "stakeholders": [
+    {
+      "name": "TBD",
+      "role": "Project Sponsor",
+      "organization": "Soudaphone",
+      "email": "",
+      "responsibility": "Approve budget and major project decisions"
+    }
+  ],
+  "tech_stack": {
+    "frontend": "Flutter (Mobile - iOS & Android)",
+    "backend": ".NET 8 (ASP.NET Core Web API)",
+    "database": "SQL Server 2022",
+    "infrastructure": "On-premise / Cloud",
+    "source_control": "Git",
+    "ci_cd": ""
+  },
+  "milestones": [
+    {
+      "id": "MS-01",
+      "name": "Requirements Sign-off",
+      "target_date": "2026-02-28",
+      "status": "Completed",
+      "owner": "Business Analyst"
+    },
+    {
+      "id": "MS-02",
+      "name": "System Design Complete",
+      "target_date": "2026-03-31",
+      "status": "In Progress",
+      "owner": "Apisit Yimboa"
+    },
+    {
+      "id": "MS-03",
+      "name": "Customer Module Complete",
+      "target_date": "2026-06-30",
+      "status": "Planned",
+      "owner": "Apisit Yimboa"
+    },
+    {
+      "id": "MS-04",
+      "name": "Driver & Admin Module Complete",
+      "target_date": "2026-08-31",
+      "status": "Planned",
+      "owner": "Apisit Yimboa"
+    },
+    {
+      "id": "MS-05",
+      "name": "UAT & Testing Complete",
+      "target_date": "2026-10-15",
+      "status": "Planned",
+      "owner": "QA Engineer"
+    },
+    {
+      "id": "MS-06",
+      "name": "Go-Live Production",
+      "target_date": "2026-11-01",
+      "status": "Planned",
+      "owner": "TBD"
+    }
+  ],
+  "requirements": [
+    {
+      "id": "REQ-001",
+      "title": "Registration & Onboarding (Customer)",
+      "description": "ระบบช่วยให้ผู้ใช้เริ่มต้นใช้งานได้ง่ายด้วยการลงทะเบียนผ่านหมายเลขโทรศัพท์มือถือและยืนยันตัวตนด้วยรหัส OTP เพื่อความปลอดภัย พร้อมทั้งสามารถตั้งค่าโปรไฟล์ส่วนตัวเพื่อบันทึกข้อมูลพื้นฐานได้",
+      "priority": "High",
+      "type": "Functional",
+      "category": "Customer Module",
+      "source": "Feature Spec 1.1",
+      "acceptance_criteria": "ผู้ใช้สามารถลงทะเบียนด้วยเบอร์โทรศัพท์ รับ OTP และตั้งค่าโปรไฟล์ได้สำเร็จภายใน 3 นาที",
+      "linked_design": [],
+      "linked_test_cases": []
+    },
+    {
+      "id": "REQ-002",
+      "title": "Booking - Select Route",
+      "description": "ลูกค้าสามารถค้นหาและปักหมุดจุดรับ-ส่งสินค้าผ่านแผนที่ Google Maps โดยรองรับการเพิ่มจุดส่งได้สูงสุดถึง 10 จุดในหนึ่งคำสั่งซื้อ และเลือกสถานที่โปรดที่ใช้บ่อยได้อย่างรวดเร็ว",
+      "priority": "High",
+      "type": "Functional",
+      "category": "Customer Module",
+      "source": "Feature Spec 1.2",
+      "acceptance_criteria": "ลูกค้าสามารถปักหมุดจุดรับ-ส่งบนแผนที่ เพิ่มจุดส่งได้สูงสุด 10 จุด และบันทึกสถานที่โปรดได้",
+      "linked_design": [],
+      "linked_test_cases": []
+    },
+    {
+      "id": "REQ-003",
+      "title": "Select Vehicle & Service",
+      "description": "ระบบแสดงรายการยานพาหนะทุกประเภทพร้อมรายละเอียดขนาดบรรทุก และเปิดให้ลูกค้าเลือกบริการเพิ่มเติม เช่น พนักงานช่วยยกของ หรือการจองรถแบบไป-กลับ",
+      "priority": "High",
+      "type": "Functional",
+      "category": "Customer Module",
+      "source": "Feature Spec 1.3",
+      "acceptance_criteria": "ลูกค้าสามารถเลือกประเภทยานพาหนะและบริการเสริมได้ ระบบแสดงราคาเบื้องต้นที่ถูกต้อง",
+      "linked_design": [],
+      "linked_test_cases": []
+    },
+    {
+      "id": "REQ-004",
+      "title": "Job Details",
+      "description": "ลูกค้าสามารถเลือกเวลาเข้ารับสินค้าได้ทั้งแบบทันทีหรือจองล่วงหน้า พร้อมทั้งระบุประเภทสินค้า แนบรูปภาพ และให้ข้อมูลติดต่อของผู้รับปลายทางเพื่อให้คนขับประสานงานได้แม่นยำ",
+      "priority": "High",
+      "type": "Functional",
+      "category": "Customer Module",
+      "source": "Feature Spec 1.4",
+      "acceptance_criteria": "ลูกค้าสามารถเลือกเวลารับสินค้า ระบุประเภทสินค้า แนบรูปภาพ และกรอกข้อมูลผู้รับปลายทางได้สำเร็จ",
+      "linked_design": [],
+      "linked_test_cases": []
+    },
+    {
+      "id": "REQ-005",
+      "title": "Summary & Payment",
+      "description": "ระบบจะคำนวณค่าใช้จ่ายทั้งหมดอย่างชัดเจน โดยแยกสัดส่วนค่ารถและค่าบริการเสริม พร้อมรองรับการชำระเงินหลายรูปแบบทั้งเงินสด โอนจ่ายผ่าน QR หรือตัดบัตรเครดิต",
+      "priority": "High",
+      "type": "Functional",
+      "category": "Customer Module",
+      "source": "Feature Spec 1.5",
+      "acceptance_criteria": "ระบบแสดงราคาครบถ้วนและรองรับการชำระเงิน 3 รูปแบบ (เงินสด, QR Code, บัตรเครดิต)",
+      "linked_design": [],
+      "linked_test_cases": []
+    },
+    {
+      "id": "REQ-006",
+      "title": "Live Tracking",
+      "description": "ลูกค้าสามารถตรวจสอบตำแหน่งของคนขับได้บนแผนที่สด แสดงสถานะการทำงานเป็นระยะ และสามารถแชร์ลิงก์ติดตามสถานะให้แก่ผู้รับปลายทางได้",
+      "priority": "High",
+      "type": "Functional",
+      "category": "Customer Module",
+      "source": "Feature Spec 1.6",
+      "acceptance_criteria": "ลูกค้าเห็นตำแหน่งคนขับ real-time บนแผนที่ และสามารถแชร์ลิงก์ติดตามได้",
+      "linked_design": [],
+      "linked_test_cases": []
+    },
+    {
+      "id": "REQ-007",
+      "title": "Rating & History",
+      "description": "หลังจากเสร็จสิ้นงาน ลูกค้าสามารถให้คะแนนความพึงพอใจและชมเชยคนขับได้ รวมถึงสามารถดูประวัติงานเก่าเพื่อทำการกดจองซ้ำในเส้นทางเดิมได้ทันที",
+      "priority": "Medium",
+      "type": "Functional",
+      "category": "Customer Module",
+      "source": "Feature Spec 1.7",
+      "acceptance_criteria": "ลูกค้าสามารถให้คะแนน 1-5 ดาว เพิ่ม comment และกดจองซ้ำจากประวัติได้",
+      "linked_design": [],
+      "linked_test_cases": []
+    },
+    {
+      "id": "REQ-008",
+      "title": "Driver Registration",
+      "description": "คนขับสามารถอัปโหลดเอกสารสำคัญ เช่น ใบขับขี่และทะเบียนรถ ผ่านแอปพลิเคชันเพื่อให้เจ้าหน้าที่ตรวจสอบและอนุมัติเข้าสู่ระบบพาร์ทเนอร์",
+      "priority": "High",
+      "type": "Functional",
+      "category": "Driver Module",
+      "source": "Feature Spec 2.1",
+      "acceptance_criteria": "คนขับสามารถอัปโหลดเอกสารและรอการอนุมัติจากแอดมิน ระบบแจ้งเตือนผลการอนุมัติ",
+      "linked_design": [],
+      "linked_test_cases": []
+    },
+    {
+      "id": "REQ-009",
+      "title": "Job Offer",
+      "description": "ระบบจะส่งสัญญาณเตือนพร้อมแสดงข้อมูลต้นทาง-ปลายทางและราคาค่าจ้างให้คนขับตัดสินใจรับงานภายในเวลาที่กำหนด",
+      "priority": "High",
+      "type": "Functional",
+      "category": "Driver Module",
+      "source": "Feature Spec 2.2",
+      "acceptance_criteria": "คนขับได้รับ notification งานใหม่ เห็นข้อมูลครบถ้วน และตอบรับ/ปฏิเสธได้ภายในเวลาที่กำหนด",
+      "linked_design": [],
+      "linked_test_cases": []
+    },
+    {
+      "id": "REQ-010",
+      "title": "Active Job Action",
+      "description": "แอปพลิเคชันช่วยนำทางคนขับไปยังจุดต่างๆ และกำหนดให้มีการถ่ายรูปยืนยันสินค้าพร้อมระบบเซ็นชื่อดิจิทัลเพื่อเป็นหลักฐานว่าการส่งสินค้าสำเร็จสมบูรณ์",
+      "priority": "High",
+      "type": "Functional",
+      "category": "Driver Module",
+      "source": "Feature Spec 2.3",
+      "acceptance_criteria": "คนขับนำทางได้ถูกต้อง ถ่ายรูปยืนยันได้ และลายเซ็นดิจิทัลถูกบันทึกลงระบบ",
+      "linked_design": [],
+      "linked_test_cases": []
+    },
+    {
+      "id": "REQ-011",
+      "title": "Driver Wallet & Earnings",
+      "description": "คนขับสามารถตรวจสอบยอดเงินสะสม รายได้รายวัน และทำรายการถอนเงินเข้าบัญชีธนาคารของตนเองได้อย่างอิสระ",
+      "priority": "High",
+      "type": "Functional",
+      "category": "Driver Module",
+      "source": "Feature Spec 2.4",
+      "acceptance_criteria": "คนขับเห็นยอดเงินสะสมแบบ real-time และสามารถถอนเงินเข้าบัญชีธนาคารได้สำเร็จ",
+      "linked_design": [],
+      "linked_test_cases": []
+    },
+    {
+      "id": "REQ-012",
+      "title": "Admin Dashboard Overview",
+      "description": "ผู้ดูแลสามารถดูสถิติการทำงานสด แผนที่ความหนาแน่นของผู้ใช้งาน และกราฟรายได้รวมของแพลตฟอร์มได้แบบเรียลไทม์",
+      "priority": "High",
+      "type": "Functional",
+      "category": "Admin Module",
+      "source": "Feature Spec 3.1",
+      "acceptance_criteria": "Dashboard แสดงสถิติ real-time รวมถึง heatmap และกราฟรายได้ที่อัปเดตทุก 1 นาที",
+      "linked_design": [],
+      "linked_test_cases": []
+    },
+    {
+      "id": "REQ-013",
+      "title": "User & Driver Management",
+      "description": "ระบบรองรับการตรวจสอบเอกสารเพื่ออนุมัติคนขับรายใหม่ และสามารถจัดการระงับสิทธิ์ผู้ใช้งานที่ทำผิดกฎระเบียบได้",
+      "priority": "High",
+      "type": "Functional",
+      "category": "Admin Module",
+      "source": "Feature Spec 3.2",
+      "acceptance_criteria": "แอดมินอนุมัติ/ปฏิเสธคนขับรายใหม่ได้ และระงับ/คืนสิทธิ์ผู้ใช้งานได้ทันที",
+      "linked_design": [],
+      "linked_test_cases": []
+    },
+    {
+      "id": "REQ-014",
+      "title": "Order Management",
+      "description": "แอดมินสามารถติดตามสถานะงานทุกรายการ แก้ไขข้อมูลในกรณีที่เกิดปัญหา และสามารถจ่ายงานให้กับคนขับได้โดยตรงในกรณีพิเศษ",
+      "priority": "High",
+      "type": "Functional",
+      "category": "Admin Module",
+      "source": "Feature Spec 3.3",
+      "acceptance_criteria": "แอดมินเห็น order ทุกรายการ แก้ไขข้อมูลได้ และ manual assign คนขับได้",
+      "linked_design": [],
+      "linked_test_cases": []
+    },
+    {
+      "id": "REQ-015",
+      "title": "Pricing & Commission Management",
+      "description": "ระบบเปิดให้ปรับปรุงอัตราค่าขนส่งตามระยะทางและประเภทรถ รวมถึงกำหนดเปอร์เซ็นต์ส่วนแบ่งที่ระบบจะหักจากคนขับ",
+      "priority": "Medium",
+      "type": "Functional",
+      "category": "Admin Module",
+      "source": "Feature Spec 3.4",
+      "acceptance_criteria": "แอดมินแก้ไขอัตราค่าขนส่งและ commission ได้ ระบบคำนวณราคาตาม config ใหม่ทันที",
+      "linked_design": [],
+      "linked_test_cases": []
+    },
+    {
+      "id": "REQ-016",
+      "title": "Notification System",
+      "description": "ระบบจะส่งข้อความแจ้งเตือนอัตโนมัติไปยังคนขับเมื่อมีงานใหม่ และแจ้งเตือนลูกค้าในทุกระยะการขนส่ง รวมถึงการส่งข่าวสารโปรโมชั่นและยืนยันการชำระเงิน",
+      "priority": "High",
+      "type": "Functional",
+      "category": "Platform",
+      "source": "Feature Spec 3.5",
+      "acceptance_criteria": "Push notification ส่งถึงผู้รับถูกต้องภายใน 5 วินาที สำหรับ job offer, status update และ payment confirmation",
+      "linked_design": [],
+      "linked_test_cases": []
+    }
+  ],
+  "design_components": [
+    {
+      "id": "COMP-001",
+      "name": "OTP Authentication Service",
+      "description": "บริการยืนยันตัวตนด้วย OTP ผ่าน SMS Gateway รองรับ retry และ expiry",
+      "type": "API / Service",
+      "related_requirements": [
+        "REQ-001"
+      ],
+      "technology": ""
+    },
+    {
+      "id": "COMP-002",
+      "name": "Route & Map Service",
+      "description": "บริการแผนที่สำหรับปักหมุดจุดรับส่ง รองรับ multi-stop สูงสุด 10 จุด",
+      "type": "UI Component / API",
+      "related_requirements": [
+        "REQ-002"
+      ],
+      "technology": ""
+    },
+    {
+      "id": "COMP-003",
+      "name": "Vehicle & Service Catalog",
+      "description": "ฐานข้อมูลยานพาหนะและบริการเสริม พร้อม pricing engine",
+      "type": "API / Database",
+      "related_requirements": [
+        "REQ-003",
+        "REQ-015"
+      ],
+      "technology": ""
+    },
+    {
+      "id": "COMP-004",
+      "name": "Job Details Form",
+      "description": "ฟอร์มกรอกรายละเอียดงาน รองรับ image upload และ contact info",
+      "type": "UI Component",
+      "related_requirements": [
+        "REQ-004"
+      ],
+      "technology": ""
+    },
+    {
+      "id": "COMP-005",
+      "name": "Payment Gateway Integration",
+      "description": "ระบบชำระเงินรองรับ QR Code, บัตรเครดิต และเงินสด",
+      "type": "Service / API",
+      "related_requirements": [
+        "REQ-005"
+      ],
+      "technology": ""
+    },
+    {
+      "id": "COMP-006",
+      "name": "Live Tracking Module",
+      "description": "ระบบติดตาม GPS real-time ส่ง location updates ผ่าน WebSocket",
+      "type": "UI Component / Service",
+      "related_requirements": [
+        "REQ-006"
+      ],
+      "technology": ""
+    },
+    {
+      "id": "COMP-007",
+      "name": "Rating & Order History",
+      "description": "ระบบให้คะแนนและประวัติการจอง รองรับ re-order",
+      "type": "UI Component / API",
+      "related_requirements": [
+        "REQ-007"
+      ],
+      "technology": ""
+    },
+    {
+      "id": "COMP-008",
+      "name": "Driver Onboarding & Document Verification",
+      "description": "ระบบรับและตรวจสอบเอกสารคนขับ รองรับ image upload และ admin approval workflow",
+      "type": "UI Component / API",
+      "related_requirements": [
+        "REQ-008",
+        "REQ-013"
+      ],
+      "technology": ""
+    },
+    {
+      "id": "COMP-009",
+      "name": "Job Dispatch Engine",
+      "description": "ระบบส่ง job offer ให้คนขับที่ใกล้ที่สุด พร้อม timeout และ fallback",
+      "type": "Service / API",
+      "related_requirements": [
+        "REQ-009"
+      ],
+      "technology": ""
+    },
+    {
+      "id": "COMP-010",
+      "name": "Active Job Navigation & POD",
+      "description": "ระบบนำทาง proof-of-delivery รองรับ photo upload และลายเซ็นดิจิทัล",
+      "type": "UI Component / API",
+      "related_requirements": [
+        "REQ-010"
+      ],
+      "technology": ""
+    },
+    {
+      "id": "COMP-011",
+      "name": "Driver Wallet & Payout Service",
+      "description": "กระเป๋าเงินของคนขับ รองรับการถอนเงินเข้าบัญชีธนาคาร",
+      "type": "API / Service",
+      "related_requirements": [
+        "REQ-011"
+      ],
+      "technology": ""
+    },
+    {
+      "id": "COMP-012",
+      "name": "Admin Dashboard & Analytics",
+      "description": "Web dashboard แสดงสถิติ real-time, heatmap และกราฟรายได้",
+      "type": "UI Component / API",
+      "related_requirements": [
+        "REQ-012"
+      ],
+      "technology": ""
+    },
+    {
+      "id": "COMP-013",
+      "name": "User & Driver Management Console",
+      "description": "ระบบจัดการผู้ใช้งานและคนขับ อนุมัติ/ระงับสิทธิ์",
+      "type": "UI Component / API",
+      "related_requirements": [
+        "REQ-013"
+      ],
+      "technology": ""
+    },
+    {
+      "id": "COMP-014",
+      "name": "Order Management System",
+      "description": "ระบบดูและจัดการ order ทุกรายการ รองรับ manual dispatch",
+      "type": "UI Component / API",
+      "related_requirements": [
+        "REQ-014"
+      ],
+      "technology": ""
+    },
+    {
+      "id": "COMP-015",
+      "name": "Pricing & Commission Engine",
+      "description": "ระบบกำหนดราคาค่าขนส่งและ commission รองรับ rule-based pricing",
+      "type": "API / Service",
+      "related_requirements": [
+        "REQ-015"
+      ],
+      "technology": ""
+    },
+    {
+      "id": "COMP-016",
+      "name": "Push Notification Service",
+      "description": "ระบบส่ง push notification ไปยังผู้ใช้งานผ่าน Firebase Cloud Messaging",
+      "type": "Service",
+      "related_requirements": [
+        "REQ-016"
+      ],
+      "technology": ""
+    }
+  ],
+  "database_tables": [
+    {
+      "name": "Users",
+      "description": "ข้อมูลผู้ใช้งาน (ลูกค้า)",
+      "columns": [
+        {
+          "name": "id",
+          "type": "UNIQUEIDENTIFIER PRIMARY KEY",
+          "description": "Primary key"
+        },
+        {
+          "name": "phone_number",
+          "type": "VARCHAR(20) NOT NULL UNIQUE",
+          "description": "หมายเลขโทรศัพท์"
+        },
+        {
+          "name": "full_name",
+          "type": "NVARCHAR(200)",
+          "description": "ชื่อ-นามสกุล"
+        },
+        {
+          "name": "email",
+          "type": "VARCHAR(200)",
+          "description": "อีเมล"
+        },
+        {
+          "name": "profile_image_url",
+          "type": "VARCHAR(500)",
+          "description": "URL รูปโปรไฟล์"
+        },
+        {
+          "name": "status",
+          "type": "VARCHAR(20) DEFAULT 'Active'",
+          "description": "สถานะ Active/Suspended"
+        },
+        {
+          "name": "created_at",
+          "type": "DATETIME DEFAULT GETDATE()",
+          "description": "วันที่สร้างบัญชี"
+        }
+      ],
+      "related_requirements": [
+        "REQ-001"
+      ]
+    },
+    {
+      "name": "Drivers",
+      "description": "ข้อมูลคนขับ",
+      "columns": [
+        {
+          "name": "id",
+          "type": "UNIQUEIDENTIFIER PRIMARY KEY",
+          "description": "Primary key"
+        },
+        {
+          "name": "phone_number",
+          "type": "VARCHAR(20) NOT NULL UNIQUE",
+          "description": "หมายเลขโทรศัพท์"
+        },
+        {
+          "name": "full_name",
+          "type": "NVARCHAR(200)",
+          "description": "ชื่อ-นามสกุล"
+        },
+        {
+          "name": "license_number",
+          "type": "VARCHAR(50)",
+          "description": "เลขใบขับขี่"
+        },
+        {
+          "name": "vehicle_plate",
+          "type": "VARCHAR(20)",
+          "description": "ทะเบียนรถ"
+        },
+        {
+          "name": "vehicle_type_id",
+          "type": "INT",
+          "description": "FK - VehicleTypes"
+        },
+        {
+          "name": "status",
+          "type": "VARCHAR(20) DEFAULT 'Pending'",
+          "description": "Pending/Active/Suspended"
+        },
+        {
+          "name": "wallet_balance",
+          "type": "DECIMAL(18,2) DEFAULT 0",
+          "description": "ยอดเงินในกระเป๋า"
+        },
+        {
+          "name": "created_at",
+          "type": "DATETIME DEFAULT GETDATE()",
+          "description": "วันที่สมัคร"
+        }
+      ],
+      "related_requirements": [
+        "REQ-008"
+      ]
+    },
+    {
+      "name": "Orders",
+      "description": "รายการคำสั่งจอง",
+      "columns": [
+        {
+          "name": "id",
+          "type": "UNIQUEIDENTIFIER PRIMARY KEY",
+          "description": "Primary key"
+        },
+        {
+          "name": "order_number",
+          "type": "VARCHAR(50) NOT NULL UNIQUE",
+          "description": "เลขที่ order"
+        },
+        {
+          "name": "user_id",
+          "type": "UNIQUEIDENTIFIER NOT NULL",
+          "description": "FK - Users"
+        },
+        {
+          "name": "driver_id",
+          "type": "UNIQUEIDENTIFIER",
+          "description": "FK - Drivers (nullable)"
+        },
+        {
+          "name": "vehicle_type_id",
+          "type": "INT",
+          "description": "FK - VehicleTypes"
+        },
+        {
+          "name": "pickup_time",
+          "type": "DATETIME",
+          "description": "เวลารับสินค้า"
+        },
+        {
+          "name": "status",
+          "type": "VARCHAR(30) DEFAULT 'Pending'",
+          "description": "สถานะ order"
+        },
+        {
+          "name": "total_amount",
+          "type": "DECIMAL(18,2)",
+          "description": "ยอดชำระทั้งหมด"
+        },
+        {
+          "name": "payment_method",
+          "type": "VARCHAR(20)",
+          "description": "Cash/QR/CreditCard"
+        },
+        {
+          "name": "payment_status",
+          "type": "VARCHAR(20) DEFAULT 'Pending'",
+          "description": "สถานะชำระเงิน"
+        },
+        {
+          "name": "created_at",
+          "type": "DATETIME DEFAULT GETDATE()",
+          "description": "วันที่สร้าง order"
+        }
+      ],
+      "related_requirements": [
+        "REQ-002",
+        "REQ-004",
+        "REQ-005"
+      ]
+    },
+    {
+      "name": "OrderStops",
+      "description": "จุดรับ-ส่งแต่ละจุดในหนึ่ง order",
+      "columns": [
+        {
+          "name": "id",
+          "type": "INT IDENTITY PRIMARY KEY",
+          "description": "Primary key"
+        },
+        {
+          "name": "order_id",
+          "type": "UNIQUEIDENTIFIER NOT NULL",
+          "description": "FK - Orders"
+        },
+        {
+          "name": "sequence",
+          "type": "INT NOT NULL",
+          "description": "ลำดับจุดที่ 1-10"
+        },
+        {
+          "name": "stop_type",
+          "type": "VARCHAR(20)",
+          "description": "Pickup/Dropoff"
+        },
+        {
+          "name": "address",
+          "type": "NVARCHAR(500)",
+          "description": "ที่อยู่"
+        },
+        {
+          "name": "latitude",
+          "type": "DECIMAL(9,6)",
+          "description": "Latitude"
+        },
+        {
+          "name": "longitude",
+          "type": "DECIMAL(9,6)",
+          "description": "Longitude"
+        },
+        {
+          "name": "contact_name",
+          "type": "NVARCHAR(200)",
+          "description": "ชื่อผู้ติดต่อปลายทาง"
+        },
+        {
+          "name": "contact_phone",
+          "type": "VARCHAR(20)",
+          "description": "เบอร์โทรผู้ติดต่อ"
+        }
+      ],
+      "related_requirements": [
+        "REQ-002",
+        "REQ-004"
+      ]
+    },
+    {
+      "name": "VehicleTypes",
+      "description": "ประเภทยานพาหนะ",
+      "columns": [
+        {
+          "name": "id",
+          "type": "INT IDENTITY PRIMARY KEY",
+          "description": "Primary key"
+        },
+        {
+          "name": "name",
+          "type": "NVARCHAR(100) NOT NULL",
+          "description": "ชื่อประเภทรถ"
+        },
+        {
+          "name": "description",
+          "type": "NVARCHAR(500)",
+          "description": "รายละเอียด"
+        },
+        {
+          "name": "max_weight_kg",
+          "type": "DECIMAL(10,2)",
+          "description": "น้ำหนักบรรทุกสูงสุด (กก)"
+        },
+        {
+          "name": "base_price",
+          "type": "DECIMAL(18,2)",
+          "description": "ราคาเริ่มต้น"
+        },
+        {
+          "name": "price_per_km",
+          "type": "DECIMAL(18,2)",
+          "description": "ราคาต่อกิโลเมตร"
+        },
+        {
+          "name": "is_active",
+          "type": "BIT DEFAULT 1",
+          "description": "สถานะเปิดใช้งาน"
+        }
+      ],
+      "related_requirements": [
+        "REQ-003",
+        "REQ-015"
+      ]
+    },
+    {
+      "name": "DriverLocations",
+      "description": "ข้อมูล GPS ตำแหน่งคนขับแบบ real-time",
+      "columns": [
+        {
+          "name": "id",
+          "type": "BIGINT IDENTITY PRIMARY KEY",
+          "description": "Primary key"
+        },
+        {
+          "name": "driver_id",
+          "type": "UNIQUEIDENTIFIER NOT NULL",
+          "description": "FK - Drivers"
+        },
+        {
+          "name": "latitude",
+          "type": "DECIMAL(9,6) NOT NULL",
+          "description": "Latitude"
+        },
+        {
+          "name": "longitude",
+          "type": "DECIMAL(9,6) NOT NULL",
+          "description": "Longitude"
+        },
+        {
+          "name": "recorded_at",
+          "type": "DATETIME DEFAULT GETDATE()",
+          "description": "เวลาบันทึก"
+        }
+      ],
+      "related_requirements": [
+        "REQ-006"
+      ]
+    },
+    {
+      "name": "Ratings",
+      "description": "คะแนนการให้บริการ",
+      "columns": [
+        {
+          "name": "id",
+          "type": "INT IDENTITY PRIMARY KEY",
+          "description": "Primary key"
+        },
+        {
+          "name": "order_id",
+          "type": "UNIQUEIDENTIFIER NOT NULL UNIQUE",
+          "description": "FK - Orders"
+        },
+        {
+          "name": "driver_id",
+          "type": "UNIQUEIDENTIFIER NOT NULL",
+          "description": "FK - Drivers"
+        },
+        {
+          "name": "user_id",
+          "type": "UNIQUEIDENTIFIER NOT NULL",
+          "description": "FK - Users"
+        },
+        {
+          "name": "score",
+          "type": "TINYINT NOT NULL",
+          "description": "คะแนน 1-5"
+        },
+        {
+          "name": "comment",
+          "type": "NVARCHAR(1000)",
+          "description": "ความคิดเห็น"
+        },
+        {
+          "name": "created_at",
+          "type": "DATETIME DEFAULT GETDATE()",
+          "description": "วันที่ให้คะแนน"
+        }
+      ],
+      "related_requirements": [
+        "REQ-007"
+      ]
+    },
+    {
+      "name": "Notifications",
+      "description": "ประวัติการส่งแจ้งเตือน",
+      "columns": [
+        {
+          "name": "id",
+          "type": "BIGINT IDENTITY PRIMARY KEY",
+          "description": "Primary key"
+        },
+        {
+          "name": "recipient_type",
+          "type": "VARCHAR(20) NOT NULL",
+          "description": "User/Driver"
+        },
+        {
+          "name": "recipient_id",
+          "type": "UNIQUEIDENTIFIER NOT NULL",
+          "description": "ID ผู้รับ"
+        },
+        {
+          "name": "title",
+          "type": "NVARCHAR(200)",
+          "description": "หัวข้อ notification"
+        },
+        {
+          "name": "body",
+          "type": "NVARCHAR(1000)",
+          "description": "เนื้อหา"
+        },
+        {
+          "name": "type",
+          "type": "VARCHAR(50)",
+          "description": "JobOffer/StatusUpdate/Payment/Promotion"
+        },
+        {
+          "name": "is_read",
+          "type": "BIT DEFAULT 0",
+          "description": "สถานะอ่านแล้ว"
+        },
+        {
+          "name": "sent_at",
+          "type": "DATETIME DEFAULT GETDATE()",
+          "description": "เวลาส่ง"
+        }
+      ],
+      "related_requirements": [
+        "REQ-016"
+      ]
+    }
+  ],
+  "test_cases": [
+    {
+      "id": "TC-001",
+      "title": "ลงทะเบียนด้วยเบอร์โทรศัพท์และรับ OTP",
+      "related_requirement": "REQ-001",
+      "test_type": "Integration",
+      "preconditions": "หมายเลขโทรศัพท์ยังไม่ถูกลงทะเบียนในระบบ",
+      "steps": [
+        "เปิดแอปและกด 'ลงทะเบียน'",
+        "กรอกหมายเลขโทรศัพท์มือถือ",
+        "กด 'ขอ OTP'",
+        "รับ SMS และกรอก OTP",
+        "กรอกชื่อ-นามสกุลและบันทึก"
+      ],
+      "expected_result": "ระบบสร้างบัญชีสำเร็จและพาไปหน้า Home",
+      "actual_result": "Pending",
+      "status": "Pending",
+      "tester": "QA Team",
+      "test_date": "",
+      "remarks": ""
+    },
+    {
+      "id": "TC-002",
+      "title": "ลงทะเบียนซ้ำด้วยเบอร์เดิม",
+      "related_requirement": "REQ-001",
+      "test_type": "Unit",
+      "preconditions": "หมายเลขโทรศัพท์ถูกลงทะเบียนแล้ว",
+      "steps": [
+        "กรอกหมายเลขโทรศัพท์ที่มีอยู่แล้ว",
+        "กด 'ขอ OTP'"
+      ],
+      "expected_result": "ระบบแสดงข้อความ 'หมายเลขนี้ถูกลงทะเบียนแล้ว'",
+      "actual_result": "Pending",
+      "status": "Pending",
+      "tester": "QA Team",
+      "test_date": "",
+      "remarks": ""
+    },
+    {
+      "id": "TC-003",
+      "title": "เพิ่มจุดส่งสูงสุด 10 จุด",
+      "related_requirement": "REQ-002",
+      "test_type": "Functional",
+      "preconditions": "ลูกค้า login แล้ว",
+      "steps": [
+        "เริ่มจอง - เลือกจุดรับ",
+        "เพิ่มจุดส่งต่อเนื่องจนครบ 10 จุด",
+        "พยายามเพิ่มจุดที่ 11"
+      ],
+      "expected_result": "ระบบอนุญาตสูงสุด 10 จุด และแสดง error เมื่อพยายามเพิ่มจุดที่ 11",
+      "actual_result": "Pending",
+      "status": "Pending",
+      "tester": "QA Team",
+      "test_date": "",
+      "remarks": ""
+    },
+    {
+      "id": "TC-004",
+      "title": "บันทึกและเรียกใช้สถานที่โปรด",
+      "related_requirement": "REQ-002",
+      "test_type": "Functional",
+      "preconditions": "ลูกค้า login แล้ว",
+      "steps": [
+        "ปักหมุดที่อยู่ใหม่",
+        "กด 'บันทึกเป็นสถานที่โปรด'",
+        "เริ่มจองใหม่และเลือกสถานที่โปรด"
+      ],
+      "expected_result": "ระบบแสดงสถานที่ที่บันทึกไว้และโหลดพิกัดอัตโนมัติ",
+      "actual_result": "Pending",
+      "status": "Pending",
+      "tester": "QA Team",
+      "test_date": "",
+      "remarks": ""
+    },
+    {
+      "id": "TC-005",
+      "title": "เลือกประเภทรถและบริการเสริม",
+      "related_requirement": "REQ-003",
+      "test_type": "Functional",
+      "preconditions": "กำหนด route แล้ว",
+      "steps": [
+        "ดูรายการรถทุกประเภท",
+        "เลือกประเภทรถ",
+        "เพิ่มบริการ 'พนักงานช่วยยกของ'"
+      ],
+      "expected_result": "ราคาอัปเดตสะท้อนบริการเสริมที่เลือก",
+      "actual_result": "Pending",
+      "status": "Pending",
+      "tester": "QA Team",
+      "test_date": "",
+      "remarks": ""
+    },
+    {
+      "id": "TC-006",
+      "title": "กรอกรายละเอียดงานและแนบรูป",
+      "related_requirement": "REQ-004",
+      "test_type": "Functional",
+      "preconditions": "เลือกรถและบริการแล้ว",
+      "steps": [
+        "เลือกเวลารับแบบ 'จองล่วงหน้า'",
+        "ระบุประเภทสินค้า",
+        "แนบรูปสินค้า",
+        "กรอกข้อมูลผู้รับปลายทาง"
+      ],
+      "expected_result": "ข้อมูลครบถ้วนและสามารถไปขั้นตอนถัดไปได้",
+      "actual_result": "Pending",
+      "status": "Pending",
+      "tester": "QA Team",
+      "test_date": "",
+      "remarks": ""
+    },
+    {
+      "id": "TC-007",
+      "title": "ชำระเงินผ่าน QR Code",
+      "related_requirement": "REQ-005",
+      "test_type": "Integration",
+      "preconditions": "กรอกข้อมูลครบแล้ว",
+      "steps": [
+        "ดูสรุปราคา",
+        "เลือก 'ชำระด้วย QR'",
+        "สแกน QR ชำระเงิน"
+      ],
+      "expected_result": "ระบบยืนยันการชำระสำเร็จและสร้าง order",
+      "actual_result": "",
+      "status": "Pending",
+      "tester": "QA Team",
+      "test_date": "",
+      "remarks": ""
+    },
+    {
+      "id": "TC-008",
+      "title": "ชำระเงินผ่านบัตรเครดิต",
+      "related_requirement": "REQ-005",
+      "test_type": "Integration",
+      "preconditions": "กรอกข้อมูลครบแล้ว",
+      "steps": [
+        "เลือก 'ชำระด้วยบัตรเครดิต'",
+        "กรอกข้อมูลบัตร",
+        "ยืนยัน"
+      ],
+      "expected_result": "การชำระเงินสำเร็จและแสดงใบเสร็จ",
+      "actual_result": "Pending",
+      "status": "Pending",
+      "tester": "QA Team",
+      "test_date": "",
+      "remarks": ""
+    },
+    {
+      "id": "TC-009",
+      "title": "ติดตามตำแหน่งคนขับ real-time",
+      "related_requirement": "REQ-006",
+      "test_type": "Integration",
+      "preconditions": "มี active order และคนขับกำลังเดินทาง",
+      "steps": [
+        "เปิดหน้า Live Tracking",
+        "สังเกตตำแหน่งบนแผนที่",
+        "กดปุ่ม 'แชร์ลิงก์ติดตาม'"
+      ],
+      "expected_result": "ตำแหน่งอัปเดต real-time และลิงก์แชร์ได้สำเร็จ",
+      "actual_result": "Pending",
+      "status": "Pending",
+      "tester": "QA Team",
+      "test_date": "",
+      "remarks": ""
+    },
+    {
+      "id": "TC-010",
+      "title": "ให้คะแนนและจองซ้ำ",
+      "related_requirement": "REQ-007",
+      "test_type": "Functional",
+      "preconditions": "งานเสร็จสมบูรณ์แล้ว",
+      "steps": [
+        "กด 'ให้คะแนน'",
+        "เลือก 5 ดาว และพิมพ์ comment",
+        "บันทึก",
+        "เปิดประวัติงาน - กด 'จองซ้ำ'"
+      ],
+      "expected_result": "คะแนนบันทึกสำเร็จ และ re-order เปิด booking form พร้อม route เดิม",
+      "actual_result": "Pending",
+      "status": "Pending",
+      "tester": "QA Team",
+      "test_date": "",
+      "remarks": ""
+    },
+    {
+      "id": "TC-011",
+      "title": "คนขับอัปโหลดเอกสารสมัคร",
+      "related_requirement": "REQ-008",
+      "test_type": "Functional",
+      "preconditions": "ดาวน์โหลด Driver App แล้ว",
+      "steps": [
+        "สมัครบัญชีคนขับ",
+        "อัปโหลดใบขับขี่",
+        "อัปโหลดทะเบียนรถ",
+        "กด 'ส่งข้อมูลเพื่อตรวจสอบ'"
+      ],
+      "expected_result": "ระบบรับเอกสารและแสดงสถานะ 'รอการอนุมัติ'",
+      "actual_result": "Pending",
+      "status": "Pending",
+      "tester": "QA Team",
+      "test_date": "",
+      "remarks": ""
+    },
+    {
+      "id": "TC-012",
+      "title": "คนขับรับ Job Offer",
+      "related_requirement": "REQ-009",
+      "test_type": "Integration",
+      "preconditions": "คนขับ Active และมีงานใหม่เข้า",
+      "steps": [
+        "รับ notification งาน",
+        "ดูรายละเอียด origin-destination",
+        "กด 'รับงาน'"
+      ],
+      "expected_result": "ระบบยืนยักการรับงาน และแสดงเส้นทางนำทางทันที",
+      "actual_result": "Pending",
+      "status": "Pending",
+      "tester": "QA Team",
+      "test_date": "",
+      "remarks": ""
+    },
+    {
+      "id": "TC-013",
+      "title": "ถ่ายรูปยืนยันส่งสินค้าและเซ็นชื่อ",
+      "related_requirement": "REQ-010",
+      "test_type": "Functional",
+      "preconditions": "คนขับถึงจุดส่งแล้ว",
+      "steps": [
+        "กด 'ยืนยันการส่ง'",
+        "ถ่ายรูปสินค้า",
+        "ให้ผู้รับเซ็นชื่อบนหน้าจอ",
+        "กด 'บันทึก'"
+      ],
+      "expected_result": "รูปภาพและลายเซ็นถูกบันทึก สถานะ order อัปเดตเป็น 'ส่งแล้ว'",
+      "actual_result": "Pending",
+      "status": "Pending",
+      "tester": "QA Team",
+      "test_date": "",
+      "remarks": ""
+    },
+    {
+      "id": "TC-014",
+      "title": "คนขับถอนเงินจาก Wallet",
+      "related_requirement": "REQ-011",
+      "test_type": "Integration",
+      "preconditions": "คนขับมียอดเงินใน wallet",
+      "steps": [
+        "ไปหน้า Wallet",
+        "กด 'ถอนเงิน'",
+        "กรอกจำนวนและเลือกบัญชีธนาคาร",
+        "ยืนยัน"
+      ],
+      "expected_result": "ยอดเงินลดลงใน wallet และโอนเข้าบัญชีสำเร็จภายใน 1 วันทำการ",
+      "actual_result": "Pending",
+      "status": "Pending",
+      "tester": "QA Team",
+      "test_date": "",
+      "remarks": ""
+    },
+    {
+      "id": "TC-015",
+      "title": "Admin Dashboard แสดงสถิติ real-time",
+      "related_requirement": "REQ-012",
+      "test_type": "Functional",
+      "preconditions": "Login ด้วยสิทธิ์ Admin",
+      "steps": [
+        "เปิด Dashboard",
+        "ดูตัวเลข active orders, drivers online",
+        "ดู heatmap",
+        "ดูกราฟรายได้"
+      ],
+      "expected_result": "ข้อมูลทุกส่วนอัปเดตภายใน 1 นาที",
+      "actual_result": "Pending",
+      "status": "Pending",
+      "tester": "QA Team",
+      "test_date": "",
+      "remarks": ""
+    },
+    {
+      "id": "TC-016",
+      "title": "Admin อนุมัติและระงับสิทธิ์คนขับ",
+      "related_requirement": "REQ-013",
+      "test_type": "Functional",
+      "preconditions": "มีคนขับรายใหม่รอการอนุมัติ",
+      "steps": [
+        "ไปหน้า Driver Management",
+        "เปิด pending request",
+        "ตรวจสอบเอกสาร",
+        "กด 'อนุมัติ'"
+      ],
+      "expected_result": "คนขับได้รับ notification ว่าได้รับการอนุมัติ สถานะเปลี่ยนเป็น Active",
+      "actual_result": "Pending",
+      "status": "Pending",
+      "tester": "QA Team",
+      "test_date": "",
+      "remarks": ""
+    },
+    {
+      "id": "TC-017",
+      "title": "Admin Manual Assign คนขับให้ Order",
+      "related_requirement": "REQ-014",
+      "test_type": "Functional",
+      "preconditions": "มี pending order ที่ยังไม่มีคนขับ",
+      "steps": [
+        "เปิด Order หน้า 'Unassigned'",
+        "เลือก order",
+        "กด 'Manual Assign'",
+        "เลือกคนขับ"
+      ],
+      "expected_result": "คนขับที่เลือกได้รับ job offer ทันที",
+      "actual_result": "Pending",
+      "status": "Pending",
+      "tester": "QA Team",
+      "test_date": "",
+      "remarks": ""
+    },
+    {
+      "id": "TC-018",
+      "title": "Admin อัปเดตอัตราค่าขนส่ง",
+      "related_requirement": "REQ-015",
+      "test_type": "Functional",
+      "preconditions": "Login ด้วยสิทธิ์ Admin",
+      "steps": [
+        "ไปหน้า Pricing",
+        "เลือกประเภทรถ",
+        "แก้ไข price_per_km",
+        "บันทึก"
+      ],
+      "expected_result": "การจองครั้งถัดไปใช้ราคาใหม่ทันที",
+      "actual_result": "Pending",
+      "status": "Pending",
+      "tester": "QA Team",
+      "test_date": "",
+      "remarks": ""
+    },
+    {
+      "id": "TC-019",
+      "title": "Push Notification ส่งถึงผู้รับในเวลา 5 วินาที",
+      "related_requirement": "REQ-016",
+      "test_type": "Performance",
+      "preconditions": "Device มีแอปติดตั้งและเปิดรับ notification",
+      "steps": [
+        "สร้าง order ใหม่",
+        "จับเวลาจาก event trigger จนถึง notification ถึงมือถือคนขับ"
+      ],
+      "expected_result": "Notification ส่งถึงภายใน 5 วินาที",
+      "actual_result": "Pending",
+      "status": "Pending",
+      "tester": "QA Team",
+      "test_date": "",
+      "remarks": ""
+    }
+  ],
+  "defects": [],
+  "risks": [
+    {
+      "id": "RISK-001",
+      "category": "Technical",
+      "description": "การใช้ Google Maps SDK อาจมีค่าใช้จ่ายเกินงบประมาณหากมีผู้ใช้งานจำนวนมาก",
+      "probability": "Medium",
+      "impact": "Medium",
+      "risk_level": "Medium",
+      "mitigation": "กำหนด quota limit และใช้ map caching เพื่อลดจำนวน API calls",
+      "owner": "Apisit Yimboa",
+      "status": "Open",
+      "review_date": "2026-04-01",
+      "contingency": "",
+      "linked_capa": ""
+    },
+    {
+      "id": "RISK-002",
+      "category": "Schedule",
+      "description": "การพัฒนา Flutter สำหรับทั้ง iOS และ Android พร้อมกันอาจทำให้ล่าช้า",
+      "probability": "Medium",
+      "impact": "High",
+      "risk_level": "High",
+      "mitigation": "แบ่ง sprint ชัดเจน ทดสอบบน emulator คู่ขนาน และ CI/CD รัน test อัตโนมัติ",
+      "owner": "Apisit Yimboa",
+      "status": "Open",
+      "review_date": "2026-04-01",
+      "contingency": "",
+      "linked_capa": ""
+    },
+    {
+      "id": "RISK-003",
+      "category": "Technical",
+      "description": "Real-time tracking ผ่าน WebSocket อาจมีปัญหา scalability เมื่อมีคนขับออนไลน์จำนวนมาก",
+      "probability": "Low",
+      "impact": "High",
+      "risk_level": "Medium",
+      "mitigation": "ออกแบบ architecture รองรับ horizontal scaling ตั้งแต่ต้น",
+      "owner": "Apisit Yimboa",
+      "status": "Open",
+      "review_date": "2026-04-01",
+      "contingency": "ใช้ polling fallback หากเกิดปัญหา WebSocket",
+      "linked_capa": ""
+    },
+    {
+      "id": "RISK-004",
+      "category": "External",
+      "description": "Payment Gateway อาจมีการเปลี่ยนแปลง API หรือ downtime",
+      "probability": "Low",
+      "impact": "High",
+      "risk_level": "Medium",
+      "mitigation": "ออกแบบ payment layer แบบ abstraction รองรับการสลับ provider",
+      "owner": "Apisit Yimboa",
+      "status": "Open",
+      "review_date": "2026-06-01",
+      "contingency": "Fallback เป็นการชำระเงินสดชั่วคราว",
+      "linked_capa": ""
+    }
+  ],
+  "change_requests": [
+    {
+      "id": "CR-001",
+      "title": "No Change Requested",
+      "description": "",
+      "requestor": "ตรวจสอบ / Reviewed by",
+      "request_date": "",
+      "priority": "Medium",
+      "impact": "",
+      "affected_documents": [],
+      "status": "Pending",
+      "approved_by": "",
+      "approval_date": "",
+      "implementation_date": ""
+    },
+    {
+      "id": "CR-001",
+      "title": "ลงชื่อ",
+      "description": "",
+      "requestor": "ตรวจสอบ / Reviewed by",
+      "request_date": "",
+      "priority": "Medium",
+      "impact": "",
+      "affected_documents": [],
+      "status": "Pending",
+      "approved_by": "",
+      "approval_date": "",
+      "implementation_date": ""
+    }
+  ],
+  "versions": [
+    {
+      "version": "1.0.0",
+      "release_date": "2026-11-01",
+      "release_type": "Major",
+      "description": "Initial production release - Logistic Pro v1.0",
+      "changes": [],
+      "deployed_by": "Apisit Yimboa",
+      "environment": "Production"
+    }
+  ],
+  "meetings": [
+    {
+      "id": "MTG-001",
+      "title": "Project Kickoff Meeting - Logistic Pro",
+      "date": "2026-01-05",
+      "time": "09:00-11:00",
+      "location": "Meeting Room / MS Teams",
+      "chair": "TBD",
+      "attendees": [
+        "Apisit Yimboa",
+        "Development Mobile Team"
+      ],
+      "agenda": [],
+      "action_items": [
+        {
+          "item": "จัดทำ detailed requirements document",
+          "owner": "Apisit Yimboa",
+          "due_date": "2026-01-31",
+          "status": "Completed"
+        }
+      ],
+      "summary": ""
+    }
+  ],
+  "training_sessions": [
+    {
+      "id": "TRN-001",
+      "title": "Logistic Pro - Admin User Training",
+      "date": "2026-10-01",
+      "duration": "4 hours",
+      "location": "Training Room / Online",
+      "trainer": "ผู้จัดอบรม / Organizer",
+      "topics": [],
+      "attendees": [
+        {
+          "name": "Admin User 1",
+          "department": "Operations",
+          "signed": false
+        }
+      ]
+    }
+  ],
+  "incidents": [
+    {
+      "id": "INC-001",
+      "title": "(Placeholder)",
+      "date_reported": "—",
+      "severity": "Medium",
+      "description": "",
+      "reported_by": "",
+      "assigned_to": "—",
+      "status": "Open",
+      "resolution": "",
+      "resolved_date": "—",
+      "root_cause": "",
+      "linked_change_request": "—"
+    }
+  ],
+  "deployments": [
+    {
+      "id": "DEP-001",
+      "version": "1.0.0",
+      "date": "2026-11-01",
+      "environment": "Production",
+      "deployed_by": "Apisit Yimboa",
+      "deployment_type": "Major",
+      "steps": [],
+      "rollback_plan": "",
+      "status": "Scheduled",
+      "approval": "Approved by TBD"
+    }
+  ],
+  "audit": {
+    "audit_date": "2026-03-04",
+    "auditor": "Internal Auditor - Soudaphone",
+    "audit_scope": "ISO/IEC 29110 compliance for Logistic Pro software development lifecycle",
+    "findings": [
+      {
+        "id": "FIND-001",
+        "clause": "ISO/IEC 29110 Section 5.2",
+        "finding_type": "Observation",
+        "description": "Project documentation is complete and traceable",
+        "linked_capa": ""
+      }
+    ]
+  },
+  "capas": [
+    {
+      "id": "CAPA-001",
+      "type": "Preventive Action",
+      "related_finding": "RISK-002",
+      "description": "วางแผนป้องกันความล่าช้าจาก cross-platform Flutter development",
+      "root_cause": "การพัฒนา iOS+Android พร้อมกันอาจพบ platform-specific issues",
+      "action_plan": "ตั้ง CI/CD pipeline รัน automated tests บน iOS simulator และ Android emulator ทุก commit",
+      "responsible": "Apisit Yimboa",
+      "target_date": "2026-03-01",
+      "status": "In Progress",
+      "effectiveness_review": "ตรวจสอบจำนวน build failures per sprint ให้ลดลง < 5%",
+      "closed_date": ""
+    },
+    {
+      "id": "CAPA-002",
+      "type": "Corrective Action",
+      "related_finding": "FIND-001",
+      "description": "จัดทำความเชื่อมโยงเอกสาร (Traceability) ให้สมบูรณ์",
+      "root_cause": "",
+      "action_plan": "",
+      "responsible": "Suthep Wadkhian",
+      "target_date": "2026-03-05",
+      "status": "Closed",
+      "effectiveness_review": "",
+      "closed_date": ""
+    }
+  ],
+  "sow": {},
+  "output_path": "D:\\Work\\DocISOGen\\projects"
+}

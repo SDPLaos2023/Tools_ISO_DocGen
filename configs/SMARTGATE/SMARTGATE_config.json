@@ -1,0 +1,1094 @@
+{
+  "project": {
+    "code": "SMARTGATE",
+    "name": "Smart Gate System",
+    "organization": "Soudaphone",
+    "description": "ระบบ Smart Gate สำหรับควบคุมและบริหารจัดการการเข้า-ออกพื้นที่ด้วยเทคโนโลยี OCR, ALPR, Card Scanning และการชั่งน้ำหนักอัตโนมัติ",
+    "scope": "ระบบครอบคลุมการยืนยันตัวตน การอ่านป้ายทะเบียนรถ การสแกนบัตร การชั่งน้ำหนัก การสั่งการไม้กั้นอัตโนมัติ และการออกรายงานสรุปการเข้า-ออกพื้นที่",
+    "department": "Soudaphone",
+    "start_date": "2024-06-01",
+    "end_date": "2025-02-18",
+    "go_live_date": "2025-02-18",
+    "doc_revision": "1.0",
+    "document_date": "2026-02-19",
+    "classification": "Internal",
+    "short_name": "SMARTGATE",
+    "objectives": [
+      "พัฒนาระบบยืนยันตัวตนและควบคุมสิทธิ์การเข้าถึงพื้นที่อย่างมีประสิทธิภาพ",
+      "รองรับการอ่านป้ายทะเบียนรถอัตโนมัติด้วยเทคโนโลยี ALPR",
+      "เชื่อมต่อระบบ OCR สำหรับประมวลผลข้อมูลจากภาพเอกสาร",
+      "บูรณาการระบบการสแกนบัตรเพื่อยืนยันตัวตนผู้ขับขี่",
+      "เชื่อมต่อและบันทึกข้อมูลจากเครื่องชั่งน้ำหนักอัตโนมัติ",
+      "สั่งการเปิด-ปิดไม้กั้นอัตโนมัติตามเงื่อนไขที่กำหนด",
+      "จัดทำรายงานสรุปข้อมูลการเข้า-ออกพื้นที่เพื่อการตรวจสอบและวิเคราะห์"
+    ]
+  },
+  "team": {
+    "members": [
+      {
+        "name": "Development TDP Team",
+        "title": "Developer",
+        "email": "dev@soudaphone.com"
+      }
+    ],
+    "project_manager": {
+      "name": "Saravut Chanchom",
+      "title": "Project Manager",
+      "email": "saravut@soudaphone.com",
+      "phone": ""
+    },
+    "lead_developer": {
+      "name": "Saravut Chanchom",
+      "title": "Lead Developer",
+      "email": "saravut@soudaphone.com",
+      "phone": ""
+    },
+    "business_analyst": {
+      "name": "Development TDP Team",
+      "title": "Business Analyst",
+      "email": "ba@soudaphone.com",
+      "phone": ""
+    },
+    "system_analyst": {
+      "name": "Saravut Chanchom",
+      "title": "System Analyst",
+      "email": "saravut@soudaphone.com",
+      "phone": ""
+    },
+    "qa_engineer": {
+      "name": "Development TDP Team",
+      "title": "QA Engineer",
+      "email": "qa@soudaphone.com",
+      "phone": ""
+    },
+    "dba": {
+      "name": "Development TDP Team",
+      "title": "DBA",
+      "email": "dba@soudaphone.com",
+      "phone": ""
+    }
+  },
+  "stakeholders": [
+    {
+      "name": "Soudaphone Management",
+      "role": "Project Sponsor",
+      "organization": "Soudaphone",
+      "email": "",
+      "responsibility": "Approve budget and major project decisions"
+    },
+    {
+      "name": "Saravut Chanchom",
+      "role": "Project Manager / Lead Developer",
+      "organization": "Development TDP",
+      "email": "",
+      "responsibility": "Overall project execution and delivery"
+    }
+  ],
+  "tech_stack": {
+    "frontend": "Windows Application (WinForms / WPF) - C#",
+    "backend": "C# .NET",
+    "database": "Microsoft SQL Server",
+    "infrastructure": "On-premise Windows Server",
+    "source_control": "Git",
+    "ci_cd": ""
+  },
+  "milestones": [
+    {
+      "id": "MS-01",
+      "name": "Requirements Sign-off",
+      "target_date": "2024-07-31",
+      "status": "Completed",
+      "owner": "Saravut Chanchom"
+    },
+    {
+      "id": "MS-02",
+      "name": "System Design Complete",
+      "target_date": "2024-08-31",
+      "status": "Completed",
+      "owner": "Saravut Chanchom"
+    },
+    {
+      "id": "MS-03",
+      "name": "Core Modules Development Complete (Login, OCR, ALPR)",
+      "target_date": "2024-10-31",
+      "status": "Completed",
+      "owner": "Saravut Chanchom"
+    },
+    {
+      "id": "MS-04",
+      "name": "Integration Complete (Smart Gate, Barrier, Weighing Scale)",
+      "target_date": "2024-12-31",
+      "status": "Completed",
+      "owner": "Saravut Chanchom"
+    },
+    {
+      "id": "MS-05",
+      "name": "UAT Complete",
+      "target_date": "2025-01-31",
+      "status": "Completed",
+      "owner": "Development TDP Team"
+    },
+    {
+      "id": "MS-06",
+      "name": "Go-Live",
+      "target_date": "2025-02-18",
+      "status": "Completed",
+      "owner": "Saravut Chanchom"
+    }
+  ],
+  "requirements": [
+    {
+      "id": "REQ-001",
+      "title": "Login & Security - User Authentication",
+      "description": "ระบบต้องรองรับการยืนยันตัวตนผู้ใช้งาน (Authentication) ด้วย Username และ Password พร้อมเข้ารหัสข้อมูลรหัสผ่าน",
+      "priority": "High",
+      "type": "Functional",
+      "category": "Security",
+      "source": "Feature Specification - Login & Security",
+      "acceptance_criteria": "ระบบต้องยืนยันตัวตนผู้ใช้ได้ถูกต้อง และปฏิเสธการเข้าถึงหากข้อมูลไม่ถูกต้อง",
+      "linked_design": [],
+      "linked_test_cases": []
+    },
+    {
+      "id": "REQ-002",
+      "title": "Login & Security - Role-based Access Control",
+      "description": "ระบบต้องควบคุมสิทธิ์การเข้าถึง (Authorization) ตามบทบาทของผู้ใช้งาน (Admin, Operator, Viewer)",
+      "priority": "High",
+      "type": "Functional",
+      "category": "Security",
+      "source": "Feature Specification - Login & Security",
+      "acceptance_criteria": "ผู้ใช้แต่ละบทบาทต้องสามารถเข้าถึงเฉพาะฟังก์ชันที่ได้รับอนุญาตเท่านั้น",
+      "linked_design": [],
+      "linked_test_cases": []
+    },
+    {
+      "id": "REQ-003",
+      "title": "OCR - Document Image Processing",
+      "description": "ระบบต้องประมวลผลและแสดงผลข้อมูลจากภาพเอกสารหรือข้อมูลตัวอักษรที่ถูกจับภาพโดยระบบกล้อง เพื่อใช้ในการตรวจสอบและบันทึกข้อมูลอัตโนมัติ",
+      "priority": "High",
+      "type": "Functional",
+      "category": "OCR Integration",
+      "source": "Feature Specification - OCR",
+      "acceptance_criteria": "ระบบต้องสามารถอ่านข้อมูลจากภาพและแสดงผลได้อย่างถูกต้องไม่น้อยกว่า 90% ของกรณีทดสอบ",
+      "linked_design": [],
+      "linked_test_cases": []
+    },
+    {
+      "id": "REQ-004",
+      "title": "ALPR - Automatic License Plate Recognition",
+      "description": "ระบบต้องตรวจจับและอ่านป้ายทะเบียนรถโดยอัตโนมัติ พร้อมแสดงภาพและข้อมูลที่ประมวลผลได้ เพื่อใช้ในการควบคุมและบันทึกการเข้า-ออกพื้นที่",
+      "priority": "High",
+      "type": "Functional",
+      "category": "ALPR Integration",
+      "source": "Feature Specification - ALPR",
+      "acceptance_criteria": "ระบบต้องอ่านป้ายทะเบียนได้ถูกต้องไม่น้อยกว่า 95% สำหรับสภาพแสงปกติ",
+      "linked_design": [],
+      "linked_test_cases": []
+    },
+    {
+      "id": "REQ-005",
+      "title": "Scan Card - Card Authentication",
+      "description": "ระบบต้องรองรับการแตะบัตร (Card Scanning) เพื่อยืนยันตัวตนผู้ขับขี่หรือผู้มีสิทธิ์เข้าใช้งาน พร้อมบันทึกข้อมูลประกอบการเข้า-ออกพื้นที่",
+      "priority": "High",
+      "type": "Functional",
+      "category": "Card Integration",
+      "source": "Feature Specification - Scan Card",
+      "acceptance_criteria": "ระบบต้องอ่านบัตรได้ถูกต้องและตอบสนองภายใน 2 วินาที",
+      "linked_design": [],
+      "linked_test_cases": []
+    },
+    {
+      "id": "REQ-006",
+      "title": "Weighing Scale - Auto Weight Data Integration",
+      "description": "ระบบต้องเชื่อมต่อและดึงข้อมูลจากเครื่องชั่งน้ำหนักอัตโนมัติ เมื่อรถเข้าชั่งน้ำหนักที่จุด Smart Gate พร้อมบันทึกค่าน้ำหนักเข้า-ออก เพื่อใช้ในการควบคุมและตรวจสอบ",
+      "priority": "High",
+      "type": "Functional",
+      "category": "Hardware Integration",
+      "source": "Feature Specification - Weighing Scale",
+      "acceptance_criteria": "ระบบต้องบันทึกน้ำหนักได้ถูกต้อง ± 5 กิโลกรัม และอัปเดตข้อมูลภายใน 3 วินาที",
+      "linked_design": [],
+      "linked_test_cases": []
+    },
+    {
+      "id": "REQ-007",
+      "title": "Smart Gate - Central Data Management",
+      "description": "ระบบต้องบันทึกและบริหารจัดการข้อมูลจากระบบ OCR, ALPR และ Scan Card รวมถึงข้อมูลการชั่งน้ำหนัก เพื่อจัดเก็บเป็นฐานข้อมูลกลาง และรองรับการตรวจสอบย้อนหลัง (Traceability)",
+      "priority": "High",
+      "type": "Functional",
+      "category": "Data Management",
+      "source": "Feature Specification - Smart Gate",
+      "acceptance_criteria": "ข้อมูลทุกรายการต้องถูกบันทึกลงฐานข้อมูลพร้อม Timestamp และสามารถสืบค้นย้อนหลังได้",
+      "linked_design": [],
+      "linked_test_cases": []
+    },
+    {
+      "id": "REQ-008",
+      "title": "Barrier - Automatic Gate Control",
+      "description": "ระบบต้องสั่งการเปิด-ปิดไม้กั้นอัตโนมัติ (Barrier Control) ภายหลังจากระบบตรวจสอบและบันทึกข้อมูลครบถ้วนตามเงื่อนไขที่กำหนด",
+      "priority": "High",
+      "type": "Functional",
+      "category": "Hardware Control",
+      "source": "Feature Specification - Barrier",
+      "acceptance_criteria": "ระบบต้องสั่งเปิดไม้กั้นได้อย่างถูกต้องตามเงื่อนไข และตอบสนองภายใน 1 วินาที",
+      "linked_design": [],
+      "linked_test_cases": []
+    },
+    {
+      "id": "REQ-009",
+      "title": "Report - Entry/Exit Summary Reports",
+      "description": "ระบบต้องจัดทำรายงานสรุปข้อมูลการเข้า-ออกพื้นที่ ข้อมูลการอ่านป้ายทะเบียน การยืนยันตัวตน และข้อมูลการชั่งน้ำหนัก เพื่อใช้ในการติดตาม ตรวจสอบ และวิเคราะห์ข้อมูลการปฏิบัติงาน",
+      "priority": "Medium",
+      "type": "Functional",
+      "category": "Reporting",
+      "source": "Feature Specification - Report",
+      "acceptance_criteria": "ระบบต้องสามารถ export รายงานเป็น Excel/PDF และกรองข้อมูลตามช่วงวันที่ได้",
+      "linked_design": [],
+      "linked_test_cases": []
+    }
+  ],
+  "design_components": [
+    {
+      "id": "COMP-001",
+      "name": "Authentication & Authorization Module",
+      "description": "โมดูลจัดการ Login, Session และ Role-based Access Control",
+      "type": "Windows Application Module",
+      "related_requirements": [
+        "REQ-001",
+        "REQ-002"
+      ],
+      "technology": ""
+    },
+    {
+      "id": "COMP-002",
+      "name": "OCR Processing Module",
+      "description": "โมดูลเชื่อมต่อกล้องและประมวลผล OCR จากภาพเอกสาร",
+      "type": "Integration Module",
+      "related_requirements": [
+        "REQ-003"
+      ],
+      "technology": ""
+    },
+    {
+      "id": "COMP-003",
+      "name": "ALPR Module",
+      "description": "โมดูลตรวจจับและอ่านป้ายทะเบียนรถอัตโนมัติ",
+      "type": "Integration Module",
+      "related_requirements": [
+        "REQ-004"
+      ],
+      "technology": ""
+    },
+    {
+      "id": "COMP-004",
+      "name": "Card Scanner Module",
+      "description": "โมดูลอ่านบัตรและยืนยันตัวตนผู้ขับขี่",
+      "type": "Integration Module",
+      "related_requirements": [
+        "REQ-005"
+      ],
+      "technology": ""
+    },
+    {
+      "id": "COMP-005",
+      "name": "Weighing Scale Integration Module",
+      "description": "โมดูลเชื่อมต่อและดึงข้อมูลจากเครื่องชั่งน้ำหนักผ่าน Serial/TCP",
+      "type": "Hardware Integration Module",
+      "related_requirements": [
+        "REQ-006"
+      ],
+      "technology": ""
+    },
+    {
+      "id": "COMP-006",
+      "name": "Smart Gate Core Data Module",
+      "description": "โมดูลกลางสำหรับจัดเก็บและบริหารข้อมูลจากทุกระบบรวมถึง Traceability",
+      "type": "Data Management Module",
+      "related_requirements": [
+        "REQ-007"
+      ],
+      "technology": ""
+    },
+    {
+      "id": "COMP-007",
+      "name": "Barrier Gate Control Module",
+      "description": "โมดูลสั่งการเปิด-ปิดไม้กั้นอัตโนมัติ",
+      "type": "Hardware Control Module",
+      "related_requirements": [
+        "REQ-008"
+      ],
+      "technology": ""
+    },
+    {
+      "id": "COMP-008",
+      "name": "Report Module",
+      "description": "โมดูลออกรายงานสรุปการเข้า-ออก น้ำหนัก และการยืนยันตัวตน",
+      "type": "Reporting Module",
+      "related_requirements": [
+        "REQ-009"
+      ],
+      "technology": ""
+    }
+  ],
+  "database_tables": [
+    {
+      "name": "Users",
+      "description": "เก็บข้อมูลผู้ใช้งานระบบ",
+      "columns": [
+        {
+          "name": "UserID",
+          "type": "INT PRIMARY KEY IDENTITY",
+          "description": "รหัสผู้ใช้"
+        },
+        {
+          "name": "Username",
+          "type": "NVARCHAR(100) NOT NULL",
+          "description": "ชื่อผู้ใช้"
+        },
+        {
+          "name": "PasswordHash",
+          "type": "NVARCHAR(256) NOT NULL",
+          "description": "รหัสผ่านที่เข้ารหัสแล้ว"
+        },
+        {
+          "name": "RoleID",
+          "type": "INT",
+          "description": "รหัสบทบาท"
+        },
+        {
+          "name": "IsActive",
+          "type": "BIT DEFAULT 1",
+          "description": "สถานะการใช้งาน"
+        },
+        {
+          "name": "CreatedAt",
+          "type": "DATETIME DEFAULT GETDATE()",
+          "description": "วันที่สร้าง"
+        }
+      ],
+      "related_requirements": [
+        "REQ-001",
+        "REQ-002"
+      ]
+    },
+    {
+      "name": "Roles",
+      "description": "เก็บข้อมูลบทบาทและสิทธิ์การใช้งาน",
+      "columns": [
+        {
+          "name": "RoleID",
+          "type": "INT PRIMARY KEY IDENTITY",
+          "description": "รหัสบทบาท"
+        },
+        {
+          "name": "RoleName",
+          "type": "NVARCHAR(50) NOT NULL",
+          "description": "ชื่อบทบาท"
+        },
+        {
+          "name": "Description",
+          "type": "NVARCHAR(255)",
+          "description": "คำอธิบาย"
+        }
+      ],
+      "related_requirements": [
+        "REQ-002"
+      ]
+    },
+    {
+      "name": "Gate_Detail",
+      "description": "เก็บข้อมูลทุก transaction การเข้า-ออกพื้นที่",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "BIGINT PRIMARY KEY IDENTITY",
+          "description": "รหัส transaction"
+        },
+        {
+          "name": "DocNo",
+          "type": "NVARCHAR",
+          "description": "รหัส transaction"
+        },
+        {
+          "name": "statusIO",
+          "type": "NVARCHAR(10) NOT NULL",
+          "description": "ประเภท: IN หรือ OUT"
+        },
+        {
+          "name": "Car_regis",
+          "type": "NVARCHAR(20)",
+          "description": "ป้ายทะเบียน (จาก ALPR)"
+        },
+        {
+          "name": "CardID",
+          "type": "NVARCHAR(50)",
+          "description": "รหัสบัตร (จาก Card Scan)"
+        },
+        {
+          "name": "OCRData",
+          "type": "NVARCHAR(MAX)",
+          "description": "ข้อมูล OCR"
+        },
+        {
+          "name": "WeightIn",
+          "type": "DECIMAL(10,2)",
+          "description": "น้ำหนักขาเข้า (กก.)"
+        },
+        {
+          "name": "WeightOut",
+          "type": "DECIMAL(10,2)",
+          "description": "น้ำหนักขาออก (กก.)"
+        },
+        {
+          "name": "CarFilePath_Fix",
+          "type": "NVARCHAR(500)",
+          "description": "ที่อยู่ไฟล์ภาพ"
+        },
+        {
+          "name": "DateDoc",
+          "type": "DATETIME DEFAULT GETDATE()",
+          "description": "วันเวลา transaction"
+        },
+        {
+          "name": "UserIN",
+          "type": "NVARCHAR",
+          "description": "รหัสผู้ใช้ที่บันทึก"
+        }
+      ],
+      "related_requirements": []
+    }
+  ],
+  "test_cases": [
+    {
+      "id": "TC-001",
+      "title": "Login with valid credentials",
+      "related_requirement": "REQ-001",
+      "test_type": "Functional",
+      "preconditions": "ระบบพร้อมใช้งาน มีบัญชีผู้ใช้ในระบบ",
+      "steps": [
+        "เปิด Smart Gate Application",
+        "กรอก Username และ Password ที่ถูกต้อง",
+        "กดปุ่ม Login"
+      ],
+      "expected_result": "ระบบอนุญาตการเข้าใช้งานและแสดงหน้าหลัก",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "Development TDP Team",
+      "test_date": "2025-01-20",
+      "remarks": ""
+    },
+    {
+      "id": "TC-002",
+      "title": "Login with invalid credentials",
+      "related_requirement": "REQ-001",
+      "test_type": "Functional",
+      "preconditions": "ระบบพร้อมใช้งาน",
+      "steps": [
+        "เปิด Smart Gate Application",
+        "กรอก Username หรือ Password ที่ไม่ถูกต้อง",
+        "กดปุ่ม Login"
+      ],
+      "expected_result": "ระบบปฏิเสธการเข้าใช้งานและแสดงข้อความแจ้งเตือน",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "Development TDP Team",
+      "test_date": "2025-01-20",
+      "remarks": ""
+    },
+    {
+      "id": "TC-003",
+      "title": "Role-based access control verification",
+      "related_requirement": "REQ-002",
+      "test_type": "Functional",
+      "preconditions": "มีบัญชีผู้ใช้หลายบทบาท (Admin, Operator, Viewer)",
+      "steps": [
+        "Login ด้วย Operator account",
+        "พยายามเข้าถึงเมนู Admin Settings",
+        "ตรวจสอบว่าเมนูถูกซ่อน/ปิดกั้น"
+      ],
+      "expected_result": "Operator ไม่สามารถเข้าถึงเมนู Admin Settings ได้",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "Development TDP Team",
+      "test_date": "2025-01-20",
+      "remarks": ""
+    },
+    {
+      "id": "TC-004",
+      "title": "OCR image processing from camera",
+      "related_requirement": "REQ-003",
+      "test_type": "Integration",
+      "preconditions": "กล้องเชื่อมต่อและ OCR Engine พร้อมใช้งาน",
+      "steps": [
+        "วางเอกสารต้นแบบที่จุดตรวจกล้อง",
+        "รอระบบจับภาพและประมวลผล OCR",
+        "ตรวจสอบข้อมูลที่แสดงผล"
+      ],
+      "expected_result": "ระบบอ่านข้อมูลจากเอกสารได้ถูกต้องไม่น้อยกว่า 90%",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "Development TDP Team",
+      "test_date": "2025-01-22",
+      "remarks": ""
+    },
+    {
+      "id": "TC-005",
+      "title": "OCR data stored in database",
+      "related_requirement": "REQ-003",
+      "test_type": "Integration",
+      "preconditions": "OCR ประมวลผลสำเร็จ",
+      "steps": [
+        "ดำเนิน OCR สำเร็จ",
+        "ตรวจสอบในตาราง OCRLogs"
+      ],
+      "expected_result": "ข้อมูล OCR ถูกบันทึกในตาราง OCRLogs พร้อม TransactionID",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "Development TDP Team",
+      "test_date": "2025-01-22",
+      "remarks": ""
+    },
+    {
+      "id": "TC-006",
+      "title": "ALPR license plate detection",
+      "related_requirement": "REQ-004",
+      "test_type": "Integration",
+      "preconditions": "กล้อง ALPR เชื่อมต่อและพร้อมใช้งาน",
+      "steps": [
+        "นำรถเข้าจุดตรวจ Smart Gate",
+        "รอระบบจับภาพป้ายทะเบียนอัตโนมัติ",
+        "ตรวจสอบป้ายทะเบียนที่ระบบอ่านได้"
+      ],
+      "expected_result": "ระบบอ่านป้ายทะเบียนได้ถูกต้องไม่น้อยกว่า 95%",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "Development TDP Team",
+      "test_date": "2025-01-23",
+      "remarks": ""
+    },
+    {
+      "id": "TC-007",
+      "title": "ALPR image and data display",
+      "related_requirement": "REQ-004",
+      "test_type": "Functional",
+      "preconditions": "ALPR อ่านป้ายทะเบียนสำเร็จ",
+      "steps": [
+        "ALPR ประมวลผลป้ายทะเบียนสำเร็จ",
+        "ตรวจสอบหน้าแสดงผลว่ามีภาพและข้อมูลป้ายทะเบียน"
+      ],
+      "expected_result": "ระบบแสดงภาพและข้อมูลป้ายทะเบียนบนหน้าจอ",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "Development TDP Team",
+      "test_date": "2025-01-23",
+      "remarks": ""
+    },
+    {
+      "id": "TC-008",
+      "title": "Card scan authentication",
+      "related_requirement": "REQ-005",
+      "test_type": "Integration",
+      "preconditions": "เครื่องอ่านบัตรเชื่อมต่อ มีบัตรที่ลงทะเบียนในระบบ",
+      "steps": [
+        "แตะบัตรที่เครื่องอ่าน",
+        "รอระบบตรวจสอบสิทธิ์",
+        "ตรวจสอบผลการยืนยันตัวตน"
+      ],
+      "expected_result": "ระบบระบุตัวตนผู้ใช้และบันทึกข้อมูลได้ภายใน 2 วินาที",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "Development TDP Team",
+      "test_date": "2025-01-24",
+      "remarks": ""
+    },
+    {
+      "id": "TC-009",
+      "title": "Unregistered card rejection",
+      "related_requirement": "REQ-005",
+      "test_type": "Functional",
+      "preconditions": "มีบัตรที่ไม่ได้ลงทะเบียนในระบบ",
+      "steps": [
+        "แตะบัตรที่ไม่ได้ลงทะเบียน",
+        "ตรวจสอบผลการตอบสนองของระบบ"
+      ],
+      "expected_result": "ระบบปฏิเสธและแสดงข้อความแจ้งเตือน",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "Development TDP Team",
+      "test_date": "2025-01-24",
+      "remarks": ""
+    },
+    {
+      "id": "TC-010",
+      "title": "Weighing scale data retrieval",
+      "related_requirement": "REQ-006",
+      "test_type": "Integration",
+      "preconditions": "เครื่องชั่งน้ำหนักเชื่อมต่อและพร้อมใช้งาน",
+      "steps": [
+        "ให้รถขับขึ้นชั่งน้ำหนัก",
+        "รอระบบดึงค่าน้ำหนักอัตโนมัติ",
+        "ตรวจสอบค่าน้ำหนักที่แสดงในระบบ"
+      ],
+      "expected_result": "ระบบแสดงและบันทึกค่าน้ำหนักถูกต้อง ± 5 กก. ภายใน 3 วินาที",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "Development TDP Team",
+      "test_date": "2025-01-25",
+      "remarks": ""
+    },
+    {
+      "id": "TC-011",
+      "title": "Weight data stored in database",
+      "related_requirement": "REQ-006",
+      "test_type": "Integration",
+      "preconditions": "ชั่งน้ำหนักสำเร็จ",
+      "steps": [
+        "ดำเนินการชั่งน้ำหนักสำเร็จ",
+        "ตรวจสอบในตาราง WeightLogs"
+      ],
+      "expected_result": "ข้อมูลน้ำหนักถูกบันทึกพร้อม TransactionID และ Timestamp",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "Development TDP Team",
+      "test_date": "2025-01-25",
+      "remarks": ""
+    },
+    {
+      "id": "TC-012",
+      "title": "Smart Gate transaction recording",
+      "related_requirement": "REQ-007",
+      "test_type": "Integration",
+      "preconditions": "ระบบทุก subsystem พร้อมใช้งาน",
+      "steps": [
+        "นำรถเข้าจุด Smart Gate",
+        "ให้ระบบทำงานครบวงจร (ALPR, Card, Weight)",
+        "ตรวจสอบข้อมูลใน GateTransactions"
+      ],
+      "expected_result": "ข้อมูลจากทุก subsystem ถูกรวมและบันทึกเป็น 1 transaction ใน GateTransactions",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "Development TDP Team",
+      "test_date": "2025-01-27",
+      "remarks": ""
+    },
+    {
+      "id": "TC-013",
+      "title": "Transaction traceability query",
+      "related_requirement": "REQ-007",
+      "test_type": "Functional",
+      "preconditions": "มีข้อมูล transaction ในระบบ",
+      "steps": [
+        "ค้นหา transaction ด้วยป้ายทะเบียนหรือวันที่",
+        "ตรวจสอบข้อมูลที่แสดงผล"
+      ],
+      "expected_result": "ระบบแสดงข้อมูล transaction ครบถ้วนพร้อมข้อมูลย้อนหลังได้ถูกต้อง",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "Development TDP Team",
+      "test_date": "2025-01-27",
+      "remarks": ""
+    },
+    {
+      "id": "TC-014",
+      "title": "Barrier open on valid transaction",
+      "related_requirement": "REQ-008",
+      "test_type": "Integration",
+      "preconditions": "ระบบตรวจสอบข้อมูลครบถ้วนตามเงื่อนไข",
+      "steps": [
+        "ระบบบันทึกข้อมูลครบถ้วน",
+        "ตรวจสอบสถานะไม้กั้น"
+      ],
+      "expected_result": "ระบบสั่งเปิดไม้กั้นอัตโนมัติภายใน 1 วินาที",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "Development TDP Team",
+      "test_date": "2025-01-28",
+      "remarks": ""
+    },
+    {
+      "id": "TC-015",
+      "title": "Barrier remains closed on incomplete check",
+      "related_requirement": "REQ-008",
+      "test_type": "Functional",
+      "preconditions": "ข้อมูลการตรวจสอบไม่ครบถ้วนตามเงื่อนไข",
+      "steps": [
+        "จำลองสถานการณ์ที่ข้อมูลไม่ครบ",
+        "ตรวจสอบสถานะไม้กั้น"
+      ],
+      "expected_result": "ระบบไม่สั่งเปิดไม้กั้นและแสดงสถานะ Error",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "Development TDP Team",
+      "test_date": "2025-01-28",
+      "remarks": ""
+    },
+    {
+      "id": "TC-016",
+      "title": "Entry/Exit summary report generation",
+      "related_requirement": "REQ-009",
+      "test_type": "Functional",
+      "preconditions": "มีข้อมูล transaction อย่างน้อย 10 รายการ",
+      "steps": [
+        "เลือกช่วงวันที่ในหน้ารายงาน",
+        "กดสร้างรายงาน",
+        "ตรวจสอบรายงานที่แสดง"
+      ],
+      "expected_result": "ระบบแสดงรายงานสรุปข้อมูลครบถ้วนตามช่วงวันที่ที่เลือก",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "Development TDP Team",
+      "test_date": "2025-01-29",
+      "remarks": ""
+    },
+    {
+      "id": "TC-017",
+      "title": "Report export to Excel/PDF",
+      "related_requirement": "REQ-009",
+      "test_type": "Functional",
+      "preconditions": "รายงานสร้างสำเร็จ",
+      "steps": [
+        "กด Export รายงาน",
+        "เลือกรูปแบบ Excel หรือ PDF",
+        "ตรวจสอบไฟล์ที่ export ได้"
+      ],
+      "expected_result": "ระบบ export ไฟล์ได้ถูกต้องและสามารถเปิดได้",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "Development TDP Team",
+      "test_date": "2025-01-29",
+      "remarks": ""
+    }
+  ],
+  "defects": [
+    {
+      "id": "BUG-001",
+      "title": "ALPR อ่านป้ายทะเบียนผิดในสภาพแสงน้อย",
+      "related_test_case": "TC-006",
+      "related_requirement": "REQ-004",
+      "severity": "Medium",
+      "priority": "High",
+      "status": "Closed",
+      "reported_by": "Development TDP Team",
+      "reported_date": "2025-01-23",
+      "assigned_to": "Saravut Chanchom",
+      "fixed_date": "2025-01-30",
+      "description": "ALPR อ่านป้ายทะเบียนได้ต่ำกว่า 90% เมื่อสภาพแสงน้อยในช่วงกลางคืน",
+      "steps_to_reproduce": "ทดสอบ ALPR ในสภาพแสงน้อย (กลางคืน) โดยไม่มีไฟ IR",
+      "root_cause": "กล้องไม่มี IR filter สำหรับแสงน้อย",
+      "resolution": "ปรับ threshold confidence และเพิ่ม fallback ให้ Operator ยืนยันด้วยตนเอง"
+    },
+    {
+      "id": "BUG-002",
+      "title": "ดึงข้อมูลน้ำหนักรถผิด",
+      "related_test_case": "",
+      "related_requirement": "",
+      "severity": "Medium",
+      "priority": "High",
+      "status": "Open",
+      "reported_by": "",
+      "reported_date": "",
+      "assigned_to": "",
+      "fixed_date": "",
+      "description": "",
+      "steps_to_reproduce": "",
+      "root_cause": "",
+      "resolution": ""
+    },
+    {
+      "id": "BUG-002",
+      "title": "บันทีกน้ำหนัก ไม่รวมน้ำหนักพ่วง",
+      "related_test_case": "",
+      "related_requirement": "",
+      "severity": "Medium",
+      "priority": "High",
+      "status": "Open",
+      "reported_by": "",
+      "reported_date": "",
+      "assigned_to": "",
+      "fixed_date": "",
+      "description": "พบว่าระบบบันทึกข้อมูลน้ำหนักรถ (Weight) เฉพาะหัวลาก (Truck) เท่านั้น\nโดย ไม่ได้นำน้ำหนักพ่วง (Trailer / Semi-trailer) มารวมในการคำนวณน้ำหนักรวม",
+      "steps_to_reproduce": "เข้าเมนูบันทึกข้อมูลรถเข้า/ออก\n\nเลือกรถที่มีข้อมูล:\n\nTruck_No = 12345\n\nTrailerLicense = 12345",
+      "root_cause": "จากการตรวจสอบพบว่า:\nโครงสร้างฐานข้อมูลมีเพียงฟิลด์ Weight เดียว\n\nไม่มีฟิลด์ TrailerWeight แยกต่างหาก",
+      "resolution": "ปรับโครงสร้างฐานข้อมูล\nเพิ่มฟิลด์:\n\nTruckWeight\n\nTrailerWeight"
+    }
+  ],
+  "risks": [
+    {
+      "id": "RISK-001",
+      "category": "Technical",
+      "description": "ความแม่นยำของ ALPR ในสภาพแวดล้อมที่มีแสงน้อยหรือป้ายทะเบียนเสียหาย",
+      "probability": "Medium",
+      "impact": "High",
+      "risk_level": "High",
+      "mitigation": "ปรับ threshold และเพิ่ม manual verification สำหรับกรณีที่ confidence ต่ำ",
+      "owner": "Saravut Chanjom",
+      "status": "Mitigated",
+      "review_date": "2025-02-15",
+      "contingency": "Operator ยืนยันป้ายทะเบียนด้วยตนเองผ่าน UI",
+      "linked_capa": "CAPA-001"
+    },
+    {
+      "id": "RISK-002",
+      "category": "Technical",
+      "description": "การเชื่อมต่อกับ Hardware (เครื่องชั่ง, ไม้กั้น, Card Reader) อาจขาดหายหรือ timeout",
+      "probability": "Medium",
+      "impact": "High",
+      "risk_level": "High",
+      "mitigation": "พัฒนา reconnect mechanism และ error handling สำหรับทุก hardware interface",
+      "owner": "Saravut Chanjom",
+      "status": "Mitigated",
+      "review_date": "2025-02-15",
+      "contingency": "มี manual override mode สำหรับ Operator ใช้ในกรณี hardware ขัดข้อง",
+      "linked_capa": ""
+    },
+    {
+      "id": "RISK-003",
+      "category": "External",
+      "description": "ปัญหาไฟฟ้าขัดข้องส่งผลให้ข้อมูล transaction หาย",
+      "probability": "Low",
+      "impact": "High",
+      "risk_level": "Medium",
+      "mitigation": "ใช้ UPS และ transaction commit ทันทีหลังบันทึกสำเร็จ",
+      "owner": "Saravut Chanjom",
+      "status": "Open",
+      "review_date": "2025-03-01",
+      "contingency": "Restore จาก SQL Server Transaction Log",
+      "linked_capa": ""
+    }
+  ],
+  "change_requests": [
+    {
+      "id": "CR-001",
+      "title": "เพิ่ม IR Camera Support สำหรับ ALPR กลางคืน",
+      "description": "",
+      "requestor": "Saravut Chanchom",
+      "request_date": "2025-01-25",
+      "priority": "Medium",
+      "impact": "",
+      "affected_documents": [],
+      "status": "Implemented",
+      "approved_by": "Soudaphone Management",
+      "approval_date": "2025-01-28",
+      "implementation_date": "2025-02-10"
+    },
+    {
+      "id": "CR-001",
+      "title": "ลงชื่อ ______________________________",
+      "description": "",
+      "requestor": "ตรวจสอบ / Reviewed by",
+      "request_date": "",
+      "priority": "Medium",
+      "impact": "",
+      "affected_documents": [],
+      "status": "Pending",
+      "approved_by": "",
+      "approval_date": "",
+      "implementation_date": ""
+    }
+  ],
+  "versions": [
+    {
+      "version": "1.0.0",
+      "release_date": "2025-02-18",
+      "release_type": "Major",
+      "description": "Initial production release of Smart Gate System",
+      "changes": [],
+      "deployed_by": "Saravut Chanjom",
+      "environment": "Production"
+    },
+    {
+      "version": "1.0.0.465",
+      "release_date": "2025-02-18",
+      "release_type": "Major",
+      "description": "Initial production release of Smart Gate System",
+      "changes": [],
+      "deployed_by": "",
+      "environment": "Production"
+    },
+    {
+      "version": "1.0.0.466",
+      "release_date": "2025-10-01",
+      "release_type": "Major",
+      "description": "แก้ไขข้อบกพร่อง",
+      "changes": [],
+      "deployed_by": "",
+      "environment": "Production"
+    },
+    {
+      "version": "1.0.0.467",
+      "release_date": "2025-11-04",
+      "release_type": "Major",
+      "description": "แก้ไขข้อบกพร่อง",
+      "changes": [],
+      "deployed_by": "",
+      "environment": "Production"
+    }
+  ],
+  "meetings": [
+    {
+      "id": "MTG-001",
+      "title": "Project Kickoff Meeting — Smart Gate",
+      "date": "2024-06-10",
+      "time": "09:00-11:00",
+      "location": "Meeting Room / Online",
+      "chair": "Saravut Chanchom",
+      "attendees": [
+        "Saravut Chanchom",
+        "Development TDP Team",
+        "Soudaphone Management"
+      ],
+      "agenda": [],
+      "action_items": [
+        {
+          "item": "จัดทำ Requirements Document",
+          "owner": "Saravut Chanchom",
+          "due_date": "2024-07-15",
+          "status": "Closed"
+        }
+      ],
+      "summary": ""
+    },
+    {
+      "id": "MTG-002",
+      "title": "────────────────────────────────────────────────────────────UAT Review Meeting",
+      "date": "2025-01-31",
+      "time": "13:00-15:00",
+      "location": "Meeting Room",
+      "chair": "Saravut Chanchom",
+      "attendees": [
+        "Saravut Chanchom",
+        "Development TDP Team",
+        "Soudaphone Management"
+      ],
+      "agenda": [],
+      "action_items": [
+        {
+          "item": "แก้ไข BUG-001 ก่อน Go-Live",
+          "owner": "Saravut Chanchom",
+          "due_date": "2025-02-10",
+          "status": "Closed"
+        }
+      ],
+      "summary": ""
+    },
+    {
+      "id": "MTG-003",
+      "title": "การส่งมอบเวอร์ชันและการอัปเดตระบบ",
+      "date": "2025-09-30",
+      "time": "13:00-15:00",
+      "location": "Meeting Room",
+      "chair": "Saravut Chanchom",
+      "attendees": [
+        "Saravut Chanchom",
+        "Development TDP Team",
+        "Soudaphone Management"
+      ],
+      "agenda": [],
+      "action_items": [
+        {
+          "item": "ทดสอบใน Environment ที่กำหนดครบถ้วนก่อน Deploy",
+          "owner": "Saravut Chanchom",
+          "due_date": "2025-10-01",
+          "status": "Closed"
+        },
+        {
+          "item": "อัพเดทระบบ",
+          "owner": "Saravut Chanchom",
+          "due_date": "2025-10-01",
+          "status": "Closed"
+        }
+      ],
+      "summary": ""
+    },
+    {
+      "id": "MTG-004",
+      "title": "การส่งมอบเวอร์ชันและการอัปเดตระบบ",
+      "date": "(Development TDP Team\nBusiness Analyst\nวันที่: _______________",
+      "time": "",
+      "location": "",
+      "chair": "เลขานุการ / Secretary",
+      "attendees": [],
+      "agenda": [],
+      "action_items": [],
+      "summary": ""
+    }
+  ],
+  "training_sessions": [
+    {
+      "id": "TRN-001",
+      "title": "Smart Gate System User Training",
+      "date": "2025-02-14",
+      "duration": "4 hours",
+      "location": "Training Room / On-site",
+      "trainer": "ผู้จัดอบรม / Organizer",
+      "topics": [],
+      "attendees": [
+        {
+          "name": "Soudaphone Operator Team",
+          "department": "Operations",
+          "signed": true
+        }
+      ]
+    }
+  ],
+  "incidents": [
+    {
+      "id": "INC-001",
+      "title": "(Placeholder)",
+      "date_reported": "—",
+      "severity": "Medium",
+      "description": "",
+      "reported_by": "",
+      "assigned_to": "—",
+      "status": "Open",
+      "resolution": "",
+      "resolved_date": "—",
+      "root_cause": "",
+      "linked_change_request": "—"
+    }
+  ],
+  "deployments": [
+    {
+      "id": "DEP-001",
+      "version": "1.0.0",
+      "date": "2025-02-18",
+      "environment": "Production",
+      "deployed_by": "Saravut Chanjom",
+      "deployment_type": "Major",
+      "steps": [],
+      "rollback_plan": "",
+      "status": "Success",
+      "approval": "Approved by Soudaphone Management"
+    }
+  ],
+  "audit": {
+    "audit_date": "2026-02-19",
+    "auditor": "Internal Auditor — Development TDP",
+    "audit_scope": "ISO/IEC 29110 compliance for Smart Gate software development lifecycle",
+    "findings": [
+      {
+        "id": "FIND-001",
+        "clause": "ISO/IEC 29110 Section 3.4 — Software Implementation",
+        "finding_type": "Observation",
+        "description": "เอกสาร Coding Standards ควรมีการอัปเดตให้ครอบคลุม Hardware Integration patterns",
+        "linked_capa": "CAPA-001"
+      }
+    ]
+  },
+  "capas": [
+    {
+      "id": "CAPA-001",
+      "type": "Corrective Action",
+      "related_finding": "RISK-001",
+      "description": "ปรับปรุงระบบ ALPR ให้รองรับสภาพแสงน้อยและเพิ่ม manual fallback",
+      "root_cause": "ไม่ได้กำหนด acceptance criteria ครอบคลุมสภาพแสงน้อยในระยะ Requirements",
+      "action_plan": "1. เพิ่ม IR camera support, 2. ปรับ confidence threshold, 3. เพิ่ม UI สำหรับ manual override",
+      "responsible": "Saravut Chanjom",
+      "target_date": "2025-02-10",
+      "status": "Closed",
+      "effectiveness_review": "ทดสอบ ALPR ในสภาพกลางคืนได้ความแม่นยำ > 90%",
+      "closed_date": "2025-02-10"
+    }
+  ],
+  "sow": {},
+  "output_path": "D:\\Work\\DocISOGen\\projects"
+}

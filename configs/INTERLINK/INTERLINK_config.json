@@ -1,0 +1,1480 @@
+{
+  "project": {
+    "code": "INTERLINK",
+    "name": "Interlink - Dry Port Terminal Management System",
+    "organization": "Soudaphone",
+    "description": "ระบบบริหารจัดการการให้บริการภายใน Dry Port ครอบคลุมการจัดการใบสั่งงาน (Order), การทำธุรกรรมที่ประตู (Gate Transaction), การบริหารคลังสินค้า (WMS), การออกใบแจ้งหนี้และใบกำกับภาษี, การบริหารจัดการลูกค้า, อัตราค่าบริการ, กิจกรรม, อัตราแลกเปลี่ยน, และข้อมูลบริษัท",
+    "scope": "ระบบครอบคลุมการดำเนินงานทั้งหมดภายใน Dry Port ตั้งแต่การรับแจ้งล่วงหน้า (Pre-Alert) จนถึงการออกเอกสาร Truck Release และการออกใบกำกับภาษี รวมถึงระบบ Master Data Management สำหรับลูกค้า, Tariff, Activity, Currency และ Company",
+    "department": "Soudaphone",
+    "start_date": "2025-05-05",
+    "end_date": "2025-11-01",
+    "go_live_date": "2025-11-01",
+    "doc_revision": "1.0",
+    "document_date": "2026-02-19",
+    "classification": "Internal",
+    "short_name": "INTERLINK",
+    "objectives": [
+      "พัฒนาระบบบริหารจัดการการให้บริการ Dry Port แบบครบวงจร",
+      "ลดขั้นตอนการทำงานด้านเอกสารด้วยระบบดิจิทัล",
+      "เพิ่มความถูกต้องในการออกใบแจ้งหนี้และใบกำกับภาษี",
+      "รองรับการตรวจสอบย้อนหลังข้อมูลการเข้า-ออกของยานพาหนะและตู้คอนเทนเนอร์",
+      "บริหารจัดการข้อมูล Master Data ของลูกค้า, อัตราค่าบริการ และกิจกรรม"
+    ]
+  },
+  "team": {
+    "members": [
+      {
+        "name": "DevelopmentTDP Team",
+        "title": "Software Developer",
+        "email": "dev@soudaphone.com"
+      }
+    ],
+    "project_manager": {
+      "name": "Saravut Chanchom",
+      "title": "Project Manager",
+      "email": "saravut@soudaphone.com",
+      "phone": ""
+    },
+    "lead_developer": {
+      "name": "Saravut Chanchom",
+      "title": "Lead Developer",
+      "email": "saravut@soudaphone.com",
+      "phone": ""
+    },
+    "business_analyst": {
+      "name": "DevelopmentTDP BA Team",
+      "title": "Business Analyst",
+      "email": "ba@soudaphone.com",
+      "phone": ""
+    },
+    "system_analyst": {
+      "name": "Saravut Chanchom",
+      "title": "System Analyst",
+      "email": "saravut@soudaphone.com",
+      "phone": ""
+    },
+    "qa_engineer": {
+      "name": "DevelopmentTDP QA Team",
+      "title": "QA Engineer",
+      "email": "qa@soudaphone.com",
+      "phone": ""
+    },
+    "dba": {
+      "name": "DevelopmentTDP DBA",
+      "title": "DBA",
+      "email": "dba@soudaphone.com",
+      "phone": ""
+    }
+  },
+  "stakeholders": [
+    {
+      "name": "Saravut Chanchom",
+      "role": "Project Manager / Lead Developer",
+      "organization": "Soudaphone - DevelopmentTDP",
+      "email": "",
+      "responsibility": "Oversee project delivery, approve major decisions, and ensure Go-Live readiness"
+    },
+    {
+      "name": "Soudaphone Management",
+      "role": "Project Sponsor",
+      "organization": "Soudaphone",
+      "email": "",
+      "responsibility": "Approve budget and strategic direction"
+    }
+  ],
+  "tech_stack": {
+    "frontend": ".NET Core MVC / Razor Views / HTML5 / CSS3 / JavaScript",
+    "backend": ".NET Core / C# / ASP.NET MVC",
+    "database": "Microsoft SQL Server",
+    "infrastructure": "On-premise / Windows Server",
+    "source_control": "Git",
+    "ci_cd": ""
+  },
+  "milestones": [
+    {
+      "id": "MS-01",
+      "name": "Requirements Sign-off",
+      "target_date": "2025-05-31",
+      "status": "Completed",
+      "owner": "Saravut Chanchom"
+    },
+    {
+      "id": "MS-02",
+      "name": "Design Complete",
+      "target_date": "2025-06-30",
+      "status": "Completed",
+      "owner": "Saravut Chanchom"
+    },
+    {
+      "id": "MS-03",
+      "name": "Development Complete (Phase 1 - Go Live Features)",
+      "target_date": "2025-09-30",
+      "status": "Completed",
+      "owner": "Saravut Chanchom"
+    },
+    {
+      "id": "MS-04",
+      "name": "UAT Complete",
+      "target_date": "2025-10-15",
+      "status": "Completed",
+      "owner": "DevelopmentTDP QA Team"
+    },
+    {
+      "id": "MS-05",
+      "name": "Go-Live (Phase 1)",
+      "target_date": "2025-11-01",
+      "status": "Completed",
+      "owner": "Saravut Chanchom"
+    },
+    {
+      "id": "MS-06",
+      "name": "Phase 2 Development Complete (Order Issuance, Cancel Request, Tax Invoice Credit, Report, User Management)",
+      "target_date": "2026-03-31",
+      "status": "In Progress",
+      "owner": "Saravut Chanchom"
+    }
+  ],
+  "requirements": [
+    {
+      "id": "REQ-001",
+      "title": "Pre-Alert Activity",
+      "description": "กำหนดและบันทึกกิจกรรม (Activity) สำหรับใบสั่งงาน (Order) ตามที่ลูกค้าแจ้งความประสงค์เข้าใช้บริการภายใน Dry Port ล่วงหน้า",
+      "priority": "High",
+      "type": "Functional",
+      "category": "Order Management",
+      "source": "Business Requirement - Dry Port Operations",
+      "acceptance_criteria": "ระบบสามารถบันทึกและแสดงข้อมูล Pre-Alert Activity ก่อนลูกค้าเข้ามาใช้บริการได้อย่างถูกต้อง",
+      "linked_design": [],
+      "linked_test_cases": []
+    },
+    {
+      "id": "REQ-002",
+      "title": "Confirm Order",
+      "description": "ยืนยันใบสั่งงาน (Order) ที่เกิดขึ้นจริง เมื่อลูกค้าเข้ามาใช้บริการภายในพื้นที่ Dry Port เพื่อให้ข้อมูลมีสถานะถูกต้องตามการปฏิบัติงานจริง",
+      "priority": "High",
+      "type": "Functional",
+      "category": "Order Management",
+      "source": "Business Requirement - Dry Port Operations",
+      "acceptance_criteria": "ระบบสามารถยืนยันสถานะ Order และอัปเดตข้อมูลได้ทันที",
+      "linked_design": [],
+      "linked_test_cases": []
+    },
+    {
+      "id": "REQ-003",
+      "title": "Gate Transaction",
+      "description": "ตรวจสอบข้อมูลการเข้า–ออกของรถบรรทุกและตู้คอนเทนเนอร์ภายในพื้นที่ Dry Port",
+      "priority": "High",
+      "type": "Functional",
+      "category": "Gate Operations",
+      "source": "Business Requirement - Dry Port Operations",
+      "acceptance_criteria": "แสดงข้อมูลการเข้า-ออกของยานพาหนะและตู้คอนเทนเนอร์ได้ครบถ้วน",
+      "linked_design": [],
+      "linked_test_cases": []
+    },
+    {
+      "id": "REQ-004",
+      "title": "WMS Transaction",
+      "description": "ตรวจสอบข้อมูลการใช้บริการคลังสินค้า (Warehouse Management System: WMS) ของลูกค้าภายใน Dry Port",
+      "priority": "High",
+      "type": "Functional",
+      "category": "Warehouse Management",
+      "source": "Business Requirement - Dry Port Operations",
+      "acceptance_criteria": "ระบบแสดงข้อมูล WMS Transaction ได้ครบถ้วนและถูกต้อง",
+      "linked_design": [],
+      "linked_test_cases": []
+    },
+    {
+      "id": "REQ-005",
+      "title": "Order Issuance",
+      "description": "จัดทำและออกเอกสารใบสั่งงานสำหรับการเบิก–รับสินค้าออกจาก Dry Port เพื่อส่งต่อให้หน่วยงานคลังสินค้า",
+      "priority": "Medium",
+      "type": "Functional",
+      "category": "Order Management",
+      "source": "Business Requirement - Dry Port Operations",
+      "acceptance_criteria": "ระบบสามารถสร้างและออกเอกสารใบสั่งงานได้ถูกต้องและส่งต่อหน่วยงานที่เกี่ยวข้องได้",
+      "linked_design": [],
+      "linked_test_cases": []
+    },
+    {
+      "id": "REQ-006",
+      "title": "Invoice",
+      "description": "จัดทำใบแจ้งหนี้ (Invoice) โดยอ้างอิงข้อมูลจาก Pre-Alert Activity และ Confirm Order เพื่อความถูกต้องครบถ้วนของรายการบริการ",
+      "priority": "High",
+      "type": "Functional",
+      "category": "Billing & Finance",
+      "source": "Business Requirement - Finance",
+      "acceptance_criteria": "ระบบสร้าง Invoice โดยดึงข้อมูลจาก Pre-Alert และ Confirm Order ได้อย่างถูกต้องครบถ้วน",
+      "linked_design": [],
+      "linked_test_cases": []
+    },
+    {
+      "id": "REQ-007",
+      "title": "Tax Invoice",
+      "description": "ออกใบกำกับภาษีให้แก่ลูกค้า โดยอ้างอิงจาก Invoice และจัดเตรียมข้อมูลสำหรับการนำส่งหน่วยงานสรรพากรตามข้อกำหนดทางกฎหมาย",
+      "priority": "High",
+      "type": "Functional",
+      "category": "Billing & Finance",
+      "source": "Legal Requirement - Revenue Department",
+      "acceptance_criteria": "ระบบออกใบกำกับภาษีถูกต้องตามข้อกำหนดของกรมสรรพากร",
+      "linked_design": [],
+      "linked_test_cases": []
+    },
+    {
+      "id": "REQ-008",
+      "title": "Cancel Request",
+      "description": "แสดงรายการคำขอยกเลิกเอกสาร และรองรับกระบวนการอนุมัติหรือปฏิเสธการยกเลิกตามลำดับขั้นการควบคุมภายใน",
+      "priority": "Medium",
+      "type": "Functional",
+      "category": "Document Control",
+      "source": "Business Requirement - Internal Control",
+      "acceptance_criteria": "ระบบรองรับกระบวนการขอยกเลิก อนุมัติ และปฏิเสธการยกเลิกเอกสารได้ถูกต้อง",
+      "linked_design": [],
+      "linked_test_cases": []
+    },
+    {
+      "id": "REQ-009",
+      "title": "Tax Invoice Credit",
+      "description": "บันทึกและบริหารจัดการข้อมูลการชำระเงินของลูกค้าที่ได้รับเครดิต โดยอ้างอิงจากใบกำกับภาษี (Tax Invoice)",
+      "priority": "Medium",
+      "type": "Functional",
+      "category": "Billing & Finance",
+      "source": "Business Requirement - Finance",
+      "acceptance_criteria": "ระบบบันทึกและแสดงข้อมูล Credit ที่เชื่อมโยงกับ Tax Invoice ได้ถูกต้อง",
+      "linked_design": [],
+      "linked_test_cases": []
+    },
+    {
+      "id": "REQ-010",
+      "title": "Truck Release",
+      "description": "ออกเอกสารอนุญาตให้นำรถบรรทุก ตู้คอนเทนเนอร์และสินค้า ออกจากพื้นที่ Dry Port หลังจากผ่านกระบวนการตรวจสอบครบถ้วนแล้ว",
+      "priority": "High",
+      "type": "Functional",
+      "category": "Gate Operations",
+      "source": "Business Requirement - Dry Port Operations",
+      "acceptance_criteria": "ระบบออกเอกสาร Truck Release ได้หลังผ่านการตรวจสอบครบถ้วน",
+      "linked_design": [],
+      "linked_test_cases": []
+    },
+    {
+      "id": "REQ-011",
+      "title": "Customer Management",
+      "description": "บริหารจัดการข้อมูลลูกค้า เช่น ชื่อบริษัท ที่อยู่ เลขประจำตัวผู้เสียภาษี และข้อมูลติดต่อ",
+      "priority": "High",
+      "type": "Functional",
+      "category": "Master Data",
+      "source": "Business Requirement - Operations",
+      "acceptance_criteria": "ระบบ CRUD ข้อมูลลูกค้าได้ครบถ้วนและถูกต้อง",
+      "linked_design": [],
+      "linked_test_cases": []
+    },
+    {
+      "id": "REQ-012",
+      "title": "Tariff Management",
+      "description": "บริหารจัดการข้อมูลอัตราค่าบริการ (Tariff) และเงื่อนไขที่เกี่ยวข้อง",
+      "priority": "High",
+      "type": "Functional",
+      "category": "Master Data",
+      "source": "Business Requirement - Finance",
+      "acceptance_criteria": "ระบบ CRUD อัตราค่าบริการและเงื่อนไขได้ถูกต้อง",
+      "linked_design": [],
+      "linked_test_cases": []
+    },
+    {
+      "id": "REQ-013",
+      "title": "Activity Management",
+      "description": "บริหารจัดการข้อมูลกิจกรรม (Activity) และความสัมพันธ์ระหว่าง Activity กับ Tariff",
+      "priority": "High",
+      "type": "Functional",
+      "category": "Master Data",
+      "source": "Business Requirement - Operations",
+      "acceptance_criteria": "ระบบ CRUD Activity และเชื่อมโยงกับ Tariff ได้ถูกต้อง",
+      "linked_design": [],
+      "linked_test_cases": []
+    },
+    {
+      "id": "REQ-014",
+      "title": "Report",
+      "description": "จัดทำรายงานสรุปข้อมูลกิจกรรม รายงานรายได้ และรายงานลูกหนี้ เพื่อใช้ในการวิเคราะห์และติดตามผลการดำเนินงาน",
+      "priority": "Medium",
+      "type": "Functional",
+      "category": "Reporting",
+      "source": "Business Requirement - Management",
+      "acceptance_criteria": "ระบบสร้างรายงานได้ครบถ้วนและถูกต้องตามข้อกำหนด",
+      "linked_design": [],
+      "linked_test_cases": []
+    },
+    {
+      "id": "REQ-015",
+      "title": "Currency Management",
+      "description": "บริหารจัดการข้อมูลอัตราแลกเปลี่ยนเงินตราต่างประเทศประจำวัน เพื่อใช้ในการคำนวณค่าบริการ",
+      "priority": "Medium",
+      "type": "Functional",
+      "category": "Master Data",
+      "source": "Business Requirement - Finance",
+      "acceptance_criteria": "ระบบบันทึกและอัปเดตอัตราแลกเปลี่ยนรายวันได้ถูกต้อง",
+      "linked_design": [],
+      "linked_test_cases": []
+    },
+    {
+      "id": "REQ-016",
+      "title": "Company Management",
+      "description": "บริหารจัดการข้อมูลบริษัท เช่น ชื่อบริษัท ที่อยู่ และเลขประจำตัวผู้เสียภาษี สำหรับใช้ในเอกสารทางการ",
+      "priority": "High",
+      "type": "Functional",
+      "category": "Master Data",
+      "source": "Business Requirement - Operations",
+      "acceptance_criteria": "ระบบ CRUD ข้อมูลบริษัทและแสดงบนเอกสารทางการได้ถูกต้อง",
+      "linked_design": [],
+      "linked_test_cases": []
+    },
+    {
+      "id": "REQ-017",
+      "title": "User Management",
+      "description": "บริหารจัดการข้อมูลผู้ใช้งาน กำหนดสิทธิ์การเข้าถึง (User Authorization) และควบคุมการใช้งานระบบ",
+      "priority": "High",
+      "type": "Functional",
+      "category": "Security",
+      "source": "Business Requirement - IT Security",
+      "acceptance_criteria": "ระบบ CRUD ผู้ใช้งานและกำหนด Role/Permission ได้ถูกต้อง",
+      "linked_design": [],
+      "linked_test_cases": []
+    }
+  ],
+  "design_components": [
+    {
+      "id": "COMP-001",
+      "name": "Pre-Alert Activity Module",
+      "description": "โมดูลจัดการข้อมูลการแจ้งล่วงหน้าและ Activity ใบสั่งงาน",
+      "type": "UI Component / Service",
+      "related_requirements": [
+        "REQ-001"
+      ],
+      "technology": ""
+    },
+    {
+      "id": "COMP-002",
+      "name": "Confirm Order Module",
+      "description": "โมดูลยืนยันใบสั่งงานและอัปเดตสถานะ",
+      "type": "UI Component / Service",
+      "related_requirements": [
+        "REQ-002"
+      ],
+      "technology": ""
+    },
+    {
+      "id": "COMP-003",
+      "name": "Gate Transaction Module",
+      "description": "โมดูลบันทึกและตรวจสอบการเข้า-ออกของยานพาหนะและคอนเทนเนอร์",
+      "type": "UI Component / Service",
+      "related_requirements": [
+        "REQ-003"
+      ],
+      "technology": ""
+    },
+    {
+      "id": "COMP-004",
+      "name": "WMS Transaction Module",
+      "description": "โมดูลแสดงข้อมูลธุรกรรมคลังสินค้า",
+      "type": "UI Component / Service",
+      "related_requirements": [
+        "REQ-004"
+      ],
+      "technology": ""
+    },
+    {
+      "id": "COMP-005",
+      "name": "Order Issuance Module",
+      "description": "โมดูลจัดทำและออกเอกสารใบสั่งงานสำหรับการเบิก-รับสินค้า",
+      "type": "UI Component / Service",
+      "related_requirements": [
+        "REQ-005"
+      ],
+      "technology": ""
+    },
+    {
+      "id": "COMP-006",
+      "name": "Invoice Module",
+      "description": "โมดูลสร้างและจัดการใบแจ้งหนี้",
+      "type": "UI Component / Service",
+      "related_requirements": [
+        "REQ-006"
+      ],
+      "technology": ""
+    },
+    {
+      "id": "COMP-007",
+      "name": "Tax Invoice Module",
+      "description": "โมดูลออกใบกำกับภาษีตามข้อกำหนดกรมสรรพากร",
+      "type": "UI Component / Service",
+      "related_requirements": [
+        "REQ-007"
+      ],
+      "technology": ""
+    },
+    {
+      "id": "COMP-008",
+      "name": "Cancel Request Module",
+      "description": "โมดูลจัดการคำขอยกเลิกเอกสารและกระบวนการอนุมัติ",
+      "type": "UI Component / Service",
+      "related_requirements": [
+        "REQ-008"
+      ],
+      "technology": ""
+    },
+    {
+      "id": "COMP-009",
+      "name": "Tax Invoice Credit Module",
+      "description": "โมดูลบริหารจัดการ Credit Note ที่เชื่อมโยงกับใบกำกับภาษี",
+      "type": "UI Component / Service",
+      "related_requirements": [
+        "REQ-009"
+      ],
+      "technology": ""
+    },
+    {
+      "id": "COMP-010",
+      "name": "Truck Release Module",
+      "description": "โมดูลออกเอกสารอนุญาตนำยานพาหนะและสินค้าออกจาก Dry Port",
+      "type": "UI Component / Service",
+      "related_requirements": [
+        "REQ-010"
+      ],
+      "technology": ""
+    },
+    {
+      "id": "COMP-011",
+      "name": "Customer Management Module",
+      "description": "โมดูล Master Data สำหรับจัดการข้อมูลลูกค้า",
+      "type": "UI Component / Service",
+      "related_requirements": [
+        "REQ-011"
+      ],
+      "technology": ""
+    },
+    {
+      "id": "COMP-012",
+      "name": "Tariff Management Module",
+      "description": "โมดูล Master Data สำหรับจัดการอัตราค่าบริการ",
+      "type": "UI Component / Service",
+      "related_requirements": [
+        "REQ-012"
+      ],
+      "technology": ""
+    },
+    {
+      "id": "COMP-013",
+      "name": "Activity Management Module",
+      "description": "โมดูล Master Data สำหรับจัดการ Activity และความสัมพันธ์กับ Tariff",
+      "type": "UI Component / Service",
+      "related_requirements": [
+        "REQ-013"
+      ],
+      "technology": ""
+    },
+    {
+      "id": "COMP-014",
+      "name": "Report Module",
+      "description": "โมดูลสร้างรายงานสรุปกิจกรรม รายได้ และลูกหนี้",
+      "type": "UI Component / Service",
+      "related_requirements": [
+        "REQ-014"
+      ],
+      "technology": ""
+    },
+    {
+      "id": "COMP-015",
+      "name": "Currency Management Module",
+      "description": "โมดูล Master Data สำหรับจัดการอัตราแลกเปลี่ยนรายวัน",
+      "type": "UI Component / Service",
+      "related_requirements": [
+        "REQ-015"
+      ],
+      "technology": ""
+    },
+    {
+      "id": "COMP-016",
+      "name": "Company Management Module",
+      "description": "โมดูล Master Data สำหรับจัดการข้อมูลบริษัท",
+      "type": "UI Component / Service",
+      "related_requirements": [
+        "REQ-016"
+      ],
+      "technology": ""
+    },
+    {
+      "id": "COMP-017",
+      "name": "User Management Module",
+      "description": "โมดูลบริหารจัดการผู้ใช้งานและสิทธิ์การเข้าถึง",
+      "type": "UI Component / Service",
+      "related_requirements": [
+        "REQ-017"
+      ],
+      "technology": ""
+    }
+  ],
+  "database_tables": [
+    {
+      "name": "TruckAdd_Activity",
+      "description": "ตารางผูก Activity กับรถ",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "INT PRIMARY KEY IDENTITY",
+          "description": "รหัสใบสั่งงาน"
+        },
+        {
+          "name": "Unique_Code",
+          "type": "NVARCHAR(50) NOT NULL",
+          "description": "เลขที่ใบสั่งงาน"
+        },
+        {
+          "name": "Pre_Alert_NO",
+          "type": "NVARCHAR(50)",
+          "description": "หมายเลขการแจ้งเตือนล่วงหน้า"
+        },
+        {
+          "name": "Truck_No",
+          "type": "NVARCHAR(50)",
+          "description": "วันที่สั่งงาน"
+        },
+        {
+          "name": "Code",
+          "type": "nvarchar(20)",
+          "description": "รหัสประเภทงาน"
+        },
+        {
+          "name": "CreateDate",
+          "type": "DATETIME DEFAULT GETDATE()",
+          "description": "วันที่สร้าง"
+        },
+        {
+          "name": "Users",
+          "type": "NVARCHAR(100)",
+          "description": "ผู้สร้าง"
+        }
+      ],
+      "related_requirements": [
+        "REQ-001"
+      ]
+    },
+    {
+      "name": "Oder_to_Warehouse",
+      "description": "ตารางใบสั่งงานหลัก",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "INT PRIMARY KEY IDENTITY",
+          "description": "รหัสใบสั่งงาน"
+        },
+        {
+          "name": "Unique_Code",
+          "type": "NVARCHAR(50) NOT NULL",
+          "description": "เลขที่ใบสั่งงาน"
+        },
+        {
+          "name": "PreAlert",
+          "type": "NVARCHAR(50)",
+          "description": "หมายเลขการแจ้งเตือนล่วงหน้า"
+        },
+        {
+          "name": "CreatedDate",
+          "type": "DATETIME",
+          "description": "วันที่สั่งงาน"
+        },
+        {
+          "name": "Activity",
+          "type": "NVARCHAR(20)",
+          "description": "รหัสประเภทงาน"
+        },
+        {
+          "name": "CreatedDate",
+          "type": "DATETIME DEFAULT GETDATE()",
+          "description": "วันที่สร้าง"
+        },
+        {
+          "name": "CreateBy",
+          "type": "NVARCHAR(100)",
+          "description": "ผู้สร้าง"
+        }
+      ],
+      "related_requirements": [
+        "REQ-002"
+      ]
+    },
+    {
+      "name": "Invice_Details",
+      "description": "ตารางใบแจ้งหนี้",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "INT PRIMARY KEY IDENTITY",
+          "description": "รหัสใบแจ้งหนี้"
+        },
+        {
+          "name": "Invoice_No",
+          "type": "NVARCHAR(50)",
+          "description": "เลขที่ใบแจ้งหนี้"
+        },
+        {
+          "name": "Pre_Alert_Number",
+          "type": "NVARCHAR",
+          "description": "รหัสใบสั่งงาน"
+        },
+        {
+          "name": "IDCustomer",
+          "type": "NVARCHAR",
+          "description": "รหัสลูกค้า"
+        },
+        {
+          "name": "DateDoc",
+          "type": "DATETIME",
+          "description": "วันที่ออกใบแจ้งหนี้"
+        },
+        {
+          "name": "total",
+          "type": "DECIMAL(18,2)",
+          "description": "ยอดรวม"
+        },
+        {
+          "name": "Status",
+          "type": "NVARCHAR(20)",
+          "description": "สถานะ"
+        }
+      ],
+      "related_requirements": []
+    },
+    {
+      "name": "TaxInvice_Details",
+      "description": "ตารางใบกำกับภาษี",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "INT PRIMARY KEY IDENTITY",
+          "description": "รหัสใบกำกับภาษี"
+        },
+        {
+          "name": "TaxInvoice_No",
+          "type": "NVARCHAR(50)",
+          "description": "เลขที่ใบกำกับภาษี"
+        },
+        {
+          "name": "Invoice_No",
+          "type": "INT FK",
+          "description": "รหัสใบแจ้งหนี้"
+        },
+        {
+          "name": "DateDoc",
+          "type": "DATETIME",
+          "description": "วันที่ออกใบกำกับภาษี"
+        },
+        {
+          "name": "VAT_Buy",
+          "type": "DECIMAL(18,2)",
+          "description": "จำนวน VAT"
+        },
+        {
+          "name": "total_Buy",
+          "type": "DECIMAL(18,2)",
+          "description": "ยอดรวมทั้งสิ้น"
+        }
+      ],
+      "related_requirements": []
+    },
+    {
+      "name": "Customers",
+      "description": "ตารางข้อมูลลูกค้า",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "INT PRIMARY KEY IDENTITY",
+          "description": "รหัสลูกค้า"
+        },
+        {
+          "name": "CustomerID",
+          "type": "NVARCHAR(20)",
+          "description": "รหัสลูกค้า (Code)"
+        },
+        {
+          "name": "NameEnglish",
+          "type": "NVARCHAR(200)",
+          "description": "ชื่อบริษัทลูกค้า"
+        },
+        {
+          "name": "TexNumber",
+          "type": "NVARCHAR(20)",
+          "description": "เลขประจำตัวผู้เสียภาษี"
+        },
+        {
+          "name": "Address",
+          "type": "NVARCHAR(500)",
+          "description": "ที่อยู่"
+        },
+        {
+          "name": "PhoneNumber",
+          "type": "NVARCHAR(20)",
+          "description": "เบอร์โทรศัพท์"
+        }
+      ],
+      "related_requirements": [
+        "REQ-011"
+      ]
+    },
+    {
+      "name": "TARIFF_Information",
+      "description": "ตารางอัตราค่าบริการ",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "INT PRIMARY KEY IDENTITY",
+          "description": "รหัสอัตราค่าบริการ"
+        },
+        {
+          "name": "Tariff_Code",
+          "type": "NVARCHAR(20)",
+          "description": "รหัส Tariff"
+        },
+        {
+          "name": "Description_ENG",
+          "type": "NVARCHAR(200)",
+          "description": "ชื่ออัตราค่าบริการ"
+        },
+        {
+          "name": "Price",
+          "type": "DECIMAL(18,2)",
+          "description": "อัตราค่าบริการ"
+        },
+        {
+          "name": "CreatedUpdated",
+          "type": "DATETIME",
+          "description": "วันที่"
+        }
+      ],
+      "related_requirements": []
+    },
+    {
+      "name": "UserRights",
+      "description": "ตารางผู้ใช้งานระบบ",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "INT PRIMARY KEY IDENTITY",
+          "description": "รหัสผู้ใช้งาน"
+        },
+        {
+          "name": "UserName",
+          "type": "NVARCHAR(100) NOT NULL",
+          "description": "ชื่อผู้ใช้งาน"
+        },
+        {
+          "name": "Password",
+          "type": "NVARCHAR(256)",
+          "description": "รหัสผ่านที่ Hash แล้ว"
+        },
+        {
+          "name": "FirstName",
+          "type": "NVARCHAR(200)",
+          "description": "ชื่อ"
+        },
+        {
+          "name": "LastName",
+          "type": "NVARCHAR(200)",
+          "description": "นามสกุล"
+        },
+        {
+          "name": "SYS_ROLE",
+          "type": "INT FK",
+          "description": "รหัสบทบาท"
+        }
+      ],
+      "related_requirements": []
+    }
+  ],
+  "test_cases": [
+    {
+      "id": "TC-001",
+      "title": "สร้าง Pre-Alert Activity สำหรับ Order ใหม่",
+      "related_requirement": "REQ-001",
+      "test_type": "Functional",
+      "preconditions": "ผู้ใช้ Login เข้าระบบแล้ว และมีข้อมูล Customer ในระบบ",
+      "steps": [
+        "เข้าเมนู Pre-Alert Activity",
+        "คลิก '+' (Activity All Inbound หรือ Activity All Outbound หรือ)",
+        "เลือก Activity ที่ต้องการ",
+        "คลิก 'Save'"
+      ],
+      "expected_result": "ระบบบันทึก Pre-Alert Activity สำเร็จและแสดงในรายการ",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "DevelopmentTDP QA Team",
+      "test_date": "2025-10-10",
+      "remarks": "Go Live แล้ว"
+    },
+    {
+      "id": "TC-002",
+      "title": "ยืนยัน Confirm Order",
+      "related_requirement": "REQ-002",
+      "test_type": "Functional",
+      "preconditions": "มี Pre-Alert Order ในระบบ",
+      "steps": [
+        "เข้าเมนู Confirm Order",
+        "เลือก Order ที่ต้องการยืนยัน",
+        "คลิก 'Confirm'"
+      ],
+      "expected_result": "สถานะ Order เปลี่ยนเป็น Confirmed",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "DevelopmentTDP QA Team",
+      "test_date": "2025-10-10",
+      "remarks": "Go Live แล้ว"
+    },
+    {
+      "id": "TC-003",
+      "title": "บันทึก Gate Transaction เข้า",
+      "related_requirement": "REQ-003",
+      "test_type": "Functional",
+      "preconditions": "มี Transaction Gata ในระบบ",
+      "steps": [
+        "เข้าเมนู Gate Transaction",
+        "สามารถค้นหาข้อมูล Gate Transaction"
+      ],
+      "expected_result": "คันหา Gate Transaction In ครบถ้วนและถูกต้อง",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "DevelopmentTDP QA Team",
+      "test_date": "2025-10-10",
+      "remarks": ""
+    },
+    {
+      "id": "TC-004",
+      "title": "ตรวจสอบข้อมูล WMS Transaction",
+      "related_requirement": "REQ-004",
+      "test_type": "Functional",
+      "preconditions": "มีข้อมูล WMS Transaction ในระบบ",
+      "steps": [
+        "เข้าเมนู WMS Transaction",
+        "ค้นหาด้วย WMS Transaction หรือช่วงวันที่",
+        "ตรวจสอบข้อมูลที่แสดง"
+      ],
+      "expected_result": "ระบบแสดงข้อมูล WMS Transaction ครบถ้วนและถูกต้อง",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "DevelopmentTDP QA Team",
+      "test_date": "2025-10-10",
+      "remarks": ""
+    },
+    {
+      "id": "TC-005",
+      "title": "ออกเอกสาร Order Issuance",
+      "related_requirement": "REQ-005",
+      "test_type": "Functional",
+      "preconditions": "มี Confirmed Order พร้อมสินค้า",
+      "steps": [
+        "เข้าเมนู Order Issuance",
+        "สร้าง Order Issuance ใหม่",
+        "ระบุรายการสินค้า",
+        "บันทึกและออกเอกสาร"
+      ],
+      "expected_result": "เอกสาร Order Issuance ออกได้สำเร็จ",
+      "actual_result": "Pending",
+      "status": "Pending",
+      "tester": "DevelopmentTDP QA Team",
+      "test_date": "",
+      "remarks": "กำลังพัฒนา"
+    },
+    {
+      "id": "TC-006",
+      "title": "สร้าง Invoice จาก Confirmed Order",
+      "related_requirement": "REQ-006",
+      "test_type": "Functional",
+      "preconditions": "มี Confirmed Order ในระบบ",
+      "steps": [
+        "เข้าเมนู Invoice",
+        "เลือก Order ที่ต้องการออก Invoice",
+        "ตรวจสอบรายการ Activity และ Tariff",
+        "คลิก 'ออก Invoice'"
+      ],
+      "expected_result": "Invoice ออกได้สำเร็จพร้อมรายการค่าบริการครบถ้วน",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "DevelopmentTDP QA Team",
+      "test_date": "2025-10-10",
+      "remarks": ""
+    },
+    {
+      "id": "TC-007",
+      "title": "ออกใบกำกับภาษีจากTax Invoice",
+      "related_requirement": "REQ-007",
+      "test_type": "Functional",
+      "preconditions": "มี Invoice ที่ยืนยันแล้ว",
+      "steps": [
+        "เข้าเมนู Tax Invoice",
+        "เลือก Invoice ที่ต้องการออกใบกำกับภาษี",
+        "ตรวจสอบข้อมูล VAT",
+        "คลิก 'ออกใบกำกับภาษี'"
+      ],
+      "expected_result": "ใบกำกับภาษีออกได้สำเร็จและมีข้อมูลถูกต้องตามกฎหมาย",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "DevelopmentTDP QA Team",
+      "test_date": "2025-10-10",
+      "remarks": ""
+    },
+    {
+      "id": "TC-008",
+      "title": "ยื่น Cancel Request และอนุมัติ",
+      "related_requirement": "REQ-008",
+      "test_type": "Functional",
+      "preconditions": "มีเอกสารที่ออกแล้วในระบบ",
+      "steps": [
+        "เข้าเมนู Cancel Request",
+        "เลือกเอกสารที่ต้องการยกเลิก",
+        "ยื่นคำขอยกเลิก",
+        "ผู้มีอำนาจอนุมัติหรือปฏิเสธ"
+      ],
+      "expected_result": "กระบวนการขอยกเลิกทำงานได้ถูกต้องตามขั้นตอน",
+      "actual_result": "Pending",
+      "status": "Pending",
+      "tester": "DevelopmentTDP QA Team",
+      "test_date": "",
+      "remarks": "กำลังพัฒนา"
+    },
+    {
+      "id": "TC-009",
+      "title": "บันทึก Tax Invoice Credit",
+      "related_requirement": "REQ-009",
+      "test_type": "Functional",
+      "preconditions": "มี Tax Invoice ที่ออกแล้ว",
+      "steps": [
+        "เข้าเมนู Tax Invoice Credit",
+        "เลือก Tax Invoice ที่ต้องการออก Credit",
+        "กรอกข้อมูล Credit",
+        "บันทึก"
+      ],
+      "expected_result": "Credit ถูกบันทึกและเชื่อมโยงกับ Tax Invoice ได้ถูกต้อง",
+      "actual_result": "Pending",
+      "status": "Pending",
+      "tester": "DevelopmentTDP QA Team",
+      "test_date": "",
+      "remarks": "กำลังพัฒนา"
+    },
+    {
+      "id": "TC-010",
+      "title": "ออก Truck Release",
+      "related_requirement": "REQ-010",
+      "test_type": "Functional",
+      "preconditions": "ผ่านกระบวนการตรวจสอบครบถ้วนแล้ว",
+      "steps": [
+        "เข้าเมนู Truck Release",
+        "เลือก Order ที่ผ่านการตรวจสอบ",
+        "คลิก 'ออก Truck Release'"
+      ],
+      "expected_result": "เอกสาร Truck Release ออกสำเร็จ",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "DevelopmentTDP QA Team",
+      "test_date": "2025-10-10",
+      "remarks": ""
+    },
+    {
+      "id": "TC-011",
+      "title": "เพิ่มและแก้ไขข้อมูลลูกค้า",
+      "related_requirement": "REQ-011",
+      "test_type": "Functional",
+      "preconditions": "ผู้ใช้มีสิทธิ์จัดการ Customer",
+      "steps": [
+        "เข้าเมนู Customer Management",
+        "เพิ่มลูกค้าใหม่หรือแก้ไขลูกค้าที่มีอยู่",
+        "บันทึก"
+      ],
+      "expected_result": "ข้อมูลลูกค้าบันทึกและแสดงผลถูกต้อง",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "DevelopmentTDP QA Team",
+      "test_date": "2025-10-10",
+      "remarks": ""
+    },
+    {
+      "id": "TC-012",
+      "title": "จัดการ Tariff",
+      "related_requirement": "REQ-012",
+      "test_type": "Functional",
+      "preconditions": "ผู้ใช้มีสิทธิ์จัดการ Tariff",
+      "steps": [
+        "เข้าเมนู Tariff Management",
+        "เพิ่มหรือแก้ไขอัตราค่าบริการ",
+        "บันทึก"
+      ],
+      "expected_result": "ข้อมูล Tariff บันทึกถูกต้อง",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "DevelopmentTDP QA Team",
+      "test_date": "2025-10-10",
+      "remarks": ""
+    },
+    {
+      "id": "TC-013",
+      "title": "จัดการ Activity และเชื่อมโยง Tariff",
+      "related_requirement": "REQ-013",
+      "test_type": "Functional",
+      "preconditions": "มีข้อมูล Tariff ในระบบ",
+      "steps": [
+        "เข้าเมนู Activity Management",
+        "เพิ่ม Activity ใหม่",
+        "เชื่อมโยง Activity กับ Tariff",
+        "บันทึก"
+      ],
+      "expected_result": "Activity บันทึกและเชื่อมโยงกับ Tariff ถูกต้อง",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "DevelopmentTDP QA Team",
+      "test_date": "2025-10-10",
+      "remarks": ""
+    },
+    {
+      "id": "TC-014",
+      "title": "สร้างรายงานสรุปรายได้",
+      "related_requirement": "REQ-014",
+      "test_type": "Functional",
+      "preconditions": "มีข้อมูล Invoice ในระบบ",
+      "steps": [
+        "เข้าเมนู Report",
+        "เลือกประเภทรายงาน",
+        "กำหนดช่วงวันที่",
+        "สร้างรายงาน"
+      ],
+      "expected_result": "รายงานแสดงข้อมูลถูกต้องตามช่วงวันที่ที่กำหนด",
+      "actual_result": "Pending",
+      "status": "Pending",
+      "tester": "DevelopmentTDP QA Team",
+      "test_date": "",
+      "remarks": "กำลังพัฒนา"
+    },
+    {
+      "id": "TC-015",
+      "title": "อัปเดตอัตราแลกเปลี่ยนรายวัน",
+      "related_requirement": "REQ-015",
+      "test_type": "Functional",
+      "preconditions": "ผู้ใช้มีสิทธิ์จัดการ Currency",
+      "steps": [
+        "เข้าเมนู Currency Management",
+        "เพิ่มอัตราแลกเปลี่ยนประจำวัน",
+        "บันทึก"
+      ],
+      "expected_result": "อัตราแลกเปลี่ยนบันทึกและใช้งานในระบบได้ถูกต้อง",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "DevelopmentTDP QA Team",
+      "test_date": "2025-10-10",
+      "remarks": ""
+    },
+    {
+      "id": "TC-016",
+      "title": "จัดการข้อมูลบริษัท",
+      "related_requirement": "REQ-016",
+      "test_type": "Functional",
+      "preconditions": "ผู้ใช้มีสิทธิ์ Admin",
+      "steps": [
+        "เข้าเมนู Company Management",
+        "แก้ไขข้อมูลบริษัท",
+        "บันทึก"
+      ],
+      "expected_result": "ข้อมูลบริษัทอัปเดตและแสดงบนเอกสารทางการได้ถูกต้อง",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "DevelopmentTDP QA Team",
+      "test_date": "2025-10-10",
+      "remarks": ""
+    },
+    {
+      "id": "TC-017",
+      "title": "เพิ่ม User และกำหนดสิทธิ์",
+      "related_requirement": "REQ-017",
+      "test_type": "Functional",
+      "preconditions": "ผู้ใช้มีสิทธิ์ Admin",
+      "steps": [
+        "เข้าเมนู User Management",
+        "เพิ่ม User ใหม่",
+        "กำหนด Role และสิทธิ์",
+        "บันทึก"
+      ],
+      "expected_result": "User ใหม่สร้างได้และสิทธิ์ทำงานถูกต้อง",
+      "actual_result": "Pending",
+      "status": "Pending",
+      "tester": "DevelopmentTDP QA Team",
+      "test_date": "",
+      "remarks": "กำลังพัฒนา"
+    }
+  ],
+  "defects": [
+    {
+      "id": "BUG-001",
+      "title": "Placeholder - No defects recorded at this time",
+      "related_test_case": "",
+      "related_requirement": "",
+      "severity": "Low",
+      "priority": "Low",
+      "status": "Closed",
+      "reported_by": "DevelopmentTDP QA Team",
+      "reported_date": "2025-10-01",
+      "assigned_to": "Saravut Chanchom",
+      "fixed_date": "2025-10-15",
+      "description": "Placeholder entry - to be updated with actual defects",
+      "steps_to_reproduce": "",
+      "root_cause": "",
+      "resolution": "No defects recorded"
+    },
+    {
+      "id": "BUG-002",
+      "title": "Currency Exchange Rate Retrieved Does Not Match Document Date",
+      "related_test_case": "",
+      "related_requirement": "",
+      "severity": "Medium",
+      "priority": "High",
+      "status": "Closed",
+      "reported_by": "DevelopmentTDP QA Team",
+      "reported_date": "",
+      "assigned_to": "Saravut Chanchom",
+      "fixed_date": "",
+      "description": "ระบบดึงอัตราแลกเปลี่ยน (Exchange Rate) ไม่ตรงกับวันที่ของเอกสาร (Document Date)\nโดยระบบดึงค่า Exchange Rate ล่าสุดของวันปัจจุบัน แทนที่จะดึงตาม DateDoc ที่ระบุในเอกสาร\nส่งผลให้ยอดคำนวณสกุลเงินต่างประเทศไม่ถูกต้อง",
+      "steps_to_reproduce": "",
+      "root_cause": "",
+      "resolution": "No defects recorded"
+    },
+    {
+      "id": "BUG-003",
+      "title": "Order Is Processed Multiple Times (Duplicate Processing)",
+      "related_test_case": "",
+      "related_requirement": "",
+      "severity": "High",
+      "priority": "High",
+      "status": "Closed",
+      "reported_by": "DevelopmentTDP QA Team",
+      "reported_date": "",
+      "assigned_to": "Saravut Chanchom",
+      "fixed_date": "",
+      "description": "ระบบมีการประมวลผล Order ซ้ำ (Duplicate Processing)\nเมื่อผู้ใช้งานกด Submit/Process ระบบบันทึกข้อมูลมากกว่า 1 ครั้ง\nทำให้เกิดรายการซ้ำในฐานข้อมูล และอาจส่งผลให้ยอดเงินคำนวณผิดพลาด",
+      "steps_to_reproduce": "",
+      "root_cause": "",
+      "resolution": "No defects recorded"
+    },
+    {
+      "id": "BUG-004",
+      "title": "Truck Release Authorization Not Linked to Tax Invoice",
+      "related_test_case": "",
+      "related_requirement": "",
+      "severity": "High",
+      "priority": "High",
+      "status": "Closed",
+      "reported_by": "DevelopmentTDP QA Team",
+      "reported_date": "",
+      "assigned_to": "Saravut Chanchom",
+      "fixed_date": "",
+      "description": "ระบบอนุญาตปล่อยรถ (Truck Release Authorization) โดยไม่มีการตรวจสอบหรือเชื่อมโยง (Link) กับ Tax Invoice ที่เกี่ยวข้อง",
+      "steps_to_reproduce": "",
+      "root_cause": "",
+      "resolution": "No defects recorded"
+    }
+  ],
+  "risks": [
+    {
+      "id": "RISK-001",
+      "category": "Technical",
+      "description": "ความเสี่ยงจากการ integrate กับระบบภายนอก (WMS, Gate System) อาจมีปัญหาเรื่อง data format ไม่ตรงกัน",
+      "probability": "Medium",
+      "impact": "High",
+      "risk_level": "High",
+      "mitigation": "กำหนด interface specification และทดสอบ integration ก่อน Go Live",
+      "owner": "Saravut Chanchom",
+      "status": "Mitigated",
+      "review_date": "2025-10-01",
+      "contingency": "สร้าง manual data entry เป็น fallback กรณี integration ล้มเหลว",
+      "linked_capa": ""
+    },
+    {
+      "id": "RISK-002",
+      "category": "Schedule",
+      "description": "Features ที่กำลังพัฒนา (Order Issuance, Cancel Request, Tax Invoice Credit, Report, User Management) อาจล่าช้ากว่ากำหนด",
+      "probability": "Medium",
+      "impact": "Medium",
+      "risk_level": "Medium",
+      "mitigation": "จัดลำดับความสำคัญ feature และติดตามความคืบหน้าทุกสัปดาห์",
+      "owner": "Saravut Chanchom",
+      "status": "Open",
+      "review_date": "2026-03-01",
+      "contingency": "ขยาย timeline สำหรับ Phase 2 หากจำเป็น",
+      "linked_capa": ""
+    },
+    {
+      "id": "RISK-003",
+      "category": "Technical",
+      "description": "ความเสี่ยงด้านความปลอดภัยของระบบ เนื่องจาก User Management ยังอยู่ระหว่างพัฒนา",
+      "probability": "Low",
+      "impact": "High",
+      "risk_level": "Medium",
+      "mitigation": "ใช้ role-based access control และเร่งพัฒนา User Management",
+      "owner": "Saravut Chanchom",
+      "status": "Open",
+      "review_date": "2026-02-28",
+      "contingency": "จำกัดสิทธิ์การเข้าถึงชั่วคราวจนกว่า User Management จะเสร็จสมบูรณ์",
+      "linked_capa": "CAPA-001"
+    },
+    {
+      "id": "RISK-004",
+      "category": "External",
+      "description": "ความเสี่ยงจากการเปลี่ยนแปลงข้อกำหนดด้านภาษีของกรมสรรพากร ซึ่งอาจกระทบต่อโมดูล Tax Invoice",
+      "probability": "Low",
+      "impact": "High",
+      "risk_level": "Medium",
+      "mitigation": "ติดตามประกาศจากกรมสรรพากรและเตรียม change request process",
+      "owner": "Saravut Chanchom",
+      "status": "Open",
+      "review_date": "2026-06-01",
+      "contingency": "Update ระบบตาม requirement ใหม่ทันทีเมื่อมีประกาศ",
+      "linked_capa": ""
+    }
+  ],
+  "change_requests": [
+    {
+      "id": "CR-001",
+      "title": "เพิ่ม Feature Order Issuance, Cancel Request, Tax Invoice Credit, Report, User Management (Phase 2)",
+      "description": "",
+      "requestor": "Soudaphone Management",
+      "request_date": "2025-11-01",
+      "priority": "High",
+      "impact": "",
+      "affected_documents": [],
+      "status": "In Progress",
+      "approved_by": "Saravut Chanjom",
+      "approval_date": "2025-11-15",
+      "implementation_date": ""
+    },
+    {
+      "id": "CR-002",
+      "title": "แก้ไขข้อบกร่อง",
+      "description": "",
+      "requestor": "Soudaphone Management",
+      "request_date": "2025-11-01",
+      "priority": "High",
+      "impact": "",
+      "affected_documents": [],
+      "status": "In Progress",
+      "approved_by": "Saravut Chanjom",
+      "approval_date": "2025-11-15",
+      "implementation_date": ""
+    },
+    {
+      "id": "CR-003",
+      "title": "",
+      "description": "",
+      "requestor": "",
+      "request_date": "",
+      "priority": "Medium",
+      "impact": "",
+      "affected_documents": [],
+      "status": "Pending",
+      "approved_by": "",
+      "approval_date": "",
+      "implementation_date": ""
+    },
+    {
+      "id": "CR-001",
+      "title": "ลงชื่อ ______________________________",
+      "description": "",
+      "requestor": "ตรวจสอบ / Reviewed by",
+      "request_date": "",
+      "priority": "Medium",
+      "impact": "",
+      "affected_documents": [],
+      "status": "Pending",
+      "approved_by": "",
+      "approval_date": "",
+      "implementation_date": ""
+    }
+  ],
+  "versions": [
+    {
+      "version": "1.0.0",
+      "release_date": "2025-11-01",
+      "release_type": "Major",
+      "description": "Go Live Phase 1 - Core features deployment",
+      "changes": [],
+      "deployed_by": "Saravut Chanchom",
+      "environment": "Production"
+    },
+    {
+      "version": "2.0.0",
+      "release_date": "2025-11-01",
+      "release_type": "Major",
+      "description": "อัปเดทรายการบัคระหว่างเริ่มให้งานในช่วง 15 วันแรก",
+      "changes": [],
+      "deployed_by": "Saravut Chanchom",
+      "environment": "Production"
+    },
+    {
+      "version": "3.0.0",
+      "release_date": "2025-12-21",
+      "release_type": "Major",
+      "description": "การแก้ไขข้อบกพร่อง",
+      "changes": [],
+      "deployed_by": "",
+      "environment": "Production"
+    }
+  ],
+  "meetings": [
+    {
+      "id": "MTG-001",
+      "title": "Kickoff Meeting - Interlink Project",
+      "date": "2025-05-05",
+      "time": "09:00-10:30",
+      "location": "Soudaphone Meeting Room",
+      "chair": "Saravut Chanchom",
+      "attendees": [
+        "Saravut Chanchom",
+        "DevelopmentTDP Team",
+        "Soudaphone Management"
+      ],
+      "agenda": [],
+      "action_items": [
+        {
+          "item": "จัดทำ Requirements Document",
+          "owner": "Saravut Chanchom",
+          "due_date": "2025-05-31",
+          "status": "Completed"
+        }
+      ],
+      "summary": ""
+    },
+    {
+      "id": "MTG-002",
+      "title": "────────────────────────────────────────────────────────────Go Live Preparation Meeting",
+      "date": "2025-10-20",
+      "time": "10:00-12:00",
+      "location": "Soudaphone Meeting Room",
+      "chair": "Saravut Chanchom",
+      "attendees": [
+        "Saravut Chanchom",
+        "DevelopmentTDP Team",
+        "Soudaphone Operations"
+      ],
+      "agenda": [],
+      "action_items": [
+        {
+          "item": "เตรียม Production environment",
+          "owner": "Saravut Chanchom",
+          "due_date": "2025-10-31",
+          "status": "Completed"
+        }
+      ],
+      "summary": ""
+    },
+    {
+      "id": "MTG-003",
+      "title": "────────────────────────────────────────────────────────────การส่งมอบเวอร์ชันและการอัปเดตระบบ",
+      "date": "2025-11-16",
+      "time": "09:00-10:30",
+      "location": "Soudaphone Meeting Room",
+      "chair": "Saravut Chanchom",
+      "attendees": [
+        "Saravut Chanchom",
+        "DevelopmentTDP Team",
+        "Soudaphone Management"
+      ],
+      "agenda": [],
+      "action_items": [
+        {
+          "item": "อัพเดทระบบ",
+          "owner": "Saravut Chanchom",
+          "due_date": "2025-11-17",
+          "status": "Completed"
+        },
+        {
+          "item": "ทดสอบใน Environment ที่กำหนดครบถ้วนก่อน Deploy",
+          "owner": "Saravut Chanchom",
+          "due_date": "2025-11-17",
+          "status": "Completed"
+        }
+      ],
+      "summary": ""
+    },
+    {
+      "id": "MTG-004",
+      "title": "การส่งมอบเวอร์ชันและการอัปเดตระบบ",
+      "date": "",
+      "time": "",
+      "location": "",
+      "chair": "",
+      "attendees": [],
+      "agenda": [],
+      "action_items": [],
+      "summary": ""
+    },
+    {
+      "id": "MTG-005",
+      "title": "การพัฒนาฟังชั่นเพิ่มเติม",
+      "date": "(DevelopmentTDP BA Team\nBusiness Analyst\nวันที่: _______________",
+      "time": "",
+      "location": "",
+      "chair": "เลขานุการ / Secretary",
+      "attendees": [],
+      "agenda": [],
+      "action_items": [],
+      "summary": ""
+    }
+  ],
+  "training_sessions": [
+    {
+      "id": "TRN-001",
+      "title": "การใช้งานระบบ Interlink - Phase 1 (Go Live Features)",
+      "date": "2025-10-25",
+      "duration": "4 hours",
+      "location": "Soudaphone Training Room",
+      "trainer": "ผู้จัดอบรม / Organizer",
+      "topics": [],
+      "attendees": [
+        {
+          "name": "Soudaphone Operations Staff",
+          "department": "Operations",
+          "signed": true
+        },
+        {
+          "name": "Soudaphone Finance Staff",
+          "department": "Finance",
+          "signed": true
+        }
+      ]
+    }
+  ],
+  "incidents": [],
+  "deployments": [],
+  "audit": {
+    "audit_date": "2026-02-19",
+    "auditor": "DevelopmentTDP Internal Audit",
+    "audit_scope": "ISO/IEC 29110 compliance for Interlink software development lifecycle",
+    "findings": [
+      {
+        "id": "FIND-001",
+        "clause": "ISO/IEC 29110 Section 3.3 - Software Implementation",
+        "finding_type": "Observation",
+        "description": "Features ในกลุ่ม Phase 2 (Order Issuance, Cancel Request, Tax Invoice Credit, Report, User Management) ยังอยู่ระหว่างพัฒนา ควรเร่งดำเนินการให้เสร็จสิ้นตามแผน",
+        "linked_capa": "CAPA-001"
+      }
+    ]
+  },
+  "capas": [
+    {
+      "id": "CAPA-001",
+      "type": "Corrective Action",
+      "related_finding": "FIND-001 / RISK-003",
+      "description": "เร่งพัฒนา Phase 2 features และเสริมความปลอดภัยของระบบด้วย User Management ที่สมบูรณ์",
+      "root_cause": "Phase 2 features ถูก scope ไว้ภายหลัง Go Live Phase 1 เพื่อให้สามารถ Go Live ได้ตามกำหนด",
+      "action_plan": "1. กำหนด sprint plan สำหรับ Phase 2 features\n2. เร่ง User Management เป็น priority สูงสุดด้านความปลอดภัย\n3. ทดสอบและ Go Live Phase 2 ภายใน Q1 2026",
+      "responsible": "Saravut Chanchom",
+      "target_date": "2026-03-31",
+      "status": "In Progress",
+      "effectiveness_review": "ตรวจสอบว่า Phase 2 features ทั้งหมด Go Live สำเร็จและผ่าน UAT ภายในกำหนด",
+      "closed_date": ""
+    }
+  ],
+  "sow": {},
+  "output_path": "D:\\Work\\DocISOGen\\projects"
+}

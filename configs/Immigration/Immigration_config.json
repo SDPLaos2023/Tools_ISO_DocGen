@@ -1,0 +1,2318 @@
+{
+  "project": {
+    "code": "Immigration",
+    "name": "ระบบตรวจคนเข้า-ออกเมือง",
+    "short_name": "Immigration",
+    "version": "4.2",
+    "doc_revision": "1.0",
+    "description": "ระบบตรวจคนเข้า-ออกเมือง รองรับการบันทึกข้อมูลการเดินทางเข้า-ออกประเทศ การลงทะเบียนเอกสารการเดินทาง บัตรผ่านแดน ยานพาหนะ รวมถึงการจัดการฐานข้อมูลบุคคลต้องห้ามและการออกรายงานสถิติ",
+    "scope": "ระบบครอบคลุมการบันทึกและตรวจสอบข้อมูลผู้เดินทางผ่านจุดตรวจชายแดน ได้แก่ การแจ้งเข้า-ออก ลงทะเบียนพาสปอร์ต บัตรผ่านแดน ยานพาหนะ ตู้คอนเทนเนอร์ การจัดการ Blacklist การออกรายงานประจำวันและสถิติ ไม่รวมถึงระบบการชำระเงินค่าธรรมเนียม",
+    "objectives": [
+      "พัฒนาระบบลงทะเบียนและตรวจสอบเอกสารการเดินทางของบุคคลที่ผ่านด่านตรวจคนเข้าเมือง",
+      "สร้างระบบ Blacklist สำหรับบุคคลต้องห้ามเข้าเมือง พร้อมแจ้งเตือนอัตโนมัติ",
+      "พัฒนาระบบบริหารจัดการวีซ่าและใบอนุญาตเข้าเมือง",
+      "สร้าง Dashboard Real-time สำหรับติดตามสถิติการเข้า-ออกเมืองรายวัน/รายเดือน",
+      "เพิ่มประสิทธิภาพการปฏิบัติงานของเจ้าหน้าที่ตรวจคนเข้าเมือง"
+    ],
+    "start_date": "2024-12-01",
+    "end_date": "2025-05-31",
+    "go_live_date": "2025-06-01",
+    "organization": "Soudaphone",
+    "department": "Soudaphone",
+    "document_date": "2026-02-19",
+    "classification": "Internal"
+  },
+  "team": {
+    "project_manager": {
+      "name": "Chan Neeammart",
+      "title": "Project Manager",
+      "email": "gm@soudaphone.com",
+      "phone": ""
+    },
+    "lead_developer": {
+      "name": "Souliya Singvongsa",
+      "title": "Head Developer",
+      "email": "souliya@soudaphone.com",
+      "phone": ""
+    },
+    "qa_engineer": {
+      "name": "Houmphaeng Duangpaserth",
+      "title": "QA Engineer",
+      "email": "houmphaeng@soudaphone.com",
+      "phone": ""
+    },
+    "business_analyst": {
+      "name": "Souliya Singvongsa",
+      "title": "Head Developer / BA",
+      "email": "souliya@soudaphone.com",
+      "phone": ""
+    },
+    "system_analyst": {
+      "name": "Souliya Singvongsa",
+      "title": "System Analyst",
+      "email": "souliya@soudaphone.com",
+      "phone": ""
+    },
+    "dba": {
+      "name": "Khamta Phantaboun",
+      "title": "Developer / DBA",
+      "email": "khamta@soudaphone.com",
+      "phone": ""
+    },
+    "members": [
+      {
+        "name": "Khamta Phantaboun",
+        "title": "Developer",
+        "email": "khamta@soudaphone.com"
+      },
+      {
+        "name": "Thanaphoum Limsakoun",
+        "title": "Developer",
+        "email": "thanaphoum@soudaphone.com"
+      },
+      {
+        "name": "Siwarit Chantham",
+        "title": "UX/UI",
+        "email": "siwarit@soudaphone.com"
+      }
+    ]
+  },
+  "stakeholders": [
+    {
+      "name": "Chan Neeammart",
+      "role": "Project Manager / Project Sponser",
+      "organization": "Soudaphone",
+      "email": "gm@soudaphone.com",
+      "responsibility": "อนุมัติงบประมาณและการตัดสินใจหลักของโครงการ"
+    },
+    {
+      "name": "Immigration Authority",
+      "role": "End User / System Owner",
+      "organization": "Immigration Department",
+      "email": "",
+      "responsibility": "ใช้งานระบบและยืนยันความต้องการทางธุรกิจ"
+    }
+  ],
+  "tech_stack": {
+    "frontend": ".NET Core MVC (Razor Pages)",
+    "backend": "C# / .NET Core",
+    "database": "Microsoft SQL Server",
+    "infrastructure": "On-premise Server",
+    "source_control": "Git",
+    "ci_cd": "Manual Deployment / GitHub Actions",
+    "other": [
+      "Figma",
+      "Dapper ORM"
+    ]
+  },
+  "milestones": [
+    {
+      "id": "MS-01",
+      "name": "Requirements Sign-off",
+      "target_date": "2024-12-20",
+      "status": "Completed",
+      "owner": "Chan Neeammart"
+    },
+    {
+      "id": "MS-02",
+      "name": "Design Complete",
+      "target_date": "2025-01-15",
+      "status": "Completed",
+      "owner": "Siwarit Chantham"
+    },
+    {
+      "id": "MS-03",
+      "name": "Development Complete",
+      "target_date": "2025-03-31",
+      "status": "Completed",
+      "owner": "Souliya Singvongsa"
+    },
+    {
+      "id": "MS-04",
+      "name": "UAT Complete",
+      "target_date": "2025-05-15",
+      "status": "Completed",
+      "owner": "Houmphaeng Duangpaserth"
+    },
+    {
+      "id": "MS-05",
+      "name": "Go-Live",
+      "target_date": "2025-06-01",
+      "status": "Pending",
+      "owner": "Souliya Singvongsa"
+    }
+  ],
+  "requirements": [
+    {
+      "id": "REQ-001",
+      "title": "แจ้งเข้า (Check-in / Entry)",
+      "description": "บันทึกการเดินทางขาเข้าประเทศ พร้อมตรวจสอบความถูกต้องของเอกสาร",
+      "priority": "High",
+      "type": "Functional",
+      "category": "Entry Management",
+      "source": "Team DevYa / Stakeholder",
+      "acceptance_criteria": "ระบบต้องบันทึกข้อมูลการเดินทางขาเข้าและตรวจสอบเอกสารได้อย่างถูกต้อง",
+      "linked_design": [
+        "COMP-001"
+      ],
+      "linked_test_cases": [
+        "TC-001"
+      ]
+    },
+    {
+      "id": "REQ-002",
+      "title": "แจ้งออก (Check-out / Exit)",
+      "description": "บันทึกการเดินทางขาออก พร้อมตรวจสอบระยะเวลาการพำนักและสถานะทางกฎหมาย",
+      "priority": "High",
+      "type": "Functional",
+      "category": "Exit Management",
+      "source": "Team DevYa / Stakeholder",
+      "acceptance_criteria": "ระบบต้องบันทึกข้อมูลการเดินทางขาออกและตรวจสอบระยะเวลาพักอาศัยได้",
+      "linked_design": [
+        "COMP-001"
+      ],
+      "linked_test_cases": [
+        "TC-002"
+      ]
+    },
+    {
+      "id": "REQ-003",
+      "title": "ลงทะเบียนหนังสือเดินทาง",
+      "description": "บันทึกข้อมูลและสแกนหน้าพาสปอร์ตเพื่อจัดเก็บฐานข้อมูลผู้เดินทาง",
+      "priority": "High",
+      "type": "Functional",
+      "category": "Passport Registration",
+      "source": "Team DevYa / Stakeholder",
+      "acceptance_criteria": "ระบบต้องสามารถบันทึกและสแกนข้อมูลพาสปอร์ตได้อย่างครบถ้วน",
+      "linked_design": [
+        "COMP-001"
+      ],
+      "linked_test_cases": [
+        "TC-003"
+      ]
+    },
+    {
+      "id": "REQ-004",
+      "title": "ลงทะเบียนบัตรผ่านแดน",
+      "description": "จัดการข้อมูลบัตรผ่านแดนสำหรับบุคคลในพื้นที่ชายแดน",
+      "priority": "High",
+      "type": "Functional",
+      "category": "Border Pass Registration",
+      "source": "Team DevYa / Stakeholder",
+      "acceptance_criteria": "ระบบต้องบันทึกและจัดการข้อมูลบัตรผ่านแดนได้",
+      "linked_design": [
+        "COMP-001"
+      ],
+      "linked_test_cases": [
+        "TC-004"
+      ]
+    },
+    {
+      "id": "REQ-005",
+      "title": "ลงทะเบียนบัตรผ่านแดนชั่วคราว",
+      "description": "ออกเอกสารและบันทึกข้อมูลสำหรับการเข้า-ออกระยะสั้นแบบชั่วคราว",
+      "priority": "High",
+      "type": "Functional",
+      "category": "Temporary Border Pass",
+      "source": "Team DevYa / Stakeholder",
+      "acceptance_criteria": "ระบบต้องออกและบันทึกบัตรผ่านแดนชั่วคราวได้",
+      "linked_design": [
+        "COMP-001"
+      ],
+      "linked_test_cases": [
+        "TC-005"
+      ]
+    },
+    {
+      "id": "REQ-006",
+      "title": "ลงทะเบียนพาหนะ",
+      "description": "บันทึกรายละเอียด ยี่ห้อ ทะเบียน และประวัติของยานพาหนะที่ใช้ข้ามแดน",
+      "priority": "High",
+      "type": "Functional",
+      "category": "Vehicle Registration",
+      "source": "Team DevYa / Stakeholder",
+      "acceptance_criteria": "ระบบต้องบันทึกข้อมูลยานพาหนะพร้อมประวัติการข้ามแดนได้",
+      "linked_design": [],
+      "linked_test_cases": []
+    },
+    {
+      "id": "REQ-007",
+      "title": "ลงทะเบียน Blacklist",
+      "description": "ระบบฐานข้อมูลเฝ้าระวัง เพื่อสกัดกั้นบุคคลต้องห้ามหรือบุคคลที่มีประวัติอาชญากรรม",
+      "priority": "High",
+      "type": "Functional",
+      "category": "Security Management",
+      "source": "Team DevYa / Stakeholder",
+      "acceptance_criteria": "ระบบต้องตรวจสอบและแจ้งเตือนเมื่อพบบุคคลใน Blacklist ขณะแจ้งเข้า-ออก",
+      "linked_design": [],
+      "linked_test_cases": []
+    },
+    {
+      "id": "REQ-008",
+      "title": "ลงทะเบียนผู้ใช้ระบบ",
+      "description": "จัดการสิทธิ์การเข้าใช้งานของเจ้าหน้าที่ (Admin/User) และบันทึกประวัติการทำงาน",
+      "priority": "High",
+      "type": "Functional",
+      "category": "User Management",
+      "source": "Team DevYa / Stakeholder",
+      "acceptance_criteria": "ระบบต้องสามารถสร้าง แก้ไข และจัดการสิทธิ์ผู้ใช้งานได้ตามระดับ Role",
+      "linked_design": [],
+      "linked_test_cases": []
+    },
+    {
+      "id": "REQ-009",
+      "title": "รายงานประจำวัน",
+      "description": "รายงานประจำวันสามารถแยกการแสดงข้อมูลตาม User Role",
+      "priority": "High",
+      "type": "Functional",
+      "category": "Reporting",
+      "source": "Team DevYa / Stakeholder",
+      "acceptance_criteria": "ระบบต้องออกรายงานประจำวันได้และแสดงข้อมูลตาม Role ของผู้ใช้งาน",
+      "linked_design": [],
+      "linked_test_cases": []
+    },
+    {
+      "id": "REQ-010",
+      "title": "ข้อมูลการเข้า-ออกเมือง",
+      "description": "รายละเอียดเชิงลึกของประวัติการเคลื่อนย้ายรายบุคคล",
+      "priority": "Medium",
+      "type": "Functional",
+      "category": "Reporting",
+      "source": "Team DevYa / Stakeholder",
+      "acceptance_criteria": "ระบบต้องแสดงประวัติการเข้า-ออกเมืองรายบุคคลได้อย่างละเอียด",
+      "linked_design": [],
+      "linked_test_cases": []
+    },
+    {
+      "id": "REQ-011",
+      "title": "สถิติผู้โดยสารเข้า-ออก",
+      "description": "รายงานเชิงกราฟและตัวเลขสรุปจำนวนผู้เดินทาง แยกตามประเภทเอกสารหรือสัญชาติ",
+      "priority": "Medium",
+      "type": "Functional",
+      "category": "Statistics & Analytics",
+      "source": "Team DevYa / Stakeholder",
+      "acceptance_criteria": "ระบบต้องแสดงสถิติผู้โดยสารในรูปแบบกราฟและตัวเลขแยกตามประเภทเอกสารหรือสัญชาติ",
+      "linked_design": [],
+      "linked_test_cases": []
+    },
+    {
+      "id": "REQ-012",
+      "title": "รายชื่อผู้โดยสารเข้า-ออก",
+      "description": "บัญชีรายชื่อผู้เดินทางอย่างละเอียดในช่วงเวลาที่กำหนด",
+      "priority": "Medium",
+      "type": "Functional",
+      "category": "Reporting",
+      "source": "Team DevYa / Stakeholder",
+      "acceptance_criteria": "ระบบต้องแสดงรายชื่อผู้เดินทางในช่วงเวลาที่กำหนดได้",
+      "linked_design": [],
+      "linked_test_cases": []
+    },
+    {
+      "id": "REQ-013",
+      "title": "ข้อมูลรถเข้า-ออก",
+      "description": "ระบบติดตามยานพาหนะแบบครบวงจร ทั้งเชิงปริมาณและข้อมูลรายคัน",
+      "priority": "Medium",
+      "type": "Functional",
+      "category": "Vehicle Reporting",
+      "source": "Team DevYa / Stakeholder",
+      "acceptance_criteria": "ระบบต้องแสดงข้อมูลรถเข้า-ออกทั้งในเชิงปริมาณและรายคันได้",
+      "linked_design": [],
+      "linked_test_cases": []
+    },
+    {
+      "id": "REQ-014",
+      "title": "สถิติรถเข้า-ออก",
+      "description": "รายงานข้อมูลสถิติรถเข้า-ออกแยกข้อมูลตามประเภทรถ",
+      "priority": "Medium",
+      "type": "Functional",
+      "category": "Vehicle Statistics",
+      "source": "Team DevYa / Stakeholder",
+      "acceptance_criteria": "ระบบต้องแสดงสถิติรถเข้า-ออกแยกตามประเภทรถได้",
+      "linked_design": [],
+      "linked_test_cases": []
+    },
+    {
+      "id": "REQ-015",
+      "title": "รายการรถเข้า-ออก",
+      "description": "ข้อมูลรายงานรถเข้า-ออก",
+      "priority": "Medium",
+      "type": "Functional",
+      "category": "Vehicle Reporting",
+      "source": "Team DevYa / Stakeholder",
+      "acceptance_criteria": "ระบบต้องแสดงรายการรถเข้า-ออกได้",
+      "linked_design": [],
+      "linked_test_cases": []
+    },
+    {
+      "id": "REQ-016",
+      "title": "จัดการข้อมูลด่าน",
+      "description": "ตั้งค่าข้อมูลพื้นฐานของจุดตรวจแต่ละแห่ง",
+      "priority": "High",
+      "type": "Functional",
+      "category": "Configuration",
+      "source": "Team DevYa / Stakeholder",
+      "acceptance_criteria": "ระบบต้องสามารถเพิ่ม แก้ไข และลบข้อมูลด่านได้",
+      "linked_design": [],
+      "linked_test_cases": []
+    },
+    {
+      "id": "REQ-017",
+      "title": "เลขตู้ Container",
+      "description": "ระบบบันทึกและตรวจสอบหมายเลขตู้คอนเทนเนอร์สำหรับรถขนส่งสินค้า เพื่อการติดตามโลจิสติกส์",
+      "priority": "Medium",
+      "type": "Functional",
+      "category": "Logistics",
+      "source": "Team DevYa / Stakeholder",
+      "acceptance_criteria": "ระบบต้องบันทึกและตรวจสอบหมายเลขตู้คอนเทนเนอร์ได้",
+      "linked_design": [],
+      "linked_test_cases": []
+    },
+    {
+      "id": "REQ-018",
+      "title": "จุดประสงค์การเข้าเมือง",
+      "description": "จัดการประเภทเหตุผลการเข้าเมือง (เช่น ท่องเที่ยว, ธุรกิจ, ขนส่งสินค้า)",
+      "priority": "Medium",
+      "type": "Functional",
+      "category": "Configuration",
+      "source": "Team DevYa / Stakeholder",
+      "acceptance_criteria": "ระบบต้องสามารถเพิ่มและจัดการประเภทจุดประสงค์การเข้าเมืองได้",
+      "linked_design": [],
+      "linked_test_cases": []
+    },
+    {
+      "id": "REQ-019",
+      "title": "ข้อมูลบริษัทขนส่ง",
+      "description": "ฐานข้อมูลบริษัทขนส่งหรือหน่วยงานที่เกี่ยวข้องกับการนำเข้า-ส่งออก",
+      "priority": "Medium",
+      "type": "Functional",
+      "category": "Configuration",
+      "source": "Team DevYa / Stakeholder",
+      "acceptance_criteria": "ระบบต้องบันทึกและจัดการข้อมูลบริษัทขนส่งได้",
+      "linked_design": [],
+      "linked_test_cases": []
+    },
+    {
+      "id": "REQ-020",
+      "title": "ข้อมูลยี่ห้อยานพาหนะ",
+      "description": "ข้อมูลมาตรฐานของยี่ห้อยานพาหนะเพื่อความแม่นยำในการลงทะเบียน",
+      "priority": "Low",
+      "type": "Functional",
+      "category": "Configuration",
+      "source": "Team DevYa / Stakeholder",
+      "acceptance_criteria": "ระบบต้องมีฐานข้อมูลยี่ห้อยานพาหนะที่สามารถเพิ่มและแก้ไขได้",
+      "linked_design": [],
+      "linked_test_cases": []
+    },
+    {
+      "id": "REQ-021",
+      "title": "ข้อมูลผู้แจ้งเอกสาร",
+      "description": "บันทึกรายละเอียดผู้ที่มาติดต่อหรือยื่นเอกสาร",
+      "priority": "Medium",
+      "type": "Functional",
+      "category": "Document Management",
+      "source": "Team DevYa / Stakeholder",
+      "acceptance_criteria": "ระบบต้องบันทึกข้อมูลผู้แจ้งเอกสารได้ครบถ้วน",
+      "linked_design": [],
+      "linked_test_cases": []
+    },
+    {
+      "id": "REQ-022",
+      "title": "ข้อมูลรูปแบบคดี",
+      "description": "จัดกลุ่มประเภทความผิดหรือเหตุการณ์ผิดปกติที่พบ ณ จุดตรวจ",
+      "priority": "Medium",
+      "type": "Functional",
+      "category": "Security Management",
+      "source": "Team DevYa / Stakeholder",
+      "acceptance_criteria": "ระบบต้องสามารถเพิ่มและจัดการประเภทความผิดหรือเหตุการณ์ผิดปกติได้",
+      "linked_design": [],
+      "linked_test_cases": []
+    },
+    {
+      "id": "REQ-023",
+      "title": "ข้อมูล Alert Source",
+      "description": "แหล่งที่มาของข้อมูลการแจ้งเตือนหรือกลุ่มเฝ้าระวังพิเศษจากหน่วยงานความมั่นคงอื่น ๆ",
+      "priority": "High",
+      "type": "Functional",
+      "category": "Security Management",
+      "source": "Team DevYa / Stakeholder",
+      "acceptance_criteria": "ระบบต้องรับและแสดงข้อมูล Alert จากแหล่งข้อมูลความมั่นคงภายนอกได้",
+      "linked_design": [],
+      "linked_test_cases": []
+    }
+  ],
+  "design_components": [
+    {
+      "id": "COMP-001",
+      "name": "Entry Module (แจ้งเข้า)",
+      "description": "โมดูลบันทึกการเดินทางขาเข้าประเทศและตรวจสอบเอกสาร",
+      "type": "UI Component / API",
+      "related_requirements": [
+        "REQ-001"
+      ],
+      "technology": "C# .NET MVC / Nuxt.js / MSSQL / Dapper"
+    },
+    {
+      "id": "COMP-002",
+      "name": "Exit Module (แจ้งออก)",
+      "description": "โมดูลบันทึกการเดินทางขาออกและตรวจสอบสถานะทางกฎหมาย",
+      "type": "UI Component / API",
+      "related_requirements": [
+        "REQ-002"
+      ],
+      "technology": ""
+    },
+    {
+      "id": "COMP-003",
+      "name": "Passport Registration Module",
+      "description": "โมดูลลงทะเบียนและสแกนหนังสือเดินทาง",
+      "type": "UI Component / Service",
+      "related_requirements": [
+        "REQ-003"
+      ],
+      "technology": ""
+    },
+    {
+      "id": "COMP-004",
+      "name": "Border Pass Module",
+      "description": "โมดูลจัดการบัตรผ่านแดนถาวร",
+      "type": "UI Component / API",
+      "related_requirements": [
+        "REQ-004"
+      ],
+      "technology": ""
+    },
+    {
+      "id": "COMP-005",
+      "name": "Temporary Border Pass Module",
+      "description": "โมดูลออกบัตรผ่านแดนชั่วคราว",
+      "type": "UI Component / API",
+      "related_requirements": [
+        "REQ-005"
+      ],
+      "technology": ""
+    },
+    {
+      "id": "COMP-006",
+      "name": "Vehicle Registration Module",
+      "description": "โมดูลลงทะเบียนและติดตามยานพาหนะ รวมถึงตู้คอนเทนเนอร์",
+      "type": "UI Component / API",
+      "related_requirements": [
+        "REQ-006",
+        "REQ-017"
+      ],
+      "technology": ""
+    },
+    {
+      "id": "COMP-007",
+      "name": "Security Management Module (Blacklist & Alert)",
+      "description": "โมดูลจัดการ Blacklist รูปแบบคดี และ Alert Source สำหรับการเฝ้าระวัง",
+      "type": "UI Component / API / Service",
+      "related_requirements": [
+        "REQ-007",
+        "REQ-022",
+        "REQ-023"
+      ],
+      "technology": ""
+    },
+    {
+      "id": "COMP-008",
+      "name": "User Management Module",
+      "description": "โมดูลจัดการผู้ใช้งาน สิทธิ์ (Role-based Access Control) และประวัติการทำงาน",
+      "type": "UI Component / API",
+      "related_requirements": [
+        "REQ-008"
+      ],
+      "technology": ""
+    },
+    {
+      "id": "COMP-009",
+      "name": "Reporting & Statistics Module (Passengers)",
+      "description": "โมดูลออกรายงานและสถิติผู้โดยสาร ประจำวัน ประวัติรายบุคคล และเชิงกราฟ",
+      "type": "UI Component / API",
+      "related_requirements": [
+        "REQ-009",
+        "REQ-010",
+        "REQ-011",
+        "REQ-012"
+      ],
+      "technology": ""
+    },
+    {
+      "id": "COMP-010",
+      "name": "Reporting & Statistics Module (Vehicles)",
+      "description": "โมดูลออกรายงานและสถิติยานพาหนะ แยกตามประเภทรถ",
+      "type": "UI Component / API",
+      "related_requirements": [
+        "REQ-013",
+        "REQ-014",
+        "REQ-015"
+      ],
+      "technology": ""
+    },
+    {
+      "id": "COMP-011",
+      "name": "Configuration Management Module",
+      "description": "โมดูลตั้งค่าข้อมูลพื้นฐาน เช่น ด่าน จุดประสงค์ บริษัท ยี่ห้อรถ",
+      "type": "UI Component / API",
+      "related_requirements": [
+        "REQ-016",
+        "REQ-018",
+        "REQ-019",
+        "REQ-020"
+      ],
+      "technology": ""
+    },
+    {
+      "id": "COMP-012",
+      "name": "Document Reporter Module",
+      "description": "โมดูลบันทึกข้อมูลผู้แจ้งเอกสาร",
+      "type": "UI Component / API",
+      "related_requirements": [
+        "REQ-021"
+      ],
+      "technology": ""
+    }
+  ],
+  "database_tables": [
+    {
+      "name": "IMMIGRATION_DATA",
+      "description": "บันทึกการเดินทางเข้า-ออกประเทศ",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "INT PRIMARY KEY",
+          "description": "Primary key"
+        },
+        {
+          "name": "Doc_No",
+          "type": "NVARCHAR(1000)",
+          "description": "เลขเอกสาร"
+        },
+        {
+          "name": "Document_No",
+          "type": "NVARCHAR(1000)",
+          "description": "เลขที่เอกสาร"
+        },
+        {
+          "name": "Name",
+          "type": "NVARCHAR(1000)",
+          "description": "ชื่อ"
+        },
+        {
+          "name": "Surname",
+          "type": "NVARCHAR(1000)",
+          "description": "นามสกุล"
+        },
+        {
+          "name": "Birth_of_date",
+          "type": "date",
+          "description": "วันเดือนปีเกิด"
+        },
+        {
+          "name": "Sex",
+          "type": "NVARCHAR(8)",
+          "description": "เพศ"
+        },
+        {
+          "name": "Country",
+          "type": "NVARCHAR(1000)",
+          "description": "ประเทศ"
+        },
+        {
+          "name": "Village",
+          "type": "NVARCHAR(1000)",
+          "description": "ตำบล"
+        },
+        {
+          "name": "District",
+          "type": "NVARCHAR(1000)",
+          "description": "อำเภอ"
+        },
+        {
+          "name": "Province",
+          "type": "NVARCHAR(1000)",
+          "description": "จังหวัด"
+        },
+        {
+          "name": "Occupation",
+          "type": "NVARCHAR(1000)",
+          "description": "อาชีพ"
+        },
+        {
+          "name": "ImagePath",
+          "type": "NVARCHAR(1000)",
+          "description": "ที่เก็บรูป"
+        },
+        {
+          "name": "Remart",
+          "type": "NVARCHAR(MAX)",
+          "description": "หมายเหตุ"
+        },
+        {
+          "name": "FrontNumber",
+          "type": "NVARCHAR(1000)",
+          "description": "ทะเบียนหน้า"
+        },
+        {
+          "name": "BackNumber",
+          "type": "NVARCHAR(1000)",
+          "description": "ทะเบียนหลัง"
+        },
+        {
+          "name": "Doorname",
+          "type": "NVARCHAR(1000)",
+          "description": "ชื่อประตู"
+        },
+        {
+          "name": "Gate",
+          "type": "NVARCHAR(1000)",
+          "description": "เกท"
+        },
+        {
+          "name": "Objective",
+          "type": "NVARCHAR(1000)",
+          "description": "วัตถุประสงค์"
+        },
+        {
+          "name": "StayAtLao",
+          "type": "NVARCHAR(1000)",
+          "description": "ที่อยู่ลาว"
+        },
+        {
+          "name": "CreateUser",
+          "type": "NVARCHAR(1000)",
+          "description": "ผู้ที่สร้าง"
+        },
+        {
+          "name": "FormNumber",
+          "type": "NVARCHAR(1000)",
+          "description": "เลขฟอร์ม"
+        },
+        {
+          "name": "Address",
+          "type": "NVARCHAR(1000)",
+          "description": "ที่อยู่"
+        },
+        {
+          "name": "VisaType",
+          "type": "NVARCHAR(1000)",
+          "description": "ประเภทวีช่า"
+        },
+        {
+          "name": "AddressNow",
+          "type": "NVARCHAR(1000)",
+          "description": "ที่อยู่ประจุบัน"
+        },
+        {
+          "name": "Status",
+          "type": "BIT",
+          "description": "สถานะ"
+        },
+        {
+          "name": "DataType",
+          "type": "NVARCHAR(1000)",
+          "description": "ประเภทข้อมูล"
+        },
+        {
+          "name": "CreateDate",
+          "type": "DATETIME",
+          "description": "วันที่สร้าง"
+        },
+        {
+          "name": "IsArrival",
+          "type": "BIT",
+          "description": "มาถึง"
+        },
+        {
+          "name": "Nationality",
+          "type": "NVARCHAR(1000)",
+          "description": "สัญชาติ"
+        },
+        {
+          "name": "Ethnicity",
+          "type": "NVARCHAR(1000)",
+          "description": "เชื้อชาติ"
+        },
+        {
+          "name": "RemarkResiger",
+          "type": "NVARCHAR(MAX)",
+          "description": "หมายเหตุลงทะเบียน"
+        },
+        {
+          "name": "Company",
+          "type": "NVARCHAR(1000)",
+          "description": "บริษัท"
+        },
+        {
+          "name": "ContainerNo",
+          "type": "NVARCHAR(1000)",
+          "description": "เลขตู้"
+        },
+        {
+          "name": "Purpose",
+          "type": "NVARCHAR(1000)",
+          "description": "จุดประสงค์"
+        },
+        {
+          "name": "Doc_IN_OUT",
+          "type": "NVARCHAR(100)",
+          "description": "เอกสารเข้า-ออก"
+        },
+        {
+          "name": "IssueByfront",
+          "type": "NVARCHAR(1000)",
+          "description": "สถานที่ลงทะเบียนหน้า"
+        },
+        {
+          "name": "IssueByback",
+          "type": "NVARCHAR(1000)",
+          "description": "สถานที่ลงทะเบียนหลัง"
+        },
+        {
+          "name": "Not_birthday",
+          "type": "BIT",
+          "description": "ไม่มีวันเกิด"
+        },
+        {
+          "name": "truck_private",
+          "type": "NVARCHAR(1000)",
+          "description": "รถส่วนตัว"
+        },
+        {
+          "name": "turck_type",
+          "type": "NVARCHAR(1000)",
+          "description": "ประเภทรถ"
+        },
+        {
+          "name": "trailer_type",
+          "type": "NVARCHAR(1000)",
+          "description": "ประเภทหาง"
+        },
+        {
+          "name": "formType",
+          "type": "NVARCHAR(1000)",
+          "description": "ประเภทฟอร์ม"
+        }
+      ],
+      "related_requirements": [
+        "REQ-001",
+        "REQ-002"
+      ]
+    },
+    {
+      "name": "FOLLOWER_DATA",
+      "description": "บันทึกการเดินทางเข้าออกประเทศของผู้โดยสาร",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "INT PRIMARY KEY",
+          "description": "Primary key"
+        },
+        {
+          "name": "Doc_HD",
+          "type": "NVARCHAR(1000)",
+          "description": "เอกสารHD"
+        },
+        {
+          "name": "Document_No",
+          "type": "NVARCHAR(1000)",
+          "description": "เลขเอกสาร"
+        },
+        {
+          "name": "Name",
+          "type": "NVARCHAR(1000)",
+          "description": "ชื่อ"
+        },
+        {
+          "name": "Surname",
+          "type": "NVARCHAR(1000)",
+          "description": "นามสกุล"
+        },
+        {
+          "name": "Birth_of_date",
+          "type": "NVARCHAR(1000)",
+          "description": "วันเดือนปีเกีด"
+        },
+        {
+          "name": "Sex",
+          "type": "NVARCHAR(8)",
+          "description": "เพศ"
+        },
+        {
+          "name": "Country",
+          "type": "NVARCHAR(1000)",
+          "description": "ประเทศ"
+        },
+        {
+          "name": "Type",
+          "type": "NVARCHAR(1000)",
+          "description": "ประเภท"
+        },
+        {
+          "name": "IsArrival",
+          "type": "NVARCHAR(1000)",
+          "description": "มาถึง"
+        },
+        {
+          "name": "Doc_IN_OUT",
+          "type": "NVARCHAR(1000)",
+          "description": "เอกสารเข้าออก"
+        },
+        {
+          "name": "Not_birthday",
+          "type": "BIT",
+          "description": "ไม่มีวันเกีด"
+        }
+      ],
+      "related_requirements": [
+        "REQ-001",
+        "REQ-002"
+      ]
+    },
+    {
+      "name": "MASTER_CHECKPOINT",
+      "description": "ฐานข้อมูลด่านตรวจ",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "INT PRIMARY KEY",
+          "description": "Primary key"
+        },
+        {
+          "name": "code",
+          "type": "NVARCHAR(1000)",
+          "description": "รหัสด่าน"
+        },
+        {
+          "name": "names",
+          "type": "NVARCHAR(MAX",
+          "description": "ชื่อด่าน"
+        },
+        {
+          "name": "status",
+          "type": "NVARCHAR(10)",
+          "description": "สถานะ"
+        }
+      ],
+      "related_requirements": [
+        "REQ-016"
+      ]
+    },
+    {
+      "name": "BORDER_PASS_REGISTER",
+      "description": "ฐานข้อมูลบัตรผ่านแดนถาวร",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "INT PRIMARY KEY",
+          "description": "Primary key"
+        },
+        {
+          "name": "Name",
+          "type": "NVARCHAR(1000)",
+          "description": "ชื่อ"
+        },
+        {
+          "name": "Surname",
+          "type": "NVARCHAR(1000)",
+          "description": "นามสกุล"
+        },
+        {
+          "name": "Birth_of_date",
+          "type": "DATE",
+          "description": "วันเดือนปีเกิด"
+        },
+        {
+          "name": "Sex",
+          "type": "NVARCHAR(8)",
+          "description": "เพศ"
+        },
+        {
+          "name": "Country",
+          "type": "NVARCHAR(1000)",
+          "description": "ประเทศ"
+        },
+        {
+          "name": "Village",
+          "type": "NVARCHAR(1000)",
+          "description": "ตำบล"
+        },
+        {
+          "name": "District",
+          "type": "NVARCHAR(1000)",
+          "description": "อำเภอ"
+        },
+        {
+          "name": "Province",
+          "type": "NVARCHAR(1000)",
+          "description": "จังหวัด"
+        },
+        {
+          "name": "Document_No",
+          "type": "NVARCHAR(1000)",
+          "description": "เลขที่เอกสาร"
+        },
+        {
+          "name": "Occupation",
+          "type": "NVARCHAR(1000)",
+          "description": "อาชีพ"
+        },
+        {
+          "name": "Nationality",
+          "type": "NVARCHAR(1000)",
+          "description": "สัญซาติ"
+        },
+        {
+          "name": "Ethnicity",
+          "type": "NVARCHAR(1000)",
+          "description": "เชื้อซาติ"
+        },
+        {
+          "name": "ImagePath",
+          "type": "NVARCHAR(1000)",
+          "description": "ที่เก็บรูป"
+        },
+        {
+          "name": "BarcodeNo",
+          "type": "NVARCHAR(1000)",
+          "description": "เลขบาโค้ด"
+        },
+        {
+          "name": "BarcodePath",
+          "type": "NVARCHAR(1000)",
+          "description": "ที่เก็บรูปบาโค้ด"
+        },
+        {
+          "name": "CreateDate",
+          "type": "DATETIME",
+          "description": "วันที่สร้าง"
+        },
+        {
+          "name": "CreateBy",
+          "type": "NVARCHAR(1000)",
+          "description": "ผู้สร้าง"
+        },
+        {
+          "name": "ModifyDate",
+          "type": "DATETIME",
+          "description": "วันที่แก้ไข"
+        },
+        {
+          "name": "ModifyBy",
+          "type": "NVARCHAR(1000)",
+          "description": "ผู้แก้ไข"
+        },
+        {
+          "name": "DeleteDate",
+          "type": "DATETIME",
+          "description": "วันที่ลบ"
+        },
+        {
+          "name": "DeleteBy",
+          "type": "NVARCHAR(1000)",
+          "description": "ผู้ลบ"
+        },
+        {
+          "name": "StatusCancel",
+          "type": "BIT",
+          "description": "สถานะการดำเนินการ"
+        },
+        {
+          "name": "CardPath",
+          "type": "NVARCHAR(1000)",
+          "description": "ทึ่เก็บรูปบัตร"
+        },
+        {
+          "name": "Remark",
+          "type": "NVARCHAR(MAX)",
+          "description": "หมายเหตุ"
+        },
+        {
+          "name": "DateOfIssue",
+          "type": "DATETIME",
+          "description": "วันที่ออก"
+        },
+        {
+          "name": "DateOfExpire",
+          "type": "DATETIME",
+          "description": "วันที่หมดอายุ"
+        },
+        {
+          "name": "Not_birthday",
+          "type": "BIT",
+          "description": "ไม่มีวันเกิด"
+        },
+        {
+          "name": "Address",
+          "type": "NVARCHAR(MAX)",
+          "description": "ที่อยู่"
+        },
+        {
+          "name": "idborderpass",
+          "type": "NVARCHAR(1000)",
+          "description": "เลขหนังสือผ่านแดน"
+        }
+      ],
+      "related_requirements": [
+        "REQ-004",
+        "REQ-005"
+      ]
+    },
+    {
+      "name": "TRUCK_MASTER_DATA",
+      "description": "ฐานข้อมูลยานพาหนะ",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "INT PRIMARY KEY",
+          "description": "Primary key"
+        },
+        {
+          "name": "TRUCK_LICENCE_PLATE_NO",
+          "type": "NVARCHAR(150)",
+          "description": "ทะเบียนยานพาหนะ"
+        },
+        {
+          "name": "TRUCK_TYPE",
+          "type": "NVARCHAR(150)",
+          "description": "ประเภทยานพาหนะ"
+        },
+        {
+          "name": "COMPANY_NAME",
+          "type": "NVARCHAR(1000)",
+          "description": "ชื่อบริษัท"
+        },
+        {
+          "name": "Country",
+          "type": "NVARCHAR(200)",
+          "description": "ประเทศ"
+        },
+        {
+          "name": "Brand",
+          "type": "NVARCHAR(1000)",
+          "description": "ยี่ห้อ"
+        },
+        {
+          "name": "CreateDate",
+          "type": "DATETIME",
+          "description": "วันที่สร้าง"
+        },
+        {
+          "name": "CreateBy",
+          "type": "NVARCHAR(1000)",
+          "description": "ผู้สร้าง"
+        },
+        {
+          "name": "ModifyDate",
+          "type": "DATETIME",
+          "description": "วันที่แก้ไข"
+        },
+        {
+          "name": "ModifyBy",
+          "type": "NVARCHAR(1000)",
+          "description": "ผู้แก้ไข"
+        },
+        {
+          "name": "DeleteDate",
+          "type": "DATETIME",
+          "description": "วันทีลบ"
+        },
+        {
+          "name": "DeleteBy",
+          "type": "NVARCHAR(1000)",
+          "description": "ผู้ลบ"
+        },
+        {
+          "name": "StatusCancel",
+          "type": "BIT",
+          "description": "สถานะยกเลิก"
+        },
+        {
+          "name": "IssueBy",
+          "type": "NVARCHAR(1000)",
+          "description": "ออกโดย"
+        },
+        {
+          "name": "no_plate",
+          "type": "NVARCHAR(1000)",
+          "description": "ไม่มีทะเบียน"
+        },
+        {
+          "name": "truck_head",
+          "type": "NVARCHAR(1)",
+          "description": "หัว"
+        },
+        {
+          "name": "truck_private",
+          "type": "NVARCHAR(1)",
+          "description": "รถส่วนตัว"
+        }
+      ],
+      "related_requirements": [
+        "REQ-006",
+        "REQ-017"
+      ]
+    },
+    {
+      "name": "BLACK_LIST_REGISTER",
+      "description": "ฐานข้อมูลบุคคลต้องห้าม",
+      "columns": [
+        {
+          "name": "id",
+          "type": "INT PRIMARY KEY",
+          "description": "Primary key"
+        },
+        {
+          "name": "Surname",
+          "type": "NVARCHAR(1000)",
+          "description": "นามสกุล"
+        },
+        {
+          "name": "Given_name",
+          "type": "NVARCHAR(1000)",
+          "description": "ระบุชื่อ"
+        },
+        {
+          "name": "Birth_of_date",
+          "type": "DATE",
+          "description": "วันเกิด"
+        },
+        {
+          "name": "Sex",
+          "type": "NVARCHAR(8)",
+          "description": "เพศ"
+        },
+        {
+          "name": "Country",
+          "type": "NVARCHAR(1000)",
+          "description": "ประเทศ"
+        },
+        {
+          "name": "Birth_Country",
+          "type": "NVARCHAR(1000)",
+          "description": "ประเทศเกิด"
+        },
+        {
+          "name": "Document_No",
+          "type": "NVARCHAR(1000)",
+          "description": "เลขเอกสาร"
+        },
+        {
+          "name": "Remarks",
+          "type": "NVARCHAR(MAX)",
+          "description": "หมายเหตุ"
+        },
+        {
+          "name": "ImagePath",
+          "type": "NVARCHAR(1000)",
+          "description": "ที่เก็บรูป"
+        },
+        {
+          "name": "CreateDate",
+          "type": "DATETIME",
+          "description": "วันที่สร้าง"
+        },
+        {
+          "name": "CreateBy",
+          "type": "NVARCHAR(1000)",
+          "description": "ผู้สร้าง"
+        },
+        {
+          "name": "ModifyDate",
+          "type": "DATETIME",
+          "description": "วันที่แก้ไข"
+        },
+        {
+          "name": "ModifyBy",
+          "type": "NVARCHAR(1000)",
+          "description": "ผู้แก้ไข"
+        },
+        {
+          "name": "DeleteDate",
+          "type": "DATETIME",
+          "description": "วันที่ลบ"
+        },
+        {
+          "name": "DeleteBy",
+          "type": "NVARCHAR(1000)",
+          "description": "ผู้ลบ"
+        },
+        {
+          "name": "StatusCancel",
+          "type": "BIT",
+          "description": "สถานะยกเลิก"
+        },
+        {
+          "name": "CardPath",
+          "type": "NVARCHAR(1000)",
+          "description": "ที่เก็บรูปบัตร"
+        },
+        {
+          "name": "ExpireDate",
+          "type": "DATETIME",
+          "description": "วันหมดอายุ"
+        },
+        {
+          "name": "StatusAction",
+          "type": "NVARCHAR(1000)",
+          "description": "สถานะการดำเนีนการ"
+        },
+        {
+          "name": "Reason",
+          "type": "NVARCHAR(1000)",
+          "description": "เหตุผล"
+        },
+        {
+          "name": "Source",
+          "type": "NVARCHAR(1000)",
+          "description": "แหล่งที่มา"
+        },
+        {
+          "name": "Action",
+          "type": "NVARCHAR(1000)",
+          "description": "การกระทำ"
+        },
+        {
+          "name": "Nationality",
+          "type": "NVARCHAR(150)",
+          "description": "สัญซาติ"
+        },
+        {
+          "name": "Race",
+          "type": "NVARCHAR(150)",
+          "description": "เชื้อซาติ"
+        },
+        {
+          "name": "Blacklistdate",
+          "type": "DATETIME",
+          "description": "บัญชีดำวันที่"
+        },
+        {
+          "name": "Not_birthday",
+          "type": "BIT",
+          "description": "ไม่มีวันเกิด"
+        }
+      ],
+      "related_requirements": [
+        "REQ-007"
+      ]
+    },
+    {
+      "name": "SYS_USER",
+      "description": "ฐานข้อมูลผู้ใช้งานระบบ",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "INT PRIMARY KEY",
+          "description": "Primary key"
+        },
+        {
+          "name": "USERNAME",
+          "type": "NVARCHAR(100)",
+          "description": "ชื่อผู้ใช้งาน"
+        },
+        {
+          "name": "PASSWORD",
+          "type": "NVARCHAR(100)",
+          "description": "รหัสผ่าน"
+        },
+        {
+          "name": "FIRSTNAME",
+          "type": "NVARCHAR(100)",
+          "description": "ชื่อ"
+        },
+        {
+          "name": "LASTNAME",
+          "type": "NVARCHAR(100)",
+          "description": "นามสกุล"
+        },
+        {
+          "name": "EMP_ID",
+          "type": "NVARCHAR(50)",
+          "description": "รหัสพนักงาน"
+        },
+        {
+          "name": "SYS_ROLE",
+          "type": "NVARCHAR(100)",
+          "description": "บทบาทผู้ใช้"
+        },
+        {
+          "name": "STATUS",
+          "type": "NVARCHAR(1)",
+          "description": "สถานะ"
+        },
+        {
+          "name": "CREATE_DATE",
+          "type": "DATETIME",
+          "description": "วันที่สร้าง"
+        },
+        {
+          "name": "TEL",
+          "type": "NVARCHAR(100)",
+          "description": "เบอร์โทร"
+        },
+        {
+          "name": "EMAIL",
+          "type": "NVARCHAR(100)",
+          "description": "อีเมว"
+        },
+        {
+          "name": "COMPANY",
+          "type": "NVARCHAR(100)",
+          "description": "บริษัท"
+        },
+        {
+          "name": "FilePathImg",
+          "type": "NVARCHAR(MAX)",
+          "description": "ที่เก็บรูป"
+        },
+        {
+          "name": "TAX_ID",
+          "type": "NVARCHAR(10)",
+          "description": ""
+        },
+        {
+          "name": "SEX",
+          "type": "NVARCHAR(10)",
+          "description": "เพศ"
+        },
+        {
+          "name": "Doorname",
+          "type": "NVARCHAR(10)",
+          "description": "ตำแหน่งประตู"
+        },
+        {
+          "name": "department",
+          "type": "NVARCHAR(100)",
+          "description": "แผนก"
+        },
+        {
+          "name": "STATUS_ACTIVE",
+          "type": "NVARCHAR(1)",
+          "description": "สถานะใช้งาน"
+        }
+      ],
+      "related_requirements": [
+        "REQ-008"
+      ]
+    },
+    {
+      "name": "MASTER_CHECKPOINT",
+      "description": "ฐานข้อมูลด่านตรวจ",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "INT PRIMARY KEY",
+          "description": "Primary key"
+        },
+        {
+          "name": "code",
+          "type": "NVARCHAR(1000)",
+          "description": "รหัสด่าน"
+        },
+        {
+          "name": "names",
+          "type": "NVARCHAR(MAX)",
+          "description": "ชื่อด่าน"
+        },
+        {
+          "name": "status",
+          "type": "NVARCHAR(10)",
+          "description": "สถานะการใช้งาน"
+        }
+      ],
+      "related_requirements": [
+        "REQ-016"
+      ]
+    },
+    {
+      "name": "PURPOSE",
+      "description": "ฐานข้อมูลจุดประสงค์การเข้าเมือง",
+      "columns": [
+        {
+          "name": "Purpose",
+          "type": "INT PRIMARY KEY",
+          "description": "Primary key"
+        },
+        {
+          "name": "PurposeName",
+          "type": "NVARCHAR(200)",
+          "description": "จุดประสงค์"
+        }
+      ],
+      "related_requirements": [
+        "REQ-018"
+      ]
+    },
+    {
+      "name": "Company",
+      "description": "ฐานข้อมูลบริษัทขนส่ง",
+      "columns": [
+        {
+          "name": "CompanyID",
+          "type": "INT PRIMARY KEY",
+          "description": "Primary key"
+        },
+        {
+          "name": "CompanyName",
+          "type": "NVARCHAR(150)",
+          "description": "ชื่อบริษัท"
+        },
+        {
+          "name": "CompanyProfile",
+          "type": "NVARCHAR(150)",
+          "description": "ประวัติบริษัท"
+        },
+        {
+          "name": "CompanyDocument",
+          "type": "NVARCHAR(150)",
+          "description": "เอกสารบริษัท"
+        }
+      ],
+      "related_requirements": []
+    },
+    {
+      "name": "BRAND",
+      "description": "ฐานข้อมูลยี่ห้อยานพาหนะ",
+      "columns": [
+        {
+          "name": "BrandID",
+          "type": "INT PRIMARY KEY",
+          "description": "Primary key"
+        },
+        {
+          "name": "BrandName",
+          "type": "NVARCHAR(100)",
+          "description": "ชื่อยี่ห้อ"
+        }
+      ],
+      "related_requirements": [
+        "REQ-020"
+      ]
+    },
+    {
+      "name": "AlertSource",
+      "description": "ฐานข้อมูลแหล่งที่มาของ Alert",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "INT PRIMARY KEY",
+          "description": "Primary key"
+        },
+        {
+          "name": "AlertSource",
+          "type": "NVARCHAR(MAX)",
+          "description": "ชื่อแหล่งข้อมูล"
+        }
+      ],
+      "related_requirements": []
+    }
+  ],
+  "test_cases": [
+    {
+      "id": "TC-001",
+      "title": "ทดสอบการแจ้งเข้า (Check-in)",
+      "related_requirement": "REQ-001",
+      "test_type": "UAT",
+      "preconditions": "ผู้ใช้ Login เข้าระบบแล้ว และมีข้อมูลผู้เดินทางในระบบ",
+      "steps": [
+        "เปิดหน้าแจ้งเข้า",
+        "กรอกข้อมูลผู้เดินทาง",
+        "เลือกด่านและจุดประสงค์",
+        "บันทึกข้อมูล"
+      ],
+      "expected_result": "ระบบบันทึกข้อมูลการเดินทางขาเข้าสำเร็จและแสดงยืนยัน",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "Team DevYa",
+      "test_date": "2025-05-01",
+      "remarks": "ผ่าน UAT แล้ว รอ Go-live"
+    },
+    {
+      "id": "TC-002",
+      "title": "ทดสอบการแจ้งออก (Check-out)",
+      "related_requirement": "REQ-002",
+      "test_type": "UAT",
+      "preconditions": "ผู้ใช้ Login เข้าระบบแล้ว และมีข้อมูลการแจ้งเข้าในระบบ",
+      "steps": [
+        "เปิดหน้าแจ้งออก",
+        "ค้นหาข้อมูลผู้เดินทาง",
+        "ตรวจสอบระยะเวลาพำนัก",
+        "บันทึกการแจ้งออก"
+      ],
+      "expected_result": "ระบบบันทึกข้อมูลการเดินทางขาออกและแสดงระยะเวลาพำนักถูกต้อง",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "Team DevYa",
+      "test_date": "2025-05-01",
+      "remarks": "ผ่าน UAT แล้ว รอ Go-live"
+    },
+    {
+      "id": "TC-003",
+      "title": "ทดสอบการลงทะเบียนหนังสือเดินทาง",
+      "related_requirement": "REQ-003",
+      "test_type": "UAT",
+      "preconditions": "ผู้ใช้ Login เข้าระบบแล้ว",
+      "steps": [
+        "เปิดหน้าลงทะเบียนพาสปอร์ต",
+        "กรอกข้อมูลและสแกนหน้าพาสปอร์ต",
+        "บันทึกข้อมูล"
+      ],
+      "expected_result": "ระบบบันทึกข้อมูลพาสปอร์ตและไฟล์สแกนสำเร็จ",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "Team DevYa",
+      "test_date": "2025-05-02",
+      "remarks": "ผ่าน UAT แล้ว รอ Go-live"
+    },
+    {
+      "id": "TC-007",
+      "title": "ทดสอบระบบ Blacklist",
+      "related_requirement": "REQ-007",
+      "test_type": "UAT",
+      "preconditions": "มีข้อมูลบุคคลใน Blacklist ในระบบ",
+      "steps": [
+        "บันทึกข้อมูลผู้เดินทางที่อยู่ใน Blacklist",
+        "กดแจ้งเข้า",
+        "ตรวจสอบการแจ้งเตือน"
+      ],
+      "expected_result": "ระบบแจ้งเตือนเมื่อพบบุคคลใน Blacklist ทันที",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "Team DevYa",
+      "test_date": "2025-05-05",
+      "remarks": "ผ่าน UAT แล้ว รอ Go-live"
+    },
+    {
+      "id": "TC-008",
+      "title": "ทดสอบการจัดการผู้ใช้งานระบบ",
+      "related_requirement": "REQ-008",
+      "test_type": "UAT",
+      "preconditions": "Login ด้วยบัญชี Admin",
+      "steps": [
+        "เปิดหน้าจัดการผู้ใช้",
+        "เพิ่มผู้ใช้ใหม่",
+        "กำหนด Role",
+        "บันทึก"
+      ],
+      "expected_result": "ระบบสร้างผู้ใช้งานใหม่พร้อม Role ที่กำหนดสำเร็จ",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "Team DevYa",
+      "test_date": "2025-05-06",
+      "remarks": "ผ่าน UAT แล้ว รอ Go-live"
+    },
+    {
+      "id": "TC-009",
+      "title": "ทดสอบรายงานประจำวันตาม Role",
+      "related_requirement": "REQ-009",
+      "test_type": "UAT",
+      "preconditions": "Login ด้วยบัญชีผู้ใช้ที่มี Role ต่างกัน",
+      "steps": [
+        "Login ด้วย Admin",
+        "ดูรายงานประจำวัน",
+        "Login ด้วย User ทั่วไป",
+        "ดูรายงานประจำวัน"
+      ],
+      "expected_result": "รายงานแสดงข้อมูลแตกต่างกันตามระดับ Role",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "Team DevYa",
+      "test_date": "2025-05-07",
+      "remarks": "ผ่าน UAT แล้ว รอ Go-live"
+    },
+    {
+      "id": "TC-004",
+      "title": "ทดสอบการลงทะเบียนบัตรผ่านแดน",
+      "related_requirement": "REQ-004",
+      "test_type": "UAT",
+      "preconditions": "ผู้ใช้ Login เข้าระบบแล้ว",
+      "steps": [
+        "เปิดหน้าลงทะเบียนบัตรผ่านแดน",
+        "กรอกข้อมูล",
+        "บันทึก"
+      ],
+      "expected_result": "ระบบบันทึกข้อมูลบัตรผ่านแดนสำเร็จ",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "Team DevYa",
+      "test_date": "2025-05-02",
+      "remarks": "ผ่าน UAT แล้ว รอ Go-live"
+    },
+    {
+      "id": "TC-005",
+      "title": "ทดสอบการลงทะเบียนบัตรผ่านแดนชั่วคราว",
+      "related_requirement": "REQ-005",
+      "test_type": "UAT",
+      "preconditions": "ผู้ใช้ Login เข้าระบบแล้ว",
+      "steps": [
+        "เปิดหน้าลงทะเบียนบัตรผ่านแดนชั่วคราว",
+        "กรอกข้อมูล",
+        "บันทึก"
+      ],
+      "expected_result": "ระบบออกบัตรผ่านแดนชั่วคราวและบันทึกสำเร็จ",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "Team DevYa",
+      "test_date": "2025-05-03",
+      "remarks": "ผ่าน UAT แล้ว รอ Go-live"
+    },
+    {
+      "id": "TC-006",
+      "title": "ทดสอบการลงทะเบียนพาหนะ",
+      "related_requirement": "REQ-006",
+      "test_type": "UAT",
+      "preconditions": "ผู้ใช้ Login เข้าระบบแล้ว",
+      "steps": [
+        "เปิดหน้าลงทะเบียนพาหนะ",
+        "กรอกรายละเอียดรถ",
+        "บันทึก"
+      ],
+      "expected_result": "ระบบบันทึกข้อมูลพาหนะสำเร็จ",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "Team DevYa",
+      "test_date": "2025-05-03",
+      "remarks": "ผ่าน UAT แล้ว รอ Go-live"
+    },
+    {
+      "id": "TC-010",
+      "title": "ทดสอบข้อมูลการเข้า-ออกเมืองรายบุคคล",
+      "related_requirement": "REQ-010",
+      "test_type": "UAT",
+      "preconditions": "มีข้อมูลประวัติการเดินทางในระบบ",
+      "steps": [
+        "ค้นหาผู้เดินทาง",
+        "ดูประวัติการเข้า-ออก"
+      ],
+      "expected_result": "ระบบแสดงประวัติการเดินทางรายบุคคลครบถ้วน",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "Team DevYa",
+      "test_date": "2025-05-08",
+      "remarks": "ผ่าน UAT แล้ว รอ Go-live"
+    },
+    {
+      "id": "TC-011",
+      "title": "ทดสอบสถิติผู้โดยสารเข้า-ออก",
+      "related_requirement": "REQ-011",
+      "test_type": "UAT",
+      "preconditions": "มีข้อมูลในระบบ",
+      "steps": [
+        "เปิดหน้าสถิติผู้โดยสาร",
+        "เลือกช่วงวันที่",
+        "ดูกราฟและตัวเลข"
+      ],
+      "expected_result": "ระบบแสดงสถิติในรูปแบบกราฟแยกตามประเภทเอกสารหรือสัญชาติ",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "Team DevYa",
+      "test_date": "2025-05-08",
+      "remarks": "ผ่าน UAT แล้ว รอ Go-live"
+    },
+    {
+      "id": "TC-012",
+      "title": "ทดสอบรายชื่อผู้โดยสารเข้า-ออก",
+      "related_requirement": "REQ-012",
+      "test_type": "UAT",
+      "preconditions": "มีข้อมูลในระบบ",
+      "steps": [
+        "เปิดหน้ารายชื่อผู้โดยสาร",
+        "เลือกช่วงวันที่",
+        "ดูรายชื่อ"
+      ],
+      "expected_result": "ระบบแสดงรายชื่อผู้เดินทางในช่วงเวลาที่กำหนดครบถ้วน",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "Team DevYa",
+      "test_date": "2025-05-09",
+      "remarks": "ผ่าน UAT แล้ว รอ Go-live"
+    },
+    {
+      "id": "TC-013",
+      "title": "ทดสอบข้อมูลรถเข้า-ออก",
+      "related_requirement": "REQ-013",
+      "test_type": "UAT",
+      "preconditions": "มีข้อมูลรถในระบบ",
+      "steps": [
+        "เปิดหน้าข้อมูลรถ",
+        "ค้นหาและดูรายละเอียดรายคัน"
+      ],
+      "expected_result": "ระบบแสดงข้อมูลรถเข้า-ออกทั้งเชิงปริมาณและรายคัน",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "Team DevYa",
+      "test_date": "2025-05-09",
+      "remarks": "ผ่าน UAT แล้ว รอ Go-live"
+    },
+    {
+      "id": "TC-014",
+      "title": "ทดสอบสถิติรถเข้า-ออก",
+      "related_requirement": "REQ-014",
+      "test_type": "UAT",
+      "preconditions": "มีข้อมูลในระบบ",
+      "steps": [
+        "เปิดหน้าสถิติรถ",
+        "เลือกช่วงวันที่",
+        "ดูสถิติแยกประเภทรถ"
+      ],
+      "expected_result": "ระบบแสดงสถิติรถเข้า-ออกแยกตามประเภทรถ",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "Team DevYa",
+      "test_date": "2025-05-10",
+      "remarks": "ผ่าน UAT แล้ว รอ Go-live"
+    },
+    {
+      "id": "TC-015",
+      "title": "ทดสอบรายการรถเข้า-ออก",
+      "related_requirement": "REQ-015",
+      "test_type": "UAT",
+      "preconditions": "มีข้อมูลในระบบ",
+      "steps": [
+        "เปิดหน้ารายการรถ",
+        "เลือกช่วงวันที่",
+        "ดูรายการ"
+      ],
+      "expected_result": "ระบบแสดงรายการรถเข้า-ออก",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "Team DevYa",
+      "test_date": "2025-05-10",
+      "remarks": "ผ่าน UAT แล้ว รอ Go-live"
+    },
+    {
+      "id": "TC-016",
+      "title": "ทดสอบการจัดการข้อมูลด่าน",
+      "related_requirement": "REQ-016",
+      "test_type": "UAT",
+      "preconditions": "Login ด้วยบัญชี Admin",
+      "steps": [
+        "เปิดหน้าจัดการด่าน",
+        "เพิ่ม/แก้ไขข้อมูลด่าน",
+        "บันทึก"
+      ],
+      "expected_result": "ระบบบันทึกข้อมูลด่านสำเร็จ",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "Team DevYa",
+      "test_date": "2025-05-11",
+      "remarks": "ผ่าน UAT แล้ว รอ Go-live"
+    },
+    {
+      "id": "TC-017",
+      "title": "ทดสอบการบันทึกเลขตู้ Container",
+      "related_requirement": "REQ-017",
+      "test_type": "UAT",
+      "preconditions": "มีข้อมูลรถขนส่งในระบบ",
+      "steps": [
+        "เปิดหน้าลงทะเบียนพาหนะ",
+        "กรอกเลขตู้ Container",
+        "บันทึก"
+      ],
+      "expected_result": "ระบบบันทึกและแสดงเลขตู้คอนเทนเนอร์ถูกต้อง",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "Team DevYa",
+      "test_date": "2025-05-11",
+      "remarks": "ผ่าน UAT แล้ว รอ Go-live"
+    },
+    {
+      "id": "TC-018",
+      "title": "ทดสอบการจัดการจุดประสงค์การเข้าเมือง",
+      "related_requirement": "REQ-018",
+      "test_type": "UAT",
+      "preconditions": "Login ด้วยบัญชี Admin",
+      "steps": [
+        "เปิดหน้าจัดการจุดประสงค์",
+        "เพิ่มประเภทใหม่",
+        "บันทึก"
+      ],
+      "expected_result": "ระบบบันทึกประเภทจุดประสงค์ใหม่สำเร็จ",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "Team DevYa",
+      "test_date": "2025-05-12",
+      "remarks": "ผ่าน UAT แล้ว รอ Go-live"
+    },
+    {
+      "id": "TC-019",
+      "title": "ทดสอบการจัดการข้อมูลบริษัทขนส่ง",
+      "related_requirement": "REQ-019",
+      "test_type": "UAT",
+      "preconditions": "Login ด้วยบัญชี Admin",
+      "steps": [
+        "เปิดหน้าจัดการบริษัท",
+        "เพิ่ม/แก้ไขข้อมูลบริษัท",
+        "บันทึก"
+      ],
+      "expected_result": "ระบบบันทึกข้อมูลบริษัทขนส่งสำเร็จ",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "Team DevYa",
+      "test_date": "2025-05-12",
+      "remarks": "ผ่าน UAT แล้ว รอ Go-live"
+    },
+    {
+      "id": "TC-020",
+      "title": "ทดสอบข้อมูลยี่ห้อยานพาหนะ",
+      "related_requirement": "REQ-020",
+      "test_type": "UAT",
+      "preconditions": "Login ด้วยบัญชี Admin",
+      "steps": [
+        "เปิดหน้าจัดการยี่ห้อรถ",
+        "เพิ่มยี่ห้อใหม่",
+        "บันทึก"
+      ],
+      "expected_result": "ระบบบันทึกยี่ห้อรถใหม่สำเร็จ",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "Team DevYa",
+      "test_date": "2025-05-13",
+      "remarks": "ผ่าน UAT แล้ว รอ Go-live"
+    },
+    {
+      "id": "TC-021",
+      "title": "ทดสอบการบันทึกข้อมูลผู้แจ้งเอกสาร",
+      "related_requirement": "REQ-021",
+      "test_type": "UAT",
+      "preconditions": "ผู้ใช้ Login เข้าระบบแล้ว",
+      "steps": [
+        "เปิดหน้าผู้แจ้งเอกสาร",
+        "กรอกข้อมูล",
+        "บันทึก"
+      ],
+      "expected_result": "ระบบบันทึกข้อมูลผู้แจ้งเอกสารสำเร็จ",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "Team DevYa",
+      "test_date": "2025-05-13",
+      "remarks": "ผ่าน UAT แล้ว รอ Go-live"
+    },
+    {
+      "id": "TC-022",
+      "title": "ทดสอบการจัดการข้อมูลรูปแบบคดี",
+      "related_requirement": "REQ-022",
+      "test_type": "UAT",
+      "preconditions": "Login ด้วยบัญชี Admin",
+      "steps": [
+        "เปิดหน้าจัดการรูปแบบคดี",
+        "เพิ่มประเภทความผิด",
+        "บันทึก"
+      ],
+      "expected_result": "ระบบบันทึกประเภทความผิดใหม่สำเร็จ",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "Team DevYa",
+      "test_date": "2025-05-14",
+      "remarks": "ผ่าน UAT แล้ว รอ Go-live"
+    },
+    {
+      "id": "TC-023",
+      "title": "ทดสอบข้อมูล Alert Source",
+      "related_requirement": "REQ-023",
+      "test_type": "UAT",
+      "preconditions": "Login ด้วยบัญชี Admin",
+      "steps": [
+        "เปิดหน้าจัดการ Alert Source",
+        "เพิ่มแหล่งข้อมูล",
+        "บันทึก"
+      ],
+      "expected_result": "ระบบบันทึกแหล่งข้อมูล Alert สำเร็จ",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "Team DevYa",
+      "test_date": "2025-05-14",
+      "remarks": "ผ่าน UAT แล้ว รอ Go-live"
+    }
+  ],
+  "defects": [
+    {
+      "id": "BUG-002",
+      "title": "บันทืกหน้า blacklist แล้ว popup ไม่ขื้นสำเร็จ",
+      "related_test_case": "",
+      "related_requirement": "",
+      "severity": "Low",
+      "priority": "Low",
+      "status": "Closed",
+      "reported_by": "Houmphaeng Duangpaserth",
+      "reported_date": "2025-05-01",
+      "assigned_to": "Souliya Singvongsa",
+      "fixed_date": "2025-05-15",
+      "description": "",
+      "steps_to_reproduce": "",
+      "root_cause": "",
+      "resolution": ""
+    },
+    {
+      "id": "BUG-003",
+      "title": "ลบ blacklist ไม่มี popup confirm",
+      "related_test_case": "",
+      "related_requirement": "",
+      "severity": "Low",
+      "priority": "Low",
+      "status": "Closed",
+      "reported_by": "Houmphaeng Duangpaserth",
+      "reported_date": "2025-05-01",
+      "assigned_to": "Souliya Singvongsa",
+      "fixed_date": "2025-05-15",
+      "description": "",
+      "steps_to_reproduce": "",
+      "root_cause": "",
+      "resolution": ""
+    },
+    {
+      "id": "BUG-004",
+      "title": "ลบข้อมูลลงทะเบียน passport แล้วตารางไม่โหลดข้อมูลใหม่",
+      "related_test_case": "",
+      "related_requirement": "",
+      "severity": "Low",
+      "priority": "Low",
+      "status": "Closed",
+      "reported_by": "Houmphaeng Duangpaserth",
+      "reported_date": "2025-05-01",
+      "assigned_to": "Souliya Singvongsa",
+      "fixed_date": "2025-05-15",
+      "description": "",
+      "steps_to_reproduce": "",
+      "root_cause": "",
+      "resolution": ""
+    },
+    {
+      "id": "BUG-005",
+      "title": "จำนวนรายงานการเข้าไม่ตรง",
+      "related_test_case": "",
+      "related_requirement": "",
+      "severity": "Low",
+      "priority": "Low",
+      "status": "Closed",
+      "reported_by": "Houmphaeng Duangpaserth",
+      "reported_date": "2025-05-01",
+      "assigned_to": "Souliya Singvongsa",
+      "fixed_date": "2025-05-15",
+      "description": "",
+      "steps_to_reproduce": "",
+      "root_cause": "",
+      "resolution": ""
+    }
+  ],
+  "risks": [
+    {
+      "id": "RISK-001",
+      "category": "Technical",
+      "description": "ระบบสแกนพาสปอร์ต (OCR) อาจอ่านข้อมูลผิดพลาดในกรณีพาสปอร์ตชำรุดหรือเก่า",
+      "probability": "Medium",
+      "impact": "High",
+      "risk_level": "High",
+      "mitigation": "พัฒนาฟีเจอร์ input ด้วยมือสำรองและ validation ข้อมูล",
+      "owner": "Souliya Singvongsa",
+      "status": "Mitigated",
+      "review_date": "2025-04-01",
+      "contingency": "เจ้าหน้าที่กรอกข้อมูลด้วยมือแทน",
+      "linked_capa": ""
+    },
+    {
+      "id": "RISK-002",
+      "category": "Security",
+      "description": "ข้อมูลบุคคลต้องห้าม (Blacklist) อาจเกิดการรั่วไหลของข้อมูล",
+      "probability": "Low",
+      "impact": "Critical",
+      "risk_level": "High",
+      "mitigation": "เข้ารหัสข้อมูลและจำกัดสิทธิ์การเข้าถึงเฉพาะ Admin",
+      "owner": "Souliya Singvongsa",
+      "status": "Open",
+      "review_date": "2025-05-01",
+      "contingency": "ปิดการเข้าถึงทันทีและแจ้งหน่วยงานความมั่นคง",
+      "linked_capa": ""
+    },
+    {
+      "id": "RISK-003",
+      "category": "Schedule",
+      "description": "ความล่าช้าในการทดสอบและ UAT สามารถเลื่อนวัน Go-live",
+      "probability": "Medium",
+      "impact": "Medium",
+      "risk_level": "Medium",
+      "mitigation": "วางแผน UAT ล่วงหน้าและสื่อสารกับผู้ใช้งานอย่างต่อเนื่อง",
+      "owner": "Souliya Singvongsa",
+      "status": "Mitigated",
+      "review_date": "2025-04-15",
+      "contingency": "กำหนดวัน Go-live ใหม่และแจ้ง stakeholders",
+      "linked_capa": ""
+    }
+  ],
+  "change_requests": [
+    {
+      "id": "CR-001",
+      "title": "ลงชื่อ ______________________________",
+      "description": "",
+      "requestor": "ตรวจสอบ / Reviewed by",
+      "request_date": "",
+      "priority": "Medium",
+      "impact": "",
+      "affected_documents": [],
+      "status": "Pending",
+      "approved_by": "",
+      "approval_date": "",
+      "implementation_date": ""
+    }
+  ],
+  "versions": [
+    {
+      "version": "4.2.0",
+      "release_date": "2025-05-31",
+      "release_type": "Major",
+      "description": "ระบบ Immigration v4.2 - ครบทุก Feature พร้อม Go-live",
+      "changes": [],
+      "deployed_by": "Souliya Singvongsa",
+      "environment": "Production"
+    }
+  ],
+  "meetings": [
+    {
+      "id": "MTG-001",
+      "title": "Kickoff Meeting - Immigration System",
+      "date": "2024-12-05",
+      "time": "09:00-10:00",
+      "location": "Meeting Room2",
+      "chair": "Souliya Singvongsa",
+      "attendees": [
+        "Souliya Singvongsa",
+        "Khamta Phantaboun",
+        "Houmphaeng Duangpaserth",
+        "Immigration Authority"
+      ],
+      "agenda": [],
+      "action_items": [
+        {
+          "item": "จัดทำ Requirements Document",
+          "owner": "Houmphaeng Duangpaserth",
+          "due_date": "2024-12-20",
+          "status": "Closed"
+        },
+        {
+          "item": "จัดทำเอกสารวิเคราะห์ระบบ",
+          "owner": "Souliya Singvongsa",
+          "due_date": "2024-12-28",
+          "status": "Closed"
+        }
+      ],
+      "summary": ""
+    },
+    {
+      "id": "MTG-002",
+      "title": "UAT Sign-off Meeting",
+      "date": "2025-05-15",
+      "time": "14:00-15:00",
+      "location": "ห้องประชุม 2",
+      "chair": "Souliya Singvongsa",
+      "attendees": [
+        "Chan Neeammart",
+        "Souliya Singvongsa",
+        "Khamta Phantaboun",
+        "Thanaphoum Limsakoun",
+        "Houmphaeng Duangpaserth"
+      ],
+      "agenda": [],
+      "action_items": [
+        {
+          "item": "เตรียมระบบสำหรับ Go-live",
+          "owner": "Souliya Singvongsa",
+          "due_date": "2025-05-31",
+          "status": "In Progress"
+        }
+      ],
+      "summary": ""
+    }
+  ],
+  "training_sessions": [
+    {
+      "id": "TRN-001",
+      "title": "การอบรมการใช้งานระบบ Immigration สำหรับเจ้าหน้าที่",
+      "date": "2025-05-25",
+      "duration": "6 hours",
+      "location": "Training Room / On-site",
+      "trainer": "ผู้จัดอบรม / Organizer",
+      "topics": [
+        "Overview ระบบ",
+        "การลงทะเบียนบุคคล",
+        "ระบบ Blacklist",
+        "บริหารวีซ่า",
+        "Dashboard และรายงาน"
+      ],
+      "attendees": [
+        {
+          "name": "Immigration Officer 1",
+          "department": "Immigration Department",
+          "signed": true
+        },
+        {
+          "name": "Immigration Officer 2",
+          "department": "Immigration Department",
+          "signed": true
+        }
+      ]
+    }
+  ],
+  "incidents": [],
+  "deployments": [
+    {
+      "id": "DEP-001",
+      "version": "4.2.0",
+      "date": "2025-05-31",
+      "environment": "Production",
+      "deployed_by": "Souliya Singvongsa",
+      "deployment_type": "Major",
+      "steps": [
+        "Database migration",
+        "Deploy backend API",
+        "Deploy frontend",
+        "Smoke test",
+        "อนุมัติ Go-Live"
+      ],
+      "rollback_plan": "Restore จาก backup + rollback database",
+      "status": "Pending",
+      "approval": "Approved by Souliya Singvongsa"
+    }
+  ],
+  "audit": {
+    "audit_date": "2026-02-19",
+    "auditor": "Internal Auditor - Team DevYa",
+    "audit_scope": "ISO/IEC 29110 compliance for Immigration Management System v4.2",
+    "findings": [
+      {
+        "id": "FIND-001",
+        "clause": "ISO/IEC 29110 Section 3.2",
+        "finding_type": "Observation",
+        "description": "ระบบผ่าน UAT ทุก Feature พร้อม Go-live",
+        "linked_capa": ""
+      }
+    ]
+  },
+  "capas": [
+    {
+      "id": "CAPA-001",
+      "type": "Preventive Action",
+      "related_finding": "RISK-002",
+      "description": "ป้องกันการรั่วไหลของข้อมูล Blacklist โดยเข้ารหัสและจำกัดสิทธิ์",
+      "root_cause": "ข้อมูลความมั่นคงมีความอ่อนไหวสูง",
+      "action_plan": "เพิ่ม Audit Log สำหรับการเข้าถึงข้อมูล Blacklist และทบทวน Role ทุก 3 เดือน",
+      "responsible": "Souliya Singvongsa",
+      "target_date": "2025-06-30",
+      "status": "In Progress",
+      "effectiveness_review": "ทบทวน Audit Log รายเดือน",
+      "closed_date": ""
+    }
+  ],
+  "sow": {
+    "contract_number": "CONTRACT-2024-IMM-001",
+    "effective_date": "2024-12-01",
+    "expiration_date": "2025-05-31",
+    "client": {
+      "name": "(Chan Neeammart\nProject Manager\nวันที่: _______________",
+      "representative": "ผู้แทนผู้รับจ้าง / Vendor Representative",
+      "title": "ผู้แทนหน่วยงาน / Agency Representative",
+      "email": "",
+      "phone": ""
+    },
+    "vendor": {
+      "name": "Soudaphone",
+      "representative": "Chan Neeammart",
+      "title": "Project Manager",
+      "email": "gm@soudaphone.com",
+      "phone": ""
+    },
+    "deliverables": [
+      {
+        "id": "DEL-001",
+        "description": "เอกสาร Requirements (BRD/FRS) ครอบคลุมฟังก์ชันทั้งหมดของระบบตรวจคนเข้าเมือง",
+        "acceptance_criteria": "ลงนามรับรองโดยหน่วยงาน Immigration",
+        "due_date": "2025-01-15",
+        "payment_milestone": "MS-01"
+      },
+      {
+        "id": "DEL-002",
+        "description": "เอกสาร System Design (SDD + DBD) แสดง Architecture และ Database Schema",
+        "acceptance_criteria": "ลงนามรับรองโดยฝ่าย IT",
+        "due_date": "2025-02-15",
+        "payment_milestone": "MS-02"
+      },
+      {
+        "id": "DEL-003",
+        "description": "Source Code ระบบตรวจคนเข้าเมืองพร้อม Unit/Integration Tests",
+        "acceptance_criteria": "Test pass rate ≥ 95%, Code review ผ่าน",
+        "due_date": "2025-04-30",
+        "payment_milestone": "MS-03"
+      },
+      {
+        "id": "DEL-004",
+        "description": "UAT Test Results + Bug Fix Report ครบถ้วน",
+        "acceptance_criteria": "Critical/High bugs = 0, UAT ลงนามผ่าน",
+        "due_date": "2025-05-20",
+        "payment_milestone": "MS-04"
+      },
+      {
+        "id": "DEL-005",
+        "description": "ระบบ Production v4.2 พร้อม User Manual + Training",
+        "acceptance_criteria": "Go-Live สำเร็จ, เจ้าหน้าที่ผ่านการอบรม",
+        "due_date": "2025-05-31",
+        "payment_milestone": "MS-05"
+      }
+    ],
+    "client_responsibilities": [
+      "ให้ข้อมูล Business Requirements และ Immigration Rule/Regulation ที่เกี่ยวข้อง",
+      "มอบหมายเจ้าหน้าที่ผู้เชี่ยวชาญสำหรับ Requirement Sessions และ UAT",
+      "จัดเตรียม Test Data (ข้อมูลจำลอง) สำหรับการทดสอบระบบ Blacklist และ Visa",
+      "ตรวจรับและลงนาม Deliverable ภายใน 5 วันทำการ",
+      "จัดเตรียม Server/Infrastructure และ Network สำหรับ Production Environment"
+    ],
+    "vendor_responsibilities": [
+      "พัฒนาระบบตามข้อกำหนด Requirements ที่ได้รับการอนุมัติ",
+      "ส่งมอบ Deliverables ทั้งหมดตามกำหนดการที่ตกลงไว้",
+      "ปฏิบัติตาม Security Standards สูงสุด เนื่องจากเป็นข้อมูลราชการลับ",
+      "จัดทำ Weekly Status Report ให้กับ Client",
+      "จัดฝึกอบรมการใช้งานระบบและจัดทำ User Manual ภาษาไทยครบถ้วน"
+    ],
+    "payment_terms": "ชำระเงินภายใน 30 วันหลังได้รับใบแจ้งหนี้ โดยออกใบแจ้งหนี้เมื่อตรวจรับ Milestone Deliverable แต่ละรายการเป็นที่เรียบร้อยแล้ว",
+    "payment_schedule": [
+      {
+        "milestone": "MS-01 — Requirements Sign-off",
+        "percentage": 0,
+        "amount": "",
+        "due_date": ""
+      },
+      {
+        "milestone": "MS-02 — Design Complete",
+        "percentage": 0,
+        "amount": "",
+        "due_date": ""
+      },
+      {
+        "milestone": "MS-03 — Development Complete",
+        "percentage": 0,
+        "amount": "",
+        "due_date": ""
+      },
+      {
+        "milestone": "MS-04 — UAT Complete",
+        "percentage": 0,
+        "amount": "",
+        "due_date": ""
+      },
+      {
+        "milestone": "MS-05 — Go-Live v4.2",
+        "percentage": 0,
+        "amount": "",
+        "due_date": ""
+      }
+    ],
+    "terms_conditions": [
+      "การรักษาความลับสูงสุด (Confidentiality): ข้อมูล Blacklist, ข้อมูลบุคคล และข้อมูลวีซ่าทั้งหมดถือเป็นข้อมูลราชการลับ ห้ามเปิดเผยหรือคัดลอกโดยเด็ดขาด",
+      "ทรัพย์สินทางปัญญา (IP): Source Code และ Deliverables ทั้งหมดตกเป็นกรรมสิทธิ์ของ Client เมื่อชำระเงินครบถ้วน",
+      "ความปลอดภัยข้อมูล (Data Security): Vendor ต้องปฏิบัติตาม พ.ร.บ. คุ้มครองข้อมูลส่วนบุคคล (PDPA) และมาตรฐานความปลอดภัยข้อมูลราชการ",
+      "การจัดการการเปลี่ยนแปลง: การเปลี่ยนแปลง Scope ต้องจัดทำ CRF และลงนามโดยทั้งสองฝ่าย",
+      "การบำรุงรักษา: Vendor ให้การสนับสนุนด้านเทคนิคภายใน 90 วันหลัง Go-Live โดยไม่คิดค่าใช้จ่ายเพิ่มเติม",
+      "กฎหมายที่ใช้บังคับ: สัญญานี้อยู่ภายใต้กฎหมายไทย"
+    ]
+  },
+  "output_path": "d:\\Work\\DocISOGen\\projects"
+}

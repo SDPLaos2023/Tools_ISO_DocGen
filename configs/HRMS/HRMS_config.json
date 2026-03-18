@@ -1,0 +1,1584 @@
+{
+  "project": {
+    "code": "HRMS",
+    "name": "HR Management System",
+    "organization": "Soudaphone",
+    "description": "ระบบบริหารทรัพยากรบุคคลแบบครบวงจร ประกอบด้วย 3 ระบบย่อย ได้แก่ (1) HRMS หลัก สำหรับจัดการข้อมูลพนักงาน เวลาทำงาน การจ่ายเงินเดือน และการประเมินผล KPI (2) Smart Leave ระบบขอลาออนไลน์พร้อม API เชื่อมต่อกับ HRMS และ (3) Smart CheckIn-out App แอปพลิเคชันมือถือสำหรับบันทึกเวลาเข้า-ออกงานด้วยระบบจดจำใบหน้า พัฒนาโดย Avengers Soft สำหรับลูกค้า Soudaphone",
+    "scope": "ในขอบเขต: ระบบ HRMS Web Application, Smart Leave Web Portal, Smart CheckIn-out Mobile App, ระบบ Payroll, KPI Assessment, รายงานเชิงวิเคราะห์. นอกขอบเขต: ระบบบัญชีภายนอก, ERP Integration อื่นๆ ที่ไม่ได้ระบุ",
+    "department": "Soudaphone",
+    "start_date": "2023-01-01",
+    "end_date": "2026-09-30",
+    "go_live_date": "2024-06-01",
+    "doc_revision": "2.4",
+    "document_date": "2026-02-19",
+    "classification": "Internal",
+    "short_name": "HRMS",
+    "objectives": [
+      "บริหารข้อมูลพนักงานและโครงสร้างองค์กรแบบรวมศูนย์",
+      "ลดขั้นตอนการขอลาและอนุมัติให้เป็น Digital Workflow",
+      "บันทึกเวลาเข้า-ออกงานด้วย Face Recognition ผ่าน Mobile App",
+      "คำนวณเงินเดือนและภาษีหัก ณ ที่จ่ายโดยอัตโนมัติ",
+      "ประเมินผลการปฏิบัติงานพนักงานผ่านระบบ KPI",
+      "สร้างรายงานสรุปข้อมูลบุคคลและการเงินได้ทันที"
+    ]
+  },
+  "team": {
+    "members": [
+      {
+        "name": "Thanet Wanchiang",
+        "title": "Software Support",
+        "email": "Thanet.waneing@gmail.com"
+      },
+      {
+        "name": "Suthep Wadkhian",
+        "title": "Mobile App Developer",
+        "email": "joe.248811@gmail.com"
+      }
+    ],
+    "project_manager": {
+      "name": "Apisit Yimboa",
+      "title": "Project Manager",
+      "email": "apisit.yimboa@gmail.com",
+      "phone": ""
+    },
+    "lead_developer": {
+      "name": "Apisit Yimboa",
+      "title": "Lead Developer",
+      "email": "apisit.yimboa@gmail.com",
+      "phone": ""
+    },
+    "business_analyst": {
+      "name": "Chan Neeammart",
+      "title": "Business Analyst",
+      "email": "neeammart.charn@gmail.com",
+      "phone": ""
+    }
+  },
+  "stakeholders": [
+    {
+      "name": "Soudaphone Management",
+      "role": "Project Sponsor",
+      "organization": "Soudaphone",
+      "email": "",
+      "responsibility": "Approve requirements, budget, and major decisions"
+    },
+    {
+      "name": "HR Department — Soudaphone",
+      "role": "Primary End User / Key Stakeholder",
+      "organization": "Soudaphone",
+      "email": "",
+      "responsibility": "Validate HR workflows, accept deliverables"
+    },
+    {
+      "name": "Apisit Yimboa",
+      "role": "Solution Architect & Delivery Lead",
+      "organization": "Soudaphone",
+      "email": "",
+      "responsibility": "System architecture, delivery oversight, technical decisions"
+    }
+  ],
+  "tech_stack": {
+    "frontend": "ASP.NET Core MVC (Razor Views) / HTML5 / CSS3 / JavaScript / Bootstrap",
+    "backend": "ASP.NET Core / C# / Web API REST",
+    "database": "Microsoft SQL Server",
+    "infrastructure": "On-Premise / Windows Server / IIS",
+    "source_control": "Git",
+    "ci_cd": ""
+  },
+  "milestones": [
+    {
+      "id": "MS-01",
+      "name": "Core HRMS Go-Live (Login, Master Data, Personnel, Payroll)",
+      "target_date": "2024-06-01",
+      "status": "Completed",
+      "owner": "Apisit Yimboa"
+    },
+    {
+      "id": "MS-02",
+      "name": "Work Time & Report Modules Go-Live",
+      "target_date": "2024-09-01",
+      "status": "Completed",
+      "owner": "Apisit Yimboa"
+    },
+    {
+      "id": "MS-03",
+      "name": "Smart Leave System Go-Live",
+      "target_date": "2024-12-01",
+      "status": "Completed",
+      "owner": "Apisit Yimboa"
+    },
+    {
+      "id": "MS-04",
+      "name": "Smart CheckIn-out App Go-Live (Core Features)",
+      "target_date": "2025-06-01",
+      "status": "Completed",
+      "owner": "Suthep Wadkhian"
+    },
+    {
+      "id": "MS-05",
+      "name": "KPI Module UAT Complete",
+      "target_date": "2026-03-31",
+      "status": "In Progress",
+      "owner": "Apisit Yimboa"
+    },
+    {
+      "id": "MS-06",
+      "name": "KPI Advanced Features (Schedule, Evaluation, History) Complete",
+      "target_date": "2026-06-30",
+      "status": "Planned",
+      "owner": "Apisit Yimboa"
+    },
+    {
+      "id": "MS-07",
+      "name": "Smart CheckIn-out OT & Shift Change Feature Go-Live",
+      "target_date": "2026-07-31",
+      "status": "Planned",
+      "owner": "Suthep Wadkhian"
+    },
+    {
+      "id": "MS-08",
+      "name": "System v2.5.0 Full Release",
+      "target_date": "2026-09-30",
+      "status": "Planned",
+      "owner": "Apisit Yimboa"
+    }
+  ],
+  "requirements": [
+    {
+      "id": "REQ-001",
+      "title": "Login & Authentication",
+      "description": "ระบบต้องรองรับการเข้าสู่ระบบด้วย Username/Password พร้อม Session Management และ Data Visibility Control ตามสิทธิ์ผู้ใช้งาน",
+      "priority": "High",
+      "type": "Functional",
+      "category": "Security",
+      "source": "Stakeholder Requirements",
+      "acceptance_criteria": "ผู้ใช้สามารถ login/logout ได้ และระบบแสดงเฉพาะข้อมูลที่ผู้ใช้มีสิทธิ์เข้าถึง",
+      "linked_design": [],
+      "linked_test_cases": []
+    },
+    {
+      "id": "REQ-002",
+      "title": "Master Data Management",
+      "description": "ระบบต้องรองรับการจัดการข้อมูล Master Data ครบถ้วน ได้แก่ Company, Branch, Prefix, Position, Department, Division, Work Group, Bank, Gender, Income Rate, Deduction Rate, Leave Type, Overtime Type, Shift, Holiday, Late Entry, Site, External Link",
+      "priority": "High",
+      "type": "Functional",
+      "category": "Master Data",
+      "source": "Stakeholder Requirements",
+      "acceptance_criteria": "สามารถ CRUD ข้อมูล Master Data ทุกประเภทได้ถูกต้อง",
+      "linked_design": [],
+      "linked_test_cases": []
+    },
+    {
+      "id": "REQ-003",
+      "title": "Employee & Staff Management",
+      "description": "ระบบต้องรองรับการจัดการฐานข้อมูลพนักงาน (Employee) และเจ้าหน้าที่ผู้ดูแลระบบ (Staff) พร้อมกำหนดสิทธิ์การเข้าถึง",
+      "priority": "High",
+      "type": "Functional",
+      "category": "Personnel",
+      "source": "Stakeholder Requirements",
+      "acceptance_criteria": "สามารถบันทึก แก้ไข และค้นหาข้อมูลพนักงานได้ถูกต้องครบถ้วน",
+      "linked_design": [],
+      "linked_test_cases": []
+    },
+    {
+      "id": "REQ-004",
+      "title": "Work Plan Management",
+      "description": "ระบบต้องรองรับการวางแผนตารางกะ (Shift), แผนงานพิเศษ (Special), และการขอสลับวันทำงาน (Switch Date)",
+      "priority": "High",
+      "type": "Functional",
+      "category": "Work Management",
+      "source": "Stakeholder Requirements",
+      "acceptance_criteria": "สามารถวางแผนกะและสลับวันทำงานได้ถูกต้อง",
+      "linked_design": [],
+      "linked_test_cases": []
+    },
+    {
+      "id": "REQ-005",
+      "title": "Work Time Recording & Time Attendance",
+      "description": "ระบบต้องบันทึกเวลาเข้า-ออกงาน (IN-OUT), รองรับการขอ OT, การลา, การออกนอกสถานที่ (Be-Out) และสรุปผล Time Attendance",
+      "priority": "High",
+      "type": "Functional",
+      "category": "Time Management",
+      "source": "Stakeholder Requirements",
+      "acceptance_criteria": "บันทึกและแสดงข้อมูลเวลาทำงานได้ถูกต้อง ประมวลผล Attendance สรุปได้ครบ",
+      "linked_design": [],
+      "linked_test_cases": []
+    },
+    {
+      "id": "REQ-006",
+      "title": "Payroll Processing",
+      "description": "ระบบต้องคำนวณเงินเดือน รายได้พิเศษ รายการหัก (ประกันสังคม, เงินสะสม) ภาษีหัก ณ ที่จ่าย และออกสลิปเงินเดือนได้",
+      "priority": "High",
+      "type": "Functional",
+      "category": "Payroll",
+      "source": "Stakeholder Requirements",
+      "acceptance_criteria": "ประมวลผลเงินเดือนได้ถูกต้องและออกรายงาน Payroll Slip ได้",
+      "linked_design": [],
+      "linked_test_cases": []
+    },
+    {
+      "id": "REQ-007",
+      "title": "Report System",
+      "description": "ระบบต้องสร้างรายงานได้ครบ 4 กลุ่ม: รายงานบุคคล, รายงานแผนงาน, รายงานเวลาทำงาน, และรายงานบัญชี (รวม Payroll Slip)",
+      "priority": "Medium",
+      "type": "Functional",
+      "category": "Reporting",
+      "source": "Stakeholder Requirements",
+      "acceptance_criteria": "สามารถ Export รายงานทุกประเภทได้ถูกต้องตามเงื่อนไขที่กำหนด",
+      "linked_design": [],
+      "linked_test_cases": []
+    },
+    {
+      "id": "REQ-008",
+      "title": "Organization Management & Org Chart",
+      "description": "ระบบต้องรองรับการตั้งค่าโครงสร้างองค์กร และแสดง Org Chart ได้ถูกต้อง",
+      "priority": "Medium",
+      "type": "Functional",
+      "category": "Organization",
+      "source": "Stakeholder Requirements",
+      "acceptance_criteria": "แสดง Org Chart ตามโครงสร้างที่กำหนดได้ถูกต้อง",
+      "linked_design": [],
+      "linked_test_cases": []
+    },
+    {
+      "id": "REQ-009",
+      "title": "KPI Assessment System",
+      "description": "ระบบต้องรองรับการจัดกลุ่ม KPI, กำหนดเกณฑ์มาตรฐาน, สร้างแบบประเมิน, ตั้งรอบการประเมิน, ประเมินผล และเก็บประวัติการประเมิน",
+      "priority": "High",
+      "type": "Functional",
+      "category": "KPI",
+      "source": "Stakeholder Requirements",
+      "acceptance_criteria": "ครบ KPI Group, Standard, Assessment, Question (UAT), Schedule/Evaluation/History (In Development)",
+      "linked_design": [],
+      "linked_test_cases": []
+    },
+    {
+      "id": "REQ-010",
+      "title": "Smart Leave — HRMS API Integration",
+      "description": "Smart Leave ต้องดึงข้อมูล Company, Employee, และ Leave Quota จาก HRMS ผ่าน API โดยอัตโนมัติ",
+      "priority": "High",
+      "type": "Functional",
+      "category": "Integration",
+      "source": "Stakeholder Requirements",
+      "acceptance_criteria": "ข้อมูลจาก HRMS ซิงค์มายัง Smart Leave ได้ครบถ้วนและทันเวลา",
+      "linked_design": [],
+      "linked_test_cases": []
+    },
+    {
+      "id": "REQ-011",
+      "title": "Smart Leave — Multi-Level Email Notification",
+      "description": "ระบบต้องส่งอีเมลแจ้งเตือน 3 กลุ่ม: Employee (ยืนยัน/ผล), Manager (คำขออนุมัติ), HR (สำเนา)",
+      "priority": "High",
+      "type": "Functional",
+      "category": "Notification",
+      "source": "Stakeholder Requirements",
+      "acceptance_criteria": "อีเมลถูกส่งไปยังผู้รับทั้ง 3 กลุ่มได้อย่างถูกต้องและทันที",
+      "linked_design": [],
+      "linked_test_cases": []
+    },
+    {
+      "id": "REQ-012",
+      "title": "Smart Leave — Leave Request Portal",
+      "description": "ระบบต้องรองรับการสร้างคำขอลา เลือกประเภทลา ระบุช่วงเวลา (เต็มวัน/ครึ่งวัน/รายชั่วโมง) แนบใบรับรองแพทย์ และ Approval Workflow",
+      "priority": "High",
+      "type": "Functional",
+      "category": "Leave Management",
+      "source": "Stakeholder Requirements",
+      "acceptance_criteria": "พนักงานสามารถยื่นคำขอลาและผู้จัดการสามารถ Approve/Reject ได้จากอีเมลหรือเว็บ",
+      "linked_design": [],
+      "linked_test_cases": []
+    },
+    {
+      "id": "REQ-013",
+      "title": "Smart CheckIn-out — Face Recognition & Location-based Check-in",
+      "description": "Mobile App ต้องรองรับการ Check-in/out ด้วย Face Recognition ทั้งในและนอกสถานที่ พร้อม GPS Location",
+      "priority": "High",
+      "type": "Functional",
+      "category": "Mobile Application",
+      "source": "Stakeholder Requirements",
+      "acceptance_criteria": "ระบบจดจำใบหน้าได้ถูกต้องและบันทึกเวลา/พิกัดได้แม่นยำ",
+      "linked_design": [],
+      "linked_test_cases": []
+    },
+    {
+      "id": "REQ-014",
+      "title": "Smart CheckIn-out — Core Mobile Features",
+      "description": "App ต้องรองรับ Notification, Profile, Calendar Work, Setting, Leave Request, Adjust Work, Approval History, Work History, Manager Approval (HR/Supervisor)",
+      "priority": "High",
+      "type": "Functional",
+      "category": "Mobile Application",
+      "source": "Stakeholder Requirements",
+      "acceptance_criteria": "ฟีเจอร์ทั้งหมดทำงานได้บน iOS และ Android",
+      "linked_design": [],
+      "linked_test_cases": []
+    },
+    {
+      "id": "REQ-015",
+      "title": "Smart CheckIn-out — Overtime & Shift Change (In Development)",
+      "description": "App ต้องรองรับการขอทำงานล่วงเวลา (OT Request) และการขอเปลี่ยนกะทำงาน (Change Work Shift) ผ่าน Mobile",
+      "priority": "Medium",
+      "type": "Functional",
+      "category": "Mobile Application",
+      "source": "Stakeholder Requirements",
+      "acceptance_criteria": "พนักงานสามารถยื่นคำขอ OT และขอเปลี่ยนกะผ่าน App ได้",
+      "linked_design": [],
+      "linked_test_cases": []
+    },
+    {
+      "id": "REQ-016",
+      "title": "Data Privacy & Role-Based Access Control",
+      "description": "",
+      "priority": "Medium",
+      "type": "Functional",
+      "category": "",
+      "source": "",
+      "acceptance_criteria": "",
+      "linked_design": [],
+      "linked_test_cases": []
+    },
+    {
+      "id": "REQ-017",
+      "title": "System Performance & Availability",
+      "description": "",
+      "priority": "Medium",
+      "type": "Functional",
+      "category": "",
+      "source": "",
+      "acceptance_criteria": "",
+      "linked_design": [],
+      "linked_test_cases": []
+    }
+  ],
+  "design_components": [
+    {
+      "id": "COMP-001",
+      "name": "Authentication & Authorization Module",
+      "description": "จัดการ Login, Session, JWT/Cookie Authentication, Role-Based Access Control, Data Visibility Filter",
+      "type": "Security Module / Middleware",
+      "related_requirements": [
+        "REQ-001",
+        "REQ-016"
+      ],
+      "technology": ""
+    },
+    {
+      "id": "COMP-002",
+      "name": "Master Data & Personnel Module",
+      "description": "CRUD Master Data ทั้งหมด (Company, Branch, Department, Position ฯลฯ) และ Employee/Staff Management พร้อม Org Chart",
+      "type": "Web Module / MVC Controllers",
+      "related_requirements": [
+        "REQ-002",
+        "REQ-003",
+        "REQ-008"
+      ],
+      "technology": ""
+    },
+    {
+      "id": "COMP-003",
+      "name": "Work Plan & Time Management Module",
+      "description": "Work Plan (Shift/Special), Switch Date, OT Request, Work Time IN-OUT, Leave, Be-Out, Time Attendance Processing",
+      "type": "Web Module / Business Logic",
+      "related_requirements": [
+        "REQ-004",
+        "REQ-005"
+      ],
+      "technology": ""
+    },
+    {
+      "id": "COMP-004",
+      "name": "Payroll Engine",
+      "description": "คำนวณเงินเดือน รายได้พิเศษ รายการหัก ภาษีหัก ณ ที่จ่าย ออก Payroll Slip",
+      "type": "Business Logic / Calculation Engine",
+      "related_requirements": [
+        "REQ-006"
+      ],
+      "technology": ""
+    },
+    {
+      "id": "COMP-005",
+      "name": "Report Module",
+      "description": "สร้าง Export รายงาน 4 กลุ่ม: Personnel, Work Plan, Time Attendance, Accounting",
+      "type": "Reporting Module",
+      "related_requirements": [
+        "REQ-007"
+      ],
+      "technology": ""
+    },
+    {
+      "id": "COMP-006",
+      "name": "KPI Assessment Module",
+      "description": "KPI Group, Standard, Assessment, Question (UAT complete), Schedule/Evaluation/History (In Development)",
+      "type": "Web Module",
+      "related_requirements": [
+        "REQ-009"
+      ],
+      "technology": ""
+    },
+    {
+      "id": "COMP-007",
+      "name": "Smart Leave System",
+      "description": "HRMS API Integration (Company/Employee/Leave Quota Sync), Multi-Level Email Notification, Leave Request Portal, Approval Workflow",
+      "type": "Web Application / API Consumer",
+      "related_requirements": [
+        "REQ-010",
+        "REQ-011",
+        "REQ-012"
+      ],
+      "technology": ""
+    },
+    {
+      "id": "COMP-008",
+      "name": "Smart CheckIn-out Mobile App",
+      "description": "Mobile App สำหรับ Check-in/out ด้วย Face Recognition, Leave, OT, Shift Change, Approval Workflow, Work History",
+      "type": "Mobile Application",
+      "related_requirements": [
+        "REQ-013",
+        "REQ-014",
+        "REQ-015"
+      ],
+      "technology": ""
+    }
+  ],
+  "database_tables": [
+    {
+      "name": "tbl_users",
+      "description": "ข้อมูลผู้ใช้งานระบบและสิทธิ์การเข้าถึง",
+      "columns": [
+        {
+          "name": "user_id",
+          "type": "INT PRIMARY KEY IDENTITY",
+          "description": "รหัสผู้ใช้งาน"
+        },
+        {
+          "name": "username",
+          "type": "NVARCHAR(100) NOT NULL",
+          "description": "ชื่อผู้ใช้งาน"
+        },
+        {
+          "name": "password_hash",
+          "type": "NVARCHAR(256)",
+          "description": "รหัสผ่านที่เข้ารหัสแล้ว"
+        },
+        {
+          "name": "company_id",
+          "type": "INT",
+          "description": "บริษัทที่ผู้ใช้สังกัด"
+        },
+        {
+          "name": "role_id",
+          "type": "INT",
+          "description": "สิทธิ์การใช้งาน"
+        },
+        {
+          "name": "is_active",
+          "type": "BIT DEFAULT 1",
+          "description": "สถานะการใช้งาน"
+        },
+        {
+          "name": "created_at",
+          "type": "DATETIME",
+          "description": "วันที่สร้าง"
+        }
+      ],
+      "related_requirements": [
+        "REQ-001",
+        "REQ-016"
+      ]
+    },
+    {
+      "name": "tbl_companies",
+      "description": "ข้อมูลบริษัทและสาขา",
+      "columns": [
+        {
+          "name": "company_id",
+          "type": "INT PRIMARY KEY IDENTITY",
+          "description": "รหัสบริษัท"
+        },
+        {
+          "name": "company_name",
+          "type": "NVARCHAR(200) NOT NULL",
+          "description": "ชื่อบริษัท"
+        },
+        {
+          "name": "tax_id",
+          "type": "NVARCHAR(13)",
+          "description": "เลขประจำตัวผู้เสียภาษี"
+        },
+        {
+          "name": "address",
+          "type": "NVARCHAR(500)",
+          "description": "ที่อยู่"
+        },
+        {
+          "name": "is_active",
+          "type": "BIT DEFAULT 1",
+          "description": "สถานะการใช้งาน"
+        }
+      ],
+      "related_requirements": [
+        "REQ-002"
+      ]
+    },
+    {
+      "name": "tbl_employees",
+      "description": "ฐานข้อมูลพนักงานหลัก",
+      "columns": [
+        {
+          "name": "employee_id",
+          "type": "INT PRIMARY KEY IDENTITY",
+          "description": "รหัสพนักงาน"
+        },
+        {
+          "name": "emp_code",
+          "type": "NVARCHAR(20) NOT NULL",
+          "description": "รหัสพนักงาน (แสดงผล)"
+        },
+        {
+          "name": "first_name",
+          "type": "NVARCHAR(100) NOT NULL",
+          "description": "ชื่อ"
+        },
+        {
+          "name": "last_name",
+          "type": "NVARCHAR(100) NOT NULL",
+          "description": "นามสกุล"
+        },
+        {
+          "name": "company_id",
+          "type": "INT",
+          "description": "รหัสบริษัท"
+        },
+        {
+          "name": "department_id",
+          "type": "INT",
+          "description": "รหัสแผนก"
+        },
+        {
+          "name": "position_id",
+          "type": "INT",
+          "description": "รหัสตำแหน่ง"
+        },
+        {
+          "name": "base_salary",
+          "type": "DECIMAL(12,2)",
+          "description": "เงินเดือนพื้นฐาน"
+        },
+        {
+          "name": "start_date",
+          "type": "DATE",
+          "description": "วันที่เริ่มงาน"
+        },
+        {
+          "name": "status",
+          "type": "NVARCHAR(20)",
+          "description": "สถานะการทำงาน"
+        }
+      ],
+      "related_requirements": [
+        "REQ-003"
+      ]
+    },
+    {
+      "name": "tbl_time_attendance",
+      "description": "บันทึกเวลาเข้า-ออกงานพนักงาน",
+      "columns": [
+        {
+          "name": "attendance_id",
+          "type": "INT PRIMARY KEY IDENTITY",
+          "description": "รหัสบันทึก"
+        },
+        {
+          "name": "employee_id",
+          "type": "INT NOT NULL",
+          "description": "รหัสพนักงาน"
+        },
+        {
+          "name": "work_date",
+          "type": "DATE NOT NULL",
+          "description": "วันทำงาน"
+        },
+        {
+          "name": "check_in",
+          "type": "DATETIME",
+          "description": "เวลาเข้างาน"
+        },
+        {
+          "name": "check_out",
+          "type": "DATETIME",
+          "description": "เวลาออกงาน"
+        },
+        {
+          "name": "source",
+          "type": "NVARCHAR(50)",
+          "description": "แหล่งข้อมูล (Web/App/Card)"
+        },
+        {
+          "name": "location_lat",
+          "type": "DECIMAL(10,7)",
+          "description": "Latitude ที่ Check-in"
+        },
+        {
+          "name": "location_lng",
+          "type": "DECIMAL(10,7)",
+          "description": "Longitude ที่ Check-in"
+        }
+      ],
+      "related_requirements": [
+        "REQ-005",
+        "REQ-013"
+      ]
+    },
+    {
+      "name": "tbl_leave_requests",
+      "description": "คำขอลาของพนักงาน",
+      "columns": [
+        {
+          "name": "leave_id",
+          "type": "INT PRIMARY KEY IDENTITY",
+          "description": "รหัสคำขอลา"
+        },
+        {
+          "name": "employee_id",
+          "type": "INT NOT NULL",
+          "description": "รหัสพนักงาน"
+        },
+        {
+          "name": "leave_type_id",
+          "type": "INT NOT NULL",
+          "description": "ประเภทการลา"
+        },
+        {
+          "name": "start_date",
+          "type": "DATE NOT NULL",
+          "description": "วันที่เริ่มลา"
+        },
+        {
+          "name": "end_date",
+          "type": "DATE NOT NULL",
+          "description": "วันที่สิ้นสุดลา"
+        },
+        {
+          "name": "leave_period",
+          "type": "NVARCHAR(20)",
+          "description": "ช่วงเวลา (Full/AM/PM/Hour)"
+        },
+        {
+          "name": "reason",
+          "type": "NVARCHAR(500)",
+          "description": "เหตุผลการลา"
+        },
+        {
+          "name": "attachment_path",
+          "type": "NVARCHAR(300)",
+          "description": "Path ไฟล์แนบ"
+        },
+        {
+          "name": "status",
+          "type": "NVARCHAR(20) DEFAULT 'Pending'",
+          "description": "Pending/Approved/Rejected"
+        },
+        {
+          "name": "approved_by",
+          "type": "INT",
+          "description": "รหัสผู้อนุมัติ"
+        },
+        {
+          "name": "approved_at",
+          "type": "DATETIME",
+          "description": "วันเวลาที่อนุมัติ"
+        }
+      ],
+      "related_requirements": [
+        "REQ-005",
+        "REQ-012"
+      ]
+    },
+    {
+      "name": "tbl_payroll",
+      "description": "ข้อมูลการจ่ายเงินเดือนรายเดือน",
+      "columns": [
+        {
+          "name": "payroll_id",
+          "type": "INT PRIMARY KEY IDENTITY",
+          "description": "รหัสรายการ Payroll"
+        },
+        {
+          "name": "employee_id",
+          "type": "INT NOT NULL",
+          "description": "รหัสพนักงาน"
+        },
+        {
+          "name": "pay_period",
+          "type": "NVARCHAR(7) NOT NULL",
+          "description": "รอบการจ่าย (YYYY-MM)"
+        },
+        {
+          "name": "base_salary",
+          "type": "DECIMAL(12,2)",
+          "description": "เงินเดือนพื้นฐาน"
+        },
+        {
+          "name": "total_income",
+          "type": "DECIMAL(12,2)",
+          "description": "รายได้รวม"
+        },
+        {
+          "name": "total_deduction",
+          "type": "DECIMAL(12,2)",
+          "description": "รายการหักรวม"
+        },
+        {
+          "name": "tax_amount",
+          "type": "DECIMAL(12,2)",
+          "description": "ภาษีหัก ณ ที่จ่าย"
+        },
+        {
+          "name": "net_salary",
+          "type": "DECIMAL(12,2)",
+          "description": "เงินเดือนสุทธิ"
+        },
+        {
+          "name": "created_at",
+          "type": "DATETIME",
+          "description": "วันที่ประมวลผล"
+        }
+      ],
+      "related_requirements": [
+        "REQ-006"
+      ]
+    },
+    {
+      "name": "tbl_kpi_assessments",
+      "description": "บันทึกการประเมิน KPI ของพนักงาน",
+      "columns": [
+        {
+          "name": "assessment_id",
+          "type": "INT PRIMARY KEY IDENTITY",
+          "description": "รหัสการประเมิน"
+        },
+        {
+          "name": "employee_id",
+          "type": "INT NOT NULL",
+          "description": "รหัสพนักงาน"
+        },
+        {
+          "name": "kpi_group_id",
+          "type": "INT",
+          "description": "รหัส KPI Group"
+        },
+        {
+          "name": "period",
+          "type": "NVARCHAR(20)",
+          "description": "รอบการประเมิน"
+        },
+        {
+          "name": "score",
+          "type": "DECIMAL(5,2)",
+          "description": "คะแนนรวม"
+        },
+        {
+          "name": "evaluated_by",
+          "type": "INT",
+          "description": "รหัสผู้ประเมิน"
+        },
+        {
+          "name": "evaluated_at",
+          "type": "DATETIME",
+          "description": "วันเวลาที่ประเมิน"
+        },
+        {
+          "name": "status",
+          "type": "NVARCHAR(20)",
+          "description": "Draft/Submitted/Approved"
+        }
+      ],
+      "related_requirements": [
+        "REQ-009"
+      ]
+    }
+  ],
+  "test_cases": [
+    {
+      "id": "TC-001",
+      "title": "Login with valid credentials",
+      "related_requirement": "REQ-001",
+      "test_type": "Functional",
+      "preconditions": "ระบบออนไลน์ มีข้อมูล User ในระบบ",
+      "steps": [
+        "เปิด Browser ไปที่หน้า Login",
+        "กรอก Username และ Password ที่ถูกต้อง",
+        "กด Login"
+      ],
+      "expected_result": "ระบบ Login สำเร็จ และ Redirect ไปยังหน้า Dashboard",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "Nattaphat Chinwatpapha",
+      "test_date": "2024-05-01",
+      "remarks": "Go Live แล้ว"
+    },
+    {
+      "id": "TC-002",
+      "title": "Data Visibility Control — User sees only authorized company data",
+      "related_requirement": "REQ-016",
+      "test_type": "Functional",
+      "preconditions": "มี User ที่กำหนดสิทธิ์เฉพาะ Company A",
+      "steps": [
+        "Login ด้วย User ที่มีสิทธิ์เฉพาะ Company A",
+        "ตรวจสอบข้อมูลที่แสดงในทุกเมนู"
+      ],
+      "expected_result": "แสดงเฉพาะข้อมูลของ Company A เท่านั้น",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "Nattaphat Chinwatpapha",
+      "test_date": "2024-05-02",
+      "remarks": ""
+    },
+    {
+      "id": "TC-003",
+      "title": "Master Data CRUD — Department Management",
+      "related_requirement": "REQ-002",
+      "test_type": "Functional",
+      "preconditions": "Login เข้าระบบในฐานะ Admin",
+      "steps": [
+        "ไปที่เมนู Master Data > Department",
+        "สร้างแผนกใหม่",
+        "แก้ไขชื่อแผนก",
+        "ลบแผนก"
+      ],
+      "expected_result": "CRUD ทำงานได้ถูกต้องทุกขั้นตอน",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "Nattaphat Chinwatpapha",
+      "test_date": "2024-05-05",
+      "remarks": ""
+    },
+    {
+      "id": "TC-004",
+      "title": "Employee Record Creation",
+      "related_requirement": "REQ-003",
+      "test_type": "Functional",
+      "preconditions": "Login เข้าระบบในฐานะ HR Admin",
+      "steps": [
+        "ไปที่เมนู Personnel > Employee",
+        "คลิก Add New Employee",
+        "กรอกข้อมูลพนักงานครบถ้วน",
+        "บันทึก"
+      ],
+      "expected_result": "บันทึกข้อมูลพนักงานสำเร็จและแสดงในรายการ",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "Nattaphat Chinwatpapha",
+      "test_date": "2024-05-10",
+      "remarks": ""
+    },
+    {
+      "id": "TC-005",
+      "title": "Work Plan Shift Assignment",
+      "related_requirement": "REQ-004",
+      "test_type": "Functional",
+      "preconditions": "มีข้อมูล Shift และ Employee ในระบบ",
+      "steps": [
+        "ไปที่เมนู Work Plan > Shift",
+        "เลือกพนักงานและกะทำงาน",
+        "กำหนดช่วงวันที่",
+        "บันทึก"
+      ],
+      "expected_result": "ตารางกะถูกบันทึกและแสดงถูกต้อง",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "Nattaphat Chinwatpapha",
+      "test_date": "2024-05-15",
+      "remarks": ""
+    },
+    {
+      "id": "TC-006",
+      "title": "OT Request Submission & Approval",
+      "related_requirement": "REQ-005",
+      "test_type": "Functional",
+      "preconditions": "มีพนักงานในระบบ Login แล้ว",
+      "steps": [
+        "ไปที่เมนู Work Time > Overtime",
+        "สร้างคำขอ OT ระบุวันเวลา",
+        "Submit คำขอ",
+        "Login ในฐานะผู้จัดการ อนุมัติ OT"
+      ],
+      "expected_result": "คำขอ OT ถูกบันทึกและอนุมัติสำเร็จ",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "Nattaphat Chinwatpapha",
+      "test_date": "2024-05-20",
+      "remarks": ""
+    },
+    {
+      "id": "TC-007",
+      "title": "Time Attendance Summary Processing",
+      "related_requirement": "REQ-005",
+      "test_type": "Functional",
+      "preconditions": "มีข้อมูล Work Time IN-OUT ในระบบ",
+      "steps": [
+        "ไปที่เมนู Work Time > Time Attendance",
+        "เลือกรอบเดือน",
+        "กด Process"
+      ],
+      "expected_result": "ระบบประมวลผลและแสดงสรุปเวลาทำงานถูกต้อง",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "Nattaphat Chinwatpapha",
+      "test_date": "2024-05-22",
+      "remarks": ""
+    },
+    {
+      "id": "TC-008",
+      "title": "Payroll Calculation — Net Salary",
+      "related_requirement": "REQ-006",
+      "test_type": "Functional",
+      "preconditions": "มีข้อมูลพนักงาน เงินเดือน รายได้ และรายการหัก",
+      "steps": [
+        "ไปที่เมนู Payroll",
+        "เลือกรอบเดือน",
+        "กด Calculate"
+      ],
+      "expected_result": "ระบบคำนวณเงินเดือนสุทธิถูกต้องตามสูตร: เงินเดือน + รายได้พิเศษ - รายการหัก - ภาษี",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "Nattaphat Chinwatpapha",
+      "test_date": "2024-06-01",
+      "remarks": ""
+    },
+    {
+      "id": "TC-009",
+      "title": "Payroll Slip Export",
+      "related_requirement": "REQ-006",
+      "test_type": "Functional",
+      "preconditions": "ประมวลผล Payroll แล้ว",
+      "steps": [
+        "เลือกพนักงาน",
+        "คลิก Export Slip"
+      ],
+      "expected_result": "ออก Payroll Slip ได้ถูกต้องครบถ้วน",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "Nattaphat Chinwatpapha",
+      "test_date": "2024-06-02",
+      "remarks": ""
+    },
+    {
+      "id": "TC-010",
+      "title": "Report Export — Time Attendance Report",
+      "related_requirement": "REQ-007",
+      "test_type": "Functional",
+      "preconditions": "มีข้อมูล Time Attendance ในระบบ",
+      "steps": [
+        "ไปที่เมนู Report > รายงานเวลาทำงาน",
+        "เลือกช่วงวันที่และแผนก",
+        "กด Export"
+      ],
+      "expected_result": "ดาวน์โหลดรายงานได้ถูกต้องตามเงื่อนไข",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "Nattaphat Chinwatpapha",
+      "test_date": "2024-06-05",
+      "remarks": ""
+    },
+    {
+      "id": "TC-011",
+      "title": "Org Chart Display",
+      "related_requirement": "REQ-008",
+      "test_type": "Functional",
+      "preconditions": "มีโครงสร้างองค์กรในระบบ",
+      "steps": [
+        "ไปที่เมนู Organization > Organization Board"
+      ],
+      "expected_result": "แสดง Org Chart ถูกต้องตามโครงสร้างที่กำหนด",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "Nattaphat Chinwatpapha",
+      "test_date": "2024-06-08",
+      "remarks": ""
+    },
+    {
+      "id": "TC-012",
+      "title": "KPI Group & Standard Configuration",
+      "related_requirement": "REQ-009",
+      "test_type": "UAT",
+      "preconditions": "Login ในฐานะ HR Manager",
+      "steps": [
+        "สร้าง KPI Group",
+        "กำหนด KPI Standard",
+        "สร้าง KPI Question"
+      ],
+      "expected_result": "บันทึก KPI Group, Standard, Question สำเร็จ",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "Nattaphat Chinwatpapha",
+      "test_date": "2026-02-01",
+      "remarks": "อยู่ในขั้นตอนทดสอบ UAT"
+    },
+    {
+      "id": "TC-013",
+      "title": "KPI Assessment Submission",
+      "related_requirement": "REQ-009",
+      "test_type": "UAT",
+      "preconditions": "มี KPI Group และ Question สำหรับพนักงาน",
+      "steps": [
+        "เปิด KPI Assessment สำหรับพนักงาน",
+        "กรอกคะแนนตาม KPI",
+        "Submit"
+      ],
+      "expected_result": "บันทึกผลการประเมินสำเร็จ",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "Nattaphat Chinwatpapha",
+      "test_date": "2026-02-05",
+      "remarks": "อยู่ในขั้นตอนทดสอบ UAT"
+    },
+    {
+      "id": "TC-014",
+      "title": "Smart Leave — HRMS API Employee Sync",
+      "related_requirement": "REQ-010",
+      "test_type": "Integration",
+      "preconditions": "HRMS API พร้อมใช้งาน",
+      "steps": [
+        "เปิดหน้า Smart Leave",
+        "เลือก Company",
+        "ระบบดึงรายชื่อพนักงานผ่าน API"
+      ],
+      "expected_result": "แสดงรายชื่อพนักงานจาก HRMS ได้ถูกต้องครบถ้วน",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "Nattaphat Chinwatpapha",
+      "test_date": "2024-11-01",
+      "remarks": ""
+    },
+    {
+      "id": "TC-015",
+      "title": "Smart Leave — Email Notification to 3 Groups",
+      "related_requirement": "REQ-011",
+      "test_type": "Integration",
+      "preconditions": "ตั้งค่า Email routing ครบ 3 กลุ่ม",
+      "steps": [
+        "ยื่นคำขอลา",
+        "ตรวจสอบกล่องอีเมลของ Employee, Manager, HR"
+      ],
+      "expected_result": "ทั้ง 3 กลุ่มได้รับอีเมลแจ้งเตือนที่ถูกต้อง",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "Nattaphat Chinwatpapha",
+      "test_date": "2024-11-05",
+      "remarks": ""
+    },
+    {
+      "id": "TC-016",
+      "title": "Smart Leave — Half-day Leave Request",
+      "related_requirement": "REQ-012",
+      "test_type": "Functional",
+      "preconditions": "Login เข้า Smart Leave Portal",
+      "steps": [
+        "สร้างคำขอลา เลือก Leave Type",
+        "ระบุวันที่ เลือก AM (ครึ่งเช้า)",
+        "Submit"
+      ],
+      "expected_result": "บันทึกคำขอลาครึ่งเช้าสำเร็จ",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "Nattaphat Chinwatpapha",
+      "test_date": "2024-11-10",
+      "remarks": ""
+    },
+    {
+      "id": "TC-017",
+      "title": "Smart Leave — Manager Approval via Email Link",
+      "related_requirement": "REQ-012",
+      "test_type": "Functional",
+      "preconditions": "มีคำขอลา Pending อยู่",
+      "steps": [
+        "เปิดอีเมลที่ Manager ได้รับ",
+        "คลิก Approve Link"
+      ],
+      "expected_result": "คำขอลาเปลี่ยนสถานะเป็น Approved สำเร็จ",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "Nattaphat Chinwatpapha",
+      "test_date": "2024-11-12",
+      "remarks": ""
+    },
+    {
+      "id": "TC-018",
+      "title": "Smart CheckIn-out — Face Recognition Check-in",
+      "related_requirement": "REQ-013",
+      "test_type": "Functional",
+      "preconditions": "พนักงานลงทะเบียนใบหน้าแล้ว",
+      "steps": [
+        "เปิด App",
+        "เลือก Check-in",
+        "จ่อกล้องไปที่ใบหน้า",
+        "ระบบสแกน"
+      ],
+      "expected_result": "บันทึกเวลา Check-in พร้อม GPS สำเร็จ",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "Nattaphat Chinwatpapha",
+      "test_date": "2025-04-01",
+      "remarks": ""
+    },
+    {
+      "id": "TC-019",
+      "title": "Smart CheckIn-out — Leave Request via App",
+      "related_requirement": "REQ-014",
+      "test_type": "Functional",
+      "preconditions": "Login เข้า App แล้ว",
+      "steps": [
+        "ไปที่เมนู Leave ใน App",
+        "สร้างคำขอลา",
+        "Submit"
+      ],
+      "expected_result": "คำขอลาถูกส่งสำเร็จและแจ้ง Notification",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "Nattaphat Chinwatpapha",
+      "test_date": "2025-04-05",
+      "remarks": ""
+    },
+    {
+      "id": "TC-020",
+      "title": "Smart CheckIn-out — Manager Approval Workflow",
+      "related_requirement": "REQ-014",
+      "test_type": "Functional",
+      "preconditions": "มีคำขออนุมัติรอดำเนินการ",
+      "steps": [
+        "Login ในฐานะ Manager",
+        "ไปที่เมนูหัวหน้าผู้อนุมัติ",
+        "อนุมัติคำขอ"
+      ],
+      "expected_result": "อนุมัติสำเร็จและส่ง Notification กลับพนักงาน",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "Nattaphat Chinwatpapha",
+      "test_date": "2025-04-08",
+      "remarks": ""
+    },
+    {
+      "id": "TC-021",
+      "title": "Smart CheckIn-out — OT Request via App (In Development)",
+      "related_requirement": "REQ-015",
+      "test_type": "Functional",
+      "preconditions": "Feature OT พัฒนาเสร็จ",
+      "steps": [
+        "ไปที่เมนู Overtime ใน App",
+        "สร้างคำขอ OT",
+        "Submit"
+      ],
+      "expected_result": "คำขอ OT ถูกส่งสำเร็จ",
+      "actual_result": "",
+      "status": "Pending",
+      "tester": "Nattaphat Chinwatpapha",
+      "test_date": "2026-07-01",
+      "remarks": "Feature กำลังพัฒนา"
+    },
+    {
+      "id": "TC-022",
+      "title": "Performance — Concurrent Users Load Test",
+      "related_requirement": "REQ-017",
+      "test_type": "Performance",
+      "preconditions": "ระบบ Production พร้อมใช้งาน",
+      "steps": [
+        "Simulate 100 concurrent users",
+        "ทำ basic operations พร้อมกัน",
+        "วัด Response time"
+      ],
+      "expected_result": "Response time ไม่เกิน 3 วินาที ระบบไม่ล่ม",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "Nattaphat Chinwatpapha",
+      "test_date": "2024-05-30",
+      "remarks": ""
+    }
+  ],
+  "defects": [
+    {
+      "id": "BUG-001",
+      "title": "KPI Schedule — บันทึกรอบการประเมินไม่สำเร็จเมื่อวันที่ Override",
+      "related_test_case": "TC-013",
+      "related_requirement": "REQ-009",
+      "severity": "Medium",
+      "priority": "High",
+      "status": "In Progress",
+      "reported_by": "QA Team",
+      "reported_date": "2026-02-10",
+      "assigned_to": "Apisit Yimboa",
+      "fixed_date": "",
+      "description": "เมื่อกำหนดรอบการประเมิน KPI ที่มีวันที่ทับซ้อนกัน ระบบแสดง Error แต่ไม่ชัดเจน",
+      "steps_to_reproduce": "1. สร้าง Schedule รอบ Q1 2. สร้าง Schedule รอบ Q1 ซ้ำ 3. พบ Error",
+      "root_cause": "ยังอยู่ระหว่างการวิเคราะห์",
+      "resolution": ""
+    }
+  ],
+  "risks": [
+    {
+      "id": "RISK-001",
+      "category": "Technical",
+      "description": "Face Recognition ใน Smart CheckIn-out App อาจมีความแม่นยำลดลงในสภาพแสงน้อยหรือใบหน้าที่มีการเปลี่ยนแปลง",
+      "probability": "Medium",
+      "impact": "Medium",
+      "risk_level": "Medium",
+      "mitigation": "ทดสอบในหลายสภาพแวดล้อม พร้อมมีทางเลือก Fallback ด้วย PIN Code",
+      "owner": "Apisit Yimboa",
+      "status": "Open",
+      "review_date": "2026-04-01",
+      "contingency": "เปิด Manual Check-in กรณี Face Recognition ล้มเหลว",
+      "linked_capa": ""
+    },
+    {
+      "id": "RISK-002",
+      "category": "Schedule",
+      "description": "KPI Advanced Features (Schedule/Evaluation/History) และ OT/ShiftChange ใน Mobile App อาจส่งมอบล่าช้ากว่าแผน",
+      "probability": "Medium",
+      "impact": "Medium",
+      "risk_level": "Medium",
+      "mitigation": "ติดตาม Sprint progress รายสัปดาห์ ปรับ Scope หาก Deadline ใกล้เข้ามา",
+      "owner": "Apisit Yimboa",
+      "status": "Open",
+      "review_date": "2026-03-15",
+      "contingency": "เลื่อน Deployment ของ Features ที่ยังพัฒนาไม่เสร็จออกไป Release ถัดไป",
+      "linked_capa": "CAPA-001"
+    },
+    {
+      "id": "RISK-003",
+      "category": "Technical",
+      "description": "HRMS API Integration กับ Smart Leave อาจหยุดทำงานหาก Schema ของ HRMS เปลี่ยนแปลงโดยไม่แจ้ง",
+      "probability": "Low",
+      "impact": "High",
+      "risk_level": "Medium",
+      "mitigation": "จัดทำ API Versioning และ Change Notification Process",
+      "owner": "Apisit Yimboa",
+      "status": "Open",
+      "review_date": "2026-04-01",
+      "contingency": "Rollback API Integration และใช้ Manual Data Entry ชั่วคราว",
+      "linked_capa": ""
+    },
+    {
+      "id": "RISK-004",
+      "category": "External",
+      "description": "ข้อมูลพนักงานและข้อมูล Payroll มีความอ่อนไหวสูง หากรั่วไหลจะส่งผลต่อองค์กร",
+      "probability": "Low",
+      "impact": "Critical",
+      "risk_level": "High",
+      "mitigation": "เข้ารหัสข้อมูล Sensitive, จำกัดสิทธิ์ผู้ใช้, Audit Log, Backup สม่ำเสมอ",
+      "owner": "Apisit Yimboa",
+      "status": "Open",
+      "review_date": "2026-03-01",
+      "contingency": "Incident Response Plan และแจ้ง Data Owner ทันที",
+      "linked_capa": "CAPA-002"
+    }
+  ],
+  "change_requests": [
+    {
+      "id": "CR-001",
+      "title": "เพิ่ม Feature OT Request ใน Smart CheckIn-out App",
+      "description": "",
+      "requestor": "Soudaphone HR",
+      "request_date": "2025-10-01",
+      "priority": "High",
+      "impact": "",
+      "affected_documents": [],
+      "status": "Approved",
+      "approved_by": "Apisit Yimboa",
+      "approval_date": "2025-10-15",
+      "implementation_date": "2026-07-31"
+    },
+    {
+      "id": "CR-001",
+      "title": "ลงชื่อ ______________________________",
+      "description": "",
+      "requestor": "ตรวจสอบ / Reviewed by",
+      "request_date": "",
+      "priority": "Medium",
+      "impact": "",
+      "affected_documents": [],
+      "status": "Pending",
+      "approved_by": "",
+      "approval_date": "",
+      "implementation_date": ""
+    },
+    {
+      "id": "CR-002",
+      "title": "เพิ่ม Feature Change Work Shift ใน Smart CheckIn-out App",
+      "description": "",
+      "requestor": "Soudaphone HR",
+      "request_date": "2025-10-01",
+      "priority": "Medium",
+      "impact": "",
+      "affected_documents": [],
+      "status": "Approved",
+      "approved_by": "Apisit Yimboa",
+      "approval_date": "2025-10-15",
+      "implementation_date": "2026-07-31"
+    },
+    {
+      "id": "CR-002",
+      "title": "ลงชื่อ ______________________________",
+      "description": "",
+      "requestor": "ตรวจสอบ / Reviewed by",
+      "request_date": "",
+      "priority": "Medium",
+      "impact": "",
+      "affected_documents": [],
+      "status": "Pending",
+      "approved_by": "",
+      "approval_date": "",
+      "implementation_date": ""
+    }
+  ],
+  "versions": [
+    {
+      "version": "1.0.0",
+      "release_date": "2024-06-01",
+      "release_type": "Major",
+      "description": "Initial Release — Core HRMS (Login, Master Data, Personnel, Work Time, Payroll, Report, Organization)",
+      "changes": [],
+      "deployed_by": "Apisit Yimboa",
+      "environment": "Production"
+    },
+    {
+      "version": "2.0.0",
+      "release_date": "2024-12-01",
+      "release_type": "Major",
+      "description": "Smart Leave System Launch — HRMS API Integration, Email Notification, Leave Portal",
+      "changes": [],
+      "deployed_by": "Apisit Yimboa",
+      "environment": "Production"
+    },
+    {
+      "version": "2.3.0",
+      "release_date": "2025-06-01",
+      "release_type": "Minor",
+      "description": "Smart CheckIn-out App Go-Live (Core Features)",
+      "changes": [],
+      "deployed_by": "Apisit Yimboa",
+      "environment": "Production"
+    },
+    {
+      "version": "2.4.3",
+      "release_date": "2026-02-14",
+      "release_type": "Minor",
+      "description": "KPI Module (Partial) — Group, Standard, Assessment, Question UAT; Bug Fixes",
+      "changes": [],
+      "deployed_by": "Apisit Yimboa",
+      "environment": "Production"
+    }
+  ],
+  "meetings": [
+    {
+      "id": "MTG-001",
+      "title": "Project Kickoff Meeting — HRMS v1.0",
+      "date": "2023-01-15",
+      "time": "09:00-11:00",
+      "location": "ห้องประชุม ตึก VLP2 ณ Thanaleng Dry Port",
+      "chair": "Apisit Yimboa",
+      "attendees": [
+        "Apisit Yimboa",
+        "Chan Neeammart",
+        "Wikanda Thongsuk"
+      ],
+      "agenda": [],
+      "action_items": [
+        {
+          "item": "จัดทำ BRD เอกสาร Requirements ให้ครบถ้วน",
+          "owner": "Apisit Yimboa",
+          "due_date": "2023-02-15",
+          "status": "Closed"
+        }
+      ],
+      "summary": ""
+    },
+    {
+      "id": "MTG-007",
+      "title": "KPI Module Review Meeting",
+      "date": "2026-02-05",
+      "time": "13:00-14:30",
+      "location": "Online",
+      "chair": "Apisit Yimboa",
+      "attendees": [
+        "Apisit Yimboa",
+        "Wikanda Thongsuk"
+      ],
+      "agenda": [],
+      "action_items": [
+        {
+          "item": "แก้ไข Bug BUG-001 KPI Schedule Date Overlap",
+          "owner": "Apisit Yimboa",
+          "due_date": "2026-02-28",
+          "status": "In Progress"
+        },
+        {
+          "item": "เริ่ม Development KPI Schedule Feature",
+          "owner": "Apisit Yimboa",
+          "due_date": "2026-04-30",
+          "status": "Open"
+        }
+      ],
+      "summary": ""
+    }
+  ],
+  "training_sessions": [
+    {
+      "id": "TRN-001",
+      "title": "HRMS User Training — Core Features",
+      "date": "2024-05-28",
+      "duration": "6 hours",
+      "location": "Meeting Main Room Sitthi Building Floor 3",
+      "trainer": "Thanet Wanchiang",
+      "topics": [],
+      "attendees": [
+        {
+          "name": "HR Admin",
+          "department": "Human Resources",
+          "signed": true
+        },
+        {
+          "name": "HR Staff 1",
+          "department": "Human Resources",
+          "signed": true
+        },
+        {
+          "name": "HR Staff 2",
+          "department": "Human Resources",
+          "signed": true
+        }
+      ]
+    },
+    {
+      "id": "TRN-002",
+      "title": "Smart CheckIn-out App Training",
+      "date": "2025-11-25",
+      "duration": "3 hours",
+      "location": "Meeting Main Room Sitthi Building Floor 3",
+      "trainer": "ผู้จัดอบรม / Organizer",
+      "topics": [],
+      "attendees": [
+        {
+          "name": "Soudaphone Employees (Group A)",
+          "department": "All Departments",
+          "signed": true
+        }
+      ]
+    }
+  ],
+  "incidents": [
+    {
+      "id": "INC-001",
+      "title": "ระบบ Login Slow Response ช่วง Peak Hour",
+      "date_reported": "",
+      "severity": "",
+      "description": "ผู้ใช้งานรายงานว่า Login ช้าในช่วง 08:00-09:00 น. ซึ่งเป็นเวลาพนักงาน Check-in พร้อมกัน",
+      "reported_by": "",
+      "assigned_to": "",
+      "status": "Open",
+      "resolution": "Optimize Database Index และปรับ Connection Pool",
+      "resolved_date": "",
+      "root_cause": "Database Query ไม่มี Index ที่เหมาะสมสำหรับ User lookup",
+      "linked_change_request": ""
+    }
+  ],
+  "deployments": [
+    {
+      "id": "DEP-001",
+      "version": "1.0.0",
+      "date": "2024-06-01",
+      "environment": "Production",
+      "deployed_by": "Apisit Yimboa",
+      "deployment_type": "Major",
+      "steps": [],
+      "rollback_plan": "",
+      "status": "Success",
+      "approval": "Approved by Soudaphone Management"
+    },
+    {
+      "id": "DEP-002",
+      "version": "2.0.0",
+      "date": "2024-12-01",
+      "environment": "Production",
+      "deployed_by": "Apisit Yimboa",
+      "deployment_type": "Major",
+      "steps": [],
+      "rollback_plan": "",
+      "status": "Success",
+      "approval": "Approved by Soudaphone Management"
+    },
+    {
+      "id": "DEP-003",
+      "version": "2.3.0",
+      "date": "2025-06-01",
+      "environment": "Production",
+      "deployed_by": "Apisit Yimboa",
+      "deployment_type": "Minor",
+      "steps": [],
+      "rollback_plan": "",
+      "status": "Success",
+      "approval": "Approved by Soudaphone Management"
+    },
+    {
+      "id": "DEP-004",
+      "version": "2.4.3",
+      "date": "2026-02-14",
+      "environment": "Production",
+      "deployed_by": "Apisit Yimboa",
+      "deployment_type": "Minor",
+      "steps": [],
+      "rollback_plan": "",
+      "status": "Success",
+      "approval": "Approved by Soudaphone Management"
+    }
+  ],
+  "audit": {
+    "audit_date": "2026-06-01",
+    "auditor": "Internal IT Auditor — Soudaphone",
+    "audit_scope": "ISO/IEC 29110 compliance for HRMS Software Development Lifecycle v2.4.3",
+    "findings": [
+      {
+        "id": "FIND-001",
+        "clause": "ISO/IEC 29110 — Software Implementation 3.4",
+        "finding_type": "Opportunity for Improvement",
+        "description": "KPI Module ยังมี Features ที่อยู่ระหว่างพัฒนา ควรเร่งดำเนินการตาม Milestone MS-06",
+        "linked_capa": "CAPA-001"
+      },
+      {
+        "id": "FIND-002",
+        "clause": "ISO/IEC 29110 — Risk Management 3.6",
+        "finding_type": "Observation",
+        "description": "ควรจัดทำ Formal Data Privacy Policy สำหรับข้อมูล Payroll และ Employee",
+        "linked_capa": "CAPA-002"
+      }
+    ]
+  },
+  "capas": [
+    {
+      "id": "CAPA-001",
+      "type": "Corrective Action",
+      "related_finding": "RISK-002 / FIND-001",
+      "description": "เร่งพัฒนา KPI Schedule, Evaluation, History Features และ Mobile OT/Shift Change ให้เสร็จตาม Milestone",
+      "root_cause": "Scope ขยายใหญ่ขึ้นจาก Change Request ทำให้ Development Timeline ยืดออก",
+      "action_plan": "จัดทำ Sprint Plan รายสัปดาห์, ติดตาม Progress ทุก Monday, ส่งมอบ KPI ครบ Q2/2026",
+      "responsible": "Apisit Yimboa",
+      "target_date": "2026-06-30",
+      "status": "In Progress",
+      "effectiveness_review": "ตรวจสอบ Feature Completion ทุก Sprint และ UAT Sign-off ก่อน Release",
+      "closed_date": ""
+    },
+    {
+      "id": "CAPA-002",
+      "type": "Preventive Action",
+      "related_finding": "RISK-004 / FIND-002",
+      "description": "จัดทำ Data Privacy Policy และ Access Control Review สำหรับข้อมูล Sensitive",
+      "root_cause": "ยังไม่มี Formal Policy document สำหรับ Data Privacy",
+      "action_plan": "จัดทำ Data Privacy Policy Document, Review Role-Based Access Control, Enable Audit Log",
+      "responsible": "Apisit Yimboa",
+      "target_date": "2026-04-30",
+      "status": "Open",
+      "effectiveness_review": "ทบทวน Access Log รายเดือน และทำ Penetration Test รายปี",
+      "closed_date": ""
+    }
+  ],
+  "sow": {},
+  "output_path": "D:\\Work\\DocISOGen\\projects"
+}

@@ -1,0 +1,1385 @@
+{
+  "project": {
+    "code": "SALESYS",
+    "name": "Sale System",
+    "organization": "Avengers Soft",
+    "description": "ระบบขายครบวงจร (Sale System) ครอบคลุมตั้งแต่การประมาณการต้นทุน การเสนอราคา การสั่งขาย การออกใบแจ้งหนี้ และการรายงาน พัฒนาและดูแลโดย Avengers Soft",
+    "scope": "ระบบครอบคลุมกระบวนการขายทั้งหมด ได้แก่ Pre-Sales, Quotation, Sale Order, Job Summary, Invoice, Reimbursement, Reporting, Master Data, และ Security & Permissions รองรับหลายบริษัท (Multi-Company) และสกุลเงิน (Multi-Currency). ไม่รวม: ระบบบัญชี (GL), ระบบจัดซื้อ (PO), และระบบคลังสินค้า (WMS)",
+    "department": "Avengers Soft",
+    "start_date": "2024-01-01",
+    "end_date": "2024-07-20",
+    "go_live_date": "2024-07-20",
+    "doc_revision": "4.2",
+    "document_date": "2026-02-19",
+    "classification": "Internal",
+    "short_name": "SALESYS",
+    "objectives": [
+      "พัฒนาระบบขายครบวงจรที่รองรับกระบวนการตั้งแต่ Pre-Sales จนถึงการออก Invoice",
+      "รองรับการทำงานแบบ Multi-Company และ Multi-Currency",
+      "ลดเวลาในการจัดทำเอกสารขายด้วยระบบ Document Series และ Auto-Convert",
+      "เพิ่มความโปร่งใสด้วยระบบ Reporting & Analytics แบบ Permission-Based",
+      "บริหารต้นทุนโครงการด้วยระบบ Estimate Cost และ Costing ที่เชื่อมโยงกัน"
+    ]
+  },
+  "team": {
+    "members": [
+      {
+        "name": "Nattaphat Chinwatpapha",
+        "title": "Software Tester",
+        "email": "qa@avengerssoft.com"
+      },
+      {
+        "name": "Thanet Wanchiang",
+        "title": "Software Support",
+        "email": "Thanet.wancheing@gmail.com"
+      },
+      {
+        "name": "Apisit Yimboa",
+        "title": "Full Stack Developer",
+        "email": "apisit@avengerssoft.com"
+      }
+    ],
+    "project_manager": {
+      "name": "Apisit Yimboa",
+      "title": "Project Manager",
+      "email": "apisit@avengerssoft.com",
+      "phone": ""
+    },
+    "lead_developer": {
+      "name": "Apisit Yimboa",
+      "title": "Lead Developer",
+      "email": "apisit@avengerssoft.com",
+      "phone": ""
+    },
+    "business_analyst": {
+      "name": "Chan Neeammart",
+      "title": "Business Analyst",
+      "email": "apisit@avengerssoft.com",
+      "phone": ""
+    },
+    "system_analyst": {
+      "name": "Apisit Yimboa",
+      "title": "System Analyst",
+      "email": "apisit@avengerssoft.com",
+      "phone": ""
+    }
+  },
+  "stakeholders": [
+    {
+      "name": "Apisit Yimboa",
+      "role": "Project Sponsor / Project Manager",
+      "organization": "Soudaphone Import-Export and Service",
+      "email": "",
+      "responsibility": "Approve scope, budget, and major decisions"
+    }
+  ],
+  "tech_stack": {
+    "frontend": "",
+    "backend": "",
+    "database": "",
+    "infrastructure": "",
+    "source_control": "",
+    "ci_cd": ""
+  },
+  "milestones": [
+    {
+      "id": "MS-01",
+      "name": "Requirements Sign-off",
+      "target_date": "2024-01-31",
+      "status": "Completed",
+      "owner": "Apisit Yimboa"
+    },
+    {
+      "id": "MS-02",
+      "name": "System Design Complete",
+      "target_date": "2024-02-28",
+      "status": "Completed",
+      "owner": "Apisit Yimboa"
+    },
+    {
+      "id": "MS-03",
+      "name": "Core Modules Development Complete (Phase 1 Go-Live)",
+      "target_date": "2024-04-30",
+      "status": "Completed",
+      "owner": "Apisit Yimboa"
+    },
+    {
+      "id": "MS-04",
+      "name": "UAT & Testing Complete",
+      "target_date": "2024-06-30",
+      "status": "Completed",
+      "owner": "Thanet Wanchiang"
+    },
+    {
+      "id": "MS-05",
+      "name": "Go-Live (All Modules)",
+      "target_date": "2024-07-20",
+      "status": "Completed",
+      "owner": "Apisit Yimboa"
+    },
+    {
+      "id": "MS-06",
+      "name": "Pre-Sales Module Development Completion",
+      "target_date": "2026-06-30",
+      "status": "In Progress",
+      "owner": "Apisit Yimboa"
+    }
+  ],
+  "requirements": [
+    {
+      "id": "REQ-001",
+      "title": "Authentication & System Access",
+      "description": "ระบบรองรับการระบุตัวตนด้วย Username และ Password ผู้ใช้สามารถเลือก 'บริษัท' (Company) ที่ต้องการก่อนเข้าสู่ระบบ รองรับ Multi-Company Login",
+      "priority": "High",
+      "type": "Functional",
+      "category": "Security",
+      "source": "Stakeholder Requirements",
+      "acceptance_criteria": "ผู้ใช้สามารถ Login ด้วย Username/Password และเลือกบริษัทได้ก่อนเข้าระบบ",
+      "linked_design": [],
+      "linked_test_cases": []
+    },
+    {
+      "id": "REQ-002",
+      "title": "Document Series Management",
+      "description": "ทุกโมดูลเอกสารรองรับ 'เลือกเล่มเอกสาร' (Document Series) เพื่อแยกประเภทหรือลำดับเลขที่เอกสารตามความต้องการของธุรกิจ",
+      "priority": "High",
+      "type": "Functional",
+      "category": "Document Management",
+      "source": "Business Requirements",
+      "acceptance_criteria": "ทุกโมดูลเอกสารมีตัวเลือก Document Series และระบบออกเลขที่เอกสารตามเล่มที่เลือกได้ถูกต้อง",
+      "linked_design": [],
+      "linked_test_cases": []
+    },
+    {
+      "id": "REQ-003",
+      "title": "Estimate Cost - การประมาณการต้นทุน",
+      "description": "ระบบคำนวณต้นทุนวัตถุดิบ (Material Cost), ค่าแรง (Labor), ค่าโสหุ้ย (Overhead) กำหนด Margin หรือ % กำไร เพื่อหาราคาขายที่เหมาะสม คำนวณ Gross Profit และสามารถ Convert to Quotation ได้",
+      "priority": "High",
+      "type": "Functional",
+      "category": "Pre-Sales & Cost Management",
+      "source": "Business Requirements",
+      "acceptance_criteria": "ระบบคำนวณต้นทุนและ Gross Profit ได้ถูกต้อง และสามารถ Convert เป็น Quotation ได้ในคลิกเดียว",
+      "linked_design": [],
+      "linked_test_cases": []
+    },
+    {
+      "id": "REQ-004",
+      "title": "Costing - การบันทึกต้นทุนจริง",
+      "description": "บันทึกต้นทุนที่เกิดขึ้นจริงจากการดำเนินงาน เชื่อมโยงกับค่าใช้จ่ายจากการเบิกจ่าย (Reimbursement) เปรียบเทียบ Budget vs Actual เพื่อดู Variance",
+      "priority": "High",
+      "type": "Functional",
+      "category": "Pre-Sales & Cost Management",
+      "source": "Business Requirements",
+      "acceptance_criteria": "ระบบแสดง Variance ระหว่าง Estimate กับ Actual Cost ได้ถูกต้อง",
+      "linked_design": [],
+      "linked_test_cases": []
+    },
+    {
+      "id": "REQ-005",
+      "title": "Quotation - ใบเสนอราคา",
+      "description": "Create/Edit Quotation โดยดึง Master Data (Customer, Product) มาสร้างเอกสาร คำนวณ VAT และส่วนลดอัตโนมัติ แสดง Quotation List พร้อมระบบ Filter ตามสถานะ วันที่ หรือชื่อลูกค้า",
+      "priority": "High",
+      "type": "Functional",
+      "category": "Sales Process",
+      "source": "Business Requirements",
+      "acceptance_criteria": "สร้างใบเสนอราคาได้ถูกต้อง คำนวณ VAT/ส่วนลดอัตโนมัติ และ Filter รายการได้ตามเงื่อนไข",
+      "linked_design": [],
+      "linked_test_cases": []
+    },
+    {
+      "id": "REQ-006",
+      "title": "Sale Order - ใบสั่งขาย",
+      "description": "สร้างใบสั่งขายโดยตรง หรือ Convert มาจากใบเสนอราคาที่ได้รับอนุมัติแล้ว รองรับ Document Series",
+      "priority": "High",
+      "type": "Functional",
+      "category": "Sales Process",
+      "source": "Business Requirements",
+      "acceptance_criteria": "สร้างและ Convert Quotation เป็น Sale Order ได้ถูกต้อง ข้อมูลครบถ้วน",
+      "linked_design": [],
+      "linked_test_cases": []
+    },
+    {
+      "id": "REQ-007",
+      "title": "Job Summary - สรุปงาน",
+      "description": "สร้างใบงานโดยตรง หรือ Convert มาจาก Sale Order ที่ได้รับอนุมัติ รวบรวมข้อมูลการขายเพื่อสรุปเนื้องาน รายละเอียดต้นทุน และขั้นตอนการทำงาน",
+      "priority": "High",
+      "type": "Functional",
+      "category": "Sales Process",
+      "source": "Business Requirements",
+      "acceptance_criteria": "สร้างและ Convert Sale Order เป็น Job Summary ได้ถูกต้อง ข้อมูลครบถ้วนสำหรับฝ่ายที่เกี่ยวข้อง",
+      "linked_design": [],
+      "linked_test_cases": []
+    },
+    {
+      "id": "REQ-008",
+      "title": "Invoice - ใบแจ้งหนี้และใบกำกับภาษี",
+      "description": "ออกใบแจ้งหนี้อ้างอิงจาก Sale Order หรือ Job Summary รองรับ Multi-Invoice (ลูกค้าเดียวกัน, สกุลเงินเดียวกัน) จัดการวันครบกำหนดชำระเงิน (Due Date) ตาม Payment Term",
+      "priority": "High",
+      "type": "Functional",
+      "category": "Finance",
+      "source": "Business Requirements",
+      "acceptance_criteria": "ออก Invoice ได้ถูกต้อง รองรับ Multi-Invoice และแสดง Due Date ตาม Payment Term",
+      "linked_design": [],
+      "linked_test_cases": []
+    },
+    {
+      "id": "REQ-009",
+      "title": "Reimbursement - ใบเรียกเก็บคืน",
+      "description": "สร้างใบเรียกเก็บคืนโดยตรง หรือ Convert มาจาก Invoice ที่ได้รับอนุมัติ รองรับ Document Series",
+      "priority": "Medium",
+      "type": "Functional",
+      "category": "Finance",
+      "source": "Business Requirements",
+      "acceptance_criteria": "สร้างและ Convert Invoice เป็น Reimbursement ได้ถูกต้อง",
+      "linked_design": [],
+      "linked_test_cases": []
+    },
+    {
+      "id": "REQ-010",
+      "title": "Reporting & Analytics",
+      "description": "ระบบรายงานแบบ Permission-Based ประกอบด้วย: Quotation Report, Sale Order Report, Job Summary Report, Invoice Report (ยอดค้างชำระ) แยกตามพนักงาน/ลูกค้า/สินค้า",
+      "priority": "High",
+      "type": "Functional",
+      "category": "Reporting",
+      "source": "Business Requirements",
+      "acceptance_criteria": "รายงานทุกประเภทแสดงข้อมูลถูกต้องตามสิทธิ์ของผู้ใช้ และสามารถ Export ได้",
+      "linked_design": [],
+      "linked_test_cases": []
+    },
+    {
+      "id": "REQ-011",
+      "title": "Product / Item Master Data Management",
+      "description": "จัดการข้อมูลสินค้า/บริการ (Item) รายละเอียด ราคา หน่วยนับ และ Category เพื่อจัดกลุ่มประเภทสินค้า",
+      "priority": "High",
+      "type": "Functional",
+      "category": "Master Data",
+      "source": "Business Requirements",
+      "acceptance_criteria": "สามารถ CRUD ข้อมูล Item และ Category ได้ถูกต้อง ข้อมูลถูกเรียกใช้ใน Quotation/Sale Order ได้",
+      "linked_design": [],
+      "linked_test_cases": []
+    },
+    {
+      "id": "REQ-012",
+      "title": "Customer Master Data Management",
+      "description": "จัดการรายชื่อลูกค้า ที่อยู่ ข้อมูลติดต่อ วงเงินเครดิต และ Customer Group (VIP, ขายส่ง, ต่างประเทศ)",
+      "priority": "High",
+      "type": "Functional",
+      "category": "Master Data",
+      "source": "Business Requirements",
+      "acceptance_criteria": "สามารถ CRUD ข้อมูลลูกค้าและกลุ่มลูกค้าได้ถูกต้อง",
+      "linked_design": [],
+      "linked_test_cases": []
+    },
+    {
+      "id": "REQ-013",
+      "title": "General Master Data",
+      "description": "จัดการข้อมูลพื้นฐาน: Employee, Currency, Bank Account, Company (ชื่อ ที่อยู่ เลขผู้เสียภาษี โลโก้)",
+      "priority": "Medium",
+      "type": "Functional",
+      "category": "Master Data",
+      "source": "Business Requirements",
+      "acceptance_criteria": "สามารถตั้งค่าและจัดการ General Master Data ได้ และข้อมูลถูกแสดงในเอกสารอย่างถูกต้อง",
+      "linked_design": [],
+      "linked_test_cases": []
+    },
+    {
+      "id": "REQ-014",
+      "title": "Security & Permission Management",
+      "description": "",
+      "priority": "Medium",
+      "type": "Functional",
+      "category": "",
+      "source": "",
+      "acceptance_criteria": "",
+      "linked_design": [],
+      "linked_test_cases": []
+    }
+  ],
+  "design_components": [
+    {
+      "id": "COMP-001",
+      "name": "Authentication & Multi-Company Login",
+      "description": "Login page with Company Selector, session management, and multi-company data isolation",
+      "type": "UI Component / Service",
+      "related_requirements": [
+        "REQ-001",
+        "REQ-014"
+      ],
+      "technology": ""
+    },
+    {
+      "id": "COMP-002",
+      "name": "Document Series Engine",
+      "description": "เครื่องมือกลางสำหรับจัดการ Document Series และการออกเลขที่เอกสารอัตโนมัติในทุกโมดูล",
+      "type": "Service",
+      "related_requirements": [
+        "REQ-002"
+      ],
+      "technology": ""
+    },
+    {
+      "id": "COMP-003",
+      "name": "Estimate Cost Module",
+      "description": "ใบประมาณการต้นทุน — คำนวณ Material, Labor, Overhead, Margin, Gross Profit และ Convert to Quotation",
+      "type": "UI Component / Service",
+      "related_requirements": [
+        "REQ-003"
+      ],
+      "technology": ""
+    },
+    {
+      "id": "COMP-004",
+      "name": "Costing Module",
+      "description": "บันทึกต้นทุนจริง Budget vs Actual Analysis เชื่อมกับ Reimbursement",
+      "type": "UI Component / Service",
+      "related_requirements": [
+        "REQ-004",
+        "REQ-009"
+      ],
+      "technology": ""
+    },
+    {
+      "id": "COMP-005",
+      "name": "Quotation Module",
+      "description": "ใบเสนอราคา — สร้าง/แก้ไข/ค้นหา คำนวณ VAT และส่วนลดอัตโนมัติ",
+      "type": "UI Component / Service",
+      "related_requirements": [
+        "REQ-005"
+      ],
+      "technology": ""
+    },
+    {
+      "id": "COMP-006",
+      "name": "Sale Order Module",
+      "description": "ใบสั่งขาย — สร้างโดยตรง หรือ Convert จาก Quotation",
+      "type": "UI Component / Service",
+      "related_requirements": [
+        "REQ-006"
+      ],
+      "technology": ""
+    },
+    {
+      "id": "COMP-007",
+      "name": "Job Summary Module",
+      "description": "สรุปงาน — สร้างโดยตรง หรือ Convert จาก Sale Order",
+      "type": "UI Component / Service",
+      "related_requirements": [
+        "REQ-007"
+      ],
+      "technology": ""
+    },
+    {
+      "id": "COMP-008",
+      "name": "Invoice Module",
+      "description": "ใบแจ้งหนี้/ใบกำกับภาษี — อ้างอิงจาก Sale Order หรือ Job Summary รองรับ Multi-Invoice",
+      "type": "UI Component / Service",
+      "related_requirements": [
+        "REQ-008"
+      ],
+      "technology": ""
+    },
+    {
+      "id": "COMP-009",
+      "name": "Reimbursement Module",
+      "description": "ใบเรียกเก็บคืน — สร้างโดยตรง หรือ Convert จาก Invoice",
+      "type": "UI Component / Service",
+      "related_requirements": [
+        "REQ-009"
+      ],
+      "technology": ""
+    },
+    {
+      "id": "COMP-010",
+      "name": "Reporting & Analytics Module",
+      "description": "รายงาน Quotation, Sale Order, Job Summary, Invoice (ค้างชำระ) แบบ Permission-Based",
+      "type": "UI Component / Service",
+      "related_requirements": [
+        "REQ-010"
+      ],
+      "technology": ""
+    },
+    {
+      "id": "COMP-011",
+      "name": "Product / Item Master Data",
+      "description": "CRUD สินค้า/บริการ พร้อม Category Management",
+      "type": "UI Component / API",
+      "related_requirements": [
+        "REQ-011"
+      ],
+      "technology": ""
+    },
+    {
+      "id": "COMP-012",
+      "name": "Customer Master Data",
+      "description": "CRUD ลูกค้า พร้อม Customer Group Management",
+      "type": "UI Component / API",
+      "related_requirements": [
+        "REQ-012"
+      ],
+      "technology": ""
+    },
+    {
+      "id": "COMP-013",
+      "name": "General Master Data",
+      "description": "CRUD Employee, Currency, Bank, Company settings",
+      "type": "UI Component / API",
+      "related_requirements": [
+        "REQ-013"
+      ],
+      "technology": ""
+    },
+    {
+      "id": "COMP-014",
+      "name": "Role-Based Access Control (RBAC)",
+      "description": "จัดการ Role และ Permission ตาม CRUD และ Data Isolation ตามบริษัท",
+      "type": "Service",
+      "related_requirements": [
+        "REQ-001",
+        "REQ-014"
+      ],
+      "technology": ""
+    }
+  ],
+  "database_tables": [
+    {
+      "name": "Users",
+      "description": "ข้อมูลผู้ใช้งานระบบ",
+      "columns": [
+        {
+          "name": "UserId",
+          "type": "INT PRIMARY KEY IDENTITY",
+          "description": "Primary key"
+        },
+        {
+          "name": "Username",
+          "type": "NVARCHAR(100) NOT NULL",
+          "description": "ชื่อผู้ใช้"
+        },
+        {
+          "name": "PasswordHash",
+          "type": "NVARCHAR(256) NOT NULL",
+          "description": "รหัสผ่านที่เข้ารหัส"
+        },
+        {
+          "name": "EmployeeId",
+          "type": "INT FK",
+          "description": "อ้างอิง Employee"
+        },
+        {
+          "name": "IsActive",
+          "type": "BIT",
+          "description": "สถานะใช้งาน"
+        },
+        {
+          "name": "CreatedAt",
+          "type": "DATETIME",
+          "description": "วันที่สร้าง"
+        }
+      ],
+      "related_requirements": [
+        "REQ-001"
+      ]
+    },
+    {
+      "name": "Companies",
+      "description": "ข้อมูลบริษัท (Multi-Company)",
+      "columns": [
+        {
+          "name": "CompanyId",
+          "type": "INT PRIMARY KEY IDENTITY",
+          "description": "Primary key"
+        },
+        {
+          "name": "CompanyCode",
+          "type": "NVARCHAR(20) NOT NULL",
+          "description": "รหัสบริษัท"
+        },
+        {
+          "name": "CompanyName",
+          "type": "NVARCHAR(200) NOT NULL",
+          "description": "ชื่อบริษัท"
+        },
+        {
+          "name": "TaxId",
+          "type": "NVARCHAR(20)",
+          "description": "เลขประจำตัวผู้เสียภาษี"
+        },
+        {
+          "name": "Address",
+          "type": "NVARCHAR(500)",
+          "description": "ที่อยู่"
+        },
+        {
+          "name": "LogoPath",
+          "type": "NVARCHAR(500)",
+          "description": "Path ของโลโก้"
+        },
+        {
+          "name": "IsActive",
+          "type": "BIT",
+          "description": "สถานะใช้งาน"
+        }
+      ],
+      "related_requirements": [
+        "REQ-013",
+        "REQ-014"
+      ]
+    },
+    {
+      "name": "DocumentSeries",
+      "description": "ตั้งค่าเล่มเอกสารสำหรับแต่ละโมดูล",
+      "columns": [
+        {
+          "name": "SeriesId",
+          "type": "INT PRIMARY KEY IDENTITY",
+          "description": "Primary key"
+        },
+        {
+          "name": "CompanyId",
+          "type": "INT FK",
+          "description": "อ้างอิงบริษัท"
+        },
+        {
+          "name": "ModuleCode",
+          "type": "NVARCHAR(20) NOT NULL",
+          "description": "รหัสโมดูล (QT, SO, INV ฯลฯ)"
+        },
+        {
+          "name": "SeriesName",
+          "type": "NVARCHAR(100)",
+          "description": "ชื่อเล่มเอกสาร"
+        },
+        {
+          "name": "Prefix",
+          "type": "NVARCHAR(20)",
+          "description": "คำนำหน้าเลขที่เอกสาร"
+        },
+        {
+          "name": "LastNumber",
+          "type": "INT DEFAULT 0",
+          "description": "เลขล่าสุด"
+        },
+        {
+          "name": "IsActive",
+          "type": "BIT",
+          "description": "สถานะใช้งาน"
+        }
+      ],
+      "related_requirements": [
+        "REQ-002"
+      ]
+    },
+    {
+      "name": "Customers",
+      "description": "ข้อมูลลูกค้า",
+      "columns": [
+        {
+          "name": "CustomerId",
+          "type": "INT PRIMARY KEY IDENTITY",
+          "description": "Primary key"
+        },
+        {
+          "name": "CompanyId",
+          "type": "INT FK",
+          "description": "อ้างอิงบริษัท"
+        },
+        {
+          "name": "CustomerCode",
+          "type": "NVARCHAR(20) NOT NULL",
+          "description": "รหัสลูกค้า"
+        },
+        {
+          "name": "CustomerName",
+          "type": "NVARCHAR(200) NOT NULL",
+          "description": "ชื่อลูกค้า"
+        },
+        {
+          "name": "TaxId",
+          "type": "NVARCHAR(20)",
+          "description": "เลขผู้เสียภาษี"
+        },
+        {
+          "name": "Address",
+          "type": "NVARCHAR(500)",
+          "description": "ที่อยู่"
+        },
+        {
+          "name": "CreditLimit",
+          "type": "DECIMAL(18,2)",
+          "description": "วงเงินเครดิต"
+        },
+        {
+          "name": "CustomerGroupId",
+          "type": "INT FK",
+          "description": "กลุ่มลูกค้า"
+        },
+        {
+          "name": "IsActive",
+          "type": "BIT",
+          "description": "สถานะ"
+        }
+      ],
+      "related_requirements": [
+        "REQ-012"
+      ]
+    },
+    {
+      "name": "Items",
+      "description": "ข้อมูลสินค้า/บริการ",
+      "columns": [
+        {
+          "name": "ItemId",
+          "type": "INT PRIMARY KEY IDENTITY",
+          "description": "Primary key"
+        },
+        {
+          "name": "CompanyId",
+          "type": "INT FK",
+          "description": "อ้างอิงบริษัท"
+        },
+        {
+          "name": "ItemCode",
+          "type": "NVARCHAR(50) NOT NULL",
+          "description": "รหัสสินค้า"
+        },
+        {
+          "name": "ItemName",
+          "type": "NVARCHAR(200) NOT NULL",
+          "description": "ชื่อสินค้า"
+        },
+        {
+          "name": "CategoryId",
+          "type": "INT FK",
+          "description": "หมวดหมู่สินค้า"
+        },
+        {
+          "name": "UnitPrice",
+          "type": "DECIMAL(18,4)",
+          "description": "ราคาต่อหน่วย"
+        },
+        {
+          "name": "Unit",
+          "type": "NVARCHAR(50)",
+          "description": "หน่วยนับ"
+        },
+        {
+          "name": "IsActive",
+          "type": "BIT",
+          "description": "สถานะ"
+        }
+      ],
+      "related_requirements": [
+        "REQ-011"
+      ]
+    },
+    {
+      "name": "Quotations",
+      "description": "ใบเสนอราคา Header",
+      "columns": [
+        {
+          "name": "QuotationId",
+          "type": "INT PRIMARY KEY IDENTITY",
+          "description": "Primary key"
+        },
+        {
+          "name": "CompanyId",
+          "type": "INT FK",
+          "description": "อ้างอิงบริษัท"
+        },
+        {
+          "name": "QuotationNo",
+          "type": "NVARCHAR(50) NOT NULL",
+          "description": "เลขที่ใบเสนอราคา"
+        },
+        {
+          "name": "QuotationDate",
+          "type": "DATE NOT NULL",
+          "description": "วันที่เอกสาร"
+        },
+        {
+          "name": "CustomerId",
+          "type": "INT FK",
+          "description": "อ้างอิงลูกค้า"
+        },
+        {
+          "name": "CurrencyId",
+          "type": "INT FK",
+          "description": "สกุลเงิน"
+        },
+        {
+          "name": "SubTotal",
+          "type": "DECIMAL(18,2)",
+          "description": "ยอดรวมก่อนภาษี"
+        },
+        {
+          "name": "DiscountAmount",
+          "type": "DECIMAL(18,2)",
+          "description": "ส่วนลด"
+        },
+        {
+          "name": "VatAmount",
+          "type": "DECIMAL(18,2)",
+          "description": "ภาษีมูลค่าเพิ่ม"
+        },
+        {
+          "name": "TotalAmount",
+          "type": "DECIMAL(18,2)",
+          "description": "ยอดรวมสุทธิ"
+        },
+        {
+          "name": "Status",
+          "type": "NVARCHAR(20)",
+          "description": "Draft / Pending / Approved / Rejected"
+        },
+        {
+          "name": "EstimateCostId",
+          "type": "INT FK NULL",
+          "description": "อ้างอิง Estimate Cost (ถ้า Convert มา)"
+        }
+      ],
+      "related_requirements": [
+        "REQ-005"
+      ]
+    },
+    {
+      "name": "SaleOrders",
+      "description": "ใบสั่งขาย Header",
+      "columns": [
+        {
+          "name": "SaleOrderId",
+          "type": "INT PRIMARY KEY IDENTITY",
+          "description": "Primary key"
+        },
+        {
+          "name": "CompanyId",
+          "type": "INT FK",
+          "description": "อ้างอิงบริษัท"
+        },
+        {
+          "name": "SaleOrderNo",
+          "type": "NVARCHAR(50) NOT NULL",
+          "description": "เลขที่ใบสั่งขาย"
+        },
+        {
+          "name": "SaleOrderDate",
+          "type": "DATE NOT NULL",
+          "description": "วันที่เอกสาร"
+        },
+        {
+          "name": "CustomerId",
+          "type": "INT FK",
+          "description": "อ้างอิงลูกค้า"
+        },
+        {
+          "name": "QuotationId",
+          "type": "INT FK NULL",
+          "description": "อ้างอิง Quotation (ถ้า Convert มา)"
+        },
+        {
+          "name": "TotalAmount",
+          "type": "DECIMAL(18,2)",
+          "description": "ยอดรวม"
+        },
+        {
+          "name": "Status",
+          "type": "NVARCHAR(20)",
+          "description": "Draft / Pending / Approved / Closed"
+        }
+      ],
+      "related_requirements": [
+        "REQ-006"
+      ]
+    },
+    {
+      "name": "Invoices",
+      "description": "ใบแจ้งหนี้/ใบกำกับภาษี Header",
+      "columns": [
+        {
+          "name": "InvoiceId",
+          "type": "INT PRIMARY KEY IDENTITY",
+          "description": "Primary key"
+        },
+        {
+          "name": "CompanyId",
+          "type": "INT FK",
+          "description": "อ้างอิงบริษัท"
+        },
+        {
+          "name": "InvoiceNo",
+          "type": "NVARCHAR(50) NOT NULL",
+          "description": "เลขที่ Invoice"
+        },
+        {
+          "name": "InvoiceDate",
+          "type": "DATE NOT NULL",
+          "description": "วันที่เอกสาร"
+        },
+        {
+          "name": "CustomerId",
+          "type": "INT FK",
+          "description": "อ้างอิงลูกค้า"
+        },
+        {
+          "name": "DueDate",
+          "type": "DATE",
+          "description": "วันครบกำหนดชำระ"
+        },
+        {
+          "name": "TotalAmount",
+          "type": "DECIMAL(18,2)",
+          "description": "ยอดรวม"
+        },
+        {
+          "name": "PaidAmount",
+          "type": "DECIMAL(18,2) DEFAULT 0",
+          "description": "ยอดที่ชำระแล้ว"
+        },
+        {
+          "name": "Status",
+          "type": "NVARCHAR(20)",
+          "description": "Draft / Pending / Approved / Paid / Overdue"
+        },
+        {
+          "name": "CurrencyId",
+          "type": "INT FK",
+          "description": "สกุลเงิน"
+        }
+      ],
+      "related_requirements": [
+        "REQ-008"
+      ]
+    }
+  ],
+  "test_cases": [
+    {
+      "id": "TC-001",
+      "title": "Login with valid credentials and company selection",
+      "related_requirement": "REQ-001",
+      "test_type": "Functional",
+      "preconditions": "มีข้อมูลผู้ใช้และบริษัทในระบบ",
+      "steps": [
+        "Step 1: เปิดหน้า Login",
+        "Step 2: กรอก Username และ Password ที่ถูกต้อง",
+        "Step 3: เลือกบริษัทที่ต้องการ",
+        "Step 4: กดปุ่ม Login"
+      ],
+      "expected_result": "ระบบ Login สำเร็จและเข้าสู่หน้า Dashboard ของบริษัทที่เลือก",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "QA Team",
+      "test_date": "2024-06-01",
+      "remarks": ""
+    },
+    {
+      "id": "TC-002",
+      "title": "Document Series selection and auto-numbering",
+      "related_requirement": "REQ-002",
+      "test_type": "Functional",
+      "preconditions": "มี Document Series ที่ตั้งค่าไว้แล้ว",
+      "steps": [
+        "Step 1: เข้าโมดูล Quotation",
+        "Step 2: กดสร้างเอกสารใหม่",
+        "Step 3: เลือก Document Series",
+        "Step 4: บันทึกเอกสาร"
+      ],
+      "expected_result": "ระบบออกเลขที่เอกสารตาม Series ที่เลือกถูกต้อง และเลขถัดไปเพิ่มขึ้น 1",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "QA Team",
+      "test_date": "2024-06-01",
+      "remarks": ""
+    },
+    {
+      "id": "TC-003",
+      "title": "Estimate Cost calculation and Convert to Quotation",
+      "related_requirement": "REQ-003",
+      "test_type": "Functional",
+      "preconditions": "มีข้อมูล Product และ Document Series สำหรับ Estimate Cost",
+      "steps": [
+        "Step 1: สร้างใบประมาณการใหม่",
+        "Step 2: กรอก Material Cost, Labor Cost, Overhead",
+        "Step 3: กำหนด Margin %",
+        "Step 4: ระบบคำนวณ Gross Profit และราคาขาย",
+        "Step 5: กดปุ่ม Convert to Quotation"
+      ],
+      "expected_result": "ระบบคำนวณถูกต้อง และสร้าง Quotation พร้อมข้อมูลจาก Estimate Cost ได้",
+      "actual_result": "In Progress",
+      "status": "In Progress",
+      "tester": "QA Team",
+      "test_date": "",
+      "remarks": "Feature ยังอยู่ในขั้นพัฒนา"
+    },
+    {
+      "id": "TC-004",
+      "title": "Costing Budget vs Actual Analysis",
+      "related_requirement": "REQ-004",
+      "test_type": "Functional",
+      "preconditions": "มี Estimate Cost และ Reimbursement ที่อ้างอิงโปรเจกต์เดียวกัน",
+      "steps": [
+        "Step 1: เข้าโมดูล Costing",
+        "Step 2: บันทึกต้นทุนจริง",
+        "Step 3: ดู Budget vs Actual Comparison"
+      ],
+      "expected_result": "ระบบแสดง Variance ระหว่าง Estimate กับ Actual ถูกต้อง",
+      "actual_result": "In Progress",
+      "status": "In Progress",
+      "tester": "QA Team",
+      "test_date": "",
+      "remarks": "Feature ยังอยู่ในขั้นพัฒนา"
+    },
+    {
+      "id": "TC-005",
+      "title": "Create Quotation with VAT and Discount auto-calculation",
+      "related_requirement": "REQ-005",
+      "test_type": "Functional",
+      "preconditions": "มีข้อมูล Customer และ Product",
+      "steps": [
+        "Step 1: สร้าง Quotation ใหม่",
+        "Step 2: เลือกลูกค้าและสินค้า",
+        "Step 3: กรอกส่วนลด",
+        "Step 4: ตรวจสอบ VAT และยอดรวม"
+      ],
+      "expected_result": "ระบบคำนวณ VAT 7% และส่วนลดถูกต้อง ยอดสุทธิถูกต้อง",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "QA Team",
+      "test_date": "2024-05-15",
+      "remarks": ""
+    },
+    {
+      "id": "TC-006",
+      "title": "Convert Quotation to Sale Order",
+      "related_requirement": "REQ-006",
+      "test_type": "Integration",
+      "preconditions": "มี Quotation ที่ได้รับอนุมัติ",
+      "steps": [
+        "Step 1: เปิด Quotation ที่อนุมัติแล้ว",
+        "Step 2: กดปุ่ม Convert to Sale Order",
+        "Step 3: ตรวจสอบข้อมูลใน Sale Order ที่ได้"
+      ],
+      "expected_result": "Sale Order ถูกสร้างพร้อมข้อมูลจาก Quotation ครบถ้วน",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "QA Team",
+      "test_date": "2024-05-20",
+      "remarks": ""
+    },
+    {
+      "id": "TC-007",
+      "title": "Convert Sale Order to Job Summary",
+      "related_requirement": "REQ-007",
+      "test_type": "Integration",
+      "preconditions": "มี Sale Order ที่ได้รับอนุมัติ",
+      "steps": [
+        "Step 1: เปิด Sale Order ที่อนุมัติแล้ว",
+        "Step 2: กดปุ่ม Convert to Job Summary",
+        "Step 3: ตรวจสอบข้อมูลใน Job Summary"
+      ],
+      "expected_result": "Job Summary ถูกสร้างพร้อมข้อมูลครบถ้วน",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "QA Team",
+      "test_date": "2024-06-01",
+      "remarks": ""
+    },
+    {
+      "id": "TC-008",
+      "title": "Multi-Invoice creation and Due Date tracking",
+      "related_requirement": "REQ-008",
+      "test_type": "Functional",
+      "preconditions": "มี Sale Order หลายรายการของลูกค้าเดียว สกุลเงินเดียวกัน",
+      "steps": [
+        "Step 1: สร้าง Invoice ใหม่",
+        "Step 2: เลือก Multi-Invoice จาก Sale Order หลายรายการ",
+        "Step 3: ตรวจสอบ Due Date ตาม Payment Term"
+      ],
+      "expected_result": "Invoice รวบรวมหลาย Sale Order ได้ และแสดง Due Date ถูกต้อง",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "QA Team",
+      "test_date": "2024-06-10",
+      "remarks": ""
+    },
+    {
+      "id": "TC-009",
+      "title": "Reimbursement conversion from Invoice",
+      "related_requirement": "REQ-009",
+      "test_type": "Functional",
+      "preconditions": "มี Invoice ที่อนุมัติแล้ว",
+      "steps": [
+        "Step 1: เปิด Invoice ที่อนุมัติแล้ว",
+        "Step 2: Convert เป็น Reimbursement",
+        "Step 3: ตรวจสอบข้อมูล"
+      ],
+      "expected_result": "Reimbursement ถูกสร้างพร้อมข้อมูลจาก Invoice ถูกต้อง",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "QA Team",
+      "test_date": "2024-06-15",
+      "remarks": ""
+    },
+    {
+      "id": "TC-010",
+      "title": "Permission-Based Reporting",
+      "related_requirement": "REQ-010",
+      "test_type": "Security",
+      "preconditions": "มีผู้ใช้ 2 role: Manager (เห็นทุก) และ Sales (เห็นเฉพาะของตัวเอง)",
+      "steps": [
+        "Step 1: Login ด้วย Sales User",
+        "Step 2: ดู Sale Order Report",
+        "Step 3: Login ด้วย Manager",
+        "Step 4: ดู Sale Order Report"
+      ],
+      "expected_result": "Sales User เห็นเฉพาะ Order ของตัวเอง, Manager เห็นทั้งหมด",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "QA Team",
+      "test_date": "2024-06-20",
+      "remarks": ""
+    },
+    {
+      "id": "TC-011",
+      "title": "Product / Item CRUD operations",
+      "related_requirement": "REQ-011",
+      "test_type": "Functional",
+      "preconditions": "Login แล้วมี Permission จัดการ Master Data",
+      "steps": [
+        "Step 1: สร้าง Item ใหม่",
+        "Step 2: แก้ไขข้อมูล Item",
+        "Step 3: ลบ Item",
+        "Step 4: ตรวจสอบใน Quotation"
+      ],
+      "expected_result": "CRUD Item สำเร็จ และ Item ปรากฏใน Quotation",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "QA Team",
+      "test_date": "2024-05-10",
+      "remarks": ""
+    },
+    {
+      "id": "TC-012",
+      "title": "Customer CRUD and Customer Group",
+      "related_requirement": "REQ-012",
+      "test_type": "Functional",
+      "preconditions": "Login แล้วมี Permission จัดการ Master Data",
+      "steps": [
+        "Step 1: สร้าง Customer ใหม่",
+        "Step 2: กำหนด Customer Group",
+        "Step 3: แก้ไขและตรวจสอบ"
+      ],
+      "expected_result": "CRUD Customer และ Customer Group สำเร็จ",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "QA Team",
+      "test_date": "2024-05-12",
+      "remarks": ""
+    },
+    {
+      "id": "TC-013",
+      "title": "General Master Data setup - Company and Currency",
+      "related_requirement": "REQ-013",
+      "test_type": "Functional",
+      "preconditions": "Login ด้วย Admin account",
+      "steps": [
+        "Step 1: ตั้งค่าข้อมูลบริษัท (ชื่อ ที่อยู่ เลขภาษี โลโก้)",
+        "Step 2: ตั้งค่า Currency",
+        "Step 3: ตรวจสอบว่าข้อมูลปรากฏใน Invoice"
+      ],
+      "expected_result": "ข้อมูลบริษัทและสกุลเงินแสดงถูกต้องในเอกสาร",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "QA Team",
+      "test_date": "2024-05-05",
+      "remarks": ""
+    },
+    {
+      "id": "TC-014",
+      "title": "Role-Based Access Control verification",
+      "related_requirement": "REQ-014",
+      "test_type": "Security",
+      "preconditions": "มี Role ที่กำหนด Permission ต่างกัน",
+      "steps": [
+        "Step 1: Login ด้วย user ที่ไม่มีสิทธิ์ Delete",
+        "Step 2: พยายาม Delete เอกสาร",
+        "Step 3: ตรวจสอบ Data Isolation ระหว่างบริษัท"
+      ],
+      "expected_result": "ปุ่ม Delete ไม่แสดง/ถูก Disable และข้อมูลบริษัทอื่นไม่ปรากฏ",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "QA Team",
+      "test_date": "2024-06-25",
+      "remarks": ""
+    }
+  ],
+  "defects": [
+    {
+      "id": "BUG-001",
+      "title": "VAT calculation rounding error for multi-line items",
+      "related_test_case": "TC-005",
+      "related_requirement": "REQ-005",
+      "severity": "Medium",
+      "priority": "High",
+      "status": "Closed",
+      "reported_by": "QA Team",
+      "reported_date": "2024-05-16",
+      "assigned_to": "Apisit Yimboa",
+      "fixed_date": "2024-05-20",
+      "description": "การคำนวณ VAT สำหรับรายการสินค้าหลายรายการเกิด Rounding Error ทำให้ยอดรวมผิดพลาด 1 สตางค์",
+      "steps_to_reproduce": "สร้าง Quotation ที่มีสินค้า 3 รายการ ราคา 33.33 บาท แต่ละรายการ",
+      "root_cause": "การปัดเศษแบบ Round-down แทน Round-half-up",
+      "resolution": "แก้ไข Rounding Logic เป็น MidpointRounding.AwayFromZero"
+    }
+  ],
+  "risks": [
+    {
+      "id": "RISK-001",
+      "category": "Schedule",
+      "description": "Pre-Sales module (Estimate Cost & Costing) ยังอยู่ในขั้นตอนเก็บข้อมูล อาจใช้เวลานานกว่าแผน เนื่องจาก business process ของลูกค้ามีความซับซ้อน",
+      "probability": "Medium",
+      "impact": "High",
+      "risk_level": "High",
+      "mitigation": "ประชุม workshop กับลูกค้าเพื่อ finalize requirements ก่อนเริ่ม development",
+      "owner": "Apisit Yimboa",
+      "status": "Open",
+      "review_date": "2026-03-01",
+      "contingency": "หาก delay เกิน 2 สัปดาห์ ให้ escalate ถึง Stakeholder เพื่อปรับ scope",
+      "linked_capa": "CAPA-001"
+    },
+    {
+      "id": "RISK-002",
+      "category": "Technical",
+      "description": "การ Integrate ระบบ Costing กับ Reimbursement อาจเกิดข้อมูลไม่สอดคล้องกัน (Data Inconsistency) ในกรณีที่มีการแก้ไข Reimbursement หลังบันทึก Costing",
+      "probability": "Medium",
+      "impact": "Medium",
+      "risk_level": "Medium",
+      "mitigation": "ออกแบบ DB Transaction และ Locking Mechanism ที่เหมาะสม",
+      "owner": "Apisit Yimboa",
+      "status": "Open",
+      "review_date": "2026-04-01",
+      "contingency": "ทำ Reconciliation Report เพื่อตรวจสอบความสอดคล้องของข้อมูล",
+      "linked_capa": ""
+    },
+    {
+      "id": "RISK-003",
+      "category": "Resource",
+      "description": "ทีมพัฒนามีสมาชิกหลักเพียงคนเดียว หากเกิด Key Person Dependency อาจกระทบ timeline",
+      "probability": "Low",
+      "impact": "High",
+      "risk_level": "Medium",
+      "mitigation": "จัดทำ Technical Documentation ให้ครบถ้วน และ Knowledge Transfer เบื้องต้น",
+      "owner": "Apisit Yimboa",
+      "status": "Open",
+      "review_date": "2026-06-01",
+      "contingency": "จ้าง Freelance Developer เสริมหากจำเป็น",
+      "linked_capa": ""
+    }
+  ],
+  "change_requests": [
+    {
+      "id": "CR-001",
+      "title": "เพิ่มฟีเจอร์ Pre-Sales Module (Estimate Cost & Costing)",
+      "description": "",
+      "requestor": "Chan Neeammart",
+      "request_date": "2024-08-01",
+      "priority": "High",
+      "impact": "",
+      "affected_documents": [],
+      "status": "In Progress",
+      "approved_by": "Apisit Yimboa",
+      "approval_date": "2024-08-15",
+      "implementation_date": ""
+    },
+    {
+      "id": "CR-001",
+      "title": "ลงชื่อ ______________________________",
+      "description": "",
+      "requestor": "ตรวจสอบ / Reviewed by",
+      "request_date": "",
+      "priority": "Medium",
+      "impact": "",
+      "affected_documents": [],
+      "status": "Pending",
+      "approved_by": "",
+      "approval_date": "",
+      "implementation_date": ""
+    }
+  ],
+  "versions": [
+    {
+      "version": "1.0.0",
+      "release_date": "2024-04-01",
+      "release_type": "Major",
+      "description": "Initial release — Core Sales Process",
+      "changes": [],
+      "deployed_by": "Apisit Yimboa",
+      "environment": "Production"
+    },
+    {
+      "version": "2.0.0",
+      "release_date": "2024-05-15",
+      "release_type": "Major",
+      "description": "Job Summary, Invoice, Reimbursement",
+      "changes": [],
+      "deployed_by": "Apisit Yimboa",
+      "environment": "Production"
+    },
+    {
+      "version": "3.0.0",
+      "release_date": "2024-06-30",
+      "release_type": "Major",
+      "description": "Reporting & Analytics, Security module",
+      "changes": [],
+      "deployed_by": "Apisit Yimboa",
+      "environment": "Production"
+    },
+    {
+      "version": "4.0.0",
+      "release_date": "2024-07-20",
+      "release_type": "Major",
+      "description": "Full system Go-Live — all core modules stable",
+      "changes": [],
+      "deployed_by": "Apisit Yimboa",
+      "environment": "Production"
+    },
+    {
+      "version": "4.2.0",
+      "release_date": "2026-02-16",
+      "release_type": "Minor",
+      "description": "Pre-Sales Module (in development) — Estimate Cost & Costing",
+      "changes": [],
+      "deployed_by": "Apisit Yimboa",
+      "environment": "Development"
+    }
+  ],
+  "meetings": [
+    {
+      "id": "MTG-005",
+      "title": "Project Kickoff Meeting — Sale System",
+      "date": "2024-01-20",
+      "time": "09:00-11:00",
+      "location": "Sitthi Laos",
+      "chair": "Apisit Yimboa",
+      "attendees": [
+        "Apisit Yimboa",
+        "Chan Neeamart",
+        "ເມລານີ ອະນຸລັງສີ"
+      ],
+      "agenda": [],
+      "action_items": [
+        {
+          "item": "จัดทำ BRD และ RTM ฉบับแรก",
+          "owner": "Apisit Yimboa",
+          "due_date": "2024-01-31",
+          "status": "Closed"
+        }
+      ],
+      "summary": ""
+    },
+    {
+      "id": "MTG-010",
+      "title": "Pre-Sales Module Requirements Workshop",
+      "date": "2025-06-1",
+      "time": "10:00-12:00",
+      "location": "Sitthi Laos",
+      "chair": "Apisit Yimboa",
+      "attendees": [
+        "Chan Neeammart",
+        "ອຸດອນ ສິດທິນະຣົງສີ"
+      ],
+      "agenda": [],
+      "action_items": [
+        {
+          "item": "ลูกค้าส่ง Excel Template ของ Estimate Cost ปัจจุบัน",
+          "owner": "ອຸດອນ ສິດທິນະຣົງສີ",
+          "due_date": "2026-01-22",
+          "status": "Open"
+        }
+      ],
+      "summary": ""
+    }
+  ],
+  "training_sessions": [
+    {
+      "id": "TRN-001",
+      "title": "Sale System User Training — Core Modules",
+      "date": "2024-07-15",
+      "duration": "4 hours",
+      "location": "Sitthi Laos",
+      "trainer": "ผู้จัดอบรม / Organizer",
+      "topics": [],
+      "attendees": [
+        {
+          "name": "Sales Team",
+          "department": "Sales",
+          "signed": true
+        },
+        {
+          "name": "Finance Team",
+          "department": "Finance",
+          "signed": true
+        }
+      ]
+    }
+  ],
+  "incidents": [
+    {
+      "id": "INC-001",
+      "title": "Invoice number duplication on concurrent creation",
+      "date_reported": "",
+      "severity": "",
+      "description": "เมื่อผู้ใช้ 2 คนสร้าง Invoice พร้อมกันในบางกรณีเกิดเลขที่ซ้ำกัน",
+      "reported_by": "",
+      "assigned_to": "",
+      "status": "Open",
+      "resolution": "เพิ่ม Row-level locking และ Retry logic สำหรับการออกเลขที่เอกสาร",
+      "resolved_date": "",
+      "root_cause": "Race condition ใน Document Number generation",
+      "linked_change_request": ""
+    }
+  ],
+  "deployments": [
+    {
+      "id": "DEP-001",
+      "version": "4.0.0",
+      "date": "2024-07-20",
+      "environment": "Production",
+      "deployed_by": "Apisit Yimboa",
+      "deployment_type": "Major",
+      "steps": [],
+      "rollback_plan": "",
+      "status": "Success",
+      "approval": "Approved by Apisit Yimboa"
+    }
+  ],
+  "audit": {
+    "audit_date": "2026-02-19",
+    "auditor": "Internal Auditor — Avengers Soft",
+    "audit_scope": "ISO/IEC 29110 compliance review for Sale System v4.2 software development lifecycle",
+    "findings": [
+      {
+        "id": "FIND-001",
+        "clause": "ISO/IEC 29110 Section 3.2 — Requirements Management",
+        "finding_type": "Observation",
+        "description": "Pre-Sales Module requirements ยังไม่ได้รับการ Sign-off อย่างเป็นทางการ",
+        "linked_capa": "CAPA-001"
+      }
+    ]
+  },
+  "capas": [
+    {
+      "id": "CAPA-001",
+      "type": "Corrective Action",
+      "related_finding": "FIND-001 / RISK-001",
+      "description": "จัดทำ Requirements Specification Document สำหรับ Pre-Sales Module และให้ Stakeholder Sign-off ก่อนเริ่ม Development",
+      "root_cause": "เริ่มเก็บข้อมูล Requirements โดยไม่มีกระบวนการ Formal Sign-off ทำให้ Scope ไม่ชัดเจน",
+      "action_plan": "1. จัดทำ BRD ฉบับสมบูรณ์สำหรับ Pre-Sales Module\n2. นำเสนอ Stakeholder เพื่อ Review\n3. ขอ Sign-off ก่อน Sprint เริ่ม\n4. อัปเดต RTM",
+      "responsible": "Apisit Yimboa",
+      "target_date": "2026-03-31",
+      "status": "In Progress",
+      "effectiveness_review": "ตรวจสอบว่า BRD ได้รับการ Sign-off และ Development เริ่มตามแผน",
+      "closed_date": ""
+    }
+  ],
+  "sow": {},
+  "output_path": "D:\\Work\\DocISOGen\\projects"
+}

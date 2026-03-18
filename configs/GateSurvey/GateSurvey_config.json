@@ -1,0 +1,1045 @@
+{
+  "project": {
+    "code": "ContainerSurvey",
+    "name": "Container Survey System",
+    "organization": "Soudaphone",
+    "description": "ระบบบันทึกและตรวจสอบข้อมูลรถบรรทุกตู้คอนเทนเนอร์และรถไม่มีตู้คอนเทนเนอร์ ทั้งขาเข้าและขาออก พร้อมพิมพ์เอกสาร Equipment Interchange Receipt (EIR) และบริหารจัดการสิทธิ์ผู้ใช้งาน",
+    "scope": "ระบบครอบคลุมการบันทึกข้อมูลการตรวจสอบรถบรรทุกตู้คอนเทนเนอร์ (Container Survey) และรถที่ไม่มีตู้คอนเทนเนอร์ (Non Container) ทั้งขาเข้าและขาออก รองรับการแนบไฟล์ภาพถ่าย การพิมพ์เอกสาร EIR พร้อม QR Code และการบริหารจัดการสิทธิ์ผู้ใช้งาน",
+    "department": "Soudaphone",
+    "start_date": "2025-10-01",
+    "end_date": "2026-02-18",
+    "go_live_date": "2026-02-18",
+    "doc_revision": "1.0",
+    "document_date": "2026-02-19",
+    "classification": "Internal",
+    "short_name": "ContainerSurvey",
+    "objectives": [
+      "บันทึกข้อมูลการตรวจสอบรถบรรทุกตู้คอนเทนเนอร์และรถไม่มีตู้คอนเทนเนอร์แบบมาตรฐาน",
+      "รองรับการแนบไฟล์ภาพถ่ายเพื่อใช้เป็นหลักฐานและตรวจสอบย้อนหลัง (Traceability)",
+      "สร้างและพิมพ์เอกสาร Equipment Interchange Receipt (EIR) พร้อม QR Code",
+      "บริหารจัดการสิทธิ์การเข้าถึงระบบตามหลักการ Access Control",
+      "รองรับการค้นหา กรองข้อมูล และส่งออกรายงานในรูปแบบ Excel"
+    ]
+  },
+  "team": {
+    "members": [
+      {
+        "name": "TDP BA Team",
+        "title": "เตรียมโดย / Prepared by",
+        "email": ""
+      },
+      {
+        "name": "TDP QA Team",
+        "title": "ตรวจสอบโดย / Reviewed by",
+        "email": ""
+      },
+      {
+        "name": "Saravut Chanjom",
+        "title": "อนุมัติโดย / Approved by",
+        "email": ""
+      }
+    ],
+    "project_manager": {
+      "name": "Development TDP",
+      "title": "Development Team",
+      "email": "dev-team@soudaphone.com",
+      "phone": ""
+    },
+    "lead_developer": {
+      "name": "Saravut Chanjom",
+      "title": "Lead Developer",
+      "email": "dev@soudaphone.com",
+      "phone": ""
+    },
+    "business_analyst": {
+      "name": "TDP BA Team",
+      "title": "Business Analyst",
+      "email": "ba@soudaphone.com",
+      "phone": ""
+    },
+    "system_analyst": {
+      "name": "Saravut Chanjom",
+      "title": "System Analyst",
+      "email": "sa@soudaphone.com",
+      "phone": ""
+    },
+    "qa_engineer": {
+      "name": "TDP QA Team",
+      "title": "QA Engineer",
+      "email": "qa@soudaphone.com",
+      "phone": ""
+    },
+    "dba": {
+      "name": "TDP DBA Team",
+      "title": "DBA",
+      "email": "dba@soudaphone.com",
+      "phone": ""
+    }
+  },
+  "stakeholders": [
+    {
+      "name": "Soudaphone Management",
+      "role": "Project Sponsor",
+      "organization": "Soudaphone",
+      "email": "",
+      "responsibility": "Approve budget and major decisions"
+    },
+    {
+      "name": "Operations Department",
+      "role": "End User / Business Owner",
+      "organization": "Soudaphone",
+      "email": "",
+      "responsibility": "Define operational requirements and conduct UAT"
+    }
+  ],
+  "tech_stack": {
+    "frontend": ".NET Core MVC / Razor Views / HTML5 / CSS3 / JavaScript",
+    "backend": ".NET Core / C#",
+    "database": "SQL Server",
+    "infrastructure": "On-premise Server",
+    "source_control": "Git",
+    "ci_cd": ""
+  },
+  "milestones": [
+    {
+      "id": "MS-01",
+      "name": "Requirements Sign-off",
+      "target_date": "2025-10-31",
+      "status": "Completed",
+      "owner": "Saravut Chanjom"
+    },
+    {
+      "id": "MS-02",
+      "name": "Design Complete",
+      "target_date": "2025-11-30",
+      "status": "Completed",
+      "owner": "Saravut Chanjom"
+    },
+    {
+      "id": "MS-03",
+      "name": "Development Complete",
+      "target_date": "2026-01-31",
+      "status": "Completed",
+      "owner": "Saravut Chanjom"
+    },
+    {
+      "id": "MS-04",
+      "name": "UAT Complete",
+      "target_date": "2026-02-15",
+      "status": "Completed",
+      "owner": "TDP QA Team"
+    },
+    {
+      "id": "MS-05",
+      "name": "Go-Live",
+      "target_date": "2026-02-18",
+      "status": "Completed",
+      "owner": "Saravut Chanjom"
+    }
+  ],
+  "requirements": [
+    {
+      "id": "REQ-001",
+      "title": "Container Survey Form",
+      "description": "ระบบต้องรองรับการบันทึกข้อมูลการตรวจสอบรถที่บรรทุกตู้คอนเทนเนอร์ ทั้งขาเข้าและขาออก ผ่านแบบฟอร์มมาตรฐาน พร้อมรองรับการแนบไฟล์ภาพถ่ายประกอบการตรวจสอบ เพื่อใช้เป็นหลักฐานและรองรับการตรวจสอบย้อนหลัง (Traceability)",
+      "priority": "High",
+      "type": "Functional",
+      "category": "Container Inspection",
+      "source": "Stakeholder - Operations Department",
+      "acceptance_criteria": "ระบบสามารถบันทึก แก้ไข และแนบไฟล์ภาพถ่ายสำหรับการตรวจสอบรถบรรทุกตู้คอนเทนเนอร์ได้ถูกต้อง",
+      "linked_design": [],
+      "linked_test_cases": []
+    },
+    {
+      "id": "REQ-002",
+      "title": "Container Survey List & Export",
+      "description": "ระบบต้องแสดงรายงานสรุปรายการตรวจสอบรถบรรทุกตู้คอนเทนเนอร์ พร้อมฟังก์ชันค้นหา กรองข้อมูล และส่งออกข้อมูลในรูปแบบ Excel",
+      "priority": "High",
+      "type": "Functional",
+      "category": "Reporting",
+      "source": "Stakeholder - Operations Department",
+      "acceptance_criteria": "ระบบสามารถค้นหา กรอง และ Export รายการ Container Survey เป็น Excel ได้ถูกต้อง",
+      "linked_design": [],
+      "linked_test_cases": []
+    },
+    {
+      "id": "REQ-003",
+      "title": "Print EIR for Container",
+      "description": "ระบบต้องสามารถพิมพ์เอกสาร Equipment Interchange Receipt (EIR) สำหรับรถบรรทุกตู้คอนเทนเนอร์ พร้อม QR Code สำหรับ Scan Zone และ Truck Status",
+      "priority": "High",
+      "type": "Functional",
+      "category": "Document Generation",
+      "source": "Stakeholder - Operations Department",
+      "acceptance_criteria": "เอกสาร EIR พิมพ์ได้ถูกต้อง และ QR Code สแกนได้ชี้ไปยัง Truck Status และ Scan Zone ได้",
+      "linked_design": [],
+      "linked_test_cases": []
+    },
+    {
+      "id": "REQ-004",
+      "title": "Non Container Survey Form",
+      "description": "ระบบต้องรองรับการบันทึกข้อมูลการตรวจสอบรถที่ไม่มีตู้คอนเทนเนอร์เพื่อเก็บ Seal ทั้งขาเข้าและขาออก ผ่านแบบฟอร์มมาตรฐาน พร้อมรองรับการแนบไฟล์ภาพถ่าย",
+      "priority": "High",
+      "type": "Functional",
+      "category": "Non-Container Inspection",
+      "source": "Stakeholder - Operations Department",
+      "acceptance_criteria": "ระบบสามารถบันทึก แก้ไข และแนบไฟล์ภาพถ่ายสำหรับการตรวจสอบรถที่ไม่มีตู้คอนเทนเนอร์ได้ถูกต้อง",
+      "linked_design": [],
+      "linked_test_cases": []
+    },
+    {
+      "id": "REQ-005",
+      "title": "Non Container Survey List & Export",
+      "description": "ระบบต้องแสดงรายงานสรุปรายการตรวจสอบรถที่ไม่มีตู้คอนเทนเนอร์ พร้อมฟังก์ชันค้นหา กรองข้อมูล และส่งออกข้อมูลในรูปแบบ Excel",
+      "priority": "High",
+      "type": "Functional",
+      "category": "Reporting",
+      "source": "Stakeholder - Operations Department",
+      "acceptance_criteria": "ระบบสามารถค้นหา กรอง และ Export รายการ Non Container Survey เป็น Excel ได้ถูกต้อง",
+      "linked_design": [],
+      "linked_test_cases": []
+    },
+    {
+      "id": "REQ-006",
+      "title": "Print EIR for Non Container",
+      "description": "ระบบต้องสามารถพิมพ์เอกสาร EIR สำหรับรถที่ไม่มีตู้คอนเทนเนอร์ พร้อม QR Code สำหรับ Scan Zone และ Truck Status",
+      "priority": "High",
+      "type": "Functional",
+      "category": "Document Generation",
+      "source": "Stakeholder - Operations Department",
+      "acceptance_criteria": "เอกสาร EIR สำหรับ Non Container พิมพ์ได้ถูกต้อง และ QR Code ใช้งานได้",
+      "linked_design": [],
+      "linked_test_cases": []
+    },
+    {
+      "id": "REQ-007",
+      "title": "User Registration & Access Management",
+      "description": "ระบบต้องรองรับการสร้างบัญชีผู้ใช้งาน (Username/Password) พร้อมกำหนดสิทธิ์การเข้าถึงระบบในแต่ละหน้าจอหรือฟังก์ชันตามหลัก Access Control",
+      "priority": "High",
+      "type": "Functional",
+      "category": "User Management",
+      "source": "Stakeholder - IT Department",
+      "acceptance_criteria": "ผู้ดูแลระบบสามารถสร้าง แก้ไข และกำหนดสิทธิ์ผู้ใช้งานได้ถูกต้อง",
+      "linked_design": [],
+      "linked_test_cases": []
+    },
+    {
+      "id": "REQ-008",
+      "title": "User Role Management",
+      "description": "ระบบต้องรองรับการบริหารจัดการ Master Data ของบทบาทผู้ใช้งาน (Role) เพื่อกำหนดระดับสิทธิ์และขอบเขตการใช้งานในระบบ",
+      "priority": "High",
+      "type": "Functional",
+      "category": "User Management",
+      "source": "Stakeholder - IT Department",
+      "acceptance_criteria": "ผู้ดูแลระบบสามารถสร้าง แก้ไข และมอบหมาย Role ให้ผู้ใช้งานได้อย่างถูกต้อง",
+      "linked_design": [],
+      "linked_test_cases": []
+    }
+  ],
+  "design_components": [
+    {
+      "id": "COMP-001",
+      "name": "Container Survey Form Module",
+      "description": "หน้าฟอร์มบันทึกข้อมูลการตรวจสอบรถบรรทุกตู้คอนเทนเนอร์ขาเข้าและขาออก พร้อม file upload สำหรับภาพถ่าย",
+      "type": "UI Component / MVC Controller",
+      "related_requirements": [
+        "REQ-001"
+      ],
+      "technology": ""
+    },
+    {
+      "id": "COMP-002",
+      "name": "Container Survey List & Export Module",
+      "description": "หน้าแสดงรายการ Container Survey พร้อม Search, Filter และ Export Excel",
+      "type": "UI Component / MVC Controller",
+      "related_requirements": [
+        "REQ-002"
+      ],
+      "technology": ""
+    },
+    {
+      "id": "COMP-003",
+      "name": "EIR Container Print Module",
+      "description": "ระบบพิมพ์เอกสาร EIR สำหรับ Container พร้อม QR Code Generation",
+      "type": "Service / Document Generator",
+      "related_requirements": [
+        "REQ-003"
+      ],
+      "technology": ""
+    },
+    {
+      "id": "COMP-004",
+      "name": "Non Container Survey Form Module",
+      "description": "หน้าฟอร์มบันทึกข้อมูลการตรวจสอบรถที่ไม่มีตู้คอนเทนเนอร์ขาเข้าและขาออก พร้อม file upload",
+      "type": "UI Component / MVC Controller",
+      "related_requirements": [
+        "REQ-004"
+      ],
+      "technology": ""
+    },
+    {
+      "id": "COMP-005",
+      "name": "Non Container Survey List & Export Module",
+      "description": "หน้าแสดงรายการ Non Container Survey พร้อม Search, Filter และ Export Excel",
+      "type": "UI Component / MVC Controller",
+      "related_requirements": [
+        "REQ-005"
+      ],
+      "technology": ""
+    },
+    {
+      "id": "COMP-006",
+      "name": "EIR Non Container Print Module",
+      "description": "ระบบพิมพ์เอกสาร EIR สำหรับ Non Container พร้อม QR Code Generation",
+      "type": "Service / Document Generator",
+      "related_requirements": [
+        "REQ-006"
+      ],
+      "technology": ""
+    },
+    {
+      "id": "COMP-007",
+      "name": "User Registration Module",
+      "description": "ระบบจัดการบัญชีผู้ใช้งาน การกำหนดสิทธิ์หน้าจอ และ Access Control",
+      "type": "UI Component / MVC Controller / Service",
+      "related_requirements": [
+        "REQ-007"
+      ],
+      "technology": ""
+    },
+    {
+      "id": "COMP-008",
+      "name": "User Role Management Module",
+      "description": "ระบบจัดการ Master Data ของ Role และการมอบหมาย Role ให้ผู้ใช้งาน",
+      "type": "UI Component / MVC Controller",
+      "related_requirements": [
+        "REQ-008"
+      ],
+      "technology": ""
+    }
+  ],
+  "database_tables": [
+    {
+      "name": "Containers",
+      "description": "เก็บข้อมูลการตรวจสอบรถบรรทุกตู้คอนเทนเนอร์ ๖",
+      "columns": [
+        {
+          "name": "Id",
+          "type": "INT PRIMARY KEY IDENTITY",
+          "description": "Primary key"
+        },
+        {
+          "name": "SURVEY",
+          "type": "INT",
+          "description": "สถานะเข้า/ออก"
+        },
+        {
+          "name": "Truck_No",
+          "type": "NVARCHAR(50)",
+          "description": "ทะเบียนหัวรถ"
+        },
+        {
+          "name": "Trailer_License",
+          "type": "NVARCHAR(100)",
+          "description": "ทะเบียนหางรถ"
+        },
+        {
+          "name": "TruckType",
+          "type": "NVARCHAR(50)",
+          "description": "ประเภทรถ"
+        },
+        {
+          "name": "Trailer_Type",
+          "type": "NVARCHAR(100)",
+          "description": "ประเภทล้อ"
+        },
+        {
+          "name": "ContainerNo",
+          "type": "NVARCHAR(50)",
+          "description": "เลขตู้"
+        },
+        {
+          "name": "StartTime",
+          "type": "DATETIME",
+          "description": "วันเวลาที่เริ่มตรวจสอบ"
+        },
+        {
+          "name": "EndTime",
+          "type": "DATETIME",
+          "description": "วันเวลาที่ตรวจสอบเสร็จสิ้น"
+        }
+      ],
+      "related_requirements": [
+        "REQ-001"
+      ]
+    },
+    {
+      "name": "Non_Containers",
+      "description": "เก็บข้อมูลการตรวจสอบรถที่ไม่มีตู้คอนเทนเนอร์",
+      "columns": [
+        {
+          "name": "Id",
+          "type": "INT PRIMARY KEY IDENTITY",
+          "description": "Primary key"
+        },
+        {
+          "name": "SURVEY",
+          "type": "NVARCHAR(50)",
+          "description": "สถานะเข้า/ออก"
+        },
+        {
+          "name": "Truck_No",
+          "type": "NVARCHAR(50)",
+          "description": "ทะเบียนหัวรถ"
+        },
+        {
+          "name": "Trailer_License",
+          "type": "NVARCHAR(100)",
+          "description": "ทะเบียนหางรถ"
+        },
+        {
+          "name": "TruckType",
+          "type": "NVARCHAR(50)",
+          "description": "ประเภทรถ"
+        },
+        {
+          "name": "Trailer_Type",
+          "type": "NVARCHAR(100)",
+          "description": "ประเภทล้อ"
+        },
+        {
+          "name": "StartTime",
+          "type": "DATETIME",
+          "description": "วันเวลาที่เริ่มตรวจสอบ"
+        },
+        {
+          "name": "EndTime",
+          "type": "DATETIME",
+          "description": "วันเวลาที่ตรวจสอบเสร็จสิ้น"
+        }
+      ],
+      "related_requirements": [
+        "REQ-004"
+      ]
+    },
+    {
+      "name": "Sys_User",
+      "description": "เก็บข้อมูลบัญชีผู้ใช้งานระบบ",
+      "columns": [
+        {
+          "name": "UserID",
+          "type": "INT PRIMARY KEY IDENTITY",
+          "description": "Primary key"
+        },
+        {
+          "name": "UserName",
+          "type": "NVARCHAR(100)",
+          "description": "ชื่อผู้ใช้งาน"
+        },
+        {
+          "name": "PasswordHash",
+          "type": "NVARCHAR(255)",
+          "description": "รหัสผ่านที่เข้ารหัสแล้ว"
+        },
+        {
+          "name": "FirstName",
+          "type": "NVARCHAR(100)",
+          "description": "ชื่อ"
+        },
+        {
+          "name": "RoleID",
+          "type": "INT FK",
+          "description": "อ้างอิง UserRole"
+        },
+        {
+          "name": "IsActive",
+          "type": "BIT",
+          "description": "สถานะใช้งาน"
+        },
+        {
+          "name": "LastName",
+          "type": "NVARCHAR(100)",
+          "description": "นามสกุล"
+        },
+        {
+          "name": "CreatedAt",
+          "type": "DATETIME",
+          "description": "วันเวลาแก้ไขล่าสุด"
+        }
+      ],
+      "related_requirements": [
+        "REQ-007"
+      ]
+    },
+    {
+      "name": "Sys_Role",
+      "description": "เก็บ Master Data ของบทบาทผู้ใช้งาน (Role)",
+      "columns": [
+        {
+          "name": "RoleID",
+          "type": "INT PRIMARY KEY IDENTITY",
+          "description": "Primary key"
+        },
+        {
+          "name": "RoleName",
+          "type": "NVARCHAR(100)",
+          "description": "ชื่อ Role"
+        },
+        {
+          "name": "CreateBy",
+          "type": "NVARCHAR(255)",
+          "description": "สร้างโดยใคร"
+        },
+        {
+          "name": "UpdatedAt",
+          "type": "DATETIME",
+          "description": "วันเวลาแก้ไข"
+        },
+        {
+          "name": "IsActive",
+          "type": "BIT",
+          "description": "สถานะใช้งาน"
+        },
+        {
+          "name": "CreatedAt",
+          "type": "DATETIME",
+          "description": "วันเวลาสร้าง"
+        }
+      ],
+      "related_requirements": [
+        "REQ-008"
+      ]
+    }
+  ],
+  "test_cases": [
+    {
+      "id": "TC-001",
+      "title": "บันทึกข้อมูล Container Survey ขาเข้า",
+      "related_requirement": "REQ-001",
+      "test_type": "Functional / UAT",
+      "preconditions": "ผู้ใช้งาน Login เข้าระบบแล้ว",
+      "steps": [
+        "เปิดหน้า Container Survey Form",
+        "เลือกสถานะ IN,กรอกข้อมูลทะเบียนรถ, หมายเลขตู้, ประเภท Container , ตรวจสอบความเสียหายรอบ Container ,แนบไฟล์ภาพถ่าย",
+        "กด Save"
+      ],
+      "expected_result": "ระบบบันทึกข้อมูลสำเร็จและแสดงใน Container Survey List",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "TDP QA Team",
+      "test_date": "2026-02-10",
+      "remarks": ""
+    },
+    {
+      "id": "TC-002",
+      "title": "บันทึกข้อมูล Container Survey ขาออก",
+      "related_requirement": "REQ-001",
+      "test_type": "Functional / UAT",
+      "preconditions": "ผู้ใช้งาน Login เข้าระบบแล้ว",
+      "steps": [
+        "เปิดหน้า Container Survey Form",
+        "เลือกสถานะ Out,กรอกข้อมูลทะเบียนรถ, หมายเลขตู้, ประเภท Container , ตรวจสอบความเสียหายรอบ Container ,แนบไฟล์ภาพถ่าย",
+        "กด Save"
+      ],
+      "expected_result": "ระบบบันทึกข้อมูลสำเร็จ",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "TDP QA Team",
+      "test_date": "2026-02-10",
+      "remarks": ""
+    },
+    {
+      "id": "TC-003",
+      "title": "ค้นหาและกรองข้อมูล Container Survey List",
+      "related_requirement": "REQ-002",
+      "test_type": "Functional / UAT",
+      "preconditions": "มีข้อมูล Container Survey อยู่ในระบบ",
+      "steps": [
+        "เปิดหน้า Container Survey List",
+        "กรอกเงื่อนไขค้นหา (วันที่, ทะเบียนรถ,Container,สถานะ In/Out, เลขที่เอกสาร Pre-Alert)",
+        "กด Search"
+      ],
+      "expected_result": "ระบบแสดงรายการที่ตรงกับเงื่อนไขค้นหา",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "TDP QA Team",
+      "test_date": "2026-02-10",
+      "remarks": ""
+    },
+    {
+      "id": "TC-004",
+      "title": "Export Container Survey List เป็น Excel",
+      "related_requirement": "REQ-002",
+      "test_type": "Functional / UAT",
+      "preconditions": "มีข้อมูล Container Survey อยู่ในระบบ",
+      "steps": [
+        "เปิดหน้า Container Survey List",
+        "กด Export Excel"
+      ],
+      "expected_result": "ระบบสร้างไฟล์ Excel และดาวน์โหลดได้",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "TDP QA Team",
+      "test_date": "2026-02-10",
+      "remarks": ""
+    },
+    {
+      "id": "TC-005",
+      "title": "พิมพ์เอกสาร EIR Container พร้อม QR Code",
+      "related_requirement": "REQ-003",
+      "test_type": "Functional / UAT",
+      "preconditions": "มีข้อมูล Container Survey บันทึกแล้ว",
+      "steps": [
+        "เปิดรายการ Container Report",
+        "เลือกรายการและกด Print EIR",
+        "สแกน QR Code บนเอกสาร"
+      ],
+      "expected_result": "เอกสาร EIR พิมพ์ถูกต้อง QR Code ชี้ไปยัง Truck Status และ Scan Zone ได้",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "TDP QA Team",
+      "test_date": "2026-02-12",
+      "remarks": ""
+    },
+    {
+      "id": "TC-006",
+      "title": "บันทึกข้อมูล Non Container Survey ขาเข้า",
+      "related_requirement": "REQ-004",
+      "test_type": "Functional / UAT",
+      "preconditions": "ผู้ใช้งาน Login เข้าระบบแล้ว",
+      "steps": [
+        "เปิดหน้า Non - Container",
+        "เลือกสถานะ IN,กรอกข้อมูลทะเบียนรถ,กรอกข้อมูล Seal ,แนบไฟล์ภาพถ่าย",
+        "กด Save"
+      ],
+      "expected_result": "ระบบบันทึกข้อมูลสำเร็จ",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "TDP QA Team",
+      "test_date": "2026-02-11",
+      "remarks": ""
+    },
+    {
+      "id": "TC-007",
+      "title": "บันทึกข้อมูล Non Container Survey ขาออก",
+      "related_requirement": "REQ-004",
+      "test_type": "Functional / UAT",
+      "preconditions": "ผู้ใช้งาน Login เข้าระบบแล้ว",
+      "steps": [
+        "เปิดหน้า Non - Container",
+        "เลือกสถานะ Out,กรอกข้อมูลทะเบียนรถ,กรอกข้อมูล Seal ,แนบไฟล์ภาพถ่าย",
+        "กด Save"
+      ],
+      "expected_result": "ระบบบันทึกข้อมูลสำเร็จ",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "TDP QA Team",
+      "test_date": "2026-02-11",
+      "remarks": ""
+    },
+    {
+      "id": "TC-008",
+      "title": "ค้นหาและกรองข้อมูล Non Container Survey List",
+      "related_requirement": "REQ-005",
+      "test_type": "Functional / UAT",
+      "preconditions": "มีข้อมูล Non Container Survey อยู่ในระบบ",
+      "steps": [
+        "เปิดหน้า Non - Container List",
+        "กรอกเงื่อนไขค้นหา (วันที่, ทะเบียนรถ,สถานะ In/Out, เลขที่เอกสาร Pre-Alert)",
+        "กด Search"
+      ],
+      "expected_result": "ระบบแสดงรายการที่ตรงกับเงื่อนไข",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "TDP QA Team",
+      "test_date": "2026-02-11",
+      "remarks": ""
+    },
+    {
+      "id": "TC-009",
+      "title": "Export Non Container Survey List เป็น Excel",
+      "related_requirement": "REQ-005",
+      "test_type": "Functional / UAT",
+      "preconditions": "มีข้อมูล Non Container Survey อยู่ในระบบ",
+      "steps": [
+        "เปิดหน้า Non Container Survey List",
+        "กด Export Excel"
+      ],
+      "expected_result": "ระบบสร้างไฟล์ Excel และดาวน์โหลดได้",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "TDP QA Team",
+      "test_date": "2026-02-11",
+      "remarks": ""
+    },
+    {
+      "id": "TC-010",
+      "title": "พิมพ์เอกสาร EIR Non Container พร้อม QR Code",
+      "related_requirement": "REQ-006",
+      "test_type": "Functional / UAT",
+      "preconditions": "มีข้อมูล Non Container Survey บันทึกแล้ว",
+      "steps": [
+        "เปิดรายการ Non Container Survey",
+        "เลือกรายการและกด Print EIR",
+        "สแกน QR Code บนเอกสาร"
+      ],
+      "expected_result": "เอกสาร EIR พิมพ์ถูกต้อง QR Code ใช้งานได้",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "TDP QA Team",
+      "test_date": "2026-02-12",
+      "remarks": ""
+    },
+    {
+      "id": "TC-011",
+      "title": "สร้างบัญชีผู้ใช้งานใหม่และกำหนดสิทธิ์",
+      "related_requirement": "REQ-007",
+      "test_type": "Functional / UAT",
+      "preconditions": "Admin เข้าสู่ระบบแล้ว",
+      "steps": [
+        "เปิดหน้า User Register",
+        "กรอก Username, Password, ชื่อผู้ใช้",
+        "กำหนด Role และสิทธิ์หน้าจอ",
+        "กด Save"
+      ],
+      "expected_result": "สร้างบัญชีผู้ใช้สำเร็จ ผู้ใช้ใหม่ Login และเข้าถึงหน้าจอตามสิทธิ์ได้",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "TDP QA Team",
+      "test_date": "2026-02-13",
+      "remarks": ""
+    },
+    {
+      "id": "TC-012",
+      "title": "ตรวจสอบการควบคุมสิทธิ์การเข้าถึง (Access Control)",
+      "related_requirement": "REQ-007",
+      "test_type": "Security / UAT",
+      "preconditions": "มีผู้ใช้งานหลาย Role ในระบบ",
+      "steps": [
+        "Login ด้วยผู้ใช้ที่ไม่มีสิทธิ์บางหน้าจอ",
+        "พยายามเข้าถึงหน้าจอที่ไม่ได้รับสิทธิ์"
+      ],
+      "expected_result": "ระบบปฏิเสธการเข้าถึง แสดงข้อความ Access Denied",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "TDP QA Team",
+      "test_date": "2026-02-13",
+      "remarks": ""
+    },
+    {
+      "id": "TC-013",
+      "title": "สร้าง Role ใหม่",
+      "related_requirement": "REQ-008",
+      "test_type": "Functional / UAT",
+      "preconditions": "Admin เข้าสู่ระบบแล้ว",
+      "steps": [
+        "เปิดหน้า User Role",
+        "กด Add New Role",
+        "กรอกชื่อ Role และกำหนด Permissions",
+        "กด Save"
+      ],
+      "expected_result": "สร้าง Role สำเร็จและปรากฏในรายการ",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "TDP QA Team",
+      "test_date": "2026-02-13",
+      "remarks": ""
+    },
+    {
+      "id": "TC-014",
+      "title": "มอบหมาย Role ให้ผู้ใช้งาน",
+      "related_requirement": "REQ-008",
+      "test_type": "Functional / UAT",
+      "preconditions": "มี Role และ User ในระบบแล้ว",
+      "steps": [
+        "เปิดหน้า User Register",
+        "เลือกผู้ใช้งาน",
+        "เปลี่ยน Role",
+        "กด Save"
+      ],
+      "expected_result": "ระบบอัปเดต Role ของผู้ใช้สำเร็จ",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "TDP QA Team",
+      "test_date": "2026-02-13",
+      "remarks": ""
+    }
+  ],
+  "defects": [
+    {
+      "id": "BUG-002",
+      "title": "ปริ้น Qr coed ไม่แสดงบางรายการ",
+      "related_test_case": "",
+      "related_requirement": "",
+      "severity": "High",
+      "priority": "Medium",
+      "status": "Open",
+      "reported_by": "",
+      "reported_date": "",
+      "assigned_to": "",
+      "fixed_date": "",
+      "description": "เมื่อทำการพิมพ์เอกสาร พบว่า QR Code ไม่แสดงในบางรายการของรายงาน แม้ว่าข้อมูลรายการนั้นจะมีอยู่ในระบบ",
+      "steps_to_reproduce": "1. เข้าสู่ระบบ\n2. ไปที่เมนูที่สามารถพิมพ์เอกสารที่มี QR Code\n3. เลือกรายการข้อมูลที่ต้องการพิมพ์\n4. กดปุ่ม Print\n5. ตรวจสอบเอกสารที่พิมพ์ออกมา พบว่า QR Code ไม่แสดงในบางรายการ",
+      "root_cause": "ไม่พบข้อบกพร่องที่ส่งผลให้ QR Code ไม่แสดง อาจเกิดจากข้อมูลบางรายการไม่มีค่า QR Code ในฐานข้อมูล",
+      "resolution": "No defects recorded"
+    }
+  ],
+  "risks": [
+    {
+      "id": "RISK-001",
+      "category": "Technical",
+      "description": "QR Code ที่สร้างอาจมีความเข้ากันไม่ได้กับ Scanner บางรุ่น",
+      "probability": "Low",
+      "impact": "Medium",
+      "risk_level": "Low",
+      "mitigation": "ทดสอบ QR Code กับ Scanner หลายรุ่นก่อน Go Live",
+      "owner": "Saravut Chanjom",
+      "status": "Closed",
+      "review_date": "2026-02-15",
+      "contingency": "ปรับ QR Code format หรือใช้ library อื่น",
+      "linked_capa": ""
+    },
+    {
+      "id": "RISK-002",
+      "category": "Technical",
+      "description": "ไฟล์ภาพถ่ายขนาดใหญ่อาจทำให้ performance ของระบบลดลง",
+      "probability": "Medium",
+      "impact": "Medium",
+      "risk_level": "Medium",
+      "mitigation": "กำหนด maximum file size และ compress ภาพก่อน upload",
+      "owner": "Saravut Chanjom",
+      "status": "Mitigated",
+      "review_date": "2026-02-15",
+      "contingency": "เพิ่ม storage และ optimize query",
+      "linked_capa": ""
+    },
+    {
+      "id": "RISK-003",
+      "category": "Security",
+      "description": "การเข้าถึงข้อมูลโดยไม่ได้รับอนุญาตหากมีช่องโหว่ใน Access Control",
+      "probability": "Low",
+      "impact": "High",
+      "risk_level": "Medium",
+      "mitigation": "ทดสอบ Access Control อย่างละเอียดและ code review",
+      "owner": "Saravut Chanjom",
+      "status": "Closed",
+      "review_date": "2026-02-15",
+      "contingency": "Patch ทันทีหากพบช่องโหว่",
+      "linked_capa": ""
+    }
+  ],
+  "change_requests": [
+    {
+      "id": "CR-002",
+      "title": "ปริ้นแล้วQr coed ไม่แสดงบางรายการ",
+      "description": "",
+      "requestor": "ตรวจสอบ / Reviewed by",
+      "request_date": "",
+      "priority": "Medium",
+      "impact": "",
+      "affected_documents": [],
+      "status": "Pending",
+      "approved_by": "",
+      "approval_date": "",
+      "implementation_date": ""
+    }
+  ],
+  "versions": [
+    {
+      "version": "1.0.0",
+      "release_date": "2026-02-18",
+      "release_type": "Major",
+      "description": "Initial Release - Go Live",
+      "changes": [],
+      "deployed_by": "Saravut Chanjom",
+      "environment": "Production"
+    },
+    {
+      "version": "2.0.0",
+      "release_date": "2026-02-28",
+      "release_type": "Major",
+      "description": "Initial Release - Go Live",
+      "changes": [],
+      "deployed_by": "Saravut Chanjom",
+      "environment": "Production"
+    }
+  ],
+  "meetings": [
+    {
+      "id": "MTG-001",
+      "title": "Project Kickoff Meeting - Container Survey System",
+      "date": "2025-10-05",
+      "time": "09:00-11:00",
+      "location": "Meeting Room / MS Teams",
+      "chair": "Saravut Chanjom",
+      "attendees": [
+        "Saravut Chanjom",
+        "Operations Team",
+        "IT Department",
+        "Development TDP"
+      ],
+      "agenda": [],
+      "action_items": [
+        {
+          "item": "จัดทำ Requirements Document",
+          "owner": "Saravut Chanjom",
+          "due_date": "2025-10-31",
+          "status": "Completed"
+        }
+      ],
+      "summary": ""
+    },
+    {
+      "id": "MTG-002",
+      "title": "────────────────────────────────────────────────────────────UAT Review Meeting",
+      "date": "2026-02-14",
+      "time": "10:00-12:00",
+      "location": "Meeting Room",
+      "chair": "Saravut Chanjom",
+      "attendees": [
+        "Saravut Chanjom",
+        "Operations Team",
+        "TDP QA Team"
+      ],
+      "agenda": [],
+      "action_items": [
+        {
+          "item": "เตรียม Production Environment",
+          "owner": "Saravut Chanjom",
+          "due_date": "2026-02-17",
+          "status": "Completed"
+        }
+      ],
+      "summary": ""
+    },
+    {
+      "id": "MTG-003",
+      "title": "UAT Review Meeting",
+      "date": "2026-02-27",
+      "time": "10:00-12:00",
+      "location": "Meeting Room",
+      "chair": "Saravut Chanjom",
+      "attendees": [
+        "Saravut Chanjom",
+        "Operations Team",
+        "TDP QA Team"
+      ],
+      "agenda": [],
+      "action_items": [
+        {
+          "item": "ทดสอบใน Environment ที่กำหนดครบถ้วนก่อน Deploy",
+          "owner": "Saravut Chanjom",
+          "due_date": "2026-02-28",
+          "status": "Completed"
+        },
+        {
+          "item": "อัพเดทระบบ",
+          "owner": "Saravut Chanjom",
+          "due_date": "2026-02-28",
+          "status": "Completed"
+        }
+      ],
+      "summary": ""
+    }
+  ],
+  "training_sessions": [
+    {
+      "id": "TRN-001",
+      "title": "System Training - Container Survey System",
+      "date": "2026-02-17",
+      "duration": "3 hours",
+      "location": "Training Room / On-site",
+      "trainer": "ผู้จัดอบรม / Organizer",
+      "topics": [],
+      "attendees": [
+        {
+          "name": "Operations Staff",
+          "department": "Operations",
+          "signed": true
+        },
+        {
+          "name": "Gate Control Team",
+          "department": "Operations",
+          "signed": true
+        },
+        {
+          "name": "IT Admin",
+          "department": "IT",
+          "signed": true
+        }
+      ]
+    }
+  ],
+  "incidents": [
+    {
+      "id": "INC-001",
+      "title": "(Placeholder)",
+      "date_reported": "—",
+      "severity": "Medium",
+      "description": "",
+      "reported_by": "",
+      "assigned_to": "—",
+      "status": "Open",
+      "resolution": "",
+      "resolved_date": "—",
+      "root_cause": "",
+      "linked_change_request": "—"
+    }
+  ],
+  "deployments": [
+    {
+      "id": "DEP-001",
+      "version": "1.0.0",
+      "date": "2026-02-18",
+      "environment": "Production",
+      "deployed_by": "Saravut Chanjom",
+      "deployment_type": "Major",
+      "steps": [],
+      "rollback_plan": "",
+      "status": "Success",
+      "approval": "Approved by Saravut Chanjom"
+    },
+    {
+      "id": "DEP-001",
+      "version": "2.0.0",
+      "date": "2026-02-28",
+      "environment": "Production",
+      "deployed_by": "Saravut Chanjom",
+      "deployment_type": "Major",
+      "steps": [],
+      "rollback_plan": "",
+      "status": "Success",
+      "approval": "Approved by Saravut Chanjom"
+    }
+  ],
+  "audit": {
+    "audit_date": "2026-03-01",
+    "auditor": "Internal Auditor - Soudaphone",
+    "audit_scope": "ISO/IEC 29110 compliance for Container Survey System development lifecycle",
+    "findings": [
+      {
+        "id": "FIND-001",
+        "clause": "—",
+        "finding_type": "Observation",
+        "description": "(กรอก findings หลัง audit)",
+        "linked_capa": "—"
+      }
+    ]
+  },
+  "capas": [
+    {
+      "id": "CAPA-001",
+      "type": "Corrective Action",
+      "related_finding": "FIND-001",
+      "description": "(กรอกเมื่อมี findings)",
+      "root_cause": "",
+      "action_plan": "",
+      "responsible": "PM",
+      "target_date": "—",
+      "status": "Open",
+      "effectiveness_review": "",
+      "closed_date": ""
+    }
+  ],
+  "sow": {},
+  "output_path": "D:\\Work\\DocISOGen\\projects"
+}

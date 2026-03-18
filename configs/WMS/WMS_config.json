@@ -1,0 +1,1105 @@
+{
+  "project": {
+    "code": "WMS",
+    "name": "Warehouse Management System",
+    "organization": "Soudaphone",
+    "description": "ระบบบริหารจัดการคลังสินค้า (Warehouse Management System) สำหรับควบคุมการรับเข้า-จ่ายออกสินค้า การตรวจสอบ การเปลี่ยนหัวลาก Cross Docking และรายงานสินค้าคงคลัง",
+    "scope": "ครอบคลุมกระบวนการรับสินค้าเข้าคลัง จ่ายสินค้าออกคลัง การตรวจสอบสินค้า TruckSwap, Cross Docking, การดูสินค้าคงคลัง และระบบรายงาน ไม่ครอบคลุมระบบบัญชีและการเงิน",
+    "department": "Soudaphone",
+    "start_date": "2024-06-01",
+    "end_date": "2025-02-18",
+    "go_live_date": "2025-02-18",
+    "doc_revision": "1.0",
+    "document_date": "2025-02-18",
+    "classification": "Internal",
+    "short_name": "WMS",
+    "objectives": [
+      "ควบคุมและติดตามการรับสินค้าเข้าคลังสินค้าอย่างถูกต้องและตรวจสอบย้อนหลังได้",
+      "ควบคุมและติดตามการจ่ายสินค้าออกจากคลังสินค้าพร้อมระบุผู้รับสินค้า",
+      "บันทึกข้อมูลการตรวจสอบสินค้าและเอกสารศุลกากร",
+      "บริหารจัดการ TruckSwap และ Cross Docking อย่างมีประสิทธิภาพ",
+      "แสดงสถานะสินค้าคงคลังแบบ Real-time",
+      "จัดทำรายงานการรับเข้า-จ่ายออกและกิจกรรมภายในคลังสินค้า"
+    ]
+  },
+  "team": {
+    "members": [
+      {
+        "name": "Development TDP Team",
+        "title": "Developer",
+        "email": "dev@soudaphone.com"
+      }
+    ],
+    "project_manager": {
+      "name": "Saravut Chanjom",
+      "title": "Project Manager",
+      "email": "saravut@soudaphone.com",
+      "phone": ""
+    },
+    "lead_developer": {
+      "name": "Saravut Chanjom",
+      "title": "Lead Developer",
+      "email": "saravut@soudaphone.com",
+      "phone": ""
+    },
+    "business_analyst": {
+      "name": "Development TDP Team",
+      "title": "Business Analyst",
+      "email": "ba@soudaphone.com",
+      "phone": ""
+    },
+    "system_analyst": {
+      "name": "Development TDP Team",
+      "title": "System Analyst",
+      "email": "sa@soudaphone.com",
+      "phone": ""
+    },
+    "qa_engineer": {
+      "name": "Development TDP Team",
+      "title": "QA Engineer",
+      "email": "qa@soudaphone.com",
+      "phone": ""
+    },
+    "dba": {
+      "name": "Development TDP Team",
+      "title": "DBA",
+      "email": "dba@soudaphone.com",
+      "phone": ""
+    }
+  },
+  "stakeholders": [
+    {
+      "name": "Soudaphone Management",
+      "role": "Project Sponsor",
+      "organization": "Soudaphone",
+      "email": "",
+      "responsibility": "Approve budget and major decisions"
+    },
+    {
+      "name": "Warehouse Operations Team",
+      "role": "Key User / End User",
+      "organization": "Soudaphone",
+      "email": "",
+      "responsibility": "Define requirements and perform UAT"
+    }
+  ],
+  "tech_stack": {
+    "frontend": "ASP.NET Core MVC / Razor Views / Bootstrap",
+    "backend": ".NET Core / C#",
+    "database": "Microsoft SQL Server",
+    "infrastructure": "On-premise / Windows Server",
+    "source_control": "Git",
+    "ci_cd": ""
+  },
+  "milestones": [
+    {
+      "id": "MS-01",
+      "name": "Requirements Sign-off",
+      "target_date": "2024-07-31",
+      "status": "Completed",
+      "owner": "Saravut Chanjom"
+    },
+    {
+      "id": "MS-02",
+      "name": "System Design Complete",
+      "target_date": "2024-08-31",
+      "status": "Completed",
+      "owner": "Saravut Chanjom"
+    },
+    {
+      "id": "MS-03",
+      "name": "Development Complete",
+      "target_date": "2024-12-31",
+      "status": "Completed",
+      "owner": "Saravut Chanjom"
+    },
+    {
+      "id": "MS-04",
+      "name": "UAT Complete",
+      "target_date": "2025-01-31",
+      "status": "Completed",
+      "owner": "Development TDP Team"
+    },
+    {
+      "id": "MS-05",
+      "name": "Go-Live",
+      "target_date": "2025-02-18",
+      "status": "Completed",
+      "owner": "Saravut Chanjom"
+    }
+  ],
+  "requirements": [
+    {
+      "id": "REQ-001",
+      "title": "Product In Warehouse (รับสินค้าเข้าคลัง)",
+      "description": "ระบบต้องสามารถบันทึกและควบคุมข้อมูลการรับสินค้าเข้าคลังสินค้า โดยอ้างอิงจากใบสั่งงาน (Order) พร้อมระบุรายละเอียดสินค้า ปริมาณ วันที่รับเข้า และข้อมูลที่เกี่ยวข้อง เพื่อให้สามารถตรวจสอบย้อนหลังได้",
+      "priority": "High",
+      "type": "Functional",
+      "category": "Warehouse Operations",
+      "source": "Warehouse Operations Team",
+      "acceptance_criteria": "ระบบสามารถบันทึกข้อมูลการรับสินค้าเข้าคลังได้ครบถ้วน อ้างอิงจาก Order ได้ และสามารถตรวจสอบย้อนหลังได้",
+      "linked_design": [],
+      "linked_test_cases": []
+    },
+    {
+      "id": "REQ-002",
+      "title": "Product Out Warehouse (จ่ายสินค้าออกคลัง)",
+      "description": "ระบบต้องสามารถบันทึกและควบคุมข้อมูลการจ่ายสินค้าออกจากคลังสินค้า โดยอ้างอิงจากใบสั่งงาน (Order) พร้อมระบุรายละเอียดสินค้า ปริมาณ วันที่จ่ายออก และข้อมูลผู้รับสินค้า เพื่อความถูกต้องและตรวจสอบได้",
+      "priority": "High",
+      "type": "Functional",
+      "category": "Warehouse Operations",
+      "source": "Warehouse Operations Team",
+      "acceptance_criteria": "ระบบสามารถบันทึกข้อมูลการจ่ายสินค้าออกคลังได้ครบถ้วน ระบุผู้รับสินค้าได้ และสามารถตรวจสอบย้อนหลังได้",
+      "linked_design": [],
+      "linked_test_cases": []
+    },
+    {
+      "id": "REQ-003",
+      "title": "Inspection (การตรวจสอบสินค้า)",
+      "description": "ระบบต้องสามารถบันทึกข้อมูลการตรวจสอบสินค้า เช่น การตรวจปล่อยศุลกากร หรือการตรวจสอบจากหน่วยงานที่เกี่ยวข้อง พร้อมแนบรายละเอียดเอกสารอ้างอิง เพื่อรองรับการควบคุมตามข้อกำหนดทางกฎหมาย",
+      "priority": "High",
+      "type": "Functional",
+      "category": "Compliance",
+      "source": "Warehouse Operations Team",
+      "acceptance_criteria": "ระบบสามารถบันทึกผลการตรวจสอบและแนบเอกสารอ้างอิงได้ รองรับการตรวจสอบจากศุลกากร",
+      "linked_design": [],
+      "linked_test_cases": []
+    },
+    {
+      "id": "REQ-004",
+      "title": "TruckSwap (การเปลี่ยนหัวลาก/ชุดลากจูง)",
+      "description": "ระบบต้องสามารถบันทึกข้อมูลการเปลี่ยนหัวลาก (Truck Swap) หรือเปลี่ยนชุดลากจูง (Trailer) ภายในกระบวนการปฏิบัติงาน เพื่อให้สามารถติดตามสถานะการขนส่งได้อย่างถูกต้อง",
+      "priority": "Medium",
+      "type": "Functional",
+      "category": "Transport Management",
+      "source": "Warehouse Operations Team",
+      "acceptance_criteria": "ระบบสามารถบันทึกและติดตามการเปลี่ยนหัวลากและชุดลากจูงได้ พร้อมประวัติการเปลี่ยนแปลง",
+      "linked_design": [],
+      "linked_test_cases": []
+    },
+    {
+      "id": "REQ-005",
+      "title": "Cross Docking (การเคลื่อนย้ายสินค้าข้ามรถ)",
+      "description": "ระบบต้องสามารถบันทึกข้อมูลการเคลื่อนย้ายสินค้าจากรถขนส่งคันหนึ่งไปยังอีกคันหนึ่งโดยตรง โดยไม่ผ่านกระบวนการจัดเก็บในคลังสินค้า พร้อมระบุรายละเอียดเวลาและผู้รับผิดชอบ",
+      "priority": "Medium",
+      "type": "Functional",
+      "category": "Transport Management",
+      "source": "Warehouse Operations Team",
+      "acceptance_criteria": "ระบบสามารถบันทึก Cross Docking ได้โดยไม่ต้องผ่านการจัดเก็บ ระบุเวลาและผู้รับผิดชอบได้",
+      "linked_design": [],
+      "linked_test_cases": []
+    },
+    {
+      "id": "REQ-006",
+      "title": "Warehouse Stock (สินค้าคงคลัง)",
+      "description": "ระบบต้องสามารถแสดงข้อมูลสถานะสินค้าคงคลังแบบปัจจุบัน (Current Stock Status) เช่น จำนวนคงเหลือ ตำแหน่งจัดเก็บ (Location) และสถานะสินค้า เพื่อสนับสนุนการควบคุมสินค้าคงคลังอย่างมีประสิทธิภาพ",
+      "priority": "High",
+      "type": "Functional",
+      "category": "Inventory Management",
+      "source": "Warehouse Operations Team",
+      "acceptance_criteria": "ระบบแสดงสถานะสินค้าคงคลัง Real-time จำนวนคงเหลือและตำแหน่งจัดเก็บถูกต้อง",
+      "linked_design": [],
+      "linked_test_cases": []
+    },
+    {
+      "id": "REQ-007",
+      "title": "Report (รายงาน)",
+      "description": "ระบบต้องสามารถจัดทำรายงานสรุปข้อมูลการรับเข้า-จ่ายออกสินค้า รายงานกิจกรรมภายในคลังสินค้า และรายงานสินค้าคงคลัง เพื่อใช้ในการวิเคราะห์ ตรวจสอบ และติดตามผลการดำเนินงาน",
+      "priority": "Medium",
+      "type": "Functional",
+      "category": "Reporting",
+      "source": "Management / Warehouse Operations Team",
+      "acceptance_criteria": "ระบบสามารถออกรายงานรับเข้า-จ่ายออก กิจกรรมคลัง และสินค้าคงคลังได้ครบถ้วน",
+      "linked_design": [],
+      "linked_test_cases": []
+    }
+  ],
+  "design_components": [
+    {
+      "id": "COMP-001",
+      "name": "Product In Warehouse Module",
+      "description": "โมดูลการรับสินค้าเข้าคลัง บันทึกการรับสินค้าอ้างอิงจาก Order",
+      "type": "UI Component / API",
+      "related_requirements": [
+        "REQ-001"
+      ],
+      "technology": ""
+    },
+    {
+      "id": "COMP-002",
+      "name": "Product Out Warehouse Module",
+      "description": "โมดูลการจ่ายสินค้าออกคลัง บันทึกการจ่ายสินค้าพร้อมข้อมูลผู้รับ",
+      "type": "UI Component / API",
+      "related_requirements": [
+        "REQ-002"
+      ],
+      "technology": ""
+    },
+    {
+      "id": "COMP-003",
+      "name": "Inspection Module",
+      "description": "โมดูลการตรวจสอบสินค้า รองรับการตรวจศุลกากรและหน่วยงานอื่นๆ",
+      "type": "UI Component / API",
+      "related_requirements": [
+        "REQ-003"
+      ],
+      "technology": ""
+    },
+    {
+      "id": "COMP-004",
+      "name": "TruckSwap Module",
+      "description": "โมดูลบันทึกการเปลี่ยนหัวลากและชุดลากจูง",
+      "type": "UI Component / API",
+      "related_requirements": [
+        "REQ-004"
+      ],
+      "technology": ""
+    },
+    {
+      "id": "COMP-005",
+      "name": "Cross Docking Module",
+      "description": "โมดูลบันทึก Cross Docking การเคลื่อนย้ายสินค้าระหว่างรถโดยตรง",
+      "type": "UI Component / API",
+      "related_requirements": [
+        "REQ-005"
+      ],
+      "technology": ""
+    },
+    {
+      "id": "COMP-006",
+      "name": "Warehouse Stock Module",
+      "description": "โมดูลแสดงสถานะสินค้าคงคลัง Real-time",
+      "type": "UI Component / API / Service",
+      "related_requirements": [
+        "REQ-006"
+      ],
+      "technology": ""
+    },
+    {
+      "id": "COMP-007",
+      "name": "Report Module",
+      "description": "โมดูลรายงาน สรุปข้อมูลรับเข้า-จ่ายออก กิจกรรมคลัง และสินค้าคงคลัง",
+      "type": "UI Component / Service",
+      "related_requirements": [
+        "REQ-007"
+      ],
+      "technology": ""
+    }
+  ],
+  "database_tables": [
+    {
+      "name": "Warehouse",
+      "description": "บันทึกข้อมูลการรับสินค้าเข้าคลัง",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "INT PRIMARY KEY IDENTITY",
+          "description": "Primary key"
+        },
+        {
+          "name": "DocNo",
+          "type": "NVARCHAR(50)",
+          "description": "รหัสใบสั่งงานอ้างอิง"
+        },
+        {
+          "name": "Item_Code",
+          "type": "NVARCHAR(100)",
+          "description": "รหัสสินค้า"
+        },
+        {
+          "name": "Product_list",
+          "type": "NVARCHAR(255)",
+          "description": "ชื่อสินค้า"
+        },
+        {
+          "name": "Amount",
+          "type": "DECIMAL(18,3)",
+          "description": "จำนวนสินค้าที่รับเข้า"
+        },
+        {
+          "name": "Unit",
+          "type": "NVARCHAR(50)",
+          "description": "หน่วยนับ"
+        },
+        {
+          "name": "Location",
+          "type": "NVARCHAR(50)",
+          "description": "ตำแหน่งจัดเก็บในคลัง"
+        },
+        {
+          "name": "Date_IN_Warehouse",
+          "type": "DATETIME",
+          "description": "วันที่รับสินค้าเข้า"
+        },
+        {
+          "name": "Users",
+          "type": "NVARCHAR(100)",
+          "description": "ผู้รับสินค้า"
+        },
+        {
+          "name": "Note",
+          "type": "NVARCHAR(500)",
+          "description": "หมายเหตุ"
+        },
+        {
+          "name": "DateDoc",
+          "type": "DATETIME",
+          "description": "วันที่สร้างข้อมูล"
+        },
+        {
+          "name": "Users",
+          "type": "NVARCHAR(100)",
+          "description": "ผู้สร้างข้อมูล"
+        },
+        {
+          "name": "Item_status",
+          "type": "NVARCHAR",
+          "description": "IN"
+        }
+      ],
+      "related_requirements": []
+    },
+    {
+      "name": "Warehouse",
+      "description": "บันทึกข้อมูลการจ่ายสินค้าออกคลัง",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "INT PRIMARY KEY IDENTITY",
+          "description": "Primary key"
+        },
+        {
+          "name": "DocNo",
+          "type": "NVARCHAR(50)",
+          "description": "รหัสใบสั่งงานอ้างอิง"
+        },
+        {
+          "name": "Item_Code",
+          "type": "NVARCHAR(100)",
+          "description": "รหัสสินค้า"
+        },
+        {
+          "name": "Unit",
+          "type": "DECIMAL(18,3)",
+          "description": "จำนวนสินค้าที่จ่ายออก"
+        },
+        {
+          "name": "Date_Out_Warehouse",
+          "type": "DATETIME",
+          "description": "วันที่จ่ายสินค้าออก"
+        },
+        {
+          "name": "Company_Name",
+          "type": "NVARCHAR(100)",
+          "description": "ชื่อผู้รับสินค้า"
+        },
+        {
+          "name": "Users",
+          "type": "NVARCHAR(100)",
+          "description": "ผู้จ่ายสินค้า"
+        },
+        {
+          "name": "Remarks",
+          "type": "NVARCHAR(500)",
+          "description": "หมายเหตุ"
+        },
+        {
+          "name": "DateDoc",
+          "type": "DATETIME",
+          "description": "วันที่สร้างข้อมูล"
+        },
+        {
+          "name": "Item_status",
+          "type": "NVARCHAR",
+          "description": "Out"
+        }
+      ],
+      "related_requirements": []
+    },
+    {
+      "name": "Warehouse",
+      "description": "บันทึกข้อมูลการตรวจสอบสินค้า",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "INT PRIMARY KEY IDENTITY",
+          "description": "Primary key"
+        },
+        {
+          "name": "DocNo",
+          "type": "NVARCHAR(50)",
+          "description": "รหัสใบสั่งงานอ้างอิง"
+        },
+        {
+          "name": "Date_IN_Warehouse",
+          "type": "DATETIME",
+          "description": "วันที่ตรวจสอบ"
+        },
+        {
+          "name": "Users",
+          "type": "NVARCHAR(100)",
+          "description": "ชื่อผู้ตรวจสอบ"
+        },
+        {
+          "name": "Note",
+          "type": "NVARCHAR(50)",
+          "description": "ผลการตรวจ (Pass/Fail/Hold)"
+        },
+        {
+          "name": "NumberRegistration",
+          "type": "NVARCHAR(255)",
+          "description": "เลขที่เอกสารอ้างอิง"
+        },
+        {
+          "name": "DateDoc",
+          "type": "DATETIME",
+          "description": "วันที่สร้างข้อมูล"
+        },
+        {
+          "name": "inspection",
+          "type": "NVARCHAR",
+          "description": ""
+        }
+      ],
+      "related_requirements": []
+    },
+    {
+      "name": "Warehouse",
+      "description": "บันทึกข้อมูลการเปลี่ยนหัวลาก/ชุดลากจูง",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "INT PRIMARY KEY IDENTITY",
+          "description": "Primary key"
+        },
+        {
+          "name": "DocNo",
+          "type": "NVARCHAR(50)",
+          "description": "รหัสใบสั่งงานอ้างอิง"
+        },
+        {
+          "name": "Car_Registration",
+          "type": "NVARCHAR(50)",
+          "description": "ทะเบียนรถหัวลากเดิม"
+        },
+        {
+          "name": "Type_Outgoing_Car",
+          "type": "NVARCHAR(50)",
+          "description": "ทะเบียนรถหัวลากใหม่"
+        },
+        {
+          "name": "Car_Registration_Outgoing",
+          "type": "NVARCHAR(50)",
+          "description": "ทะเบียนชุดลากจูง"
+        },
+        {
+          "name": "DateDoc",
+          "type": "DATETIME",
+          "description": "วันที่เวลาที่เปลี่ยน"
+        },
+        {
+          "name": "Location",
+          "type": "NVARCHAR(255)",
+          "description": "สถานที่เปลี่ยน"
+        },
+        {
+          "name": "Users",
+          "type": "NVARCHAR(100)",
+          "description": "ผู้บันทึก"
+        },
+        {
+          "name": "DateDoc",
+          "type": "DATETIME",
+          "description": "วันที่สร้างข้อมูล"
+        }
+      ],
+      "related_requirements": []
+    },
+    {
+      "name": "Warehouse",
+      "description": "บันทึกข้อมูล Cross Docking การเคลื่อนย้ายสินค้าระหว่างรถ",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "INT PRIMARY KEY IDENTITY",
+          "description": "Primary key"
+        },
+        {
+          "name": "DocNo",
+          "type": "NVARCHAR(50)",
+          "description": "รหัสใบสั่งงานอ้างอิง"
+        },
+        {
+          "name": "Car_Registration",
+          "type": "NVARCHAR(50)",
+          "description": "ทะเบียนรถต้นทาง"
+        },
+        {
+          "name": "Car_Registration_Outgoing",
+          "type": "NVARCHAR(50)",
+          "description": "ทะเบียนรถปลายทาง"
+        },
+        {
+          "name": "Item_Code",
+          "type": "NVARCHAR(100)",
+          "description": "รหัสสินค้า"
+        },
+        {
+          "name": "Amount",
+          "type": "DECIMAL(18,3)",
+          "description": "จำนวนสินค้า"
+        },
+        {
+          "name": "DateDoc",
+          "type": "DATETIME",
+          "description": "วันที่เวลาดำเนินการ"
+        },
+        {
+          "name": "Users",
+          "type": "NVARCHAR(100)",
+          "description": "ผู้รับผิดชอบ"
+        },
+        {
+          "name": "Note",
+          "type": "NVARCHAR(500)",
+          "description": "หมายเหตุ"
+        },
+        {
+          "name": "CreatedAt",
+          "type": "DATETIME",
+          "description": "วันที่สร้างข้อมูล"
+        }
+      ],
+      "related_requirements": []
+    },
+    {
+      "name": "Warehouse",
+      "description": "ตารางสต็อกสินค้าในคลัง (Current Stock)",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "INT PRIMARY KEY IDENTITY",
+          "description": "Primary key"
+        },
+        {
+          "name": "Item_Code",
+          "type": "NVARCHAR(100)",
+          "description": "รหัสสินค้า"
+        },
+        {
+          "name": "Product_list",
+          "type": "NVARCHAR(255)",
+          "description": "ชื่อสินค้า"
+        },
+        {
+          "name": "Location",
+          "type": "NVARCHAR(50)",
+          "description": "ตำแหน่งจัดเก็บ"
+        },
+        {
+          "name": "CurrentQty",
+          "type": "DECIMAL(18,3)",
+          "description": "จำนวนคงเหลือปัจจุบัน"
+        },
+        {
+          "name": "Amount",
+          "type": "NVARCHAR(50)",
+          "description": "หน่วยนับ"
+        }
+      ],
+      "related_requirements": []
+    }
+  ],
+  "test_cases": [
+    {
+      "id": "TC-001",
+      "title": "บันทึกรับสินค้าเข้าคลัง - กรณีปกติ",
+      "related_requirement": "REQ-001",
+      "test_type": "Functional",
+      "preconditions": "ผู้ใช้ login เข้าสู่ระบบ และมี Order อยู่ในระบบ",
+      "steps": [
+        "เข้าเมนู Product In Warehouse",
+        "เลือก Order ที่ต้องการรับสินค้า",
+        "กรอกรายละเอียดสินค้า ปริมาณ วันที่รับ",
+        "กดบันทึก"
+      ],
+      "expected_result": "ระบบบันทึกข้อมูลสำเร็จ และแสดงข้อมูลการรับสินค้าในประวัติ",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "Development TDP Team",
+      "test_date": "2025-01-20",
+      "remarks": ""
+    },
+    {
+      "id": "TC-002",
+      "title": "บันทึกรับสินค้าเข้าคลัง - กรณีข้อมูลไม่ครบ",
+      "related_requirement": "REQ-001",
+      "test_type": "Functional",
+      "preconditions": "ผู้ใช้ login เข้าสู่ระบบ",
+      "steps": [
+        "เข้าเมนู Product In Warehouse",
+        "กรอกข้อมูลไม่ครบ (ไม่ระบุปริมาณ)",
+        "กดบันทึก"
+      ],
+      "expected_result": "ระบบแสดงข้อความแจ้งเตือนให้กรอกข้อมูลให้ครบ ไม่บันทึกข้อมูล",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "Development TDP Team",
+      "test_date": "2025-01-20",
+      "remarks": ""
+    },
+    {
+      "id": "TC-003",
+      "title": "บันทึกจ่ายสินค้าออกคลัง - กรณีปกติ",
+      "related_requirement": "REQ-002",
+      "test_type": "Functional",
+      "preconditions": "มีสินค้าในคลังและมี Order จ่ายออก",
+      "steps": [
+        "เข้าเมนู Product Out Warehouse",
+        "เลือก Order ที่ต้องการจ่ายสินค้า",
+        "กรอกรายละเอียดและข้อมูลผู้รับสินค้า",
+        "กดบันทึก"
+      ],
+      "expected_result": "ระบบบันทึกการจ่ายสินค้าสำเร็จ และอัพเดทสต็อกสินค้าคงคลัง",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "Development TDP Team",
+      "test_date": "2025-01-21",
+      "remarks": ""
+    },
+    {
+      "id": "TC-004",
+      "title": "จ่ายสินค้าออกคลังเกินจำนวนที่มี",
+      "related_requirement": "REQ-002",
+      "test_type": "Functional",
+      "preconditions": "มีสินค้าในคลัง 10 หน่วย",
+      "steps": [
+        "เข้าเมนู Product Out Warehouse",
+        "กรอกจำนวนสินค้าที่ต้องการจ่ายออกเป็น 15 หน่วย",
+        "กดบันทึก"
+      ],
+      "expected_result": "ระบบแจ้งเตือนสินค้าไม่เพียงพอ ไม่อนุญาตให้บันทึก",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "Development TDP Team",
+      "test_date": "2025-01-21",
+      "remarks": ""
+    },
+    {
+      "id": "TC-005",
+      "title": "บันทึก Inspection สินค้า",
+      "related_requirement": "REQ-003",
+      "test_type": "Functional",
+      "preconditions": "มีสินค้าที่ต้องตรวจสอบในระบบ",
+      "steps": [
+        "เข้าเมนู Inspection",
+        "เลือก Order/สินค้าที่ต้องตรวจ",
+        "กรอกข้อมูลผู้ตรวจ ผลการตรวจ และเอกสารอ้างอิง",
+        "กดบันทึก"
+      ],
+      "expected_result": "ระบบบันทึกผลการตรวจสอบสำเร็จ สามารถดูประวัติการตรวจได้",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "Development TDP Team",
+      "test_date": "2025-01-22",
+      "remarks": ""
+    },
+    {
+      "id": "TC-006",
+      "title": "บันทึก TruckSwap",
+      "related_requirement": "REQ-004",
+      "test_type": "Functional",
+      "preconditions": "มี Order ขนส่งในระบบ",
+      "steps": [
+        "เข้าเมนู TruckSwap",
+        "เลือก Order",
+        "กรอกทะเบียนรถหัวลากเดิมและใหม่ พร้อมวันที่เวลา",
+        "กดบันทึก"
+      ],
+      "expected_result": "ระบบบันทึกการเปลี่ยนหัวลากสำเร็จ และแสดงประวัติการเปลี่ยน",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "Development TDP Team",
+      "test_date": "2025-01-22",
+      "remarks": ""
+    },
+    {
+      "id": "TC-007",
+      "title": "บันทึก Cross Docking",
+      "related_requirement": "REQ-005",
+      "test_type": "Functional",
+      "preconditions": "มีรถขนส่งต้นทางและปลายทางในระบบ",
+      "steps": [
+        "เข้าเมนู Cross Docking",
+        "กรอกข้อมูลรถต้นทาง ปลายทาง สินค้า จำนวน และผู้รับผิดชอบ",
+        "กดบันทึก"
+      ],
+      "expected_result": "ระบบบันทึก Cross Docking สำเร็จ โดยไม่สร้าง Stock ในคลัง",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "Development TDP Team",
+      "test_date": "2025-01-23",
+      "remarks": ""
+    },
+    {
+      "id": "TC-008",
+      "title": "แสดงสถานะสินค้าคงคลัง Real-time",
+      "related_requirement": "REQ-006",
+      "test_type": "Functional",
+      "preconditions": "มีข้อมูลสินค้าในคลัง",
+      "steps": [
+        "เข้าเมนู Warehouse Stock",
+        "ดูรายการสินค้าคงคลัง",
+        "ตรวจสอบจำนวน Location และสถานะ"
+      ],
+      "expected_result": "ระบบแสดงสถานะสินค้าคงคลังปัจจุบันถูกต้องตรงกับข้อมูลจริง",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "Development TDP Team",
+      "test_date": "2025-01-23",
+      "remarks": ""
+    },
+    {
+      "id": "TC-009",
+      "title": "รายงานสรุปรับเข้า-จ่ายออก",
+      "related_requirement": "REQ-007",
+      "test_type": "Functional",
+      "preconditions": "มีข้อมูลรับเข้า-จ่ายออกในระบบ",
+      "steps": [
+        "เข้าเมนู Report",
+        "เลือกประเภทรายงาน: รับเข้า-จ่ายออก",
+        "กำหนดช่วงวันที่",
+        "กดออกรายงาน"
+      ],
+      "expected_result": "ระบบแสดงรายงานสรุปรับเข้า-จ่ายออกตามช่วงเวลาที่กำหนดได้ถูกต้อง",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "Development TDP Team",
+      "test_date": "2025-01-24",
+      "remarks": ""
+    },
+    {
+      "id": "TC-010",
+      "title": "รายงานสินค้าคงคลัง",
+      "related_requirement": "REQ-007",
+      "test_type": "Functional",
+      "preconditions": "มีข้อมูลสินค้าในคลัง",
+      "steps": [
+        "เข้าเมนู Report",
+        "เลือกประเภทรายงาน: สินค้าคงคลัง",
+        "กดออกรายงาน"
+      ],
+      "expected_result": "ระบบแสดงรายงานสินค้าคงคลัง ณ ปัจจุบันครบถ้วนถูกต้อง",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "Development TDP Team",
+      "test_date": "2025-01-24",
+      "remarks": ""
+    }
+  ],
+  "defects": [
+    {
+      "id": "BUG-001",
+      "title": "ไม่มีข้อมูล defect ที่บันทึกไว้",
+      "related_test_case": "",
+      "related_requirement": "",
+      "severity": "Low",
+      "priority": "Low",
+      "status": "Closed",
+      "reported_by": "Development TDP Team",
+      "reported_date": "2025-01-20",
+      "assigned_to": "Saravut Chanjom",
+      "fixed_date": "2025-01-20",
+      "description": "Placeholder - ไม่มีข้อบกพร่องที่สำคัญถูกรายงาน",
+      "steps_to_reproduce": "N/A",
+      "root_cause": "N/A",
+      "resolution": "N/A"
+    },
+    {
+      "id": "BUG-002",
+      "title": "บันทึกข้อมูล",
+      "related_test_case": "",
+      "related_requirement": "",
+      "severity": "High",
+      "priority": "High",
+      "status": "Closed",
+      "reported_by": "Development TDP Team",
+      "reported_date": "2025-01-20",
+      "assigned_to": "",
+      "fixed_date": "2025-01-20",
+      "description": "พบปัญหาการบันทึกข้อมูลไม่ถูกประเภท โดยข้อมูลที่ผู้ใช้กรอกในฟิลด์หนึ่ง ถูกบันทึกไปยังประเภทข้อมูลที่ไม่ตรงตามที่กำหนดในระบบ ส่งผลให้ข้อมูลที่แสดงผลหรือถูกนำไปใช้งานภายหลังมีความคลาดเคลื่อน และอาจกระทบต่อความถูกต้องของรายงานหรือการประมวลผลข้อมูลอื่น ๆ ในระบบ",
+      "steps_to_reproduce": "N/A",
+      "root_cause": "N/A",
+      "resolution": "N/A"
+    },
+    {
+      "id": "BUG-003",
+      "title": "ข้อมูล คงเหลือสินค้าไม่ถูกต้อง",
+      "related_test_case": "",
+      "related_requirement": "",
+      "severity": "High",
+      "priority": "High",
+      "status": "Open",
+      "reported_by": "Development TDP Team",
+      "reported_date": "2025-01-20",
+      "assigned_to": "",
+      "fixed_date": "2025-01-20",
+      "description": "พบปัญหาการแสดงผลข้อมูลคงเหลือสินค้า (Inventory Balance) ไม่ถูกต้อง โดยจำนวนสินค้าคงเหลือที่แสดงในระบบไม่ตรงกับข้อมูลจริงในฐานข้อมูล หรือไม่สอดคล้องกับรายการรับ–จ่ายสินค้าที่เกิดขึ้น ส่งผลให้รายงานสต็อกคลาดเคลื่อน",
+      "steps_to_reproduce": "N/A",
+      "root_cause": "N/A",
+      "resolution": "N/A"
+    },
+    {
+      "id": "BUG-004",
+      "title": "บันทึกข้อมูล",
+      "related_test_case": "",
+      "related_requirement": "",
+      "severity": "High",
+      "priority": "High",
+      "status": "Open",
+      "reported_by": "Development TDP Team",
+      "reported_date": "2025-10-29",
+      "assigned_to": "",
+      "fixed_date": "2025-10-29",
+      "description": "พบปัญหาการบันทึกข้อมูล Surcharge ผิดประเภท โดยระบบทำการจัดเก็บค่าธรรมเนียมเพิ่มเติม (Surcharge) ลงในหมวดหมู่หรือประเภทค่าบริการที่ไม่ถูกต้อง ส่งผลให้การคำนวณยอดรวม การออกใบแจ้งหนี้ (Invoice) และรายงานทางการเงินเกิดความคลาดเคลื่อน และอาจกระทบต่อความถูกต้องของข้อมูลบัญชีในระบบ",
+      "steps_to_reproduce": "N/A",
+      "root_cause": "N/A",
+      "resolution": "N/A"
+    }
+  ],
+  "risks": [
+    {
+      "id": "RISK-001",
+      "category": "Technical",
+      "description": "ข้อมูลสินค้าคงคลังไม่ตรงกันระหว่างระบบและความเป็นจริง หากมีการนำเข้า/ส่งออกข้อมูลพร้อมกัน",
+      "probability": "Medium",
+      "impact": "High",
+      "risk_level": "High",
+      "mitigation": "ใช้ Database Transaction และ Locking เพื่อป้องกันการเขียนข้อมูลพร้อมกัน",
+      "owner": "Saravut Chanjom",
+      "status": "Mitigated",
+      "review_date": "2025-02-18",
+      "contingency": "มีกระบวนการ Stock Reconciliation เพื่อตรวจสอบและแก้ไขข้อมูล",
+      "linked_capa": "CAPA-001"
+    },
+    {
+      "id": "RISK-002",
+      "category": "Schedule",
+      "description": "ความล่าช้าในการทดสอบและ UAT จากผู้ใช้งานจริงที่คุ้นเคยกับกระบวนการ",
+      "probability": "Low",
+      "impact": "Medium",
+      "risk_level": "Low",
+      "mitigation": "จัดทำ User Training ก่อน UAT และมี Key User ร่วมทดสอบ",
+      "owner": "Saravut Chanjom",
+      "status": "Closed",
+      "review_date": "2025-02-18",
+      "contingency": "ขยายช่วงเวลา UAT หากจำเป็น",
+      "linked_capa": ""
+    }
+  ],
+  "change_requests": [
+    {
+      "id": "CR-001",
+      "title": "Placeholder - ไม่มี Change Request ในขณะนี้",
+      "description": "",
+      "requestor": "N/A",
+      "request_date": "2025-02-18",
+      "priority": "Low",
+      "impact": "",
+      "affected_documents": [],
+      "status": "Rejected",
+      "approved_by": "",
+      "approval_date": "",
+      "implementation_date": ""
+    },
+    {
+      "id": "CR-001",
+      "title": "ลงชื่อ ______________________________",
+      "description": "",
+      "requestor": "ตรวจสอบ / Reviewed by",
+      "request_date": "",
+      "priority": "Medium",
+      "impact": "",
+      "affected_documents": [],
+      "status": "Pending",
+      "approved_by": "",
+      "approval_date": "",
+      "implementation_date": ""
+    }
+  ],
+  "versions": [
+    {
+      "version": "1.0.0",
+      "release_date": "2025-02-18",
+      "release_type": "Major",
+      "description": "เปิดตัวระบบ WMS เวอร์ชันแรก (Go Live)",
+      "changes": [],
+      "deployed_by": "Saravut Chanjom",
+      "environment": "Production"
+    }
+  ],
+  "meetings": [
+    {
+      "id": "MTG-001",
+      "title": "Kick-off Meeting - WMS Project",
+      "date": "2024-06-01",
+      "time": "09:00-11:00",
+      "location": "Meeting Room",
+      "chair": "Saravut Chanjom",
+      "attendees": [
+        "Saravut Chanjom",
+        "Development TDP Team",
+        "Warehouse Operations Team"
+      ],
+      "agenda": [],
+      "action_items": [
+        {
+          "item": "จัดทำ Requirements Document ฉบับแรก",
+          "owner": "Saravut Chanjom",
+          "due_date": "2024-06-30",
+          "status": "Completed"
+        }
+      ],
+      "summary": ""
+    },
+    {
+      "id": "MTG-002",
+      "title": "────────────────────────────────────────────────────────────Go-Live Review Meeting",
+      "date": "2025-02-17",
+      "time": "14:00-15:30",
+      "location": "Meeting Room",
+      "chair": "Saravut Chanjom",
+      "attendees": [
+        "Saravut Chanjom",
+        "Development TDP Team",
+        "Warehouse Operations Team",
+        "Soudaphone Management"
+      ],
+      "agenda": [],
+      "action_items": [
+        {
+          "item": "Deploy ระบบขึ้น Production",
+          "owner": "Saravut Chanjom",
+          "due_date": "2025-02-18",
+          "status": "Completed"
+        }
+      ],
+      "summary": ""
+    },
+    {
+      "id": "MTG-003",
+      "title": "การพัฒนาฟังชั่นเพิ่มเติม",
+      "date": "2025-10-17",
+      "time": "14:00-15:30",
+      "location": "Meeting Room",
+      "chair": "Saravut Chanjom",
+      "attendees": [
+        "Saravut Chanjom",
+        "Development TDP Team",
+        "Warehouse Operations Team",
+        "Soudaphone Management"
+      ],
+      "agenda": [],
+      "action_items": [
+        {
+          "item": "จัดทำ Requirements Document ฉบับแรก",
+          "owner": "Saravut Chanjom",
+          "due_date": "2025-10-25",
+          "status": "Completed"
+        }
+      ],
+      "summary": ""
+    },
+    {
+      "id": "MTG-004",
+      "title": "การส่งมอบเวอร์ชันและการอัปเดตระบบ",
+      "date": "(Development TDP Team\nBusiness Analyst\nวันที่: _______________",
+      "time": "",
+      "location": "",
+      "chair": "เลขานุการ / Secretary",
+      "attendees": [],
+      "agenda": [],
+      "action_items": [],
+      "summary": ""
+    }
+  ],
+  "training_sessions": [
+    {
+      "id": "TRN-001",
+      "title": "การใช้งานระบบ WMS สำหรับเจ้าหน้าที่คลังสินค้า",
+      "date": "2025-02-10",
+      "duration": "4 hours",
+      "location": "Training Room / On-site",
+      "trainer": "ผู้จัดอบรม / Organizer",
+      "topics": [],
+      "attendees": [
+        {
+          "name": "Warehouse Operations Team",
+          "department": "Warehouse",
+          "signed": true
+        }
+      ]
+    }
+  ],
+  "incidents": [
+    {
+      "id": "INC-001",
+      "title": "Placeholder - ไม่มี Incident ที่บันทึกไว้ ณ เวลา Go Live",
+      "date_reported": "",
+      "severity": "",
+      "description": "ไม่มี Incident ที่บันทึกไว้",
+      "reported_by": "",
+      "assigned_to": "",
+      "status": "Open",
+      "resolution": "N/A",
+      "resolved_date": "",
+      "root_cause": "N/A",
+      "linked_change_request": ""
+    }
+  ],
+  "deployments": [
+    {
+      "id": "DEP-001",
+      "version": "1.0.0",
+      "date": "2025-02-18",
+      "environment": "Production",
+      "deployed_by": "Saravut Chanjom",
+      "deployment_type": "Major",
+      "steps": [],
+      "rollback_plan": "",
+      "status": "Success",
+      "approval": "Approved by Soudaphone Management"
+    }
+  ],
+  "audit": {
+    "audit_date": "2025-03-01",
+    "auditor": "Internal Audit Team",
+    "audit_scope": "ISO/IEC 29110 compliance for WMS software development lifecycle",
+    "findings": [
+      {
+        "id": "FIND-001",
+        "clause": "ISO/IEC 29110 Section 3.1 - Project Planning",
+        "finding_type": "Opportunity for Improvement",
+        "description": "ควรจัดทำ Lessons Learned Document หลัง Go Live เพื่อนำไปปรับปรุงโครงการถัดไป",
+        "linked_capa": "CAPA-001"
+      }
+    ]
+  },
+  "capas": [
+    {
+      "id": "CAPA-001",
+      "type": "Preventive Action",
+      "related_finding": "FIND-001 / RISK-001",
+      "description": "จัดทำ Lessons Learned และ Database Concurrency Control Guidelines",
+      "root_cause": "ยังไม่มีกระบวนการ Lessons Learned อย่างเป็นทางการ",
+      "action_plan": "จัดทำ Lessons Learned Document ภายใน 1 เดือนหลัง Go Live และจัดทำ Best Practice Guide สำหรับ Database Concurrency",
+      "responsible": "Saravut Chanjom",
+      "target_date": "2025-03-31",
+      "status": "In Progress",
+      "effectiveness_review": "ตรวจสอบการนำบทเรียนไปใช้ในโครงการถัดไป",
+      "closed_date": ""
+    }
+  ],
+  "sow": {},
+  "output_path": "D:\\Work\\DocISOGen\\projects"
+}

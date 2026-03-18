@@ -1,0 +1,1452 @@
+{
+  "project": {
+    "code": "StockChecque",
+    "name": "Stock Cheque Management System",
+    "organization": "Soudaphone",
+    "description": "ระบบบริหารจัดการเช็คและการชำระเงิน (Stock Cheque) ที่ครอบคลุมกระบวนการตั้งแต่การลงทะเบียนข้อมูลหลัก การสร้างคำขออนุมัติสั่งจ่ายเช็ค การติดตามสถานะเช็ค ไปจนถึงการออกรายงานสรุปยอดเงินและการวิเคราะห์ประสิทธิภาพกระบวนการ เพื่อรองรับการควบคุมภายในและมาตรฐานทางการเงินขององค์กร",
+    "scope": "ขอบเขตระบบครอบคลุม: (1) การยืนยันตัวตนและการจัดการสิทธิ์ผู้ใช้งาน (2) การลงทะเบียนข้อมูลหลัก (Master Data) ได้แก่ บริษัท บัญชีธนาคาร เล่มเช็ค ผู้ใช้งาน ธนาคาร กลุ่มรายจ่าย และผู้ลงนาม (3) การสร้างและบริหารจัดการคำขออนุมัติสั่งจ่ายเช็ค (4) การออกรายงานด้านการเงินและการวิเคราะห์สถิติการใช้เช็ค ไม่ครอบคลุม: การเชื่อมโยงกับระบบบัญชีภายนอก และการประมวลผลชำระเงินผ่านช่องทางอิเล็กทรอนิกส์",
+    "department": "Soudaphone",
+    "start_date": "2025-03-01",
+    "end_date": "2025-12-31",
+    "go_live_date": "2025-12-15",
+    "doc_revision": "2.1",
+    "document_date": "2026-02-19",
+    "classification": "Internal",
+    "short_name": "StockChecque",
+    "objectives": [
+      "ควบคุมและติดตามสถานะเช็คแต่ละฉบับตลอดกระบวนการตั้งแต่สร้างจนถึงชำระเงินเสร็จสิ้น",
+      "ป้องกันความผิดพลาดและการทุจริตในกระบวนการสั่งจ่ายเช็คด้วยระบบควบคุมภายใน",
+      "รองรับการแบ่งแยกหน้าที่ (Segregation of Duties) ตามหลักการบัญชีที่ดี",
+      "ให้ข้อมูลรายงานที่ถูกต้องและทันสมัยสำหรับการตัดสินใจทางการเงิน",
+      "เพิ่มประสิทธิภาพกระบวนการอนุมัติสั่งจ่ายและลดระยะเวลาการดำเนินงาน"
+    ]
+  },
+  "team": {
+    "members": [
+      {
+        "name": "TDP Business Analyst",
+        "title": "เตรียมโดย / Prepared by",
+        "email": ""
+      },
+      {
+        "name": "TDP QA Team",
+        "title": "ตรวจสอบโดย / Reviewed by",
+        "email": ""
+      },
+      {
+        "name": "Apisit Yimboa",
+        "title": "อนุมัติโดย / Approved by",
+        "email": ""
+      }
+    ],
+    "project_manager": {
+      "name": "Apisit Yimboa",
+      "title": "Project Manager",
+      "email": "apisit.y@soudaphone.com",
+      "phone": ""
+    },
+    "lead_developer": {
+      "name": "Saravut Chanjom",
+      "title": "Lead Developer",
+      "email": "saravut.c@soudaphone.com",
+      "phone": ""
+    },
+    "business_analyst": {
+      "name": "TDP Business Analyst",
+      "title": "Business Analyst",
+      "email": "ba@soudaphone.com",
+      "phone": ""
+    },
+    "system_analyst": {
+      "name": "TDP System Analyst",
+      "title": "System Analyst",
+      "email": "sa@soudaphone.com",
+      "phone": ""
+    },
+    "qa_engineer": {
+      "name": "TDP QA Team",
+      "title": "QA Engineer",
+      "email": "qa@soudaphone.com",
+      "phone": ""
+    },
+    "dba": {
+      "name": "TDP DBA",
+      "title": "DBA",
+      "email": "dba@soudaphone.com",
+      "phone": ""
+    }
+  },
+  "stakeholders": [
+    {
+      "name": "Apisit Yimboa",
+      "role": "Project Manager",
+      "organization": "Soudaphone",
+      "email": "",
+      "responsibility": "Approve project scope, timeline, and major decisions"
+    },
+    {
+      "name": "Finance Department",
+      "role": "Key User / Business Owner",
+      "organization": "Soudaphone",
+      "email": "",
+      "responsibility": "Define business requirements and perform UAT"
+    }
+  ],
+  "tech_stack": {
+    "frontend": ".NET Core MVC / Razor Views / Bootstrap",
+    "backend": ".NET Core MVC / C#",
+    "database": "Microsoft SQL Server",
+    "infrastructure": "On-premise Windows Server",
+    "source_control": "Git",
+    "ci_cd": ""
+  },
+  "milestones": [
+    {
+      "id": "MS-01",
+      "name": "Requirements Sign-off",
+      "target_date": "2025-03-31",
+      "status": "Completed",
+      "owner": "Apisit Yimboa"
+    },
+    {
+      "id": "MS-02",
+      "name": "System Design Complete",
+      "target_date": "2025-04-30",
+      "status": "Completed",
+      "owner": "Saravut Chanjom"
+    },
+    {
+      "id": "MS-03",
+      "name": "Development Complete (v1.0)",
+      "target_date": "2025-08-31",
+      "status": "Completed",
+      "owner": "Saravut Chanjom"
+    },
+    {
+      "id": "MS-04",
+      "name": "UAT Complete",
+      "target_date": "2025-11-30",
+      "status": "Completed",
+      "owner": "TDP QA Team"
+    },
+    {
+      "id": "MS-05",
+      "name": "Go-Live (v2.1.0)",
+      "target_date": "2025-12-15",
+      "status": "Completed",
+      "owner": "Apisit Yimboa"
+    }
+  ],
+  "requirements": [
+    {
+      "id": "REQ-001",
+      "title": "Login - User Authentication",
+      "description": "ระบบต้องรองรับการยืนยันตัวตนผู้ใช้งานก่อนเข้าสู่ระบบ โดยตรวจสอบ Username/Password และกำหนดสิทธิ์การเข้าถึงตาม Role ที่กำหนด",
+      "priority": "High",
+      "type": "Functional",
+      "category": "Security & Authentication",
+      "source": "Feature 1 - Login",
+      "acceptance_criteria": "ผู้ใช้งานสามารถ Login ด้วย Username/Password ที่ถูกต้องได้ และระบบแสดงเมนูตามสิทธิ์ที่กำหนด หากข้อมูลไม่ถูกต้องระบบแสดงข้อความ Error",
+      "linked_design": [],
+      "linked_test_cases": []
+    },
+    {
+      "id": "REQ-002",
+      "title": "Company Registration - Master Data",
+      "description": "ระบบต้องรองรับการบันทึกและบริหารจัดการข้อมูลบริษัท (Master Data) เพื่อใช้เป็นข้อมูลอ้างอิงในกระบวนการลงทะเบียนเล่มเช็คและบันทึกธุรกรรม",
+      "priority": "High",
+      "type": "Functional",
+      "category": "Master Data Management",
+      "source": "Feature 2.1 - ลงทะเบียนบริษัท",
+      "acceptance_criteria": "ผู้ใช้งานสามารถเพิ่ม/แก้ไข/ลบข้อมูลบริษัทได้ และข้อมูลบริษัทสามารถเลือกใช้ในการลงทะเบียนเล่มเช็คได้",
+      "linked_design": [],
+      "linked_test_cases": []
+    },
+    {
+      "id": "REQ-003",
+      "title": "Bank Account Registration",
+      "description": "ระบบต้องรองรับการบันทึกและบริหารจัดการรายละเอียดบัญชีธนาคาร เช่น ชื่อธนาคาร เลขที่บัญชี และสกุลเงิน",
+      "priority": "High",
+      "type": "Functional",
+      "category": "Master Data Management",
+      "source": "Feature 2.2 - ลงทะเบียนบัญชีธนาคาร",
+      "acceptance_criteria": "ผู้ใช้งานสามารถลงทะเบียนบัญชีธนาคารพร้อมระบุชื่อธนาคาร เลขบัญชี และสกุลเงิน และระบบตรวจสอบความซ้ำซ้อนของเลขบัญชี",
+      "linked_design": [],
+      "linked_test_cases": []
+    },
+    {
+      "id": "REQ-004",
+      "title": "Cheque Book Registration",
+      "description": "ระบบต้องรองรับการลงทะเบียนเล่มเช็คพร้อมกำหนดช่วงหมายเลขเช็ค (Cheque Range) เพื่อควบคุมและติดตามการใช้เช็ค",
+      "priority": "High",
+      "type": "Functional",
+      "category": "Cheque Management",
+      "source": "Feature 2.3 - ลงทะเบียนเล่มเช็ค",
+      "acceptance_criteria": "ผู้ใช้งานสามารถลงทะเบียนเล่มเช็คพร้อมระบุช่วงหมายเลขเช็ค และระบบป้องกันการลงทะเบียนหมายเลขเช็คซ้ำกัน",
+      "linked_design": [],
+      "linked_test_cases": []
+    },
+    {
+      "id": "REQ-005",
+      "title": "Deposit/Withdrawal Transaction Recording",
+      "description": "ระบบต้องรองรับการบันทึกรายการฝากเงินและถอนเงิน (Transaction Record) เพื่อควบคุมยอดเงินรับเข้า-จ่ายออกในแต่ละบัญชีธนาคาร",
+      "priority": "High",
+      "type": "Functional",
+      "category": "Financial Transaction",
+      "source": "Feature 2.4 - ลงทะเบียนฝาก/ถอนเงิน",
+      "acceptance_criteria": "ผู้ใช้งานสามารถบันทึกรายการฝาก/ถอนเงินและระบบอัปเดตยอดเงินคงเหลือแบบ Real-time",
+      "linked_design": [],
+      "linked_test_cases": []
+    },
+    {
+      "id": "REQ-006",
+      "title": "User Registration with Role-based Access Control",
+      "description": "ระบบต้องรองรับการลงทะเบียนผู้ใช้งานรายใหม่พร้อมกำหนดสิทธิ์การเข้าถึงตามโครงสร้างองค์กรและหลักการ Segregation of Duties",
+      "priority": "High",
+      "type": "Functional",
+      "category": "Security & Access Control",
+      "source": "Feature 2.5 - ลงทะเบียนผู้ใช้งาน",
+      "acceptance_criteria": "ผู้ดูแลระบบสามารถสร้างบัญชีผู้ใช้ กำหนด Role และสิทธิ์การเข้าถึงแต่ละ Module ได้",
+      "linked_design": [],
+      "linked_test_cases": []
+    },
+    {
+      "id": "REQ-007",
+      "title": "Bank Master Data Management",
+      "description": "ระบบต้องรองรับการบริหารจัดการข้อมูลรายชื่อธนาคารเพื่อใช้เป็นข้อมูลอ้างอิงในระบบ",
+      "priority": "Medium",
+      "type": "Functional",
+      "category": "Master Data Management",
+      "source": "Feature 2.6 - ลงทะเบียนธนาคาร",
+      "acceptance_criteria": "ผู้ใช้งานสามารถเพิ่ม/แก้ไข/ลบข้อมูลธนาคารได้และนำไปใช้อ้างอิงในการลงทะเบียนบัญชีธนาคาร",
+      "linked_design": [],
+      "linked_test_cases": []
+    },
+    {
+      "id": "REQ-008",
+      "title": "Expense Group Classification",
+      "description": "ระบบต้องรองรับการจำแนกประเภทรายจ่ายออกเป็นหมวดหมู่ เช่น Internal Expense และ External Expense เพื่อสนับสนุนกระบวนการอนุมัติ",
+      "priority": "Medium",
+      "type": "Functional",
+      "category": "Master Data Management",
+      "source": "Feature 2.7 - ลงทะเบียนกลุ่มรายจ่าย",
+      "acceptance_criteria": "ผู้ใช้งานสามารถสร้างและจัดการหมวดหมู่รายจ่ายและนำไปใช้ในกระบวนการสร้างคำขออนุมัติเช็คได้",
+      "linked_design": [],
+      "linked_test_cases": []
+    },
+    {
+      "id": "REQ-009",
+      "title": "Signatory Data Registration with Approval Authority",
+      "description": "ระบบต้องรองรับการบันทึกข้อมูลผู้มีอำนาจลงนามพร้อมกำหนดขอบเขตอำนาจในการอนุมัติสั่งจ่ายเช็ค",
+      "priority": "High",
+      "type": "Functional",
+      "category": "Authorization Control",
+      "source": "Feature 2.8 - ลงทะเบียนข้อมูลผู้ลงนาม",
+      "acceptance_criteria": "ระบบสามารถบันทึกข้อมูลผู้ลงนามพร้อมวงเงินอนุมัติ และใช้ข้อมูลนี้ในกระบวนการ workflow การอนุมัติเช็คได้",
+      "linked_design": [],
+      "linked_test_cases": []
+    },
+    {
+      "id": "REQ-010",
+      "title": "Create Cheque Payment Request",
+      "description": "ระบบต้องรองรับการสร้างรายการขออนุมัติสั่งจ่ายเช็คใหม่ พร้อมระบบตรวจสอบข้อมูลซ้ำ และสามารถเรียกดูประวัติการทำรายการย้อนหลัง",
+      "priority": "High",
+      "type": "Functional",
+      "category": "Cheque Process",
+      "source": "Feature 3 - Create Cheque Payment",
+      "acceptance_criteria": "ผู้ใช้งานสามารถสร้างคำขอสั่งจ่ายเช็คได้ ระบบตรวจสอบข้อมูลซ้ำอัตโนมัติ และแสดงประวัติการทำรายการที่เกี่ยวข้อง",
+      "linked_design": [],
+      "linked_test_cases": []
+    },
+    {
+      "id": "REQ-011",
+      "title": "Cheque Status Management",
+      "description": "ระบบต้องรองรับการติดตามและบริหารจัดการสถานะเช็ค เช่น In Process, Waiting to Pay, Completed เพื่อควบคุมขั้นตอนการดำเนินงาน",
+      "priority": "High",
+      "type": "Functional",
+      "category": "Cheque Process",
+      "source": "Feature 4 - Manage Cheque Pay",
+      "acceptance_criteria": "ระบบแสดงและอัปเดตสถานะเช็คแบบ Real-time และควบคุม workflow การเปลี่ยนสถานะตามกระบวนการที่กำหนด",
+      "linked_design": [],
+      "linked_test_cases": []
+    },
+    {
+      "id": "REQ-012",
+      "title": "Cash Balance Report",
+      "description": "ระบบต้องออกรายงานสรุปยอดเงินรับเข้า รายจ่าย และยอดเงินคงเหลือสุทธิของแต่ละบัญชีธนาคาร",
+      "priority": "High",
+      "type": "Functional",
+      "category": "Reporting",
+      "source": "Feature 5 - Cash Balance Report",
+      "acceptance_criteria": "รายงานแสดงยอดเงินรับ-จ่าย และยอดคงเหลือของแต่ละบัญชีธนาคารได้อย่างถูกต้อง และสามารถกรองตามช่วงเวลาได้",
+      "linked_design": [],
+      "linked_test_cases": []
+    },
+    {
+      "id": "REQ-013",
+      "title": "Cheque Tracking Summary Report",
+      "description": "ระบบต้องออกรายงานสถานะเล่มเช็คในแต่ละบัญชีธนาคาร แสดงจำนวนเช็คที่ใช้งานแล้วและคงเหลือ",
+      "priority": "Medium",
+      "type": "Functional",
+      "category": "Reporting",
+      "source": "Feature 6 - Cheque Tracking Summary",
+      "acceptance_criteria": "รายงานแสดงสถานะเล่มเช็คแยกตามบัญชีธนาคาร พร้อมจำนวนเช็คที่ใช้และคงเหลือได้อย่างถูกต้อง",
+      "linked_design": [],
+      "linked_test_cases": []
+    },
+    {
+      "id": "REQ-014",
+      "title": "Cheque Activity Log with Lead Time Analysis",
+      "description": "ระบบต้องออกรายงานรายละเอียดการดำเนินการเช็ครายใบ รวมถึงสกุลเงินและการวิเคราะห์ Lead Time แต่ละขั้นตอน",
+      "priority": "Medium",
+      "type": "Functional",
+      "category": "Reporting & Analytics",
+      "source": "Feature 7 - Cheque Activity Log",
+      "acceptance_criteria": "รายงานแสดงข้อมูลเช็คแต่ละฉบับพร้อม Lead Time ในแต่ละขั้นตอนกระบวนการ และสามารถวิเคราะห์เปรียบเทียบได้",
+      "linked_design": [],
+      "linked_test_cases": []
+    },
+    {
+      "id": "REQ-015",
+      "title": "Cheque Usage Statistics Report",
+      "description": "ระบบต้องออกรายงานสถิติการใช้เช็คแยกตามบัญชีธนาคาร แสดงจำนวนฉบับ มูลค่ารวม และสถานะปัจจุบัน",
+      "priority": "Medium",
+      "type": "Functional",
+      "category": "Reporting & Analytics",
+      "source": "Feature 8 - Cheque Usage Report",
+      "acceptance_criteria": "รายงานแสดงสถิติการใช้เช็คแยกตามธนาคาร พร้อมมูลค่ารวมและสถานะ สามารถ Export เป็น Excel ได้",
+      "linked_design": [],
+      "linked_test_cases": []
+    }
+  ],
+  "design_components": [
+    {
+      "id": "COMP-001",
+      "name": "Authentication & Authorization Module",
+      "description": "Module จัดการการ Login, Session Management, Role-Based Access Control (RBAC) และการลงทะเบียนผู้ใช้งาน",
+      "type": "Web Application Module",
+      "related_requirements": [
+        "REQ-001",
+        "REQ-006"
+      ],
+      "technology": ""
+    },
+    {
+      "id": "COMP-002",
+      "name": "Master Data Management Module",
+      "description": "Module จัดการข้อมูลหลัก (Master Data) ได้แก่ บริษัท บัญชีธนาคาร ธนาคาร กลุ่มรายจ่าย พร้อม CRUD operations",
+      "type": "Web Application Module",
+      "related_requirements": [
+        "REQ-002",
+        "REQ-003",
+        "REQ-007",
+        "REQ-008"
+      ],
+      "technology": ""
+    },
+    {
+      "id": "COMP-003",
+      "name": "Cheque Management Module",
+      "description": "Module จัดการเล่มเช็ค ข้อมูลผู้ลงนาม การสร้างคำขอสั่งจ่ายเช็ค และการติดตามสถานะเช็คตลอด Workflow",
+      "type": "Web Application Module",
+      "related_requirements": [
+        "REQ-004",
+        "REQ-009",
+        "REQ-010",
+        "REQ-011"
+      ],
+      "technology": ""
+    },
+    {
+      "id": "COMP-004",
+      "name": "Financial Transaction Module",
+      "description": "Module บันทึกรายการฝาก-ถอนเงิน และบริหารจัดการสถานะการชำระเงินผ่านเช็ค",
+      "type": "Web Application Module",
+      "related_requirements": [
+        "REQ-005",
+        "REQ-010",
+        "REQ-011"
+      ],
+      "technology": ""
+    },
+    {
+      "id": "COMP-005",
+      "name": "Reporting & Analytics Module",
+      "description": "Module ออกรายงานทางการเงิน ได้แก่ Cash Balance Report, Cheque Tracking Summary, Cheque Activity Log พร้อม Lead Time Analysis และ Cheque Usage Report",
+      "type": "Web Application Module",
+      "related_requirements": [
+        "REQ-012",
+        "REQ-013",
+        "REQ-014",
+        "REQ-015"
+      ],
+      "technology": ""
+    }
+  ],
+  "database_tables": [
+    {
+      "name": "UserRegistration",
+      "description": "ข้อมูลผู้ใช้งานระบบและสิทธิ์การเข้าถึง",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "INT PRIMARY KEY IDENTITY",
+          "description": "รหัสผู้ใช้งาน"
+        },
+        {
+          "name": "USERNAME",
+          "type": "NVARCHAR(50) NOT NULL UNIQUE",
+          "description": "ชื่อผู้ใช้งาน"
+        },
+        {
+          "name": "PASSWORD",
+          "type": "NVARCHAR(255) NOT NULL",
+          "description": "รหัสผ่านที่เข้ารหัสแล้ว"
+        },
+        {
+          "name": "FirstName",
+          "type": "NVARCHAR(100)",
+          "description": "ชื่อ"
+        },
+        {
+          "name": "LastName",
+          "type": "NVARCHAR(100)",
+          "description": "นามสกุล"
+        },
+        {
+          "name": "ROLE",
+          "type": "INT",
+          "description": "รหัส Role"
+        },
+        {
+          "name": "Company",
+          "type": "NVARCHAR(100)",
+          "description": "บริษัท"
+        },
+        {
+          "name": "Position",
+          "type": "NVARCHAR(100)",
+          "description": "ตำแหน่งงาน"
+        }
+      ],
+      "related_requirements": [
+        "REQ-001",
+        "REQ-006"
+      ]
+    },
+    {
+      "name": "Registration_Pay_Company",
+      "description": "ข้อมูลบริษัทสำหรับใช้อ้างอิงในระบบ",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "INT PRIMARY KEY IDENTITY",
+          "description": "รหัสบริษัท"
+        },
+        {
+          "name": "Company_Code",
+          "type": "NVARCHAR(100) NOT NULL UNIQUE",
+          "description": "รหัสย่อบริษัท"
+        },
+        {
+          "name": "Company_PaymentAccount",
+          "type": "NVARCHAR(200) NOT NULL",
+          "description": "ชื่อบริษัท"
+        },
+        {
+          "name": "BankAccountNumber",
+          "type": "NVARCHAR(50)",
+          "description": "บัญชีธนาคาร"
+        },
+        {
+          "name": "DocNumber",
+          "type": "NVARCHAR(20)",
+          "description": "รหัสตัวย่อเอกสารของแต่ละบริษัท"
+        },
+        {
+          "name": "CreatedAt",
+          "type": "DATETIME",
+          "description": "วันเวลาที่สร้าง"
+        }
+      ],
+      "related_requirements": [
+        "REQ-002"
+      ]
+    },
+    {
+      "name": "Master_Bank",
+      "description": "ข้อมูลธนาคาร (Master Data)",
+      "columns": [
+        {
+          "name": "Id",
+          "type": "INT PRIMARY KEY IDENTITY",
+          "description": "รหัสธนาคาร"
+        },
+        {
+          "name": "BankCode",
+          "type": "NVARCHAR(20) NOT NULL UNIQUE",
+          "description": "รหัสย่อธนาคาร"
+        },
+        {
+          "name": "BankName",
+          "type": "NVARCHAR(200) NOT NULL",
+          "description": "ชื่อธนาคาร"
+        },
+        {
+          "name": "CreateAt",
+          "type": "DATETIME",
+          "description": "วันเวลาที่สร้าง"
+        }
+      ],
+      "related_requirements": [
+        "REQ-007"
+      ]
+    },
+    {
+      "name": "BankAccount",
+      "description": "ข้อมูลบัญชีธนาคารของบริษัท",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "INT PRIMARY KEY IDENTITY",
+          "description": "รหัสบัญชี"
+        },
+        {
+          "name": "BankAccountNumber",
+          "type": "NVARCHAR(50) NOT NULL UNIQUE",
+          "description": "เลขที่บัญชี"
+        },
+        {
+          "name": "AccountHolderName",
+          "type": "NVARCHAR(255)",
+          "description": "ชื่อบัญชี"
+        },
+        {
+          "name": "Currency",
+          "type": "NVARCHAR(255)",
+          "description": "สกุลเงิน"
+        },
+        {
+          "name": "BankAccountType",
+          "type": "NVARCHAR(50)",
+          "description": "ประเภทบัญชิ"
+        },
+        {
+          "name": "Company_PaymentAccount",
+          "type": "NVARCHAR(100)",
+          "description": "บริษัท"
+        }
+      ],
+      "related_requirements": [
+        "REQ-003"
+      ]
+    },
+    {
+      "name": "Registration_Check",
+      "description": "ข้อมูลเล่มเช็คที่ลงทะเบียนในระบบ",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "INT PRIMARY KEY IDENTITY",
+          "description": "รหัส"
+        },
+        {
+          "name": "CheckID",
+          "type": "varchar(20)",
+          "description": "รหัสเช็คที่ถูกสร้างตามปี"
+        },
+        {
+          "name": "Check_Number",
+          "type": "NVARCHAR(50)",
+          "description": "หมายเลข"
+        },
+        {
+          "name": "Check_Serial_Number",
+          "type": "NVARCHAR(50)",
+          "description": "หมายเลขเล่มเช็ค"
+        },
+        {
+          "name": "DocNumber",
+          "type": "NVARCHAR(50)",
+          "description": "เลขเอกสาร"
+        },
+        {
+          "name": "SecretaryNumber",
+          "type": "NVARCHAR(255)",
+          "description": "เลขกองเลขา"
+        },
+        {
+          "name": "BankAccountNumber",
+          "type": "NVARCHAR(50)",
+          "description": "เลขบัญชีธนาคาร"
+        }
+      ],
+      "related_requirements": [
+        "REQ-004"
+      ]
+    },
+    {
+      "name": "Create_Check_Payment",
+      "description": "รายการขออนุมัติสั่งจ่ายเช็ค",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "INT PRIMARY KEY IDENTITY",
+          "description": "รหัสรายการ"
+        },
+        {
+          "name": "ChequePayID",
+          "type": "NVARCHAR(50)",
+          "description": "เลขที่ใบสั่งจ่าย"
+        },
+        {
+          "name": "CheckSerialNumber",
+          "type": "NVARCHAR(50)",
+          "description": "รหัสเล่มเช็ค"
+        },
+        {
+          "name": "Check_Number",
+          "type": "NVARCHAR(50)",
+          "description": "หมายเลขเช็ค"
+        },
+        {
+          "name": "PayBankAccountNumber",
+          "type": "NVARCHAR(50)",
+          "description": "เลขบัญชีธนาคาร"
+        },
+        {
+          "name": "RecvCompanyName",
+          "type": "NVARCHAR(200)",
+          "description": "ชื่อบริษัทผู้รับเช็ค"
+        },
+        {
+          "name": "PaymentAmount",
+          "type": "FLOAT",
+          "description": "จำนวนเงิน"
+        },
+        {
+          "name": "Currency",
+          "type": "NVARCHAR(50)",
+          "description": "สกุลเงิน"
+        },
+        {
+          "name": "ExpenseGroupID",
+          "type": "NVARCHAR(50)",
+          "description": "รหัสกลุ่มรายจ่าย"
+        },
+        {
+          "name": "Transaction_Date",
+          "type": "DATE",
+          "description": "วันที่ทำธุรกรรม"
+        },
+        {
+          "name": "StatusChequePay",
+          "type": "NVARCHAR(255)",
+          "description": "สถานะ (InProcess/WaitingToPay/Completed)"
+        },
+        {
+          "name": "CreateBy",
+          "type": "nvarchar(100)",
+          "description": "ผู้สร้างรายการ"
+        },
+        {
+          "name": "CreatedAt",
+          "type": "DATETIME DEFAULT GETDATE()",
+          "description": "วันที่สร้าง"
+        },
+        {
+          "name": "Description",
+          "type": "NVARCHAR(255)",
+          "description": "รายละเอียด"
+        }
+      ],
+      "related_requirements": [
+        "REQ-010",
+        "REQ-011"
+      ]
+    },
+    {
+      "name": "IncomingFund",
+      "description": "รายการเคลื่อนไหวทางบัญชี (ฝาก/ถอน)",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "INT PRIMARY KEY IDENTITY",
+          "description": "รหัสรายการ"
+        },
+        {
+          "name": "BankAccountNumber",
+          "type": "NVARCHAR(100)",
+          "description": "รหัสบัญชีธนาคาร"
+        },
+        {
+          "name": "TransactionType",
+          "type": "INT",
+          "description": "ประเภทธุรกรรม"
+        },
+        {
+          "name": "Amount",
+          "type": "FLOAT",
+          "description": "จำนวนเงิน"
+        },
+        {
+          "name": "Transaction_Date",
+          "type": "DATE NOT NULL",
+          "description": "วันที่ทำธุรกรรม"
+        },
+        {
+          "name": "Description",
+          "type": "NVARCHAR(250)",
+          "description": "รายละเอียด"
+        },
+        {
+          "name": "CreatedBy",
+          "type": "NVARCHAR(100)",
+          "description": "ผู้บันทึก"
+        },
+        {
+          "name": "CreatedAt",
+          "type": "DATETIME DEFAULT GETDATE()",
+          "description": "วันที่บันทึก"
+        }
+      ],
+      "related_requirements": [
+        "REQ-005"
+      ]
+    },
+    {
+      "name": "ExpenseGroups",
+      "description": "หมวดหมู่ประเภทรายจ่าย",
+      "columns": [
+        {
+          "name": "Id",
+          "type": "INT PRIMARY KEY IDENTITY",
+          "description": "รหัส"
+        },
+        {
+          "name": "expenseGroupCode",
+          "type": "NVARCHAR(20) NOT NULL UNIQUE",
+          "description": "รหัสกลุ่ม"
+        },
+        {
+          "name": "expenseGroupType",
+          "type": "NVARCHAR(200) NOT NULL",
+          "description": "ชื่อกลุ่มรายจ่าย"
+        },
+        {
+          "name": "confirmCount",
+          "type": "NVARCHAR(20)",
+          "description": "จำนวนผู้ลงนาม"
+        },
+        {
+          "name": "CreateBy",
+          "type": "BIT DEFAULT 1",
+          "description": "ชื่อผู้สร้าง"
+        }
+      ],
+      "related_requirements": [
+        "REQ-008"
+      ]
+    },
+    {
+      "name": "SignatoryRegistration",
+      "description": "ข้อมูลผู้มีอำนาจลงนามสั่งจ่ายเช็ค",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "INT PRIMARY KEY IDENTITY",
+          "description": "รหัสผู้ลงนาม"
+        },
+        {
+          "name": "FirstName",
+          "type": "NVARCHAR(100) NOT NULL",
+          "description": "ชื่อ"
+        },
+        {
+          "name": "LastName",
+          "type": "NVARCHAR(100)",
+          "description": "นามสกุล"
+        },
+        {
+          "name": "CreateDate",
+          "type": "DATETIME",
+          "description": "วันที่สร้าง"
+        },
+        {
+          "name": "Company",
+          "type": "NVARCHAR(100)",
+          "description": "บริษัท"
+        }
+      ],
+      "related_requirements": [
+        "REQ-009"
+      ]
+    }
+  ],
+  "test_cases": [
+    {
+      "id": "TC-001",
+      "title": "Login with valid credentials",
+      "related_requirement": "REQ-001",
+      "test_type": "UAT",
+      "preconditions": "มีบัญชีผู้ใช้งานที่ Active ในระบบ",
+      "steps": [
+        "เปิดหน้า Login",
+        "กรอก Username และ Password ที่ถูกต้อง",
+        "คลิกปุ่ม Login"
+      ],
+      "expected_result": "ระบบ Login สำเร็จและ Redirect ไปยังหน้าหลักตาม Role ของผู้ใช้",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "TDP QA Team",
+      "test_date": "2025-11-15",
+      "remarks": "Go Live แล้ว"
+    },
+    {
+      "id": "TC-002",
+      "title": "Login with invalid credentials",
+      "related_requirement": "REQ-001",
+      "test_type": "UAT",
+      "preconditions": "มีบัญชีผู้ใช้งานในระบบ",
+      "steps": [
+        "เปิดหน้า Login",
+        "กรอก Username ถูกต้องแต่ Password ผิด",
+        "คลิกปุ่ม Login"
+      ],
+      "expected_result": "ระบบแสดงข้อความ Error และไม่อนุญาตให้เข้าระบบ",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "TDP QA Team",
+      "test_date": "2025-11-15",
+      "remarks": ""
+    },
+    {
+      "id": "TC-003",
+      "title": "Company Master Data - Add new company",
+      "related_requirement": "REQ-002",
+      "test_type": "UAT",
+      "preconditions": "Login ด้วยบัญชีที่มีสิทธิ์จัดการ Master Data",
+      "steps": [
+        "ไปที่เมนู Register > ลงทะเบียนบริษัท",
+        "กรอกข้อมูลบริษัทให้ครบถ้วน",
+        "คลิกบันทึก"
+      ],
+      "expected_result": "บันทึกข้อมูลบริษัทสำเร็จและแสดงในรายการ",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "TDP QA Team",
+      "test_date": "2025-11-16",
+      "remarks": "Go Live แล้ว"
+    },
+    {
+      "id": "TC-004",
+      "title": "Bank Account Registration",
+      "related_requirement": "REQ-003",
+      "test_type": "UAT",
+      "preconditions": "มีข้อมูลธนาคารและบริษัทในระบบแล้ว",
+      "steps": [
+        "ไปที่เมนู Register > ลงทะเบียนบัญชีธนาคาร",
+        "เลือกธนาคาร บริษัท และกรอกเลขบัญชี",
+        "กำหนดสกุลเงิน",
+        "คลิกบันทึก"
+      ],
+      "expected_result": "บัญชีธนาคารใหม่ถูกบันทึกและแสดงในรายการ ระบบตรวจจับเลขบัญชีซ้ำได้",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "TDP QA Team",
+      "test_date": "2025-11-16",
+      "remarks": "Go Live แล้ว"
+    },
+    {
+      "id": "TC-005",
+      "title": "Cheque Book Registration with Range Validation",
+      "related_requirement": "REQ-004",
+      "test_type": "UAT",
+      "preconditions": "มีบัญชีธนาคารที่ Active ในระบบ",
+      "steps": [
+        "ไปที่เมนู Register > ลงทะเบียนเล่มเช็ค",
+        "เลือกบัญชีธนาคาร",
+        "ระบุช่วงหมายเลขเช็ค From-To",
+        "คลิกบันทึก"
+      ],
+      "expected_result": "เล่มเช็คถูกบันทึก ระบบคำนวณจำนวนใบเช็คอัตโนมัติ และป้องกันการลงทะเบียนซ้ำในช่วงเดิม",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "TDP QA Team",
+      "test_date": "2025-11-17",
+      "remarks": "Go Live แล้ว"
+    },
+    {
+      "id": "TC-006",
+      "title": "Deposit/Withdrawal Transaction Recording",
+      "related_requirement": "REQ-005",
+      "test_type": "UAT",
+      "preconditions": "มีบัญชีธนาคารในระบบ",
+      "steps": [
+        "ไปที่เมนู Register > ลงทะเบียนฝาก/ถอนเงิน",
+        "เลือกบัญชีและประเภท (Deposit/Withdrawal)",
+        "กรอกจำนวนเงินและวันที่",
+        "บันทึก"
+      ],
+      "expected_result": "รายการถูกบันทึกและยอดเงินคงเหลือในบัญชีอัปเดตถูกต้อง",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "TDP QA Team",
+      "test_date": "2025-11-17",
+      "remarks": "Go Live แล้ว"
+    },
+    {
+      "id": "TC-007",
+      "title": "User Registration with Role Assignment",
+      "related_requirement": "REQ-006",
+      "test_type": "UAT",
+      "preconditions": "Login ด้วยบัญชี Admin",
+      "steps": [
+        "ไปที่เมนู Register > ลงทะเบียนผู้ใช้งาน",
+        "กรอกข้อมูลผู้ใช้งานและเลือก Role",
+        "กำหนดสิทธิ์การเข้าถึงแต่ละ Module",
+        "บันทึก"
+      ],
+      "expected_result": "บัญชีผู้ใช้ใหม่ถูกสร้าง สามารถ Login ได้และเห็นเมนูตาม Role ที่กำหนด",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "TDP QA Team",
+      "test_date": "2025-11-18",
+      "remarks": "Go Live แล้ว"
+    },
+    {
+      "id": "TC-008",
+      "title": "Bank Master Data Management",
+      "related_requirement": "REQ-007",
+      "test_type": "UAT",
+      "preconditions": "Login ด้วยบัญชีที่มีสิทธิ์",
+      "steps": [
+        "ไปที่เมนู Register > ลงทะเบียนธนาคาร",
+        "เพิ่มข้อมูลธนาคารใหม่",
+        "บันทึก"
+      ],
+      "expected_result": "ข้อมูลธนาคารถูกบันทึกและสามารถเลือกใช้ในการลงทะเบียนบัญชีธนาคารได้",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "TDP QA Team",
+      "test_date": "2025-11-18",
+      "remarks": "Go Live แล้ว"
+    },
+    {
+      "id": "TC-009",
+      "title": "Expense Group Classification",
+      "related_requirement": "REQ-008",
+      "test_type": "UAT",
+      "preconditions": "Login ด้วยบัญชีที่มีสิทธิ์",
+      "steps": [
+        "ไปที่เมนู Register > ลงทะเบียนกลุ่มรายจ่าย",
+        "สร้างกลุ่ม Internal และ External",
+        "บันทึก"
+      ],
+      "expected_result": "กลุ่มรายจ่ายถูกบันทึกและสามารถเลือกได้เมื่อสร้างคำขอสั่งจ่ายเช็ค",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "TDP QA Team",
+      "test_date": "2025-11-19",
+      "remarks": "Go Live แล้ว"
+    },
+    {
+      "id": "TC-010",
+      "title": "Signatory Registration with Approval Limit",
+      "related_requirement": "REQ-009",
+      "test_type": "UAT",
+      "preconditions": "Login ด้วยบัญชีที่มีสิทธิ์",
+      "steps": [
+        "ไปที่เมนู Register > ลงทะเบียนข้อมูลผู้ลงนาม",
+        "กรอกชื่อ บริษัทและบันทึก"
+      ],
+      "expected_result": "ข้อมูลผู้ลงนามถูกบันทึกพร้อมขอบเขตวงเงิน",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "TDP QA Team",
+      "test_date": "2025-11-19",
+      "remarks": "Go Live แล้ว"
+    },
+    {
+      "id": "TC-011",
+      "title": "Create New Cheque Payment Request",
+      "related_requirement": "REQ-010",
+      "test_type": "UAT",
+      "preconditions": "มีเล่มเช็คที่มียอดคงเหลือในระบบ",
+      "steps": [
+        "ไปที่เมนู Create Cheque Payment",
+        "เลือกบัญชีธนาคารและเล่มเช็ค",
+        "กรอกข้อมูลผู้รับเช็ค จำนวนเงิน และวันที่",
+        "เลือกกลุ่มรายจ่าย",
+        "บันทึกคำขอ"
+      ],
+      "expected_result": "คำขอสั่งจ่ายเช็คถูกสร้างสำเร็จ สถานะเริ่มต้นเป็น InProcess และหมายเลขเช็คถูกตัดออกจากเล่ม",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "TDP QA Team",
+      "test_date": "2025-11-20",
+      "remarks": "Go Live แล้ว"
+    },
+    {
+      "id": "TC-012",
+      "title": "Duplicate Cheque Payment Detection",
+      "related_requirement": "REQ-010",
+      "test_type": "UAT",
+      "preconditions": "มีรายการเช็คที่สร้างแล้วในระบบ",
+      "steps": [
+        "สร้างคำขอสั่งจ่ายซ้ำด้วยข้อมูลเดิม",
+        "บันทึก"
+      ],
+      "expected_result": "ระบบแสดง Warning แจ้งเตือนรายการที่อาจซ้ำกัน",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "TDP QA Team",
+      "test_date": "2025-11-20",
+      "remarks": ""
+    },
+    {
+      "id": "TC-013",
+      "title": "Cheque Status Update Workflow",
+      "related_requirement": "REQ-011",
+      "test_type": "UAT",
+      "preconditions": "มีรายการเช็คสถานะ InProcess",
+      "steps": [
+        "ไปที่เมนู Manage Cheque Pay",
+        "เลือกรายการเช็คที่ต้องการอัปเดต",
+        "เปลี่ยนสถานะจาก InProcess เป็น WaitingToPay",
+        "บันทึก"
+      ],
+      "expected_result": "สถานะเช็คอัปเดตสำเร็จตาม Workflow ที่กำหนด",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "TDP QA Team",
+      "test_date": "2025-11-21",
+      "remarks": "Go Live แล้ว"
+    },
+    {
+      "id": "TC-014",
+      "title": "Cash Balance Report - Accuracy Verification",
+      "related_requirement": "REQ-012",
+      "test_type": "UAT",
+      "preconditions": "มีรายการฝาก/ถอนและเช็คในระบบ",
+      "steps": [
+        "ไปที่เมนู Cash Balance Report",
+        "เลือกบัญชีธนาคารและช่วงวันที่",
+        "ดูรายงาน"
+      ],
+      "expected_result": "รายงานแสดงยอดรับ-จ่าย และยอดคงเหลือสุทธิถูกต้องตรงกับยอดจริง",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "TDP QA Team",
+      "test_date": "2025-11-25",
+      "remarks": "Go Live แล้ว"
+    },
+    {
+      "id": "TC-015",
+      "title": "Cheque Tracking Summary Report",
+      "related_requirement": "REQ-013",
+      "test_type": "UAT",
+      "preconditions": "มีเล่มเช็คที่ใช้งานบางส่วนในระบบ",
+      "steps": [
+        "ไปที่เมนู Cheque Tracking Summary",
+        "เลือกบัญชีธนาคาร",
+        "ดูรายงาน"
+      ],
+      "expected_result": "รายงานแสดงจำนวนเช็คที่ใช้แล้วและคงเหลือถูกต้อง",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "TDP QA Team",
+      "test_date": "2025-11-25",
+      "remarks": "Go Live แล้ว"
+    },
+    {
+      "id": "TC-016",
+      "title": "Cheque Activity Log with Lead Time Analysis",
+      "related_requirement": "REQ-014",
+      "test_type": "UAT",
+      "preconditions": "มีรายการเช็คที่ดำเนินการเสร็จสิ้นในระบบ",
+      "steps": [
+        "ไปที่เมนู Cheque Activity Log",
+        "เลือกช่วงวันที่",
+        "ดูรายงาน"
+      ],
+      "expected_result": "รายงานแสดงรายละเอียดเช็คแต่ละฉบับพร้อม Lead Time ในแต่ละขั้นตอน",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "TDP QA Team",
+      "test_date": "2025-11-26",
+      "remarks": "Go Live แล้ว"
+    },
+    {
+      "id": "TC-017",
+      "title": "Cheque Usage Statistics Report",
+      "related_requirement": "REQ-015",
+      "test_type": "UAT",
+      "preconditions": "มีรายการเช็คในระบบ",
+      "steps": [
+        "ไปที่เมนู Cheque Usage Report",
+        "เลือกบัญชีธนาคารและช่วงเวลา",
+        "ดูรายงาน"
+      ],
+      "expected_result": "รายงานแสดงสถิติการใช้เช็คพร้อมมูลค่ารวมและสถานะถูกต้อง",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "TDP QA Team",
+      "test_date": "2025-11-26",
+      "remarks": "Go Live แล้ว"
+    }
+  ],
+  "defects": [
+    {
+      "id": "BUG-001",
+      "title": "Placeholder - No major defect recorded",
+      "related_test_case": "TC-001",
+      "related_requirement": "REQ-001",
+      "severity": "Low",
+      "priority": "Low",
+      "status": "Closed",
+      "reported_by": "TDP QA Team",
+      "reported_date": "2025-11-15",
+      "assigned_to": "Saravut Chanjom",
+      "fixed_date": "2025-11-20",
+      "description": "ระบบทำงานได้ตาม Requirements ทุก Feature ผ่าน Go Live แล้ว",
+      "steps_to_reproduce": "N/A",
+      "root_cause": "N/A",
+      "resolution": "All features tested and passed"
+    },
+    {
+      "id": "BUG-002",
+      "title": "บัคกำหนดสิธทการเข้าถึงหน้าจอ",
+      "related_test_case": "",
+      "related_requirement": "",
+      "severity": "High",
+      "priority": "High",
+      "status": "Closed",
+      "reported_by": "",
+      "reported_date": "",
+      "assigned_to": "",
+      "fixed_date": "",
+      "description": "พบปัญหาการกำหนดสิทธิการเข้าถึงหน้าจอในระบบไม่ถูกต้อง ทำให้ผู้ใช้งานบางกลุ่มสามารถเข้าถึงเมนูหรือหน้าจอที่ไม่ได้รับอนุญาต หรือในบางกรณีผู้ใช้ที่ควรมีสิทธิ์กลับไม่สามารถเข้าใช้งานหน้าจอได้ ส่งผลให้การควบคุมสิทธิ์การใช้งานระบบไม่เป็นไปตามที่กำหนด",
+      "steps_to_reproduce": "N/A",
+      "root_cause": "N/A",
+      "resolution": "ตรวจสอบและปรับปรุงเงื่อนไขการตรวจสอบสิทธิ์การเข้าถึงหน้าจอในระบบให้ตรงกับ Role/Permission ที่กำหนด รวมถึงทดสอบการเข้าใช้งานในแต่ละระดับสิทธิ์ (User Role) เพื่อให้แน่ใจว่าผู้ใช้สามารถเข้าถึงเฉพาะหน้าจอที่ได้รับอนุญาตเท่านั้น"
+    },
+    {
+      "id": "BUG-003",
+      "title": "บัคการนำเข้าข้อมูลมีปัญหา",
+      "related_test_case": "",
+      "related_requirement": "",
+      "severity": "Medium",
+      "priority": "Medium",
+      "status": "Open",
+      "reported_by": "",
+      "reported_date": "",
+      "assigned_to": "",
+      "fixed_date": "",
+      "description": "",
+      "steps_to_reproduce": "",
+      "root_cause": "",
+      "resolution": ""
+    }
+  ],
+  "risks": [
+    {
+      "id": "RISK-001",
+      "category": "Technical",
+      "description": "ข้อมูลในฐานข้อมูลอาจสูญหายหรือเสียหายจากการ Crash ของ SQL Server",
+      "probability": "Low",
+      "impact": "High",
+      "risk_level": "Medium",
+      "mitigation": "จัดทำ Backup Database อัตโนมัติรายวัน และทดสอบ Restore ทุกเดือน",
+      "owner": "Saravut Chanjom",
+      "status": "Mitigated",
+      "review_date": "2026-03-01",
+      "contingency": "Restore จาก Backup ล่าสุด และแจ้ง Finance Team ทันที",
+      "linked_capa": ""
+    },
+    {
+      "id": "RISK-002",
+      "category": "Security",
+      "description": "ความเสี่ยงจากการเข้าถึงระบบโดยไม่ได้รับอนุญาต อาจเกิดการทุจริตทางการเงิน",
+      "probability": "Low",
+      "impact": "High",
+      "risk_level": "Medium",
+      "mitigation": "ใช้ Role-Based Access Control (RBAC) และหลักการ Segregation of Duties รวมถึง Audit Log ทุกการทำรายการ",
+      "owner": "Apisit Yimboa",
+      "status": "Mitigated",
+      "review_date": "2026-03-01",
+      "contingency": "ล็อคบัญชีที่ถูกโจมตีทันทีและตรวจสอบ Audit Log",
+      "linked_capa": ""
+    },
+    {
+      "id": "RISK-003",
+      "category": "Operational",
+      "description": "ผู้ใช้งานไม่คุ้นเคยกับระบบใหม่ อาจทำให้เกิดข้อผิดพลาดในกระบวนการสั่งจ่ายเช็ค",
+      "probability": "Medium",
+      "impact": "Medium",
+      "risk_level": "Medium",
+      "mitigation": "จัดทำ User Manual ภาษาไทยและอบรมผู้ใช้งานก่อน Go Live",
+      "owner": "Apisit Yimboa",
+      "status": "Closed",
+      "review_date": "2026-03-01",
+      "contingency": "จัดทีม Support ช่วยเหลือในช่วง 1 เดือนแรกหลัง Go Live",
+      "linked_capa": ""
+    },
+    {
+      "id": "RISK-004",
+      "category": "Technical",
+      "description": "การคำนวณยอดเงินคงเหลือผิดพลาดจาก Concurrent Transaction บน SQL Server",
+      "probability": "Low",
+      "impact": "High",
+      "risk_level": "Medium",
+      "mitigation": "ใช้ Database Transaction และ Locking Mechanism เพื่อป้องกัน Race Condition",
+      "owner": "Saravut Chanjom",
+      "status": "Mitigated",
+      "review_date": "2026-03-01",
+      "contingency": "ยกเลิกรายการที่ผิดพลาดและคำนวณยอดใหม่จาก Transaction Log",
+      "linked_capa": ""
+    }
+  ],
+  "change_requests": [
+    {
+      "id": "CR-001",
+      "title": "Upgrade system to version 2.1.0",
+      "description": "",
+      "requestor": "Apisit Yimboa",
+      "request_date": "2026-01-15",
+      "priority": "Medium",
+      "impact": "",
+      "affected_documents": [],
+      "status": "Implemented",
+      "approved_by": "Apisit Yimboa",
+      "approval_date": "2026-01-20",
+      "implementation_date": "2026-02-15"
+    },
+    {
+      "id": "CR-001",
+      "title": "ลงชื่อ ______________________________",
+      "description": "",
+      "requestor": "ตรวจสอบ / Reviewed by",
+      "request_date": "",
+      "priority": "Medium",
+      "impact": "",
+      "affected_documents": [],
+      "status": "Pending",
+      "approved_by": "",
+      "approval_date": "",
+      "implementation_date": ""
+    }
+  ],
+  "versions": [
+    {
+      "version": "1.0.0",
+      "release_date": "2025-09-01",
+      "release_type": "Major",
+      "description": "Initial Release - Core Features",
+      "changes": [],
+      "deployed_by": "Saravut Chanjom",
+      "environment": "Production"
+    },
+    {
+      "version": "2.0.0",
+      "release_date": "2025-12-15",
+      "release_type": "Major",
+      "description": "Go-Live Production Release",
+      "changes": [],
+      "deployed_by": "Saravut Chanjom",
+      "environment": "Production"
+    },
+    {
+      "version": "2.1.0",
+      "release_date": "2026-02-15",
+      "release_type": "Minor",
+      "description": "Enhancement Release - Lead Time Analysis",
+      "changes": [],
+      "deployed_by": "Saravut Chanjom",
+      "environment": "Production"
+    }
+  ],
+  "meetings": [
+    {
+      "id": "MTG-001",
+      "title": "Project Kickoff Meeting - Stock Cheque System",
+      "date": "2025-03-05",
+      "time": "09:00-11:00",
+      "location": "Meeting Room / MS Teams",
+      "chair": "Apisit Yimboa",
+      "attendees": [
+        "Apisit Yimboa",
+        "Saravut Chanjom",
+        "Finance Department Representative",
+        "TDP Team"
+      ],
+      "agenda": [],
+      "action_items": [
+        {
+          "item": "จัดทำ Requirements Document ฉบับสมบูรณ์",
+          "owner": "Apisit Yimboa",
+          "due_date": "2025-03-31",
+          "status": "Completed"
+        }
+      ],
+      "summary": ""
+    },
+    {
+      "id": "MTG-002",
+      "title": "UAT Sign-off Meeting",
+      "date": "2025-11-30",
+      "time": "14:00-16:00",
+      "location": "Meeting Room",
+      "chair": "Apisit Yimboa",
+      "attendees": [
+        "Apisit Yimboa",
+        "Saravut Chanjom",
+        "Finance Department",
+        "TDP QA Team"
+      ],
+      "agenda": [],
+      "action_items": [
+        {
+          "item": "เตรียมระบบสำหรับ Go Live บน Production Server",
+          "owner": "Saravut Chanjom",
+          "due_date": "2025-12-10",
+          "status": "Completed"
+        }
+      ],
+      "summary": ""
+    },
+    {
+      "id": "MTG-003",
+      "title": "อัพเดทระบบ",
+      "date": "2026-02-14",
+      "time": "14:00-16:00",
+      "location": "Meeting Room",
+      "chair": "Apisit Yimboa",
+      "attendees": [
+        "Apisit Yimboa",
+        "Saravut Chanjom",
+        "Finance Department",
+        "TDP QA Team"
+      ],
+      "agenda": [],
+      "action_items": [
+        {
+          "item": "ทดสอบใน Environment ที่กำหนดครบถ้วนก่อน Deploy",
+          "owner": "Saravut Chanjom",
+          "due_date": "2026-02-14",
+          "status": "Completed"
+        },
+        {
+          "item": "อัพเดทระบบ",
+          "owner": "Saravut Chanjom",
+          "due_date": "2026-02-14",
+          "status": "Completed"
+        }
+      ],
+      "summary": ""
+    }
+  ],
+  "training_sessions": [
+    {
+      "id": "TRN-001",
+      "title": "Stock Cheque System - End User Training",
+      "date": "2025-12-10",
+      "duration": "4 hours",
+      "location": "Training Room / Soudaphone",
+      "trainer": "ผู้จัดอบรม / Organizer",
+      "topics": [],
+      "attendees": [
+        {
+          "name": "Finance Department Users",
+          "department": "Finance",
+          "signed": true
+        }
+      ]
+    }
+  ],
+  "incidents": [
+    {
+      "id": "INC-001",
+      "title": "Placeholder - Post Go-Live Support",
+      "date_reported": "",
+      "severity": "",
+      "description": "ปัญหาเล็กน้อยด้านการแสดงผลหน้าจอหลังจาก Go Live ได้รับการแก้ไขแล้ว",
+      "reported_by": "",
+      "assigned_to": "",
+      "status": "Open",
+      "resolution": "แก้ไข CSS และ UI Layout ผ่าน Patch Release",
+      "resolved_date": "",
+      "root_cause": "Browser Compatibility Issue with IE11",
+      "linked_change_request": ""
+    }
+  ],
+  "deployments": [
+    {
+      "id": "DEP-001",
+      "version": "1.0.0",
+      "date": "2025-09-01",
+      "environment": "Production",
+      "deployed_by": "Saravut Chanjom",
+      "deployment_type": "Major",
+      "steps": [],
+      "rollback_plan": "",
+      "status": "Success",
+      "approval": "Approved by Apisit Yimboa"
+    },
+    {
+      "id": "DEP-002",
+      "version": "2.0.0",
+      "date": "2025-12-15",
+      "environment": "Production",
+      "deployed_by": "Saravut Chanjom",
+      "deployment_type": "Major",
+      "steps": [],
+      "rollback_plan": "",
+      "status": "Success",
+      "approval": "Approved by Apisit Yimboa"
+    },
+    {
+      "id": "DEP-003",
+      "version": "2.1.0",
+      "date": "2026-02-15",
+      "environment": "Production",
+      "deployed_by": "Saravut Chanjom",
+      "deployment_type": "Minor",
+      "steps": [],
+      "rollback_plan": "",
+      "status": "Success",
+      "approval": "Approved by Apisit Yimboa"
+    }
+  ],
+  "audit": {
+    "audit_date": "2026-03-01",
+    "auditor": "Internal Auditor - TDP",
+    "audit_scope": "ISO/IEC 29110 compliance for Stock Cheque Software Development Lifecycle",
+    "findings": [
+      {
+        "id": "FIND-001",
+        "clause": "ISO/IEC 29110 Section 3.3 - Project Management",
+        "finding_type": "Opportunity for Improvement",
+        "description": "ควรจัดทำ Risk Register อย่างเป็นทางการและ Review อย่างสม่ำเสมอ",
+        "linked_capa": "CAPA-001"
+      }
+    ]
+  },
+  "capas": [
+    {
+      "id": "CAPA-001",
+      "type": "Preventive Action",
+      "related_finding": "FIND-001",
+      "description": "จัดทำ Risk Register อย่างเป็นทางการในทุก Sprint Review เพื่อลดความเสี่ยงด้านการพัฒนา",
+      "root_cause": "ไม่มีกระบวนการ Review Risk อย่างเป็นระบบและสม่ำเสมอ",
+      "action_plan": "กำหนดให้มีการ Review Risk Register ทุก Sprint และ Update Status ใน Project Meeting",
+      "responsible": "Apisit Yimboa",
+      "target_date": "2026-04-30",
+      "status": "Open",
+      "effectiveness_review": "ตรวจสอบว่า Risk Register ได้รับการอัปเดตทุก Sprint ใน 3 Sprint ถัดไป",
+      "closed_date": ""
+    }
+  ],
+  "sow": {},
+  "output_path": "D:\\Work\\DocISOGen\\projects"
+}

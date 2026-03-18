@@ -1,0 +1,984 @@
+{
+  "project": {
+    "code": "MSPPOS",
+    "name": "MSP POS Point of Sale System",
+    "short_name": "MSPPOS",
+    "version": "1.0",
+    "description": "ระบบบริหารจัดการร้านค้าและจุดขายสำหรับบริษัท เอ็ม เอส พี อินเตอร์ฟู้ดส์ จำกัด รองรับงานขายหน้าร้าน การจัดซื้อ การควบคุมสินค้าคงคลัง งาน CRM รายงานเชิงธุรกิจ และการซิงโครไนซ์ข้อมูลหลายสาขา โดยโครงการยังอยู่ระหว่างการพัฒนาและยังไม่ได้ Go-Live",
+    "scope": "ครอบคลุมการพัฒนา 10 โมดูลหลัก ได้แก่ Master Data, Systems Manager, Back Office, Sale System, Purchasing System, CRM System, Inventory Control System, POS System, Reports & Dashboard และ Data Synchronization สำหรับใช้งานแบบหลายสาขา",
+    "objectives": [
+      "พัฒนาระบบ POS หลายสาขาที่รองรับการขายหน้าร้านและการรับชำระเงินหลายรูปแบบ",
+      "เพิ่มประสิทธิภาพการจัดการข้อมูลหลัก การจัดซื้อ และการควบคุมสินค้าคงคลังแบบรวมศูนย์",
+      "สนับสนุนการตัดสินใจทางธุรกิจด้วยรายงาน Realtime และ Dashboard สำหรับผู้บริหาร",
+      "เตรียมระบบให้พร้อมสำหรับ UAT การฝึกอบรมผู้ใช้ และ Go-Live ตามแผนงานปี 2569"
+    ],
+    "start_date": "2024-12-01",
+    "end_date": "2026-08-31",
+    "go_live_date": "2026-08-31",
+    "organization": "บริษัท เอ็ม เอส พี อินเตอร์ฟู้ดส์ จำกัด (Moo Inter)",
+    "department": "Development",
+    "document_date": "2026-03-17",
+    "classification": "Internal"
+  },
+
+  "team": {
+    "project_manager": {
+      "name": "Apisit Yimboa",
+      "title": "Project Manager",
+      "email": "",
+      "phone": ""
+    },
+    "lead_developer": {
+      "name": "Apisit Yimboa",
+      "title": "Lead Developer",
+      "email": "",
+      "phone": ""
+    },
+    "qa_engineer": {
+      "name": "QA Team",
+      "title": "QA Engineer",
+      "email": "",
+      "phone": ""
+    },
+    "business_analyst": {
+      "name": "Business Analyst",
+      "title": "Business Analyst",
+      "email": "",
+      "phone": ""
+    },
+    "system_analyst": {
+      "name": "System Analyst",
+      "title": "System Analyst",
+      "email": "",
+      "phone": ""
+    },
+    "dba": {
+      "name": "Database Administrator",
+      "title": "DBA",
+      "email": "",
+      "phone": ""
+    },
+    "members": [
+      {
+        "name": "Development Team",
+        "title": "Software Developer",
+        "email": ""
+      },
+      {
+        "name": "Key User Team",
+        "title": "Business User Representative",
+        "email": ""
+      }
+    ]
+  },
+
+  "stakeholders": [
+    {
+      "name": "Apisit Yimboa",
+      "role": "Project Manager / Development Lead",
+      "organization": "บริษัท เอ็ม เอส พี อินเตอร์ฟู้ดส์ จำกัด (Moo Inter)",
+      "email": "",
+      "responsibility": "Approve project scope, manage delivery timeline, and oversee development progress"
+    },
+    {
+      "name": "ผู้แทนผู้ใช้งานระบบ",
+      "role": "Key User",
+      "organization": "บริษัท เอ็ม เอส พี อินเตอร์ฟู้ดส์ จำกัด (Moo Inter)",
+      "email": "",
+      "responsibility": "Review requirements, participate in UAT, and validate operational workflows"
+    },
+    {
+      "name": "ฝ่ายบริหาร",
+      "role": "Project Sponsor",
+      "organization": "บริษัท เอ็ม เอส พี อินเตอร์ฟู้ดส์ จำกัด (Moo Inter)",
+      "email": "",
+      "responsibility": "Approve major decisions and support rollout readiness"
+    }
+  ],
+
+  "tech_stack": {
+    "frontend": ".NET Core MVC",
+    "backend": "C# / .NET Core",
+    "database": "Microsoft SQL Server",
+    "infrastructure": "Windows Server / On-premise",
+    "source_control": "Git",
+    "ci_cd": "Manual Deployment",
+    "other": [
+      "POS Touchscreen Devices",
+      "QR PromptPay Integration",
+      "Credit Card / e-Payment Integration"
+    ]
+  },
+
+  "milestones": [
+    {
+      "id": "MS-01",
+      "name": "Mockup and Digital Confirm Approved",
+      "target_date": "2025-03-31",
+      "status": "Completed",
+      "owner": "Apisit Yimboa"
+    },
+    {
+      "id": "MS-02",
+      "name": "Master Data and Systems Manager Delivery",
+      "target_date": "2025-11-10",
+      "status": "Completed",
+      "owner": "Apisit Yimboa"
+    },
+    {
+      "id": "MS-03",
+      "name": "POS Module Delivery",
+      "target_date": "2026-01-31",
+      "status": "In Progress",
+      "owner": "Apisit Yimboa"
+    },
+    {
+      "id": "MS-04",
+      "name": "Inventory Control System Delivery",
+      "target_date": "2026-02-28",
+      "status": "In Progress",
+      "owner": "Apisit Yimboa"
+    },
+    {
+      "id": "MS-05",
+      "name": "Sale System Delivery",
+      "target_date": "2026-05-30",
+      "status": "Planned",
+      "owner": "Apisit Yimboa"
+    },
+    {
+      "id": "MS-06",
+      "name": "Data Synchronization and Dashboard Baseline",
+      "target_date": "2025-06-30",
+      "status": "Planned",
+      "owner": "Apisit Yimboa"
+    },
+    {
+      "id": "MS-07",
+      "name": "UAT and User Training Start",
+      "target_date": "2026-07-01",
+      "status": "Planned",
+      "owner": "QA Team"
+    },
+    {
+      "id": "MS-08",
+      "name": "Go-Live Readiness Complete",
+      "target_date": "2026-08-31",
+      "status": "Planned",
+      "owner": "Apisit Yimboa"
+    }
+  ],
+
+  "requirements": [
+    {
+      "id": "REQ-001",
+      "title": "Manage Master Data Across Branches",
+      "description": "The system shall manage products, barcodes, prices, customers, vendors, and warehouses and support import from Excel and text files.",
+      "priority": "High",
+      "type": "Functional",
+      "category": "Master Data",
+      "source": "Project scope summary",
+      "acceptance_criteria": "Authorized users can create, update, search, and import master data records without data loss.",
+      "linked_design": ["COMP-001"],
+      "linked_test_cases": ["TC-001"]
+    },
+    {
+      "id": "REQ-002",
+      "title": "Provide Role-Based System Administration",
+      "description": "The system shall support at least four permission levels, system settings, promotions, discounts, backup and restore, and operational logging.",
+      "priority": "High",
+      "type": "Functional",
+      "category": "Administration",
+      "source": "Project scope summary",
+      "acceptance_criteria": "Administrators can assign roles, configure settings, and review audit logs and backup status.",
+      "linked_design": ["COMP-002"],
+      "linked_test_cases": ["TC-002"]
+    },
+    {
+      "id": "REQ-003",
+      "title": "Support POS Sales and Multi-Payment Workflows",
+      "description": "The POS module shall support touchscreen operation, cash, QR PromptPay, credit card, e-Payment, and delivery platform sales transactions.",
+      "priority": "Critical",
+      "type": "Functional",
+      "category": "POS",
+      "source": "Project scope summary",
+      "acceptance_criteria": "Cashier can complete an end-to-end sale and print or record a transaction for each supported payment type.",
+      "linked_design": ["COMP-003"],
+      "linked_test_cases": ["TC-003"]
+    },
+    {
+      "id": "REQ-004",
+      "title": "Control Inventory Movements and Stock Alerts",
+      "description": "The inventory module shall support receiving, issuing, transfers, min/max configuration, and expiry alerts.",
+      "priority": "High",
+      "type": "Functional",
+      "category": "Inventory",
+      "source": "Project scope summary",
+      "acceptance_criteria": "Warehouse users can process stock transactions and receive alerts for low stock and expiring items.",
+      "linked_design": ["COMP-004"],
+      "linked_test_cases": ["TC-004"]
+    },
+    {
+      "id": "REQ-005",
+      "title": "Support Sales Documents and Fulfillment",
+      "description": "The sales system shall manage quotations, sales orders, delivery notes, tax invoices, and stock issue transactions.",
+      "priority": "High",
+      "type": "Functional",
+      "category": "Sales",
+      "source": "Project scope summary",
+      "acceptance_criteria": "Sales staff can create and track each sales document through fulfillment status.",
+      "linked_design": ["COMP-005"],
+      "linked_test_cases": ["TC-005"]
+    },
+    {
+      "id": "REQ-006",
+      "title": "Support Purchasing and Supplier Planning",
+      "description": "The purchasing module shall manage purchase requisitions, purchase orders, MOQ validation, and lead-time checking.",
+      "priority": "Medium",
+      "type": "Functional",
+      "category": "Purchasing",
+      "source": "Project scope summary",
+      "acceptance_criteria": "Procurement users can generate PR and PO documents with supplier and lead-time validation.",
+      "linked_design": ["COMP-006"],
+      "linked_test_cases": ["TC-006"]
+    },
+    {
+      "id": "REQ-007",
+      "title": "Provide CRM Tracking and Loyalty Analysis",
+      "description": "The CRM module shall track purchase history, loyalty points, and customer behavior analytics.",
+      "priority": "Medium",
+      "type": "Functional",
+      "category": "CRM",
+      "source": "Project scope summary",
+      "acceptance_criteria": "Marketing or sales users can review customer purchase trends and loyalty balances.",
+      "linked_design": ["COMP-007"],
+      "linked_test_cases": ["TC-007"]
+    },
+    {
+      "id": "REQ-008",
+      "title": "Provide Realtime Reporting and Data Synchronization",
+      "description": "The system shall provide realtime reports and dashboards and synchronize branch data with headquarters automatically.",
+      "priority": "Critical",
+      "type": "Functional",
+      "category": "Reporting and Integration",
+      "source": "Project scope summary",
+      "acceptance_criteria": "Users can view realtime dashboards and synchronized data between branches and head office with no manual intervention.",
+      "linked_design": ["COMP-008", "COMP-009"],
+      "linked_test_cases": ["TC-008"]
+    },
+    {
+      "id": "REQ-009",
+      "title": "Support Back Office Bilingual Operations",
+      "description": "The back office module shall support Thai and English language operation, automatic notifications, and email report delivery.",
+      "priority": "Medium",
+      "type": "Functional",
+      "category": "Back Office",
+      "source": "Project scope summary",
+      "acceptance_criteria": "Users can switch language context and receive configured automated notifications and emailed reports.",
+      "linked_design": ["COMP-010"],
+      "linked_test_cases": ["TC-009"]
+    }
+  ],
+
+  "design_components": [
+    {
+      "id": "COMP-001",
+      "name": "Master Data Module",
+      "description": "Centralized maintenance of product, customer, vendor, barcode, and warehouse master data",
+      "type": "Module",
+      "related_requirements": ["REQ-001"],
+      "technology": ".NET Core MVC + SQL Server"
+    },
+    {
+      "id": "COMP-002",
+      "name": "Systems Manager Module",
+      "description": "Role-based access control, system settings, backup/restore, and audit logging",
+      "type": "Module",
+      "related_requirements": ["REQ-002"],
+      "technology": ".NET Core MVC + SQL Server"
+    },
+    {
+      "id": "COMP-003",
+      "name": "POS Transaction Engine",
+      "description": "Touchscreen sales workflow and payment integration engine for storefront transactions",
+      "type": "Application Service",
+      "related_requirements": ["REQ-003"],
+      "technology": ".NET Core MVC + SQL Server + Payment Interfaces"
+    },
+    {
+      "id": "COMP-004",
+      "name": "Inventory Control Module",
+      "description": "Stock receiving, issuing, transfers, and expiry monitoring",
+      "type": "Module",
+      "related_requirements": ["REQ-004"],
+      "technology": ".NET Core MVC + SQL Server"
+    },
+    {
+      "id": "COMP-005",
+      "name": "Sales Fulfillment Module",
+      "description": "Sales documents, fulfillment, and invoicing workflow",
+      "type": "Module",
+      "related_requirements": ["REQ-005"],
+      "technology": ".NET Core MVC + SQL Server"
+    },
+    {
+      "id": "COMP-006",
+      "name": "Purchasing Module",
+      "description": "Procurement planning and PR/PO lifecycle management",
+      "type": "Module",
+      "related_requirements": ["REQ-006"],
+      "technology": ".NET Core MVC + SQL Server"
+    },
+    {
+      "id": "COMP-007",
+      "name": "CRM Module",
+      "description": "Customer profile, loyalty, and analytics features",
+      "type": "Module",
+      "related_requirements": ["REQ-007"],
+      "technology": ".NET Core MVC + SQL Server"
+    },
+    {
+      "id": "COMP-008",
+      "name": "Reports and Dashboard Module",
+      "description": "Realtime operational and management reporting dashboards",
+      "type": "Module",
+      "related_requirements": ["REQ-008"],
+      "technology": ".NET Core MVC + SQL Server"
+    },
+    {
+      "id": "COMP-009",
+      "name": "Data Synchronization Service",
+      "description": "Branch to head office realtime synchronization service",
+      "type": "Service",
+      "related_requirements": ["REQ-008"],
+      "technology": "C# Service + SQL Server"
+    },
+    {
+      "id": "COMP-010",
+      "name": "Back Office and Notification Module",
+      "description": "Bilingual operations, notifications, and email report distribution",
+      "type": "Module",
+      "related_requirements": ["REQ-009"],
+      "technology": ".NET Core MVC + SQL Server + Email Service"
+    }
+  ],
+
+  "database_tables": [
+    {
+      "name": "Products",
+      "description": "Stores product master data and barcode mapping",
+      "columns": [
+        {"name": "product_id", "type": "INT PRIMARY KEY", "description": "Primary key"},
+        {"name": "product_code", "type": "NVARCHAR(50)", "description": "Unique product code"},
+        {"name": "product_name", "type": "NVARCHAR(255)", "description": "Product name"},
+        {"name": "barcode", "type": "NVARCHAR(50)", "description": "Main barcode"},
+        {"name": "unit_price", "type": "DECIMAL(18,2)", "description": "Current selling price"}
+      ],
+      "related_requirements": ["REQ-001", "REQ-003"]
+    },
+    {
+      "name": "Customers",
+      "description": "Stores customer master data, contact information, and loyalty references",
+      "columns": [
+        {"name": "customer_id", "type": "INT PRIMARY KEY", "description": "Primary key"},
+        {"name": "customer_code", "type": "NVARCHAR(50)", "description": "Customer code"},
+        {"name": "customer_name", "type": "NVARCHAR(255)", "description": "Customer name"},
+        {"name": "phone_no", "type": "NVARCHAR(50)", "description": "Phone number"},
+        {"name": "loyalty_point", "type": "INT", "description": "Accumulated point balance"}
+      ],
+      "related_requirements": ["REQ-001", "REQ-007"]
+    },
+    {
+      "name": "SalesTransactions",
+      "description": "Stores POS sales header and payment information",
+      "columns": [
+        {"name": "sale_id", "type": "INT PRIMARY KEY", "description": "Primary key"},
+        {"name": "branch_id", "type": "INT", "description": "Sales branch"},
+        {"name": "sale_date", "type": "DATETIME", "description": "Transaction datetime"},
+        {"name": "payment_method", "type": "NVARCHAR(50)", "description": "Payment channel"},
+        {"name": "net_amount", "type": "DECIMAL(18,2)", "description": "Net sale amount"}
+      ],
+      "related_requirements": ["REQ-003", "REQ-008"]
+    },
+    {
+      "name": "InventoryMovements",
+      "description": "Stores stock movement transactions",
+      "columns": [
+        {"name": "movement_id", "type": "INT PRIMARY KEY", "description": "Primary key"},
+        {"name": "product_id", "type": "INT", "description": "Related product"},
+        {"name": "warehouse_id", "type": "INT", "description": "Warehouse reference"},
+        {"name": "movement_type", "type": "NVARCHAR(30)", "description": "Receive, issue, transfer"},
+        {"name": "quantity", "type": "DECIMAL(18,2)", "description": "Movement quantity"}
+      ],
+      "related_requirements": ["REQ-004"]
+    },
+    {
+      "name": "PurchaseOrders",
+      "description": "Stores purchase order data and supplier lead-time references",
+      "columns": [
+        {"name": "po_id", "type": "INT PRIMARY KEY", "description": "Primary key"},
+        {"name": "supplier_id", "type": "INT", "description": "Supplier reference"},
+        {"name": "po_date", "type": "DATE", "description": "PO creation date"},
+        {"name": "expected_date", "type": "DATE", "description": "Expected receipt date"},
+        {"name": "status", "type": "NVARCHAR(30)", "description": "PO status"}
+      ],
+      "related_requirements": ["REQ-006"]
+    },
+    {
+      "name": "SyncQueue",
+      "description": "Stores branch synchronization queue and processing status",
+      "columns": [
+        {"name": "sync_id", "type": "INT PRIMARY KEY", "description": "Primary key"},
+        {"name": "branch_code", "type": "NVARCHAR(20)", "description": "Branch code"},
+        {"name": "entity_name", "type": "NVARCHAR(100)", "description": "Synchronized entity"},
+        {"name": "queued_at", "type": "DATETIME", "description": "Queue timestamp"},
+        {"name": "sync_status", "type": "NVARCHAR(20)", "description": "Pending, Processing, Done, Error"}
+      ],
+      "related_requirements": ["REQ-008"]
+    }
+  ],
+
+  "test_cases": [
+    {
+      "id": "TC-001",
+      "title": "Create and Import Master Data",
+      "related_requirement": "REQ-001",
+      "test_type": "Functional",
+      "preconditions": "User has administrator access",
+      "steps": [
+        "Open the master data module",
+        "Create a new product record",
+        "Import additional products from Excel",
+        "Search for the imported records"
+      ],
+      "expected_result": "Master data records are created and searchable after import.",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "QA Team",
+      "test_date": "2026-02-15",
+      "remarks": "Master Data progress 100%"
+    },
+    {
+      "id": "TC-002",
+      "title": "Assign Roles and Review Logs",
+      "related_requirement": "REQ-002",
+      "test_type": "Functional",
+      "preconditions": "Administrator account is available",
+      "steps": [
+        "Open Systems Manager",
+        "Create a user role",
+        "Assign permissions",
+        "Review log and backup menu"
+      ],
+      "expected_result": "Role assignment and system administration functions work correctly.",
+      "actual_result": "Pass",
+      "status": "Pass",
+      "tester": "QA Team",
+      "test_date": "2026-02-16",
+      "remarks": "Systems Manager progress 100%"
+    },
+    {
+      "id": "TC-003",
+      "title": "Execute POS Sale With Multiple Payments",
+      "related_requirement": "REQ-003",
+      "test_type": "Integration",
+      "preconditions": "Product and cashier data exist",
+      "steps": [
+        "Open the POS screen",
+        "Add products to cart",
+        "Complete one sale using cash and one sale using QR or card",
+        "Verify receipt and transaction record"
+      ],
+      "expected_result": "POS transactions are completed and recorded for each supported payment method.",
+      "actual_result": "In Progress",
+      "status": "In Progress",
+      "tester": "QA Team",
+      "test_date": "2026-03-10",
+      "remarks": "POS progress 90% and under system testing"
+    },
+    {
+      "id": "TC-004",
+      "title": "Process Inventory Receive and Transfer",
+      "related_requirement": "REQ-004",
+      "test_type": "Functional",
+      "preconditions": "Warehouse master data exists",
+      "steps": [
+        "Create a stock receipt transaction",
+        "Transfer items to another warehouse",
+        "Review min/max and expiry alert"
+      ],
+      "expected_result": "Inventory balances and alerts are updated correctly.",
+      "actual_result": "In Progress",
+      "status": "In Progress",
+      "tester": "QA Team",
+      "test_date": "2026-03-12",
+      "remarks": "Inventory Control progress 50%"
+    },
+    {
+      "id": "TC-005",
+      "title": "Create Quotation to Tax Invoice Flow",
+      "related_requirement": "REQ-005",
+      "test_type": "Functional",
+      "preconditions": "Customer and product data exist",
+      "steps": [
+        "Create a quotation",
+        "Convert to sales order",
+        "Create delivery note",
+        "Generate tax invoice"
+      ],
+      "expected_result": "Sales documents progress through the workflow with correct status changes.",
+      "actual_result": "Not Started",
+      "status": "Not Started",
+      "tester": "QA Team",
+      "test_date": "2026-03-17",
+      "remarks": "Sale System progress 30%"
+    },
+    {
+      "id": "TC-006",
+      "title": "Create PR and PO With Lead-Time Validation",
+      "related_requirement": "REQ-006",
+      "test_type": "Functional",
+      "preconditions": "Supplier master data exists",
+      "steps": [
+        "Create a purchase requisition",
+        "Convert to purchase order",
+        "Validate MOQ and lead-time"
+      ],
+      "expected_result": "The system validates procurement rules before PO approval.",
+      "actual_result": "Planned",
+      "status": "Planned",
+      "tester": "QA Team",
+      "test_date": "2026-04-15",
+      "remarks": "Purchasing module planned in scope"
+    },
+    {
+      "id": "TC-007",
+      "title": "Review Loyalty Point and Customer Behavior",
+      "related_requirement": "REQ-007",
+      "test_type": "Functional",
+      "preconditions": "CRM sample data exists",
+      "steps": [
+        "Open CRM dashboard",
+        "Review customer purchase history",
+        "Check loyalty point balance and behavior indicators"
+      ],
+      "expected_result": "CRM data is available for customer analysis.",
+      "actual_result": "Planned",
+      "status": "Planned",
+      "tester": "QA Team",
+      "test_date": "2026-05-15",
+      "remarks": "CRM capability referenced in scope"
+    },
+    {
+      "id": "TC-008",
+      "title": "Validate Realtime Dashboard and Branch Synchronization",
+      "related_requirement": "REQ-008",
+      "test_type": "Integration",
+      "preconditions": "At least two branches are configured",
+      "steps": [
+        "Generate sales data in branch A",
+        "Check synchronized records at headquarters",
+        "Review dashboard refresh and summary metrics"
+      ],
+      "expected_result": "Data is synchronized and visible on realtime dashboards.",
+      "actual_result": "Not Started",
+      "status": "Not Started",
+      "tester": "QA Team",
+      "test_date": "2026-06-15",
+      "remarks": "Reports and Dashboard 20%, Data Synchronization 0%"
+    },
+    {
+      "id": "TC-009",
+      "title": "Switch Language and Send Automated Email Report",
+      "related_requirement": "REQ-009",
+      "test_type": "Functional",
+      "preconditions": "Notification configuration is available",
+      "steps": [
+        "Switch interface language",
+        "Trigger an automated notification",
+        "Generate and send an email report"
+      ],
+      "expected_result": "Back Office features work in Thai and English and email delivery is successful.",
+      "actual_result": "Planned",
+      "status": "Planned",
+      "tester": "QA Team",
+      "test_date": "2026-05-20",
+      "remarks": "Back Office scope item"
+    }
+  ],
+
+  "defects": [
+    {
+      "id": "BUG-001",
+      "title": "QR PromptPay payment confirmation timeout",
+      "related_test_case": "TC-003",
+      "related_requirement": "REQ-003",
+      "severity": "High",
+      "priority": "High",
+      "status": "In Progress",
+      "reported_by": "QA Team",
+      "reported_date": "2026-03-11",
+      "assigned_to": "Apisit Yimboa",
+      "fixed_date": "",
+      "description": "Some QR payment transactions do not confirm within the expected cashier workflow time.",
+      "steps_to_reproduce": "Perform POS sale using QR PromptPay during peak test load.",
+      "root_cause": "Payment callback handling is still under refinement.",
+      "resolution": ""
+    },
+    {
+      "id": "BUG-002",
+      "title": "Inventory transfer does not update destination stock immediately",
+      "related_test_case": "TC-004",
+      "related_requirement": "REQ-004",
+      "severity": "Medium",
+      "priority": "High",
+      "status": "Open",
+      "reported_by": "QA Team",
+      "reported_date": "2026-03-12",
+      "assigned_to": "Development Team",
+      "fixed_date": "",
+      "description": "Transferred stock appears delayed in the destination warehouse balance.",
+      "steps_to_reproduce": "Transfer stock between warehouses and refresh the destination stock card.",
+      "root_cause": "Pending investigation",
+      "resolution": ""
+    },
+    {
+      "id": "BUG-003",
+      "title": "Dashboard summary widget shows incomplete branch totals",
+      "related_test_case": "TC-008",
+      "related_requirement": "REQ-008",
+      "severity": "Medium",
+      "priority": "Medium",
+      "status": "Open",
+      "reported_by": "QA Team",
+      "reported_date": "2026-03-16",
+      "assigned_to": "Development Team",
+      "fixed_date": "",
+      "description": "The dashboard summary omits some branch totals when synchronization jobs are delayed.",
+      "steps_to_reproduce": "Simulate delayed synchronization and compare branch totals with dashboard summary.",
+      "root_cause": "Pending investigation",
+      "resolution": ""
+    }
+  ],
+
+  "risks": [
+    {
+      "id": "RISK-001",
+      "category": "Schedule",
+      "description": "Inventory Control, Sale System, Reports, and Synchronization modules are not yet complete and may impact the planned UAT and launch timeline.",
+      "probability": "High",
+      "impact": "High",
+      "risk_level": "High",
+      "mitigation": "Prioritize critical POS and inventory workflows, review progress weekly, and freeze non-essential scope before UAT.",
+      "contingency": "Resequence lower-priority modules into a post-go-live enhancement release.",
+      "owner": "Apisit Yimboa",
+      "status": "Open",
+      "review_date": "2026-03-17",
+      "linked_capa": "CAPA-001"
+    },
+    {
+      "id": "RISK-002",
+      "category": "Technical",
+      "description": "Realtime branch synchronization may cause data inconsistency if conflict handling is not finalized before multi-branch rollout.",
+      "probability": "High",
+      "impact": "High",
+      "risk_level": "High",
+      "mitigation": "Implement sync queue monitoring, reconciliation rules, and end-to-end integration tests before launch.",
+      "contingency": "Fallback to scheduled synchronization for non-critical data while realtime sync issues are resolved.",
+      "owner": "Apisit Yimboa",
+      "status": "Open",
+      "review_date": "2026-03-17",
+      "linked_capa": "CAPA-002"
+    },
+    {
+      "id": "RISK-003",
+      "category": "Operational",
+      "description": "User readiness may be insufficient if training materials and UAT scenarios are not completed before the launch phase.",
+      "probability": "Medium",
+      "impact": "High",
+      "risk_level": "High",
+      "mitigation": "Prepare user manual, training record, and role-based UAT scenarios before July 2569.",
+      "contingency": "Extend pilot usage period and provide additional onsite support.",
+      "owner": "QA Team",
+      "status": "Open",
+      "review_date": "2026-03-17",
+      "linked_capa": "CAPA-003"
+    }
+  ],
+
+  "change_requests": [
+    {
+      "id": "CRF-001",
+      "title": "Add delivery platform integration to POS workflow",
+      "description": "Extend POS workflow to capture and reconcile sales from delivery platform channels.",
+      "requestor": "Key User",
+      "request_date": "2026-02-20",
+      "priority": "High",
+      "impact": "Requires integration mapping and additional test coverage for order source handling.",
+      "affected_documents": ["REQ-003", "TC-003"],
+      "status": "Approved",
+      "approved_by": "Apisit Yimboa",
+      "approval_date": "2026-02-25",
+      "implementation_date": ""
+    },
+    {
+      "id": "CRF-002",
+      "title": "Enhance dashboard with branch map and top-selling items",
+      "description": "Provide geographic branch view and top 10 selling products on the management dashboard.",
+      "requestor": "Project Sponsor",
+      "request_date": "2026-03-05",
+      "priority": "Medium",
+      "impact": "Adds UI and reporting scope for the Reports and Dashboard module.",
+      "affected_documents": ["REQ-008", "TC-008"],
+      "status": "Pending",
+      "approved_by": "",
+      "approval_date": "",
+      "implementation_date": ""
+    }
+  ],
+
+  "versions": [
+    {
+      "version": "0.1.0",
+      "release_date": "2025-03-31",
+      "release_type": "Major",
+      "description": "Planning baseline with approved mockup and confirmed business scope.",
+      "changes": [
+        "Project mockup completed",
+        "Business workflow and source data reviewed",
+        "Initial development plan approved"
+      ],
+      "deployed_by": "Apisit Yimboa",
+      "environment": "Planning"
+    },
+    {
+      "version": "0.5.0",
+      "release_date": "2025-11-10",
+      "release_type": "Major",
+      "description": "Foundation release with Master Data and Systems Manager ready for baseline testing.",
+      "changes": [
+        "REQ-001 Master Data baseline completed",
+        "REQ-002 Systems Manager baseline completed",
+        "Initial database structure on SQL Server completed"
+      ],
+      "deployed_by": "Apisit Yimboa",
+      "environment": "Development"
+    },
+    {
+      "version": "0.8.0",
+      "release_date": "2026-03-17",
+      "release_type": "Minor",
+      "description": "Current in-progress build for internal system testing as of 17 March 2026.",
+      "changes": [
+        "REQ-003 POS module reached 90% progress",
+        "REQ-004 Inventory Control reached 50% progress",
+        "REQ-005 Sale System reached 30% progress",
+        "REQ-008 Reports and Dashboard reached 20% progress",
+        "Data Synchronization work has not started"
+      ],
+      "deployed_by": "Apisit Yimboa",
+      "environment": "Development"
+    }
+  ],
+
+  "meetings": [
+    {
+      "id": "MTG-001",
+      "title": "Project Planning and Mockup Review",
+      "date": "2024-12-10",
+      "time": "10:00-12:00",
+      "location": "Moo Inter Meeting Room",
+      "chair": "Apisit Yimboa",
+      "attendees": ["Apisit Yimboa", "Key User Team", "Project Sponsor"],
+      "agenda": [
+        "Review business objectives",
+        "Confirm scope and source data",
+        "Discuss mockup and development plan"
+      ],
+      "action_items": [
+        {
+          "item": "Finalize mockup and obtain digital confirmation",
+          "owner": "Apisit Yimboa",
+          "due_date": "2025-03-31",
+          "status": "Closed"
+        }
+      ],
+      "summary": "Project scope and mockup direction were reviewed and confirmed for phase 1 planning."
+    },
+    {
+      "id": "MTG-002",
+      "title": "Foundation Module Delivery Review",
+      "date": "2025-11-10",
+      "time": "14:00-15:30",
+      "location": "Online Meeting",
+      "chair": "Apisit Yimboa",
+      "attendees": ["Apisit Yimboa", "Development Team", "QA Team", "Key User Team"],
+      "agenda": [
+        "Review Master Data completion",
+        "Review Systems Manager completion",
+        "Confirm next development phase"
+      ],
+      "action_items": [
+        {
+          "item": "Begin POS and Inventory development sprint",
+          "owner": "Development Team",
+          "due_date": "2025-11-12",
+          "status": "Closed"
+        }
+      ],
+      "summary": "Foundation modules were accepted for internal baseline testing and the next phase was approved."
+    },
+    {
+      "id": "MTG-003",
+      "title": "Current Development Status Review",
+      "date": "2026-03-17",
+      "time": "09:30-10:30",
+      "location": "Development Office",
+      "chair": "Apisit Yimboa",
+      "attendees": ["Apisit Yimboa", "Development Team", "QA Team"],
+      "agenda": [
+        "Review progress of POS, Inventory, Sale System, Reports, and Synchronization",
+        "Review active defects and risks",
+        "Prepare next UAT readiness actions"
+      ],
+      "action_items": [
+        {
+          "item": "Resolve priority issues in POS payment confirmation",
+          "owner": "Apisit Yimboa",
+          "due_date": "2026-03-31",
+          "status": "Open"
+        },
+        {
+          "item": "Prepare UAT scenarios and user training materials",
+          "owner": "QA Team",
+          "due_date": "2026-06-15",
+          "status": "Open"
+        }
+      ],
+      "summary": "The team reviewed the current project status and agreed to focus on stabilizing POS and inventory workflows before formal UAT."
+    }
+  ],
+
+  "training_sessions": [
+    {
+      "id": "TRN-001",
+      "title": "MSP POS UAT and End-User Training",
+      "date": "2026-07-10",
+      "duration": "6 hours",
+      "location": "Moo Inter Training Room",
+      "trainer": "Apisit Yimboa",
+      "topics": [
+        "POS cashier workflow",
+        "Inventory transaction handling",
+        "Sales document workflow",
+        "Dashboard usage and exception handling"
+      ],
+      "attendees": [
+        {
+          "name": "Cashier Team",
+          "department": "Operations",
+          "signed": false
+        },
+        {
+          "name": "Warehouse Team",
+          "department": "Operations",
+          "signed": false
+        }
+      ]
+    }
+  ],
+
+  "incidents": [],
+
+  "deployments": [
+    {
+      "id": "DEP-001",
+      "version": "0.8.0",
+      "date": "2026-03-17",
+      "environment": "Development",
+      "deployed_by": "Apisit Yimboa",
+      "deployment_type": "Update",
+      "steps": [
+        "Backup SQL Server database",
+        "Deploy latest build to development environment",
+        "Run smoke test for POS and inventory modules"
+      ],
+      "rollback_plan": "Restore latest database backup and redeploy previous stable build",
+      "status": "Success",
+      "approval": "Apisit Yimboa"
+    }
+  ],
+
+  "audit": {
+    "audit_date": "2026-03-17",
+    "auditor": "Internal ISO 29110 Review Team",
+    "audit_scope": "Pre-go-live readiness review for MSP POS Point of Sale System against ISO/IEC 29110 documentation set",
+    "findings": [
+      {
+        "id": "FIND-001",
+        "clause": "PM / Schedule Control",
+        "finding_type": "Observation",
+        "description": "Several core modules remain incomplete and require closer milestone tracking before UAT.",
+        "linked_capa": "CAPA-001"
+      },
+      {
+        "id": "FIND-002",
+        "clause": "SI / Integration Readiness",
+        "finding_type": "Non-Conformance",
+        "description": "Realtime data synchronization design and validation are not yet implemented while multi-branch synchronization is in project scope.",
+        "linked_capa": "CAPA-002"
+      },
+      {
+        "id": "FIND-003",
+        "clause": "SI / Training and Transition",
+        "finding_type": "Observation",
+        "description": "Formal training evidence and signed attendance records are not yet available because the project is still before UAT.",
+        "linked_capa": "CAPA-003"
+      }
+    ]
+  },
+
+  "capas": [
+    {
+      "id": "CAPA-001",
+      "type": "Corrective Action",
+      "related_finding": "FIND-001",
+      "description": "Stabilize critical unfinished modules and update milestone control before UAT.",
+      "root_cause": "Development capacity is concentrated on multiple parallel modules with differing completion states.",
+      "action_plan": "Re-prioritize backlog to POS, Inventory, and Sale System; review progress weekly; defer non-critical enhancements.",
+      "responsible": "Apisit Yimboa",
+      "target_date": "2026-04-15",
+      "status": "Open",
+      "effectiveness_review": "Critical modules should show measurable completion gains and fewer open high-priority defects.",
+      "closed_date": ""
+    },
+    {
+      "id": "CAPA-002",
+      "type": "Corrective Action",
+      "related_finding": "FIND-002",
+      "description": "Complete synchronization architecture, conflict handling, and integration tests before multi-branch deployment.",
+      "root_cause": "Realtime synchronization work has not started despite being required in scope.",
+      "action_plan": "Design sync queue, define reconciliation rules, and execute end-to-end tests with at least two branches.",
+      "responsible": "Apisit Yimboa",
+      "target_date": "2026-06-15",
+      "status": "Open",
+      "effectiveness_review": "Synchronization tests should pass and dashboard totals should match branch data.",
+      "closed_date": ""
+    },
+    {
+      "id": "CAPA-003",
+      "type": "Preventive Action",
+      "related_finding": "FIND-003",
+      "description": "Prepare role-based training materials and collect formal attendance evidence before launch.",
+      "root_cause": "Training activities are scheduled later in the project lifecycle and have not yet produced evidence.",
+      "action_plan": "Finalize user manual, training plan, attendee list, and sign-off sheet before phase 6 launch activities.",
+      "responsible": "QA Team",
+      "target_date": "2026-07-10",
+      "status": "Open",
+      "effectiveness_review": "Signed training records and completed UAT training sessions should be available.",
+      "closed_date": ""
+    }
+  ],
+
+  "output_path": "d:\\Work\\DocISOGen\\projects"
+}
